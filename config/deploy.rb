@@ -13,7 +13,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 set :domain,      '104.131.127.246'
 set :deploy_to,   '/home/deploy/almapp'
 set :repository,  'https://github.com/almapp/almapp-web.git'
-set :branch,      'master'
+set :branch,      'production'
 set :user,        'deploy'
 set :port,        '1813'
 
@@ -87,7 +87,7 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      queue "cd #{deploy_to}/#{current_path}/ng-app && grunt build --force && cd ../../.." # Grunt build
+      # queue "cd #{deploy_to}/#{current_path}/ng-app && grunt build --force && cd ../../.." # Grunt build
     end
   end
 end
