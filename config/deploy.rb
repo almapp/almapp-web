@@ -87,7 +87,7 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      queue "cd #{deploy_to}/#{current_path}/ng-app && grunt build --force && cd ../../.." # Grunt build
+      # queue "cd #{deploy_to}/#{current_path}/ng-app && grunt build --force && cd ../../.." # Grunt build
     end
   end
 end
