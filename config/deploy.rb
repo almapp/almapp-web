@@ -10,7 +10,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain,      '104.131.127.246'
+set :domain,      'direct.almapp.me'
 set :deploy_to,   '/home/deploy/almapp'
 set :repository,  'https://github.com/almapp/almapp-web.git'
 set :branch,      'master'
