@@ -13,6 +13,12 @@
 #  information :text
 #  facebook    :string
 #  twitter     :string
+#  zoom        :float            default("0.0")
+#  angle       :float            default("0.0")
+#  tilt        :float            default("0.0")
+#  latitude    :float            default("0.0")
+#  longitude   :float            default("0.0")
+#  floor       :string
 #  created_at  :datetime
 #  updated_at  :datetime
 #

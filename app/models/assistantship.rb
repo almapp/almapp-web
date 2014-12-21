@@ -10,4 +10,21 @@
 #
 
 class Assistantship < ActiveRecord::Base
+  validates :section_id, presence: true
+  validates :user_id, presence: true
+
+  belongs_to :section
+  belongs_to :user
+
+  def teachers
+    self.section.teachers
+  end
+
+  def semester
+    self.section.semester
+  end
+
+  def year
+    self.section.year
+  end
 end

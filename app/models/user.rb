@@ -17,4 +17,36 @@
 #
 
 class User < ActiveRecord::Base
+  validates :organization_id, presence: true
+  validates :username, presence: true
+  validates :email, presence: true, uniqueness: true, format: /\A[a-z0-9]+[a-z0-9\._-]*@[a-z0-9\.]+\.[a-z]{2,5}\z/i
+
+  belongs_to :organization
+
+  has_many :friendships
+
+  def friends
+    # (friends.all + inverse_friends.all).uniq
+    # User.connection.execute('SELECT * FROM users WHERE user_id IN ((SELECT friend_id FROM friendships WHERE user_id = (?)) UNION (SELECT user_id FROM friendships WHERE friend_id = (?)))') #, :skip_logging)
+    User.where('users.id IN ((SELECT friend_id FROM friendships WHERE user_id = (?) AND accepted = true) UNION (SELECT user_id FROM friendships WHERE friend_id = (?)  AND accepted = true))', self.id, self.id) #, :skip_logging)
+  end
+
+  def pending_friends
+    User.where('users.id IN ((SELECT friend_id FROM friendships WHERE user_id = (?) AND accepted = false) UNION (SELECT user_id FROM friendships WHERE friend_id = (?)  AND accepted = false))', self.id, self.id)
+  end
+
+  has_and_belongs_to_many :sections
+
+  has_many :assistantships
+  has_many :assisting_sections, through: :assistantships, source: :section
+
+  has_many :enrolled_careers
+  has_many :careers, through: :enrolled_careers
+
+  has_many :event_assistances
+  has_many :attending_events, through: :event_assistances, source: :event
+
+  has_many :comments
+  has_many :likes
+
 end

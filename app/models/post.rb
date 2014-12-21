@@ -17,4 +17,25 @@
 #
 
 class Post < ActiveRecord::Base
+  include Commentable
+  include Likeable
+
+  validates :user, presence: true
+  validates :notify, presence: true
+  validates :target_id, presence: true
+  validates :target_type, presence: true
+  validates :content, length: {
+                    minimum: 2,
+                    maximum: 700,
+                    too_short: 'must have at least %{count} words.',
+                    too_long: 'must have at most %{count} words.'
+                    }, presence: true
+
+  belongs_to :place
+  belongs_to :event
+  belongs_to :user
+
+  belongs_to :target, polymorphic: true
+  belongs_to :entity, polymorphic: true
+
 end

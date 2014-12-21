@@ -6,6 +6,7 @@
 #  identifier  :string           not null
 #  slug        :string           not null
 #  name        :string
+#  service     :boolean          default("false"), not null
 #  campus_id   :integer
 #  area_id     :integer          not null
 #  area_type   :string           not null

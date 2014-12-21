@@ -14,4 +14,16 @@
 #
 
 class Career < ActiveRecord::Base
+  include Commentable
+  include Posteable
+  include PostPublisher
+  include Likeable
+
+  validates :name, presence: true, uniqueness: {scope: :academic_unity_id}
+
+  belongs_to :academic_unity
+
+  has_many :enrolled_careers
+  has_many :students, through: :enrolled_careers, source: :user
+
 end

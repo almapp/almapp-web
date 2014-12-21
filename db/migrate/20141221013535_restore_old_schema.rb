@@ -11,6 +11,12 @@ class RestoreOldSchema < ActiveRecord::Migration
       t.text     "information"
       t.string   "facebook"
       t.string   "twitter"
+      t.float    "zoom",            default: 0.0
+      t.float    "angle",           default: 0.0
+      t.float    "tilt",            default: 0.0
+      t.float    "latitude",        default: 0.0
+      t.float    "longitude",       default: 0.0
+      t.string   "floor"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
@@ -41,7 +47,6 @@ class RestoreOldSchema < ActiveRecord::Migration
       t.string   "phone"
       t.string   "email"
       t.text     "description"
-      t.string   "icon"
       t.float    "zoom",            default: 0.0
       t.float    "angle",           default: 0.0
       t.float    "tilt",            default: 0.0
@@ -264,12 +269,13 @@ class RestoreOldSchema < ActiveRecord::Migration
     add_index "organizations", ["slug"], name: "index_organizations_on_slug", unique: true, using: :btree
 
     create_table "places", force: true do |t| # TODO polymorphic
-      t.string   "identifier",                 null: false
-      t.string   "slug",                       null: false
+      t.string   "identifier",                  null: false
+      t.string   "slug",                        null: false
       t.string   "name"
+      t.boolean  "service",     default: false, null: false
       t.integer  "campus_id"
-      t.integer  "area_id",                    null: false
-      t.string   "area_type",                  null: false
+      t.integer  "area_id",                     null: false
+      t.string   "area_type",                   null: false
       t.text     "description"
       t.float    "zoom",        default: 0.0
       t.float    "angle",       default: 0.0

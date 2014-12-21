@@ -13,9 +13,31 @@
 #  information :text
 #  facebook    :string
 #  twitter     :string
+#  zoom        :float            default("0.0")
+#  angle       :float            default("0.0")
+#  tilt        :float            default("0.0")
+#  latitude    :float            default("0.0")
+#  longitude   :float            default("0.0")
+#  floor       :string
 #  created_at  :datetime
 #  updated_at  :datetime
 #
 
 class AcademicUnity < ActiveRecord::Base
+  include Commentable
+  include Posteable
+  include PostPublisher
+  include Zoneable
+  include Likeable
+  include MapMarkable
+
+  validates :short_name, presence: true
+  validates :faculty_id, presence: true
+
+  belongs_to :faculty
+
+  has_and_belongs_to_many :teachers
+  has_many :courses
+  has_many :careers
+
 end

@@ -4,6 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  user_id       :integer          not null
+#  valuation     :integer          default("0"), not null
 #  likeable_id   :integer          not null
 #  likeable_type :string           not null
 #

@@ -137,8 +137,11 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    timeliness (0.3.7)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    validates_timeliness (3.0.14)
+      timeliness (~> 0.3.6)
 
 PLATFORMS
   ruby
@@ -156,3 +159,4 @@ DEPENDENCIES
   sass
   sdoc (~> 0.4.0)
   spring
+  validates_timeliness (~> 3.0)

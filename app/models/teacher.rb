@@ -14,4 +14,19 @@
 #
 
 class Teacher < ActiveRecord::Base
+  include Commentable
+  include Likeable
+
+  validates :name, presence: true
+
+  has_and_belongs_to_many :sections
+  has_and_belongs_to_many :academic_unities
+
+  def faculty
+    # self.academic_unity.faculty 
+  end
+
+  def courses
+    self.sections.courses
+  end
 end

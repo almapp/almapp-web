@@ -11,4 +11,15 @@
 #
 
 class ScheduleItem < ActiveRecord::Base
+  belongs_to :section
+  belongs_to :schedule_module
+  belongs_to :place
+
+  def semester
+    self.section.try(:semester)
+  end
+
+  def year
+    self.section.try(:year)
+  end
 end

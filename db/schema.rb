@@ -17,16 +17,22 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   enable_extension "plpgsql"
 
   create_table "academic_unities", force: :cascade do |t|
-    t.string   "short_name",  null: false
+    t.string   "short_name",                null: false
     t.string   "name"
     t.integer  "faculty_id"
-    t.string   "slug",        null: false
+    t.string   "slug",                      null: false
     t.string   "url"
     t.string   "email"
     t.string   "address"
     t.text     "information"
     t.string   "facebook"
     t.string   "twitter"
+    t.float    "zoom",        default: 0.0
+    t.float    "angle",       default: 0.0
+    t.float    "tilt",        default: 0.0
+    t.float    "latitude",    default: 0.0
+    t.float    "longitude",   default: 0.0
+    t.string   "floor"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,7 +72,6 @@ ActiveRecord::Schema.define(version: 20141221030832) do
     t.string   "phone"
     t.string   "email"
     t.text     "description"
-    t.string   "icon"
     t.float    "zoom",            default: 0.0
     t.float    "angle",           default: 0.0
     t.float    "tilt",            default: 0.0
@@ -259,9 +264,10 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   add_index "groups_subscribers", ["user_id"], name: "index_groups_subscribers_on_user_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id",       null: false
-    t.integer "likeable_id",   null: false
-    t.string  "likeable_type", null: false
+    t.integer "user_id",                   null: false
+    t.integer "valuation",     default: 0, null: false
+    t.integer "likeable_id",               null: false
+    t.string  "likeable_type",             null: false
   end
 
   add_index "likes", ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", using: :btree
@@ -282,12 +288,13 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   add_index "organizations", ["slug"], name: "index_organizations_on_slug", unique: true, using: :btree
 
   create_table "places", force: :cascade do |t|
-    t.string   "identifier",                null: false
-    t.string   "slug",                      null: false
+    t.string   "identifier",                  null: false
+    t.string   "slug",                        null: false
     t.string   "name"
+    t.boolean  "service",     default: false, null: false
     t.integer  "campus_id"
-    t.integer  "area_id",                   null: false
-    t.string   "area_type",                 null: false
+    t.integer  "area_id",                     null: false
+    t.string   "area_type",                   null: false
     t.text     "description"
     t.float    "zoom",        default: 0.0
     t.float    "angle",       default: 0.0

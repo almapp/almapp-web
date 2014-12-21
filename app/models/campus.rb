@@ -14,7 +14,6 @@
 #  phone           :string
 #  email           :string
 #  description     :text
-#  icon            :string
 #  zoom            :float            default("0.0")
 #  angle           :float            default("0.0")
 #  tilt            :float            default("0.0")
@@ -26,5 +25,22 @@
 #
 
 class Campus < ActiveRecord::Base
+  include Commentable
+  include Posteable
+  include PostPublisher
+  include Likeable
+  include MapMarkable
+
+  validates :short_name, presence: true, uniqueness: {scope: :organization_id}
+  validates :name, presence: true
+  validates :organization_id, presence: true
+
+  belongs_to :organization
+
+  has_many :faculties
+  has_many :academic_unities, through: :faculties
+  has_many :courses, through: :academic_unities
+
+  has_many :places
 
 end
