@@ -259,11 +259,13 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   add_index "groups_subscribers", ["user_id"], name: "index_groups_subscribers_on_user_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
+    t.integer "user_id",       null: false
     t.integer "likeable_id",   null: false
     t.string  "likeable_type", null: false
   end
 
   add_index "likes", ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name",        null: false
