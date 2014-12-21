@@ -25,6 +25,7 @@ class Comment < ActiveRecord::Base
                     too_long: 'must have at most %{count} words.'
                     }
 
+  belongs_to :user
   belongs_to :commentable, polymorphic: true
 
   has_many :responses, -> { order(created_at: :asc) }, as: :commentable, class_name: 'Comment'

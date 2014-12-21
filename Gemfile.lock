@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_record_union (1.0.1)
+      activerecord (>= 4.0)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -65,6 +67,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     ffi (1.9.6)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -147,11 +151,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_record_union
   annotate
   awesome_print
   better_errors
   binding_of_caller
   compass
+  friendly_id
   jbuilder
   pg
   rails (= 4.2)

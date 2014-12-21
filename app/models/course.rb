@@ -20,6 +20,7 @@ class Course < ActiveRecord::Base
   include Commentable
   include Posteable
   include PostPublisher
+  include EventPublisher
   include Likeable
 
   validates :initials, presence: true, uniqueness: {scope: 'academic_unity.faculty.campus.organization'} # TODO Test
@@ -30,10 +31,15 @@ class Course < ActiveRecord::Base
   validates :credits, numericality: {greater_than_or_equal_to: 0}, if: 'credits.present?'
   validates :enrolled, numericality: {greater_than_or_equal_to: 0}, if: 'enrolled.present?'
 
-  has_many :sections
   belongs_to :academic_unity
 
-  def teachers
-    self.sections.teachers
+  has_many :sections
+  has_many :teachers, through: :sections
+
+  extend FriendlyId
+  friendly_id :initials, use: :scoped, scope: :academic_unity # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
+
+  def normalize_friendly_id(string)
+    super.upcase
   end
 end

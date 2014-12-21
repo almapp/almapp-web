@@ -3,7 +3,7 @@
 # Table name: campuses
 #
 #  id              :integer          not null, primary key
-#  short_name      :string           not null
+#  abbreviation    :string           not null
 #  name            :string           not null
 #  slug            :string           not null
 #  organization_id :integer          not null
@@ -14,12 +14,7 @@
 #  phone           :string
 #  email           :string
 #  description     :text
-#  zoom            :float            default("0.0")
-#  angle           :float            default("0.0")
-#  tilt            :float            default("0.0")
-#  latitude        :float            default("0.0")
-#  longitude       :float            default("0.0")
-#  floor           :string
+#  place_id        :integer
 #  created_at      :datetime
 #  updated_at      :datetime
 #
@@ -28,10 +23,11 @@ class Campus < ActiveRecord::Base
   include Commentable
   include Posteable
   include PostPublisher
+  include EventPublisher
   include Likeable
   include MapMarkable
 
-  validates :short_name, presence: true, uniqueness: {scope: :organization_id}
+  validates :abbreviation, presence: true, uniqueness: {scope: :organization_id}
   validates :name, presence: true
   validates :organization_id, presence: true
 
@@ -41,6 +37,17 @@ class Campus < ActiveRecord::Base
   has_many :academic_unities, through: :faculties
   has_many :courses, through: :academic_unities
 
+  has_many :faculty_places, through: :faculties, source: :places, class_name: 'Place'
   has_many :places
 
+  def places
+    first_level_places.append(faculty_places)
+  end
+
+  def campus
+    return self
+  end
+
+  extend FriendlyId
+  friendly_id :name, use: :scoped, scope: :organization # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
 end

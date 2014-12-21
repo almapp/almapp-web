@@ -15,12 +15,7 @@
 #  facebook     :string
 #  description  :text
 #  twitter      :string
-#  zoom         :float            default("0.0")
-#  angle        :float            default("0.0")
-#  tilt         :float            default("0.0")
-#  latitude     :float            default("0.0")
-#  longitude    :float            default("0.0")
-#  floor        :string
+#  place_id     :integer
 #  created_at   :datetime
 #  updated_at   :datetime
 #
@@ -29,13 +24,14 @@ class Faculty < ActiveRecord::Base
   include Commentable
   include Posteable
   include PostPublisher
+  include EventPublisher
   include Likeable
   include MapMarkable
 
   validates :name, presence: true
   validates :campus_id, presence: true
-  validates :abbreviation, presence: true, uniqueness: {scope: 'campus.organization'}
-  validates :short_name, presence: true, uniqueness: {scope: 'campus.organization'}
+  validates :abbreviation, presence: true #, uniqueness: {scope: 'campus.organization'}
+  validates :short_name, presence: true   #,   uniqueness: {scope: 'campus.organization'}
 
   belongs_to :campus
   delegate :organization, :to => :camp, :allow_nil => true
@@ -45,12 +41,26 @@ class Faculty < ActiveRecord::Base
   has_many :careers, through: :academic_unities
   has_many :teachers, through: :academic_unities
 
-  has_many :faculty_places, -> { order(created_at: :asc) }, as: :area, class_name: 'Place'
-  has_many :academic_unity_places, through: :academic_unities, source: :place
+  has_many :academic_unity_places, through: :academic_unities, source: :places, class_name: 'Place'
+
+  has_many :places
 
   def places
-    (faculty_places.all + academic_unity_places.all).uniq
+    first_level_places.append(academic_unity_places)
   end
 
   has_and_belongs_to_many :groups
+
+  extend FriendlyId
+  friendly_id :short_name, use: :scoped, scope: :campus # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
+
+  def set_localization_area
+    if localization.present?
+      localization.identifier = abbreviation
+      localization.name = name
+      localization.area = self
+      localization.save
+    end
+  end
+
 end

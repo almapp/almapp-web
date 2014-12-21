@@ -17,6 +17,8 @@
 #
 
 class User < ActiveRecord::Base
+  include PostPublisher
+
   validates :organization_id, presence: true
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true, format: /\A[a-z0-9]+[a-z0-9\._-]*@[a-z0-9\.]+\.[a-z]{2,5}\z/i
@@ -46,7 +48,25 @@ class User < ActiveRecord::Base
   has_many :event_assistances
   has_many :attending_events, through: :event_assistances, source: :event
 
-  has_many :comments
-  has_many :likes
+  has_many :commented_content, class_name: 'Comment'
+  has_many :liked_content, class_name: 'Like'
+
+  before_validation :create_slug
+
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :scoped, scope: :organization
+
+  def create_slug
+    self.username = self.email.split('@').first
+  end
+
+  # Try building a slug based on the following fields in
+  # increasing order of specificity.
+  def slug_candidates
+    [
+    :username,
+    [:username, :id]
+    ]
+  end
 
 end

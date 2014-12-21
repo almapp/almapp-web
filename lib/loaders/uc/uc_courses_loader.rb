@@ -3,6 +3,7 @@ class UCCoursesLoader < CoursesLoader
   require 'nokogiri'
 
   def initialize
+    @organization = Organization.find_by_slug('UC')
     @sj = Camp.find_by_cid('SJ')
     @cc = Camp.find_by_cid('CC')
     @lc = Camp.find_by_cid('LC')
@@ -214,7 +215,7 @@ class UCCoursesLoader < CoursesLoader
                 #end
 
                 if module_block.present? && regex(module_block)
-                  matches = ScheduleModule.modules_for_loader(module_block)
+                  matches = ScheduleModule.modules_for_loader(@organization, module_block)
                   matches.each do |s|
                     p = ScheduleItem.create(class_type: module_type,
                                             section: section,

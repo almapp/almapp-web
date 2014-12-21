@@ -27,6 +27,8 @@ gem 'sass'
 gem 'compass'
 
 gem 'validates_timeliness', '~> 3.0'
+gem 'active_record_union'
+gem 'friendly_id'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

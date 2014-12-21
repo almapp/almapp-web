@@ -36,7 +36,11 @@ class Event < ActiveRecord::Base
   validates_datetime :to_date, after: lambda { 1.minute.from_now }
   validates_datetime :from_date, :on_or_after => lambda { 3.month.ago }, if: 'from_date.present?'
 
-  has_many :event_assistances
-  has_many :participants, through: :event_assistances, class_name: 'User'
+  belongs_to :host, polymorphic: true
 
+  has_many :event_assistances
+  has_many :participants, through: :event_assistances, source: :user
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 end

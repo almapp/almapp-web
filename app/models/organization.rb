@@ -18,7 +18,9 @@ class Organization < ActiveRecord::Base
   include Commentable
   include Posteable
   include PostPublisher
+  include EventPublisher
   include Likeable
+  include MapMarkable
 
   validates :name, presence: true
   validates :slug,
@@ -34,7 +36,6 @@ class Organization < ActiveRecord::Base
   has_many :faculties, through: :campuses
   has_many :academic_unities, through: :faculties
 
-  has_many :places, through: :campuses
   has_many :careers, through: :academic_unities
   has_many :courses, through: :academic_unities
   has_many :teachers, through: :academic_unities
@@ -42,6 +43,14 @@ class Organization < ActiveRecord::Base
   has_many :schedule_modules
 
   has_and_belongs_to_many :groups
+
+  has_many :campuses_places, through: :campuses, source: :places, class_name: 'Place'
+  has_many :places
+
+  def places
+    first_level_places.append(campuses_places)
+  end
+
 
   def self.find_with_subdomain(subdomain)
     self.where("lower(slug) = ?", subdomain.downcase).first if (subdomain.present? && subdomain.size != 0)

@@ -13,12 +13,7 @@
 #  information :text
 #  facebook    :string
 #  twitter     :string
-#  zoom        :float            default("0.0")
-#  angle       :float            default("0.0")
-#  tilt        :float            default("0.0")
-#  latitude    :float            default("0.0")
-#  longitude   :float            default("0.0")
-#  floor       :string
+#  place_id    :integer
 #  created_at  :datetime
 #  updated_at  :datetime
 #
@@ -27,9 +22,10 @@ class AcademicUnity < ActiveRecord::Base
   include Commentable
   include Posteable
   include PostPublisher
+  include EventPublisher
   include Zoneable
   include Likeable
-  include MapMarkable
+  # include MapMarkable
 
   validates :short_name, presence: true
   validates :faculty_id, presence: true
@@ -39,5 +35,15 @@ class AcademicUnity < ActiveRecord::Base
   has_and_belongs_to_many :teachers
   has_many :courses
   has_many :careers
+
+  has_many :places, as: :area
+
+  def campus
+    return self.faculty.campus rescue nil
+  end
+
+  extend FriendlyId
+  friendly_id :short_name, use: :scoped, scope: :faculty # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
+
 
 end

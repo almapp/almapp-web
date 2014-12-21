@@ -11,33 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141221030832) do
+ActiveRecord::Schema.define(version: 20141221171920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "academic_unities", force: :cascade do |t|
-    t.string   "short_name",                null: false
+    t.string   "short_name",  null: false
     t.string   "name"
     t.integer  "faculty_id"
-    t.string   "slug",                      null: false
+    t.string   "slug",        null: false
     t.string   "url"
     t.string   "email"
     t.string   "address"
     t.text     "information"
     t.string   "facebook"
     t.string   "twitter"
-    t.float    "zoom",        default: 0.0
-    t.float    "angle",       default: 0.0
-    t.float    "tilt",        default: 0.0
-    t.float    "latitude",    default: 0.0
-    t.float    "longitude",   default: 0.0
-    t.string   "floor"
+    t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "academic_unities", ["faculty_id"], name: "index_academic_unities_on_faculty_id", using: :btree
+  add_index "academic_unities", ["place_id"], name: "index_academic_unities_on_place_id", using: :btree
   add_index "academic_unities", ["slug", "faculty_id"], name: "index_academic_unities_on_slug_and_faculty_id", unique: true, using: :btree
 
   create_table "academic_unities_teachers", id: false, force: :cascade do |t|
@@ -61,10 +57,10 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   add_index "assistantships", ["user_id"], name: "index_assistantships_on_user_id", using: :btree
 
   create_table "campuses", force: :cascade do |t|
-    t.string   "short_name",                    null: false
-    t.string   "name",                          null: false
-    t.string   "slug",                          null: false
-    t.integer  "organization_id",               null: false
+    t.string   "abbreviation",    null: false
+    t.string   "name",            null: false
+    t.string   "slug",            null: false
+    t.integer  "organization_id", null: false
     t.string   "address"
     t.string   "url"
     t.string   "facebook"
@@ -72,18 +68,14 @@ ActiveRecord::Schema.define(version: 20141221030832) do
     t.string   "phone"
     t.string   "email"
     t.text     "description"
-    t.float    "zoom",            default: 0.0
-    t.float    "angle",           default: 0.0
-    t.float    "tilt",            default: 0.0
-    t.float    "latitude",        default: 0.0
-    t.float    "longitude",       default: 0.0
-    t.string   "floor"
+    t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "campuses", ["abbreviation", "organization_id"], name: "index_campuses_on_cid_and_organization_id", unique: true, using: :btree
   add_index "campuses", ["organization_id"], name: "index_campuses_on_organization_id", using: :btree
-  add_index "campuses", ["short_name", "organization_id"], name: "index_campuses_on_cid_and_organization_id", unique: true, using: :btree
+  add_index "campuses", ["place_id"], name: "index_campuses_on_place_id", using: :btree
   add_index "campuses", ["slug", "organization_id"], name: "index_campuses_on_slug_and_organization_id", unique: true, using: :btree
 
   create_table "careers", force: :cascade do |t|
@@ -179,11 +171,11 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   add_index "events_assistances", ["user_id"], name: "index_events_assistances_on_user_id", using: :btree
 
   create_table "faculties", force: :cascade do |t|
-    t.string   "abbreviation",               null: false
-    t.string   "short_name",                 null: false
-    t.string   "name",                       null: false
-    t.string   "slug",                       null: false
-    t.integer  "campus_id",                  null: false
+    t.string   "abbreviation", null: false
+    t.string   "short_name",   null: false
+    t.string   "name",         null: false
+    t.string   "slug",         null: false
+    t.integer  "campus_id",    null: false
     t.string   "address"
     t.string   "phone"
     t.string   "email"
@@ -191,18 +183,14 @@ ActiveRecord::Schema.define(version: 20141221030832) do
     t.string   "facebook"
     t.text     "description"
     t.string   "twitter"
-    t.float    "zoom",         default: 0.0
-    t.float    "angle",        default: 0.0
-    t.float    "tilt",         default: 0.0
-    t.float    "latitude",     default: 0.0
-    t.float    "longitude",    default: 0.0
-    t.string   "floor"
+    t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "faculties", ["abbreviation", "campus_id"], name: "index_faculties_on_abbreviation_and_campus_id", unique: true, using: :btree
   add_index "faculties", ["campus_id"], name: "index_faculties_on_campus_id", using: :btree
+  add_index "faculties", ["place_id"], name: "index_faculties_on_place_id", using: :btree
   add_index "faculties", ["short_name", "campus_id"], name: "index_faculties_on_short_name_and_campus_id", unique: true, using: :btree
   add_index "faculties", ["slug", "campus_id"], name: "index_faculties_on_slug_and_campus_id", unique: true, using: :btree
 
@@ -214,6 +202,19 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   add_index "faculties_groups", ["faculty_id"], name: "index_faculties_groups_on_faculty_id", using: :btree
   add_index "faculties_groups", ["group_id", "faculty_id"], name: "index_faculties_groups_on_group_id_and_faculty_id", unique: true, using: :btree
   add_index "faculties_groups", ["group_id"], name: "index_faculties_groups_on_group_id", using: :btree
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id",                    null: false
@@ -289,13 +290,11 @@ ActiveRecord::Schema.define(version: 20141221030832) do
 
   create_table "places", force: :cascade do |t|
     t.string   "identifier",                  null: false
-    t.string   "slug",                        null: false
     t.string   "name"
     t.boolean  "service",     default: false, null: false
-    t.integer  "campus_id"
     t.integer  "area_id",                     null: false
     t.string   "area_type",                   null: false
-    t.text     "description"
+    t.text     "description", default: ""
     t.float    "zoom",        default: 0.0
     t.float    "angle",       default: 0.0
     t.float    "tilt",        default: 0.0
@@ -307,9 +306,7 @@ ActiveRecord::Schema.define(version: 20141221030832) do
   end
 
   add_index "places", ["area_id", "area_type"], name: "index_places_on_area_id_and_area_type", using: :btree
-  add_index "places", ["campus_id"], name: "index_places_on_campus_id", using: :btree
-  add_index "places", ["identifier", "campus_id"], name: "index_places_on_identifier_and_campus_id", unique: true, using: :btree
-  add_index "places", ["slug", "campus_id"], name: "index_places_on_slug_and_campus_id", unique: true, using: :btree
+  add_index "places", ["identifier", "area_id", "area_type"], name: "index_places_on_identifier_and_area", unique: true, using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id",                     null: false

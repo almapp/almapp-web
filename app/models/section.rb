@@ -15,6 +15,7 @@ class Section < ActiveRecord::Base
   include Commentable
   include Posteable
   include PostPublisher
+  include EventPublisher
 
   validates :course_id, presence: true
   validates :semester, presence: true, numericality: {greater_than_or_equal_to: 0}

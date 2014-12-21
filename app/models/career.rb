@@ -17,6 +17,7 @@ class Career < ActiveRecord::Base
   include Commentable
   include Posteable
   include PostPublisher
+  include EventPublisher
   include Likeable
 
   validates :name, presence: true, uniqueness: {scope: :academic_unity_id}
@@ -26,4 +27,6 @@ class Career < ActiveRecord::Base
   has_many :enrolled_careers
   has_many :students, through: :enrolled_careers, source: :user
 
+  extend FriendlyId
+  friendly_id :name, use: :scoped, scope: :academic_unity # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
 end
