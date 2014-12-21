@@ -159,6 +159,7 @@ DEPENDENCIES
   compass
   friendly_id
   jbuilder
+  nokogiri
   pg
   rails (= 4.2)
   rails-api

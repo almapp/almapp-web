@@ -356,14 +356,15 @@ class RestoreOldSchema < ActiveRecord::Migration
       t.string   "slug",              null: false
       t.string   "email"
       t.string   "url"
-      t.integer  "academic_unity_id"
+      # t.integer  "academic_unity_id"
       t.text     "information"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
 
-    add_index "teachers", ["academic_unity_id"], name: "index_teachers_on_academic_unity_id", using: :btree
+    # add_index "teachers", ["academic_unity_id"], name: "index_teachers_on_academic_unity_id", using: :btree
     add_index "teachers", ["slug"], name: "index_teachers_on_slug", unique: true, using: :btree
+    add_index "teachers", ["name"], name: "index_teachers_on_name", using: :btree
 
     create_table "academic_unities_teachers", id: false, force: true do |t|
       t.integer  "teacher_id",    null: false

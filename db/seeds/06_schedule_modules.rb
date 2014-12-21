@@ -2,12 +2,14 @@ puts('Creating schedule modules')
 
 # Table name: schedule_modules
 #
-#  id         :integer          not null, primary key
-#  initials   :string(255)      not null
-#  day        :integer          not null
-#  block      :integer          not null
-#  start_time :string(255)      not null
-#  end_time   :string(255)      not null
+#  id              :integer          not null, primary key
+#  organization_id :integer          not null
+#  initials        :string           not null
+#  day             :integer          not null
+#  block           :integer          not null
+#  start_time      :string           not null
+#  end_time        :string           not null
+#
 
 def create_modules(days, blocks, start_times, end_times)
   days.each do |day|

@@ -23,7 +23,7 @@ class Course < ActiveRecord::Base
   include EventPublisher
   include Likeable
 
-  validates :initials, presence: true, uniqueness: {scope: 'academic_unity.faculty.campus.organization'} # TODO Test
+  validates :initials, presence: true #, uniqueness: {scope: 'academic_unity.faculty.campus.organization'} # TODO Test
   validates :academic_unity_id, presence: true
 
   # Causes error if left empty

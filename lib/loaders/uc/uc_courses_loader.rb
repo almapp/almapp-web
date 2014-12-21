@@ -4,11 +4,12 @@ class UCCoursesLoader < CoursesLoader
 
   def initialize
     @organization = Organization.find_by_slug('UC')
-    @sj = Camp.find_by_cid('SJ')
-    @cc = Camp.find_by_cid('CC')
-    @lc = Camp.find_by_cid('LC')
-    @vr = Camp.find_by_cid('VR')
-    @or = Camp.find_by_cid('OR')
+    @sj = Campus.find_by_abbreviation('SJ')
+    @cc = Campus.find_by_abbreviation('CC')
+    @lc = Campus.find_by_abbreviation('LC')
+    @vr = Campus.find_by_abbreviation('VR')
+    @or = Campus.find_by_abbreviation('OR')
+    @ex = Campus.find_by_abbreviation('EX')
   end
 
   def regex(input)
@@ -16,17 +17,19 @@ class UCCoursesLoader < CoursesLoader
   end
 
   def get_camp(name)
-    case name
-      when 'San Joaquin'
+    case name.downcase
+      when 'San Joaquin'.downcase
         @sj
-      when 'Lo Contador'
+      when 'Lo Contador'.downcase
         @lc
-      when 'Casa Central'
+      when 'Casa Central'.downcase
         @cc
-      when 'Campus Oriente'
+      when 'Campus Oriente'.downcase
         @or
-      when 'Villarica'
+      when 'Villarica'.downcase
         @vr
+      when 'Campus Externo'.downcase
+        @ex
       else
         nil
     end
@@ -165,15 +168,16 @@ class UCCoursesLoader < CoursesLoader
                 if t_name.downcase == 'sin profesores' || t_name.downcase == 'por definir'
                   puts course.name.concat(' has no teachers.')
                 else
-                  teacher = Teacher.find_by_academic_unity_id_and_name(unity.id, t_name)
+                  teacher = Teacher.find_by_name(t_name)
                   if teacher.present?
                     puts 'Teacher found: '.concat(teacher.name)
                   else
-                    teacher = Teacher.create(name: t_name,
-                                             academic_unity: unity)
+                    teacher = Teacher.new(name: t_name)
                     puts 'Teacher not found, created: '.concat(teacher.name)
                   end
-                  section.teachers << teacher
+                  teacher.academic_unities << unity unless teacher.academic_unities.include?(unity)
+                  teacher.save
+                  section.teachers << teacher unless section.teachers.include?(teacher)
                 end
               end
             end
@@ -220,7 +224,7 @@ class UCCoursesLoader < CoursesLoader
                     p = ScheduleItem.create(class_type: module_type,
                                             section: section,
                                             place_name: module_place,
-                                            camp_name: campus,
+                                            campus_name: campus,
                                             schedule_module: s)
                     puts "Created item: #{section.identifier} | #{module_type} | #{s.initials} | #{module_place} @ #{campus}"
                   end
@@ -228,7 +232,7 @@ class UCCoursesLoader < CoursesLoader
                   p = ScheduleItem.create(class_type: module_type,
                                           section: section,
                                           place_name: module_place,
-                                          camp_name: campus,
+                                          campus_name: campus,
                                           schedule_module: nil)
                   puts "Created item: #{section.identifier} | #{module_type} | No ModuleBlock | #{module_place} @ #{campus}"
                 end
