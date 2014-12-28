@@ -3,18 +3,17 @@
 # Table name: faculties
 #
 #  id           :integer          not null, primary key
-#  abbreviation :string           not null
-#  short_name   :string           not null
-#  name         :string           not null
-#  slug         :string           not null
+#  abbreviation :string(255)
+#  short_name   :string(255)
+#  name         :string(255)
 #  campus_id    :integer          not null
-#  address      :string
-#  phone        :string
-#  email        :string
-#  url          :string
-#  facebook     :string
-#  description  :text
-#  twitter      :string
+#  address      :string(255)
+#  phone        :string(255)
+#  email        :string(255)
+#  url          :string(255)
+#  facebook     :string(255)
+#  information  :text             default("")
+#  twitter      :string(255)
 #  place_id     :integer
 #  created_at   :datetime
 #  updated_at   :datetime

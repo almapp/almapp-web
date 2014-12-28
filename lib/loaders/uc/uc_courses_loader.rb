@@ -3,7 +3,7 @@ class UCCoursesLoader < CoursesLoader
   require 'nokogiri'
 
   def initialize
-    @organization = Organization.find_by_slug('UC')
+    @organization = Organization.find_by_abbreviation('UC')
     @sj = Campus.find_by_abbreviation('SJ')
     @cc = Campus.find_by_abbreviation('CC')
     @lc = Campus.find_by_abbreviation('LC')
@@ -218,24 +218,37 @@ class UCCoursesLoader < CoursesLoader
                 #  place = Place.find_by_insensitive_pid(module_place)
                 #end
 
+                place_campus = Campus.where("lower(unaccent(short_name)) = ? AND organization_id = ?", campus.downcase, @organization.id).first
+                normalized = module_place.downcase.gsub(/([-,., ,_])/, '#') if module_place.present?
+                normalized ||= nil
+                p = place_campus.places.where("regexp_replace(lower(unaccent(identifier)), '([-,., ,_])', '#')  = ?", normalized).first if place_campus.present? && normalized.present?
+
                 if module_block.present? && regex(module_block)
                   matches = ScheduleModule.modules_for_loader(@organization, module_block)
                   matches.each do |s|
-                    p = ScheduleItem.create(class_type: module_type,
+
+                    # Drawing.where("drawing_number REGEXP ?", 'A\d{4}')
+
+                    created_item = ScheduleItem.create(class_type: module_type,
                                             section: section,
                                             place_name: module_place,
                                             campus_name: campus,
+                                            place: p,
                                             schedule_module: s)
-                    puts "Created item: #{section.identifier} | #{module_type} | #{s.initials} | #{module_place} @ #{campus}"
+                    puts "Created item: #{section.identifier} | #{module_type} | #{s.initials} | place: #{p.present? ? p.id : 'none'} - #{module_place} @ #{campus}"
                   end
                 else
-                  p = ScheduleItem.create(class_type: module_type,
+                  created_item = ScheduleItem.create(class_type: module_type,
                                           section: section,
                                           place_name: module_place,
                                           campus_name: campus,
+                                          place: p,
                                           schedule_module: nil)
-                  puts "Created item: #{section.identifier} | #{module_type} | No ModuleBlock | #{module_place} @ #{campus}"
+                  puts "Created item: #{section.identifier} | #{module_type} | No ModuleBlock | place: #{p.present? ? p.id : 'none'} - #{module_place} @ #{campus}"
                 end
+
+                # SELECT DISTINCT schedule_items.id, schedule_items.place_name, schedule_items.campus_name, schedule_items.place_id FROM schedule_items LEFT OUTER JOIN places ON places.id = schedule_items.place_id;
+
               end
             end
           end

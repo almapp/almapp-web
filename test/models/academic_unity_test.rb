@@ -2,20 +2,20 @@
 #
 # Table name: academic_unities
 #
-#  id          :integer          not null, primary key
-#  short_name  :string           not null
-#  name        :string
-#  faculty_id  :integer
-#  slug        :string           not null
-#  url         :string
-#  email       :string
-#  address     :string
-#  information :text
-#  facebook    :string
-#  twitter     :string
-#  place_id    :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id           :integer          not null, primary key
+#  abbreviation :string(255)
+#  short_name   :string(255)
+#  name         :string(255)
+#  faculty_id   :integer
+#  url          :string(255)
+#  email        :string(255)
+#  address      :string(255)
+#  information  :text             default("")
+#  facebook     :string(255)
+#  twitter      :string(255)
+#  place_id     :integer
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 
 require 'test_helper'

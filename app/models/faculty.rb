@@ -3,18 +3,17 @@
 # Table name: faculties
 #
 #  id           :integer          not null, primary key
-#  abbreviation :string           not null
-#  short_name   :string           not null
-#  name         :string           not null
-#  slug         :string           not null
+#  abbreviation :string(255)
+#  short_name   :string(255)
+#  name         :string(255)
 #  campus_id    :integer          not null
-#  address      :string
-#  phone        :string
-#  email        :string
-#  url          :string
-#  facebook     :string
-#  description  :text
-#  twitter      :string
+#  address      :string(255)
+#  phone        :string(255)
+#  email        :string(255)
+#  url          :string(255)
+#  facebook     :string(255)
+#  information  :text             default("")
+#  twitter      :string(255)
 #  place_id     :integer
 #  created_at   :datetime
 #  updated_at   :datetime
@@ -22,11 +21,12 @@
 
 class Faculty < ActiveRecord::Base
   include Commentable
-  include Posteable
+  include PostTarget
   include PostPublisher
   include EventPublisher
   include Likeable
-  include MapMarkable
+  include Mapable
+  include Nameable
 
   validates :name, presence: true
   validates :campus_id, presence: true
@@ -41,26 +41,22 @@ class Faculty < ActiveRecord::Base
   has_many :careers, through: :academic_unities
   has_many :teachers, through: :academic_unities
 
+  has_many :courses_students,     through: :academic_unities,   source: :courses_students,    class_name: 'User'
+  has_many :enrolled_students,    through: :academic_unities,   source: :enrolled_students,   class_name: 'User'
+
+  has_and_belongs_to_many :groups
+
   has_many :academic_unity_places, through: :academic_unities, source: :places, class_name: 'Place'
 
-  has_many :places
+  has_many :academic_unity_events, through: :academic_unities, source: :events, class_name: 'Event'
 
+  # Overrides has_many relationship from Mapable
   def places
     first_level_places.append(academic_unity_places)
   end
 
-  has_and_belongs_to_many :groups
-
-  extend FriendlyId
-  friendly_id :short_name, use: :scoped, scope: :campus # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
-
-  def set_localization_area
-    if localization.present?
-      localization.identifier = abbreviation
-      localization.name = name
-      localization.area = self
-      localization.save
-    end
+  # Overrides has_many relationship from EventPublisher
+  def events
+    hosting_events.append(academic_unity_events)
   end
-
 end

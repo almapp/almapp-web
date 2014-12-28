@@ -2,28 +2,32 @@
 #
 # Table name: organizations
 #
-#  id          :integer          not null, primary key
-#  name        :string           not null
-#  slug        :string           not null
-#  information :text
-#  image       :string
-#  url         :string
-#  created_at  :datetime
-#  updated_at  :datetime
-#  facebook    :string
-#  twitter     :string
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  short_name   :string(255)
+#  abbreviation :string(255)      not null
+#  information  :text             default("")
+#  image        :string(255)
+#  url          :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  facebook     :string(255)
+#  twitter      :string(255)
+#  place_id     :integer
 #
 
 class Organization < ActiveRecord::Base
   include Commentable
-  include Posteable
+  include PostTarget
   include PostPublisher
   include EventPublisher
   include Likeable
-  include MapMarkable
+  include Mapable
+  include Nameable
 
   validates :name, presence: true
-  validates :slug,
+  validates :short_name, presence: true
+  validates :abbreviation,
             presence: true,
             uniqueness: true,
             exclusion: { in: %w(www mail ftp dev help), message: '%{value} is reserved.' },
@@ -43,16 +47,23 @@ class Organization < ActiveRecord::Base
   has_many :schedule_modules
 
   has_and_belongs_to_many :groups
+  has_many :enrolled_students, through: :faculties, source: :enrolled_students, class_name: 'User'
 
-  has_many :campuses_places, through: :campuses, source: :places, class_name: 'Place'
-  has_many :places
 
+  # Overrides has_many relationship from Mapable
   def places
-    first_level_places.append(campuses_places)
+    #first_level_places.append(campuses_places) # TODO create query
+    []
+  end
+
+  # Overrides has_many relationship from EventPublisher
+  def events
+    #first_level_places.append(campuses_places) # TODO create query
+    []
   end
 
 
   def self.find_with_subdomain(subdomain)
-    self.where("lower(slug) = ?", subdomain.downcase).first if (subdomain.present? && subdomain.size != 0)
+    self.where("lower(abbreviation) = ?", subdomain.downcase).first if (subdomain.present? && subdomain.size != 0)
   end
 end

@@ -2,14 +2,15 @@ module Likeable
   extend ActiveSupport::Concern
 
   included do
-    has_many :likes, as: :likeable
+    has_many :likes, -> { positive }, as: :likeable
+    has_many :dislikes, -> { negative }, as: :likeable, class_name: 'Like'
   end
 
-  def positive_likes
-    self.likes.positive
+  def like_count
+    likes.size
   end
 
-  def negative_likes
-    self.likes.negative
+  def dislike_count
+    dislikes.size
   end
 end

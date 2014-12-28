@@ -2,30 +2,30 @@
 #
 # Table name: academic_unities
 #
-#  id          :integer          not null, primary key
-#  short_name  :string           not null
-#  name        :string
-#  faculty_id  :integer
-#  slug        :string           not null
-#  url         :string
-#  email       :string
-#  address     :string
-#  information :text
-#  facebook    :string
-#  twitter     :string
-#  place_id    :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id           :integer          not null, primary key
+#  abbreviation :string(255)
+#  short_name   :string(255)
+#  name         :string(255)
+#  faculty_id   :integer
+#  url          :string(255)
+#  email        :string(255)
+#  address      :string(255)
+#  information  :text             default("")
+#  facebook     :string(255)
+#  twitter      :string(255)
+#  place_id     :integer
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 
 class AcademicUnity < ActiveRecord::Base
   include Commentable
-  include Posteable
+  include PostTarget
   include PostPublisher
   include EventPublisher
-  include Zoneable
   include Likeable
-  # include MapMarkable
+  include Mapable
+  include Nameable
 
   validates :short_name, presence: true
   validates :faculty_id, presence: true
@@ -36,14 +36,12 @@ class AcademicUnity < ActiveRecord::Base
   has_many :courses
   has_many :careers
 
-  has_many :places, as: :area
+  has_many :courses_sections, through: :courses, source: :sections
+
+  has_many :courses_students,   through: :courses_sections,   source: :section_students,    class_name: 'User'
+  has_many :enrolled_students,  through: :careers,            source: :enrolled_students,   class_name: 'User'
 
   def campus
     return self.faculty.campus rescue nil
   end
-
-  extend FriendlyId
-  friendly_id :short_name, use: :scoped, scope: :faculty # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
-
-
 end

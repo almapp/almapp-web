@@ -3,13 +3,12 @@
 # Table name: courses
 #
 #  id                :integer          not null, primary key
-#  initials          :string           not null
-#  name              :string
-#  slug              :string           not null
+#  initials          :string(255)      not null
+#  name              :string(255)
 #  credits           :integer
-#  availability      :boolean          default("true")
+#  availability      :boolean          default(TRUE)
 #  academic_unity_id :integer
-#  description       :text
+#  information       :text             default("")
 #  capacity          :integer
 #  enrolled          :integer
 #  created_at        :datetime

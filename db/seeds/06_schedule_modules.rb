@@ -11,6 +11,7 @@ puts('Creating schedule modules')
 #  end_time        :string           not null
 #
 
+@uc = Organization.find_by_abbreviation('UC')
 def create_modules(days, blocks, start_times, end_times)
   days.each do |day|
     blocks.each do |block|

@@ -3,11 +3,10 @@
 # Table name: teachers
 #
 #  id          :integer          not null, primary key
-#  name        :string
-#  slug        :string           not null
-#  email       :string
-#  url         :string
-#  information :text
+#  name        :string(255)
+#  email       :string(255)
+#  url         :string(255)
+#  information :text             default("")
 #  created_at  :datetime
 #  updated_at  :datetime
 #

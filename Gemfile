@@ -1,9 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2'
+gem 'rails', '4.1.6'
 gem 'rails-api'
+
+# Must add extension:
+# CREATE EXTENSION unaccent;
 gem 'pg'
+
 gem 'jbuilder'
+gem 'jbuilder_cache_multi'
+gem 'oj'
+gem 'oj_mimic_json'
 
 group :development, :test do
   # gem 'debugger'
@@ -23,12 +30,16 @@ group :production do
 
 end
 
+gem 'devise_token_auth'
+gem 'omniauth-github',        :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'omniauth-facebook',      :git => 'git://github.com/mkdynamic/omniauth-facebook.git'
+gem 'omniauth-google-oauth2', :git => 'git://github.com/zquestz/omniauth-google-oauth2.git'
+
 gem 'sass'
 gem 'compass'
 
 gem 'validates_timeliness', '~> 3.0'
 gem 'active_record_union'
-gem 'friendly_id'
 
 gem 'nokogiri'
 

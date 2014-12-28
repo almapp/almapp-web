@@ -3,13 +3,12 @@
 # Table name: groups
 #
 #  id          :integer          not null, primary key
-#  name        :string           not null
-#  slug        :string           not null
-#  email       :string           not null
-#  url         :string
-#  facebook    :string
-#  twitter     :string
-#  information :text
+#  name        :string(255)      not null
+#  email       :string(255)      not null
+#  url         :string(255)
+#  facebook    :string(255)
+#  twitter     :string(255)
+#  information :text             default("")
 #  created_at  :datetime
 #  updated_at  :datetime
 #

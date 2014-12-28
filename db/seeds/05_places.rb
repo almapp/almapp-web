@@ -10,7 +10,7 @@ puts('Creating places')
 #  service     :boolean          default("false"), not null
 #  area_id     :integer          not null
 #  area_type   :string           not null
-#  description :text             default("")
+#  information :text             default("")
 #  zoom        :float            default("0.0")
 #  angle       :float            default("0.0")
 #  tilt        :float            default("0.0")
@@ -27,7 +27,7 @@ puts('Creating places')
 # 	faculty_id: nil,
 # 	coords: '',
 # 	floor: ,
-# 	# 	description: nil,
+# 	# 	information: nil,
 # 	zoom: 0.0,
 # 	angle: 0.0,
 # 	tilt: 0.0
@@ -40,7 +40,7 @@ Place.create(
     latitude: -33.499013,
     longitude: -70.613039,
     floor: '1',
-    description: 'Asuntos Estudiantiles',
+    information: 'Asuntos Estudiantiles',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -53,7 +53,7 @@ Place.create(
     latitude: -33.498915,
     longitude: -70.613041,
     floor: '1',
-    description: 'Centro de Simulación',
+    information: 'Centro de Simulación',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -66,7 +66,7 @@ Place.create(
     latitude: -33.498937,
     longitude: -70.613039,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -79,7 +79,7 @@ Place.create(
     latitude: -33.499013,
     longitude: -70.613039,
     floor: '1',
-    description: 'Servicios Generales',
+    information: 'Servicios Generales',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -92,7 +92,7 @@ Place.create(
     latitude: -33.499013,
     longitude: -70.613039,
     floor: '1',
-    description: 'Sala de Alumnos',
+    information: 'Sala de Alumnos',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -105,7 +105,7 @@ Place.create(
     latitude: -33.497114,
     longitude: -70.611485,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -118,7 +118,7 @@ Place.create(
     latitude: -33.497119,
     longitude: -70.611482,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -131,7 +131,7 @@ Place.create(
     latitude: -33.496961,
     longitude: -70.611022,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -144,7 +144,7 @@ Place.create(
     latitude: -33.498915,
     longitude: -70.613092,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -157,7 +157,7 @@ Place.create(
     latitude: -33.498912,
     longitude: -70.613125,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -170,7 +170,7 @@ Place.create(
     latitude: -33.496966,
     longitude: -70.611006,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -183,7 +183,7 @@ Place.create(
     latitude: -33.498901,
     longitude: -70.613162,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -196,7 +196,7 @@ Place.create(
     latitude: -33.499004,
     longitude: -70.613127,
     floor: '2',
-    description: 'Auditorio',
+    information: 'Auditorio',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -209,7 +209,7 @@ Place.create(
     latitude: -33.497020,
     longitude: -70.610998,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -222,7 +222,7 @@ Place.create(
     latitude: -33.419557,
     longitude: -70.618506,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -235,7 +235,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -248,7 +248,7 @@ Place.create(
     latitude: -33.419566,
     longitude: -70.618533,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -261,7 +261,7 @@ Place.create(
     latitude: -33.419544,
     longitude: -70.618509,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -274,7 +274,7 @@ Place.create(
     latitude: -33.419535,
     longitude: -70.618498,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -287,7 +287,7 @@ Place.create(
     latitude: -33.500288,
     longitude: -70.612476,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -300,7 +300,7 @@ Place.create(
     latitude: -33.500288,
     longitude: -70.612476,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -313,7 +313,7 @@ Place.create(
     latitude: -33.500141,
     longitude: -70.612511,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -326,7 +326,7 @@ Place.create(
     latitude: -33.500141,
     longitude: -70.612511,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -339,7 +339,7 @@ Place.create(
     latitude: -33.499965,
     longitude: -70.612540,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -352,7 +352,7 @@ Place.create(
     latitude: -33.499965,
     longitude: -70.612540,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -365,7 +365,7 @@ Place.create(
     latitude: -33.499809,
     longitude: -70.612569,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -378,7 +378,7 @@ Place.create(
     latitude: -33.499703,
     longitude: -70.612068,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -391,7 +391,7 @@ Place.create(
     latitude: -33.497122,
     longitude: -70.609658,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -404,7 +404,7 @@ Place.create(
     latitude: -33.497116,
     longitude: -70.609519,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -417,7 +417,7 @@ Place.create(
     latitude: -33.497106,
     longitude: -70.609405,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -430,7 +430,7 @@ Place.create(
     latitude: -33.496900,
     longitude: -70.609659,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -443,7 +443,7 @@ Place.create(
     latitude: -33.496895,
     longitude: -70.609568,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -456,7 +456,7 @@ Place.create(
     latitude: -33.496885,
     longitude: -70.609456,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -469,7 +469,7 @@ Place.create(
     latitude: -33.496999,
     longitude: -70.609272,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -482,7 +482,7 @@ Place.create(
     latitude: -33.497508,
     longitude: -70.609004,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -495,7 +495,7 @@ Place.create(
     latitude: -33.497569,
     longitude: -70.608890,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -508,7 +508,7 @@ Place.create(
     latitude: -33.497710,
     longitude: -70.608824,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -521,7 +521,7 @@ Place.create(
     latitude: -33.497820,
     longitude: -70.608866,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -534,7 +534,7 @@ Place.create(
     latitude: -33.440890,
     longitude: -70.640925,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -547,7 +547,7 @@ Place.create(
     latitude: -33.498331,
     longitude: -70.610272,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -560,7 +560,7 @@ Place.create(
     latitude: -33.497917,
     longitude: -70.608998,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -573,7 +573,7 @@ Place.create(
     latitude: -33.498054,
     longitude: -70.609414,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -586,7 +586,7 @@ Place.create(
     latitude: -33.498102,
     longitude: -70.609270,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -599,7 +599,7 @@ Place.create(
     latitude: -33.498032,
     longitude: -70.609080,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -612,7 +612,7 @@ Place.create(
     latitude: -33.440929,
     longitude: -70.641053,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -625,7 +625,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -638,7 +638,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -651,7 +651,7 @@ Place.create(
     latitude: -33.419581,
     longitude: -70.617635,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -664,7 +664,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -677,7 +677,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -690,7 +690,7 @@ Place.create(
     latitude: -33.499427,
     longitude: -70.615001,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -703,7 +703,7 @@ Place.create(
     latitude: -33.499094,
     longitude: -70.612009,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -716,7 +716,7 @@ Place.create(
     latitude: -33.497129,
     longitude: -70.609794,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -729,7 +729,7 @@ Place.create(
     latitude: -33.498870,
     longitude: -70.613985,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -742,7 +742,7 @@ Place.create(
     latitude: -33.500553,
     longitude: -70.611173,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -755,7 +755,7 @@ Place.create(
     latitude: -33.497383,
     longitude: -70.613498,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -768,7 +768,7 @@ Place.create(
     latitude: -33.496731,
     longitude: -70.614014,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -781,7 +781,7 @@ Place.create(
     latitude: -33.496929,
     longitude: -70.614026,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -794,7 +794,7 @@ Place.create(
     latitude: -33.440897,
     longitude: -70.640708,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -807,7 +807,7 @@ Place.create(
     latitude: -33.496987,
     longitude: -70.611897,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -820,7 +820,7 @@ Place.create(
     latitude: -33.497118,
     longitude: -70.611773,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -833,7 +833,7 @@ Place.create(
     latitude: -33.496974,
     longitude: -70.611846,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -846,7 +846,7 @@ Place.create(
     latitude: -33.497096,
     longitude: -70.611623,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -859,7 +859,7 @@ Place.create(
     latitude: -33.496965,
     longitude: -70.611680,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -872,7 +872,7 @@ Place.create(
     latitude: -33.497096,
     longitude: -70.611588,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -885,7 +885,7 @@ Place.create(
     latitude: -33.496957,
     longitude: -70.611376,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -898,7 +898,7 @@ Place.create(
     latitude: -33.497087,
     longitude: -70.611487,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -911,7 +911,7 @@ Place.create(
     latitude: -33.496979,
     longitude: -70.611219,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -924,7 +924,7 @@ Place.create(
     latitude: -33.497105,
     longitude: -70.611338,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -937,7 +937,7 @@ Place.create(
     latitude: -33.496928,
     longitude: -70.611144,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -950,7 +950,7 @@ Place.create(
     latitude: -33.497094,
     longitude: -70.611230,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -963,7 +963,7 @@ Place.create(
     latitude: -33.441155,
     longitude: -70.640779,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -976,7 +976,7 @@ Place.create(
     latitude: -33.440707,
     longitude: -70.640166,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -989,7 +989,7 @@ Place.create(
     latitude: -33.441262,
     longitude: -70.640143,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -998,11 +998,11 @@ Place.create(
 Place.create(
     identifier: 'CLARO',
     name: 'Auditorio Claro y Cia.',
-    area: @sj,
+    area: @cc,
     latitude: -33.441267,
     longitude: -70.640054,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1015,7 +1015,7 @@ Place.create(
     latitude: -33.441573,
     longitude: -70.640652,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1028,7 +1028,7 @@ Place.create(
     latitude: -33.441060,
     longitude: -70.640345,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1041,7 +1041,7 @@ Place.create(
     latitude: -33.499906,
     longitude: -70.614197,
     floor: '-2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1054,7 +1054,7 @@ Place.create(
     latitude: -33.499841,
     longitude: -70.611156,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1067,7 +1067,7 @@ Place.create(
     latitude: -33.419047,
     longitude: -70.617905,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1080,7 +1080,7 @@ Place.create(
     latitude: -33.419085,
     longitude: -70.617850,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1093,7 +1093,7 @@ Place.create(
     latitude: -33.499187,
     longitude: -70.610875,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1106,7 +1106,7 @@ Place.create(
     latitude: -33.497807,
     longitude: -70.609146,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1119,7 +1119,7 @@ Place.create(
     latitude: -33.440946,
     longitude: -70.640001,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1132,7 +1132,7 @@ Place.create(
     latitude: -33.497077,
     longitude: -70.611969,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1145,7 +1145,7 @@ Place.create(
     latitude: -33.441678,
     longitude: -70.639548,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1158,7 +1158,7 @@ Place.create(
     latitude: -33.441571,
     longitude: -70.639651,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1171,7 +1171,7 @@ Place.create(
     latitude: -33.441528,
     longitude: -70.639691,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1184,7 +1184,7 @@ Place.create(
     latitude: -33.500466,
     longitude: -70.613094,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1197,7 +1197,7 @@ Place.create(
     latitude: -33.500427,
     longitude: -70.613135,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1210,7 +1210,7 @@ Place.create(
     latitude: -33.500400,
     longitude: -70.613138,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1223,7 +1223,7 @@ Place.create(
     latitude: -33.500397,
     longitude: -70.612830,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1236,7 +1236,7 @@ Place.create(
     latitude: -33.500397,
     longitude: -70.612720,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1249,7 +1249,7 @@ Place.create(
     latitude: -33.500397,
     longitude: -70.612629,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1262,7 +1262,7 @@ Place.create(
     latitude: -33.500317,
     longitude: -70.612466,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1275,7 +1275,7 @@ Place.create(
     latitude: -33.500386,
     longitude: -70.612463,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1284,11 +1284,11 @@ Place.create(
 Place.create(
     identifier: 'B-201',
     name: 'B-201',
-    area: @sj,
+    area: @cc,
     latitude: -33.441733,
     longitude: -70.639850,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1297,11 +1297,11 @@ Place.create(
 Place.create(
     identifier: 'B-202',
     name: 'B-202',
-    area: @sj,
+    area: @cc,
     latitude: -33.441733,
     longitude: -70.639850,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1310,11 +1310,11 @@ Place.create(
 Place.create(
     identifier: 'B-203',
     name: 'B-203',
-    area: @sj,
+    area: @cc,
     latitude: -33.441733,
     longitude: -70.639850,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1327,7 +1327,7 @@ Place.create(
     latitude: -33.500397,
     longitude: -70.612830,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1340,7 +1340,7 @@ Place.create(
     latitude: -33.500397,
     longitude: -70.612720,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1353,7 +1353,7 @@ Place.create(
     latitude: -33.500397,
     longitude: -70.612629,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1366,7 +1366,7 @@ Place.create(
     latitude: -33.500317,
     longitude: -70.612466,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1379,7 +1379,7 @@ Place.create(
     latitude: -33.500386,
     longitude: -70.612463,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1392,7 +1392,7 @@ Place.create(
     latitude: -33.500493,
     longitude: -70.613091,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1405,7 +1405,7 @@ Place.create(
     latitude: -33.500352,
     longitude: -70.613158,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1418,7 +1418,7 @@ Place.create(
     latitude: -33.500424,
     longitude: -70.613148,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1431,7 +1431,7 @@ Place.create(
     latitude: -33.500495,
     longitude: -70.613105,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1444,7 +1444,7 @@ Place.create(
     latitude: -33.500477,
     longitude: -70.613036,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1457,7 +1457,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1470,7 +1470,7 @@ Place.create(
     latitude: -33.498158,
     longitude: -70.610165,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1483,7 +1483,7 @@ Place.create(
     latitude: -33.498158,
     longitude: -70.610165,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1496,7 +1496,7 @@ Place.create(
     latitude: -33.498113,
     longitude: -70.613188,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1509,7 +1509,7 @@ Place.create(
     latitude: -33.498113,
     longitude: -70.613188,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1522,7 +1522,7 @@ Place.create(
     latitude: -33.498941,
     longitude: -70.614578,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1535,7 +1535,7 @@ Place.create(
     latitude: -33.497743,
     longitude: -70.610668,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1548,7 +1548,7 @@ Place.create(
     latitude: -33.497524,
     longitude: -70.610201,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1561,7 +1561,7 @@ Place.create(
     latitude: -33.497152,
     longitude: -70.609128,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1574,7 +1574,7 @@ Place.create(
     latitude: -33.496848,
     longitude: -70.609203,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1587,7 +1587,7 @@ Place.create(
     latitude: -33.496736,
     longitude: -70.609209,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1600,7 +1600,7 @@ Place.create(
     latitude: -33.499022,
     longitude: -70.610890,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1613,7 +1613,7 @@ Place.create(
     latitude: -33.499423,
     longitude: -70.610082,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1626,7 +1626,7 @@ Place.create(
     latitude: -33.499857,
     longitude: -70.613125,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1639,7 +1639,7 @@ Place.create(
     latitude: -33.500213,
     longitude: -70.613154,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1652,7 +1652,7 @@ Place.create(
     latitude: -33.500369,
     longitude: -70.614493,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1665,7 +1665,7 @@ Place.create(
     latitude: -33.499814,
     longitude: -70.612603,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1678,7 +1678,7 @@ Place.create(
     latitude: -33.500300,
     longitude: -70.612507,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1691,7 +1691,7 @@ Place.create(
     latitude: -33.500450,
     longitude: -70.611239,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1704,7 +1704,7 @@ Place.create(
     latitude: -33.500572,
     longitude: -70.610761,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1717,7 +1717,7 @@ Place.create(
     latitude: -33.441271,
     longitude: -70.640637,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1730,7 +1730,7 @@ Place.create(
     latitude: -33.419454,
     longitude: -70.618450,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1743,7 +1743,7 @@ Place.create(
     latitude: -33.499952,
     longitude: -70.614743,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1756,7 +1756,7 @@ Place.create(
     latitude: -33.500331,
     longitude: -70.612970,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1769,7 +1769,7 @@ Place.create(
     latitude: -33.441791,
     longitude: -70.640508,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1782,7 +1782,7 @@ Place.create(
     latitude: -33.441351,
     longitude: -70.640007,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1795,7 +1795,7 @@ Place.create(
     latitude: -33.499936,
     longitude: -70.613730,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1808,7 +1808,7 @@ Place.create(
     latitude: -33.419555,
     longitude: -70.618540,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1821,7 +1821,7 @@ Place.create(
     latitude: -33.419170,
     longitude: -70.617931,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1834,7 +1834,7 @@ Place.create(
     latitude: -33.418768,
     longitude: -70.618145,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1847,7 +1847,7 @@ Place.create(
     latitude: -33.445798,
     longitude: -70.594330,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1860,7 +1860,7 @@ Place.create(
     latitude: -33.445747,
     longitude: -70.593911,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1873,7 +1873,7 @@ Place.create(
     latitude: -33.446120,
     longitude: -70.593421,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1886,7 +1886,7 @@ Place.create(
     latitude: -33.498056,
     longitude: -70.614263,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1899,7 +1899,7 @@ Place.create(
     latitude: -33.498190,
     longitude: -70.613578,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1912,7 +1912,7 @@ Place.create(
     latitude: -33.497435,
     longitude: -70.613783,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1925,7 +1925,7 @@ Place.create(
     latitude: -33.496800,
     longitude: -70.613379,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1938,7 +1938,7 @@ Place.create(
     latitude: -33.496805,
     longitude: -70.611423,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1951,7 +1951,7 @@ Place.create(
     latitude: -33.496819,
     longitude: -70.610955,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1964,7 +1964,7 @@ Place.create(
     latitude: -33.500279,
     longitude: -70.609976,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1977,7 +1977,7 @@ Place.create(
     latitude: -33.499711,
     longitude: -70.612989,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -1990,7 +1990,7 @@ Place.create(
     latitude: -33.499246,
     longitude: -70.615733,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2003,7 +2003,7 @@ Place.create(
     latitude: -33.497038,
     longitude: -70.611095,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2016,7 +2016,7 @@ Place.create(
     latitude: -33.497129,
     longitude: -70.611926,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2029,7 +2029,7 @@ Place.create(
     latitude: -33.497770,
     longitude: -70.615337,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2042,7 +2042,7 @@ Place.create(
     latitude: -33.498136,
     longitude: -70.614242,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2055,7 +2055,7 @@ Place.create(
     latitude: -33.498133,
     longitude: -70.614249,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2068,7 +2068,7 @@ Place.create(
     latitude: -33.498224,
     longitude: -70.614968,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2081,7 +2081,7 @@ Place.create(
     latitude: -33.498957,
     longitude: -70.613033,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2094,7 +2094,7 @@ Place.create(
     latitude: -33.498051,
     longitude: -70.611167,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2107,7 +2107,7 @@ Place.create(
     latitude: -33.496731,
     longitude: -70.614014,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2120,7 +2120,7 @@ Place.create(
     latitude: -33.498852,
     longitude: -70.613845,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2133,7 +2133,7 @@ Place.create(
     latitude: -33.499114,
     longitude: -70.614356,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2146,7 +2146,7 @@ Place.create(
     latitude: -33.500518,
     longitude: -70.612970,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2159,7 +2159,7 @@ Place.create(
     latitude: -33.500462,
     longitude: -70.612518,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2172,7 +2172,7 @@ Place.create(
     latitude: -33.500044,
     longitude: -70.613149,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2185,7 +2185,7 @@ Place.create(
     latitude: -33.497709,
     longitude: -70.610613,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2198,7 +2198,7 @@ Place.create(
     latitude: -33.497928,
     longitude: -70.610600,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2211,7 +2211,7 @@ Place.create(
     latitude: -33.497452,
     longitude: -70.610290,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2224,7 +2224,7 @@ Place.create(
     latitude: -33.498804,
     longitude: -70.610091,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2237,7 +2237,7 @@ Place.create(
     latitude: -33.499384,
     longitude: -70.610088,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2250,7 +2250,7 @@ Place.create(
     latitude: -33.500274,
     longitude: -70.610345,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2263,7 +2263,7 @@ Place.create(
     latitude: -33.498074,
     longitude: -70.609122,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2276,7 +2276,7 @@ Place.create(
     latitude: -33.496880,
     longitude: -70.609526,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2289,7 +2289,7 @@ Place.create(
     latitude: -33.497108,
     longitude: -70.609505,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2302,7 +2302,7 @@ Place.create(
     latitude: -33.500560,
     longitude: -70.611205,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2315,7 +2315,7 @@ Place.create(
     latitude: -33.500639,
     longitude: -70.610794,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2328,7 +2328,7 @@ Place.create(
     latitude: -33.498191,
     longitude: -70.613487,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2341,7 +2341,7 @@ Place.create(
     latitude: -33.441206,
     longitude: -70.640170,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2354,7 +2354,7 @@ Place.create(
     latitude: -33.440979,
     longitude: -70.640580,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2367,7 +2367,7 @@ Place.create(
     latitude: -33.441534,
     longitude: -70.640684,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2380,7 +2380,7 @@ Place.create(
     latitude: -33.440989,
     longitude: -70.640544,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2393,7 +2393,7 @@ Place.create(
     latitude: -33.499226,
     longitude: -70.611995,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2406,7 +2406,7 @@ Place.create(
     latitude: -33.441248,
     longitude: -70.640934,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2419,7 +2419,7 @@ Place.create(
     latitude: -33.445844,
     longitude: -70.594468,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2432,7 +2432,7 @@ Place.create(
     latitude: -33.445003,
     longitude: -70.593557,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2445,7 +2445,7 @@ Place.create(
     latitude: -33.446249,
     longitude: -70.593734,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2458,7 +2458,7 @@ Place.create(
     latitude: -33.445881,
     longitude: -70.594410,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2471,7 +2471,7 @@ Place.create(
     latitude: -33.419679,
     longitude: -70.618642,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2484,7 +2484,7 @@ Place.create(
     latitude: -33.419240,
     longitude: -70.617769,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2497,7 +2497,7 @@ Place.create(
     latitude: -33.418811,
     longitude: -70.618033,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2510,7 +2510,7 @@ Place.create(
     latitude: -33.419443,
     longitude: -70.618588,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2523,7 +2523,7 @@ Place.create(
     latitude: -33.420053,
     longitude: -70.618183,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2536,7 +2536,7 @@ Place.create(
     latitude: -33.497407,
     longitude: -70.613161,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2549,7 +2549,7 @@ Place.create(
     latitude: -33.496790,
     longitude: -70.613154,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2562,7 +2562,7 @@ Place.create(
     latitude: -33.500563,
     longitude: -70.611273,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2575,7 +2575,7 @@ Place.create(
     latitude: -33.498134,
     longitude: -70.610171,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2588,7 +2588,7 @@ Place.create(
     latitude: -33.499577,
     longitude: -70.615009,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2601,7 +2601,7 @@ Place.create(
     latitude: -33.441312,
     longitude: -70.640322,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2614,7 +2614,7 @@ Place.create(
     latitude: -33.441325,
     longitude: -70.640317,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2627,7 +2627,7 @@ Place.create(
     latitude: -33.419372,
     longitude: -70.618268,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2640,7 +2640,7 @@ Place.create(
     latitude: -33.445472,
     longitude: -70.593408,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2653,7 +2653,7 @@ Place.create(
     latitude: -33.498421,
     longitude: -70.609898,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2666,7 +2666,7 @@ Place.create(
     latitude: -33.497495,
     longitude: -70.613940,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2679,7 +2679,7 @@ Place.create(
     latitude: -33.499831,
     longitude: -70.610784,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2692,7 +2692,7 @@ Place.create(
     latitude: -33.497838,
     longitude: -70.610826,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2705,7 +2705,7 @@ Place.create(
     latitude: -33.496081,
     longitude: -70.607884,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2718,7 +2718,7 @@ Place.create(
     latitude: -33.500496,
     longitude: -70.610034,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2731,7 +2731,7 @@ Place.create(
     latitude: -33.497909,
     longitude: -70.608993,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2744,7 +2744,7 @@ Place.create(
     latitude: -33.499200,
     longitude: -70.612130,
     floor: '3',
-    description: 'Comisión de Acogida',
+    information: 'Comisión de Acogida',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2757,7 +2757,7 @@ Place.create(
     latitude: -33.498967,
     longitude: -70.613442,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2770,7 +2770,7 @@ Place.create(
     latitude: -33.498928,
     longitude: -70.613394,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2783,7 +2783,7 @@ Place.create(
     latitude: -33.499013,
     longitude: -70.613368,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2796,7 +2796,7 @@ Place.create(
     latitude: -33.498838,
     longitude: -70.613738,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2809,7 +2809,7 @@ Place.create(
     latitude: -33.498852,
     longitude: -70.613775,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2822,7 +2822,7 @@ Place.create(
     latitude: -33.498870,
     longitude: -70.614130,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2835,7 +2835,7 @@ Place.create(
     latitude: -33.498888,
     longitude: -70.614168,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2848,7 +2848,7 @@ Place.create(
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2861,7 +2861,7 @@ Place.create(
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2874,7 +2874,7 @@ Place.create(
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2887,7 +2887,7 @@ Place.create(
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2900,7 +2900,7 @@ Place.create(
     latitude: -33.441366,
     longitude: -70.640815,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2913,7 +2913,7 @@ Place.create(
     latitude: -33.418967,
     longitude: -70.618195,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2926,7 +2926,7 @@ Place.create(
     latitude: -33.497855,
     longitude: -70.609893,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2939,7 +2939,7 @@ Place.create(
     latitude: -33.499102,
     longitude: -70.610713,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2948,11 +2948,11 @@ Place.create(
 Place.create(
     identifier: 'COM307',
     name: 'COM307',
-    area: @sj,
+    area: @cc,
     latitude: -33.441343,
     longitude: -70.640916,
     floor: '3?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2961,11 +2961,11 @@ Place.create(
 Place.create(
     identifier: 'COM308',
     name: 'COM308',
-    area: @sj,
+    area: @cc,
     latitude: -33.441368,
     longitude: -70.640897,
     floor: '3?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2974,11 +2974,11 @@ Place.create(
 Place.create(
     identifier: 'COM310',
     name: 'COM310',
-    area: @sj,
+    area: @cc,
     latitude: -33.441444,
     longitude: -70.640729,
     floor: '3?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -2991,7 +2991,7 @@ Place.create(
     latitude: -33.498139,
     longitude: -70.613804,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3004,7 +3004,7 @@ Place.create(
     latitude: -33.497836,
     longitude: -70.610202,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3017,7 +3017,7 @@ Place.create(
     latitude: -33.497959,
     longitude: -70.610188,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3030,7 +3030,7 @@ Place.create(
     latitude: -33.499133,
     longitude: -70.612116,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3043,7 +3043,7 @@ Place.create(
     latitude: -33.445834,
     longitude: -70.594471,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3056,7 +3056,7 @@ Place.create(
     latitude: -33.419267,
     longitude: -70.618316,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3069,7 +3069,7 @@ Place.create(
     latitude: -33.419254,
     longitude: -70.618064,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3082,7 +3082,7 @@ Place.create(
     latitude: -33.500629,
     longitude: -70.610383,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3095,7 +3095,7 @@ Place.create(
     latitude: -33.500645,
     longitude: -70.610194,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3108,7 +3108,7 @@ Place.create(
     latitude: -33.500629,
     longitude: -70.610410,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3121,7 +3121,7 @@ Place.create(
     latitude: -33.500616,
     longitude: -70.610344,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3134,7 +3134,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610269,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3147,7 +3147,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610192,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3160,7 +3160,7 @@ Place.create(
     latitude: -33.500629,
     longitude: -70.610410,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3173,7 +3173,7 @@ Place.create(
     latitude: -33.500616,
     longitude: -70.610344,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3186,7 +3186,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610269,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3199,7 +3199,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610192,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3212,7 +3212,7 @@ Place.create(
     latitude: -33.500629,
     longitude: -70.610410,
     floor: '4',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3225,7 +3225,7 @@ Place.create(
     latitude: -33.500616,
     longitude: -70.610344,
     floor: '4',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3238,7 +3238,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610269,
     floor: '4',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3251,7 +3251,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610192,
     floor: '4',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3264,7 +3264,7 @@ Place.create(
     latitude: -33.500669,
     longitude: -70.610021,
     floor: '4',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3277,7 +3277,7 @@ Place.create(
     latitude: -33.498794,
     longitude: -70.615907,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3290,7 +3290,7 @@ Place.create(
     latitude: -33.497082,
     longitude: -70.611207,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3303,7 +3303,7 @@ Place.create(
     latitude: -33.499624,
     longitude: -70.613563,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3316,7 +3316,7 @@ Place.create(
     latitude: -33.498126,
     longitude: -70.613097,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3329,7 +3329,7 @@ Place.create(
     latitude: -33.498168,
     longitude: -70.610231,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3342,7 +3342,7 @@ Place.create(
     latitude: -33.441244,
     longitude: -70.640889,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3355,7 +3355,7 @@ Place.create(
     latitude: -33.446624,
     longitude: -70.594578,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3368,7 +3368,7 @@ Place.create(
     latitude: -33.419508,
     longitude: -70.618057,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3381,7 +3381,7 @@ Place.create(
     latitude: -33.445714,
     longitude: -70.593499,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3394,7 +3394,7 @@ Place.create(
     latitude: -33.497909,
     longitude: -70.608993,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3407,7 +3407,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3420,7 +3420,7 @@ Place.create(
     latitude: -33.440825,
     longitude: -70.640773,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3433,7 +3433,7 @@ Place.create(
     latitude: -33.420019,
     longitude: -70.618267,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3446,7 +3446,7 @@ Place.create(
     latitude: -33.419946,
     longitude: -70.618384,
     floor: '1',
-    description: 'Aquí hacen clases',
+    information: 'Aquí hacen clases',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3459,7 +3459,7 @@ Place.create(
     latitude: -33.446352,
     longitude: -70.593928,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3473,7 +3473,7 @@ Place.create(
     latitude: -33.498854,
     longitude: -70.613187,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3486,7 +3486,7 @@ Place.create(
     latitude: -33.419496,
     longitude: -70.618523,
     floor: '1',
-    description: 'CEARQ',
+    information: 'CEARQ',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3499,7 +3499,7 @@ Place.create(
     latitude: -33.500660,
     longitude: -70.610596,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3512,7 +3512,7 @@ Place.create(
     latitude: -33.500030,
     longitude: -70.613225,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3525,7 +3525,7 @@ Place.create(
     latitude: -33.441425,
     longitude: -70.640525,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3538,7 +3538,7 @@ Place.create(
     latitude: -33.497716,
     longitude: -70.610729,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3551,7 +3551,7 @@ Place.create(
     latitude: -33.499173,
     longitude: -70.612111,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3564,7 +3564,7 @@ Place.create(
     latitude: -33.498147,
     longitude: -70.613745,
     floor: '1',
-    description: 'CEEP',
+    information: 'CEEP',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3577,7 +3577,7 @@ Place.create(
     latitude: -33.497854,
     longitude: -70.615327,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3590,7 +3590,7 @@ Place.create(
     latitude: -33.441546,
     longitude: -70.640279,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3603,7 +3603,7 @@ Place.create(
     latitude: -33.499558,
     longitude: -70.611290,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3616,7 +3616,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3629,7 +3629,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3642,7 +3642,7 @@ Place.create(
     latitude: -33.500422,
     longitude: -70.611161,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3655,7 +3655,7 @@ Place.create(
     latitude: -33.499906,
     longitude: -70.614197,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3668,7 +3668,7 @@ Place.create(
     latitude: -33.499145,
     longitude: -70.615123,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3681,7 +3681,7 @@ Place.create(
     latitude: -33.499145,
     longitude: -70.615123,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3694,7 +3694,7 @@ Place.create(
     latitude: -33.498915,
     longitude: -70.610695,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3707,7 +3707,7 @@ Place.create(
     latitude: -33.441303,
     longitude: -70.640081,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3720,7 +3720,7 @@ Place.create(
     latitude: -33.496921,
     longitude: -70.611203,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3733,7 +3733,7 @@ Place.create(
     latitude: -33.499045,
     longitude: -70.613138,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3746,7 +3746,7 @@ Place.create(
     latitude: -33.498967,
     longitude: -70.613442,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3759,7 +3759,7 @@ Place.create(
     latitude: -33.499683,
     longitude: -70.613110,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3772,7 +3772,7 @@ Place.create(
     latitude: -33.499674,
     longitude: -70.612956,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3785,7 +3785,7 @@ Place.create(
     latitude: -33.500404,
     longitude: -70.611025,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3798,7 +3798,7 @@ Place.create(
     latitude: -33.500620,
     longitude: -70.610785,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3811,7 +3811,7 @@ Place.create(
     latitude: -33.500547,
     longitude: -70.610029,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3824,7 +3824,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3837,7 +3837,7 @@ Place.create(
     latitude: -33.440899,
     longitude: -70.641083,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3850,7 +3850,7 @@ Place.create(
     latitude: -33.445119,
     longitude: -70.593593,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3863,7 +3863,7 @@ Place.create(
     latitude: -33.500558,
     longitude: -70.611208,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3876,7 +3876,7 @@ Place.create(
     latitude: -33.500515,
     longitude: -70.611019,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3889,7 +3889,7 @@ Place.create(
     latitude: -33.500563,
     longitude: -70.611268,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3902,7 +3902,7 @@ Place.create(
     latitude: -33.500563,
     longitude: -70.611241,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3915,7 +3915,7 @@ Place.create(
     latitude: -33.500587,
     longitude: -70.611018,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3928,7 +3928,7 @@ Place.create(
     latitude: -33.500598,
     longitude: -70.610932,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3941,7 +3941,7 @@ Place.create(
     latitude: -33.500581,
     longitude: -70.611225,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3954,7 +3954,7 @@ Place.create(
     latitude: -33.500579,
     longitude: -70.611166,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3967,7 +3967,7 @@ Place.create(
     latitude: -33.500590,
     longitude: -70.611072,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3980,7 +3980,7 @@ Place.create(
     latitude: -33.500607,
     longitude: -70.610919,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -3993,7 +3993,7 @@ Place.create(
     latitude: -33.500618,
     longitude: -70.610737,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4006,7 +4006,7 @@ Place.create(
     latitude: -33.500633,
     longitude: -70.610636,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4019,7 +4019,7 @@ Place.create(
     latitude: -33.497909,
     longitude: -70.608993,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4032,7 +4032,7 @@ Place.create(
     latitude: -33.441281,
     longitude: -70.640251,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4045,7 +4045,7 @@ Place.create(
     latitude: -33.497763,
     longitude: -70.613103,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4058,7 +4058,7 @@ Place.create(
     latitude: -33.497840,
     longitude: -70.613116,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4071,7 +4071,7 @@ Place.create(
     latitude: -33.497389,
     longitude: -70.607615,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4084,7 +4084,7 @@ Place.create(
     latitude: -33.498952,
     longitude: -70.614970,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4097,7 +4097,7 @@ Place.create(
     latitude: -33.499558,
     longitude: -70.611290,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4110,7 +4110,7 @@ Place.create(
     latitude: -33.498974,
     longitude: -70.615160,
     floor: '4',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4123,7 +4123,7 @@ Place.create(
     latitude: -33.441110,
     longitude: -70.640691,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4136,7 +4136,7 @@ Place.create(
     latitude: -33.498839,
     longitude: -70.610867,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4149,7 +4149,7 @@ Place.create(
     latitude: -33.499187,
     longitude: -70.611589,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4162,7 +4162,7 @@ Place.create(
     latitude: -33.441110,
     longitude: -70.640691,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4175,7 +4175,7 @@ Place.create(
     latitude: -33.498859,
     longitude: -70.611214,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4188,7 +4188,7 @@ Place.create(
     latitude: -33.441110,
     longitude: -70.640691,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4201,7 +4201,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4214,7 +4214,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4227,7 +4227,7 @@ Place.create(
     latitude: -33.499027,
     longitude: -70.613004,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4240,7 +4240,7 @@ Place.create(
     latitude: -33.498762,
     longitude: -70.613470,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4253,7 +4253,7 @@ Place.create(
     latitude: -33.498754,
     longitude: -70.610875,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4266,7 +4266,7 @@ Place.create(
     latitude: -33.498857,
     longitude: -70.609777,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4279,7 +4279,7 @@ Place.create(
     latitude: -33.499468,
     longitude: -70.610958,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4292,7 +4292,7 @@ Place.create(
     latitude: -33.499103,
     longitude: -70.612076,
     floor: '2-3?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4305,7 +4305,7 @@ Place.create(
     latitude: -33.499616,
     longitude: -70.612735,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4318,7 +4318,7 @@ Place.create(
     latitude: -33.441825,
     longitude: -70.639324,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4331,7 +4331,7 @@ Place.create(
     latitude: -33.441690,
     longitude: -70.639266,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4344,7 +4344,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4357,7 +4357,7 @@ Place.create(
     latitude: -33.418620,
     longitude: -70.616706,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4370,7 +4370,7 @@ Place.create(
     latitude: -33.499343,
     longitude: -70.613116,
     floor: '1',
-    description: 'Domo',
+    information: 'Domo',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4383,7 +4383,7 @@ Place.create(
     latitude: -33.499823,
     longitude: -70.612897,
     floor: '1',
-    description: 'Domo',
+    information: 'Domo',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4396,7 +4396,7 @@ Place.create(
     latitude: -33.499823,
     longitude: -70.612897,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4409,7 +4409,7 @@ Place.create(
     latitude: -33.499134,
     longitude: -70.614200,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4422,7 +4422,7 @@ Place.create(
     latitude: -33.499022,
     longitude: -70.614178,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4435,7 +4435,7 @@ Place.create(
     latitude: -33.499022,
     longitude: -70.614076,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4448,7 +4448,7 @@ Place.create(
     latitude: -33.499111,
     longitude: -70.614081,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4461,7 +4461,7 @@ Place.create(
     latitude: -33.499089,
     longitude: -70.613797,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4474,7 +4474,7 @@ Place.create(
     latitude: -33.499013,
     longitude: -70.613797,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4487,7 +4487,7 @@ Place.create(
     latitude: -33.498981,
     longitude: -70.613706,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4500,7 +4500,7 @@ Place.create(
     latitude: -33.499075,
     longitude: -70.613673,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4513,7 +4513,7 @@ Place.create(
     latitude: -33.498179,
     longitude: -70.614941,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4526,7 +4526,7 @@ Place.create(
     latitude: -33.498235,
     longitude: -70.614842,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4539,7 +4539,7 @@ Place.create(
     latitude: -33.498119,
     longitude: -70.614193,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4552,7 +4552,7 @@ Place.create(
     latitude: -33.498099,
     longitude: -70.613990,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4565,7 +4565,7 @@ Place.create(
     latitude: -33.498108,
     longitude: -70.613993,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4578,7 +4578,7 @@ Place.create(
     latitude: -33.498117,
     longitude: -70.614207,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4591,7 +4591,7 @@ Place.create(
     latitude: -33.498144,
     longitude: -70.614223,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4604,7 +4604,7 @@ Place.create(
     latitude: -33.498055,
     longitude: -70.613960,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4617,7 +4617,7 @@ Place.create(
     latitude: -33.498120,
     longitude: -70.614035,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4630,7 +4630,7 @@ Place.create(
     latitude: -33.498098,
     longitude: -70.613986,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4643,7 +4643,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4656,7 +4656,7 @@ Place.create(
     latitude: -33.419849,
     longitude: -70.617716,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4669,7 +4669,7 @@ Place.create(
     latitude: -33.499616,
     longitude: -70.612735,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4682,7 +4682,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4695,7 +4695,7 @@ Place.create(
     latitude: -33.498722,
     longitude: -70.610711,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4708,7 +4708,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4721,7 +4721,7 @@ Place.create(
     latitude: -33.445349,
     longitude: -70.594181,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4734,7 +4734,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4747,7 +4747,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4760,7 +4760,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4773,7 +4773,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4786,7 +4786,7 @@ Place.create(
     latitude: -33.445832,
     longitude: -70.592896,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4799,7 +4799,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4812,7 +4812,7 @@ Place.create(
     latitude: -33.498403,
     longitude: -70.610134,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4825,7 +4825,7 @@ Place.create(
     latitude: -33.446006,
     longitude: -70.593148,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4838,7 +4838,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4851,7 +4851,7 @@ Place.create(
     latitude: -33.498501,
     longitude: -70.610128,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4864,7 +4864,7 @@ Place.create(
     latitude: -33.497740,
     longitude: -70.612941,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4877,7 +4877,7 @@ Place.create(
     latitude: -33.418895,
     longitude: -70.618351,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4890,7 +4890,7 @@ Place.create(
     latitude: -33.499361,
     longitude: -70.614255,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4903,7 +4903,7 @@ Place.create(
     latitude: -33.497237,
     longitude: -70.610355,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4916,7 +4916,7 @@ Place.create(
     latitude: -33.498375,
     longitude: -70.610533,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4929,7 +4929,7 @@ Place.create(
     latitude: -33.500282,
     longitude: -70.609832,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4942,7 +4942,7 @@ Place.create(
     latitude: -33.500706,
     longitude: -70.608004,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4955,7 +4955,7 @@ Place.create(
     latitude: -33.499442,
     longitude: -70.611902,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4968,7 +4968,7 @@ Place.create(
     latitude: -33.441524,
     longitude: -70.639994,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4981,7 +4981,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -4994,7 +4994,7 @@ Place.create(
     latitude: -33.440847,
     longitude: -70.641010,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5007,7 +5007,7 @@ Place.create(
     latitude: -33.499031,
     longitude: -70.613146,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5020,7 +5020,7 @@ Place.create(
     latitude: -33.498973,
     longitude: -70.613149,
     floor: '1',
-    description: 'Auditorio',
+    information: 'Auditorio',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5033,7 +5033,7 @@ Place.create(
     latitude: -33.498892,
     longitude: -70.613160,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5042,11 +5042,11 @@ Place.create(
 Place.create(
     identifier: 'FADEU',
     name: 'FADEU',
-    area: @sj,
+    area: @lc,
     latitude: -33.419663,
     longitude: -70.618624,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5059,7 +5059,7 @@ Place.create(
     latitude: -33.440857,
     longitude: -70.640356,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5072,7 +5072,7 @@ Place.create(
     latitude: -33.419700,
     longitude: -70.618192,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5085,7 +5085,7 @@ Place.create(
     latitude: -33.497766,
     longitude: -70.609919,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5098,7 +5098,7 @@ Place.create(
     latitude: -33.497971,
     longitude: -70.610615,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5111,7 +5111,7 @@ Place.create(
     latitude: -33.497703,
     longitude: -70.610647,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5124,7 +5124,7 @@ Place.create(
     latitude: -33.497656,
     longitude: -70.610762,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5137,7 +5137,7 @@ Place.create(
     latitude: -33.497985,
     longitude: -70.610700,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5150,7 +5150,7 @@ Place.create(
     latitude: -33.498020,
     longitude: -70.610714,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5163,7 +5163,7 @@ Place.create(
     latitude: -33.441837,
     longitude: -70.639496,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5176,7 +5176,7 @@ Place.create(
     latitude: -33.499850,
     longitude: -70.611151,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5189,7 +5189,7 @@ Place.create(
     latitude: -33.441423,
     longitude: -70.640802,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5202,7 +5202,7 @@ Place.create(
     latitude: -33.496753,
     longitude: -70.614067,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5215,7 +5215,7 @@ Place.create(
     latitude: -33.441403,
     longitude: -70.639573,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5228,7 +5228,7 @@ Place.create(
     latitude: -33.497309,
     longitude: -70.613166,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5241,7 +5241,7 @@ Place.create(
     latitude: -33.496719,
     longitude: -70.613595,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5254,7 +5254,7 @@ Place.create(
     latitude: -33.499762,
     longitude: -70.610652,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5267,7 +5267,7 @@ Place.create(
     latitude: -33.498832,
     longitude: -70.611327,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5280,7 +5280,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5293,7 +5293,7 @@ Place.create(
     latitude: -33.419393,
     longitude: -70.618427,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5306,7 +5306,7 @@ Place.create(
     latitude: -33.441965,
     longitude: -70.639700,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5319,7 +5319,7 @@ Place.create(
     latitude: -33.441015,
     longitude: -70.640385,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5332,7 +5332,7 @@ Place.create(
     latitude: -33.441542,
     longitude: -70.640571,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5345,7 +5345,7 @@ Place.create(
     latitude: -33.497615,
     longitude: -70.610703,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5358,7 +5358,7 @@ Place.create(
     latitude: -33.498135,
     longitude: -70.613398,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5371,7 +5371,7 @@ Place.create(
     latitude: -33.500118,
     longitude: -70.613304,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5384,7 +5384,7 @@ Place.create(
     latitude: -33.501360,
     longitude: -70.611823,
     floor: '1',
-    description: 'Afuera de la universidad.',
+    information: 'Afuera de la universidad.',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5397,7 +5397,7 @@ Place.create(
     latitude: -33.501639,
     longitude: -70.611671,
     floor: '1',
-    description: 'Afuera de la universidad.',
+    information: 'Afuera de la universidad.',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5410,7 +5410,7 @@ Place.create(
     latitude: -33.498139,
     longitude: -70.616333,
     floor: '1',
-    description: 'Afuera de la universidad.',
+    information: 'Afuera de la universidad.',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5423,7 +5423,7 @@ Place.create(
     latitude: -33.500526,
     longitude: -70.611040,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5436,7 +5436,7 @@ Place.create(
     latitude: -33.496932,
     longitude: -70.611425,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5449,7 +5449,7 @@ Place.create(
     latitude: -33.498150,
     longitude: -70.614246,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5462,7 +5462,7 @@ Place.create(
     latitude: -33.497499,
     longitude: -70.613976,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5475,7 +5475,7 @@ Place.create(
     latitude: -33.498856,
     longitude: -70.613184,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5488,7 +5488,7 @@ Place.create(
     latitude: -33.498980,
     longitude: -70.613669,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5501,7 +5501,7 @@ Place.create(
     latitude: -33.498911,
     longitude: -70.610767,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5514,7 +5514,7 @@ Place.create(
     latitude: -33.497815,
     longitude: -70.609874,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5527,7 +5527,7 @@ Place.create(
     latitude: -33.446751,
     longitude: -70.593597,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5540,7 +5540,7 @@ Place.create(
     latitude: -33.499037,
     longitude: -70.615147,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5553,7 +5553,7 @@ Place.create(
     latitude: -33.499107,
     longitude: -70.615134,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5566,7 +5566,7 @@ Place.create(
     latitude: -33.499193,
     longitude: -70.615112,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5579,7 +5579,7 @@ Place.create(
     latitude: -33.499258,
     longitude: -70.615088,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5592,7 +5592,7 @@ Place.create(
     latitude: -33.441148,
     longitude: -70.640744,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5605,7 +5605,7 @@ Place.create(
     latitude: -33.498034,
     longitude: -70.613136,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5618,7 +5618,7 @@ Place.create(
     latitude: -33.419393,
     longitude: -70.618427,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5631,7 +5631,7 @@ Place.create(
     latitude: -33.498135,
     longitude: -70.613398,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5644,7 +5644,7 @@ Place.create(
     latitude: -33.440872,
     longitude: -70.6409771,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5657,7 +5657,7 @@ Place.create(
     latitude: -33.446264,
     longitude: -70.594105,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5670,7 +5670,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5683,7 +5683,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5696,7 +5696,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5709,7 +5709,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5722,7 +5722,7 @@ Place.create(
     latitude: -33.446473,
     longitude: -70.593993,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5735,7 +5735,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5748,7 +5748,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5761,7 +5761,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5774,7 +5774,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5787,7 +5787,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5800,7 +5800,7 @@ Place.create(
     latitude: -33.498501,
     longitude: -70.610128,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5813,7 +5813,7 @@ Place.create(
     latitude: -33.499116,
     longitude: -70.612157,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5826,7 +5826,7 @@ Place.create(
     latitude: -33.499094,
     longitude: -70.612106,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5839,7 +5839,7 @@ Place.create(
     latitude: -33.499107,
     longitude: -70.612041,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5852,7 +5852,7 @@ Place.create(
     latitude: -33.499089,
     longitude: -70.611987,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5865,7 +5865,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5878,7 +5878,7 @@ Place.create(
     latitude: -33.496783,
     longitude: -70.609766,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5891,7 +5891,7 @@ Place.create(
     latitude: -33.500629,
     longitude: -70.610410,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5904,7 +5904,7 @@ Place.create(
     latitude: -33.500616,
     longitude: -70.610344,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5917,7 +5917,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610269,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5930,7 +5930,7 @@ Place.create(
     latitude: -33.500640,
     longitude: -70.610192,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5943,7 +5943,7 @@ Place.create(
     latitude: -33.499488,
     longitude: -70.610692,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5956,7 +5956,7 @@ Place.create(
     latitude: -33.499481,
     longitude: -70.610789,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5969,7 +5969,7 @@ Place.create(
     latitude: -33.499277,
     longitude: -70.610837,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5982,7 +5982,7 @@ Place.create(
     latitude: -33.499351,
     longitude: -70.610681,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -5995,7 +5995,7 @@ Place.create(
     latitude: -33.496797,
     longitude: -70.609765,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6008,7 +6008,7 @@ Place.create(
     latitude: -33.496695,
     longitude: -70.609780,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6021,7 +6021,7 @@ Place.create(
     latitude: -33.496629,
     longitude: -70.609795,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6034,7 +6034,7 @@ Place.create(
     latitude: -33.496546,
     longitude: -70.609793,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6047,7 +6047,7 @@ Place.create(
     latitude: -33.499645,
     longitude: -70.610940,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6060,7 +6060,7 @@ Place.create(
     latitude: -33.419331,
     longitude: -70.617971,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6073,7 +6073,7 @@ Place.create(
     latitude: -33.499176,
     longitude: -70.612194,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6086,7 +6086,7 @@ Place.create(
     latitude: -33.500442,
     longitude: -70.609986,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6099,7 +6099,7 @@ Place.create(
     latitude: -33.498768,
     longitude: -70.611349,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6112,7 +6112,7 @@ Place.create(
     latitude: -33.500344,
     longitude: -70.609962,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6125,7 +6125,7 @@ Place.create(
     latitude: -33.499187,
     longitude: -70.611589,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6138,7 +6138,7 @@ Place.create(
     latitude: -33.499297,
     longitude: -70.610695,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6147,11 +6147,11 @@ Place.create(
 Place.create(
     identifier: 'Piwonka',
     name: 'Laboratorio Piwonka',
-    area: @sj,
+    area: @lc,
     latitude: -33.419267,
     longitude: -70.618316,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6164,7 +6164,7 @@ Place.create(
     latitude: -33.500317,
     longitude: -70.610345,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6177,7 +6177,7 @@ Place.create(
     latitude: -33.500257,
     longitude: -70.610120,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6190,7 +6190,7 @@ Place.create(
     latitude: -33.496747,
     longitude: -70.613854,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6203,20 +6203,20 @@ Place.create(
     latitude: -33.497362,
     longitude: -70.613113,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
     )
 
 Place.create(
-    identifier: 'LAB. M yP',
+    identifier: 'LAB. M y P',
     name: 'Laboratorio de Modelos y Prototipos ',
     area: @sj,
     latitude: -33.419167,
     longitude: -70.617730,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6229,7 +6229,7 @@ Place.create(
     latitude: -33.498781,
     longitude: -70.611333,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6242,7 +6242,7 @@ Place.create(
     latitude: -33.499022,
     longitude: -70.611056,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6255,7 +6255,7 @@ Place.create(
     latitude: -33.500359,
     longitude: -70.610352,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6268,7 +6268,7 @@ Place.create(
     latitude: -33.497409,
     longitude: -70.609826,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6281,7 +6281,7 @@ Place.create(
     latitude: -33.499513,
     longitude: -70.610969,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6294,7 +6294,7 @@ Place.create(
     latitude: -33.441918,
     longitude: -70.639567,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6307,7 +6307,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6320,7 +6320,7 @@ Place.create(
     latitude: -33.498336,
     longitude: -70.610208,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6333,7 +6333,7 @@ Place.create(
     latitude: -33.445503,
     longitude: -70.593665,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6346,7 +6346,7 @@ Place.create(
     latitude: -33.418941,
     longitude: -70.618043,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6359,7 +6359,7 @@ Place.create(
     latitude: -33.441493,
     longitude: -70.640542,
     floor: '1-?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6372,7 +6372,7 @@ Place.create(
     latitude: -33.497693,
     longitude: -70.609919,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6385,7 +6385,7 @@ Place.create(
     latitude: -33.497421,
     longitude: -70.609914,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6398,7 +6398,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6411,7 +6411,7 @@ Place.create(
     latitude: -33.446333,
     longitude: -70.594229,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6424,7 +6424,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6437,7 +6437,7 @@ Place.create(
     latitude: -33.441992,
     longitude: -70.639585,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6450,7 +6450,7 @@ Place.create(
     latitude: -33.441369,
     longitude: -70.640321,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6463,7 +6463,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6476,7 +6476,7 @@ Place.create(
     latitude: -33.496875,
     longitude: -70.611566,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6489,7 +6489,7 @@ Place.create(
     latitude: -33.499384,
     longitude: -70.610088,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6502,7 +6502,7 @@ Place.create(
     latitude: -33.499349,
     longitude: -70.609885,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6515,7 +6515,7 @@ Place.create(
     latitude: -33.497071,
     longitude: -70.609311,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6528,7 +6528,7 @@ Place.create(
     latitude: -33.500565,
     longitude: -70.611192,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6541,7 +6541,7 @@ Place.create(
     latitude: -33.499188,
     longitude: -70.612019,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6554,7 +6554,7 @@ Place.create(
     latitude: -33.441304,
     longitude: -70.640858,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6567,7 +6567,7 @@ Place.create(
     latitude: -33.441260,
     longitude: -70.640967,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6580,7 +6580,7 @@ Place.create(
     latitude: -33.441529,
     longitude: -70.640659,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6593,7 +6593,7 @@ Place.create(
     latitude: -33.419398,
     longitude: -70.618452,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6606,7 +6606,7 @@ Place.create(
     latitude: -33.497118,
     longitude: -70.611854,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6619,7 +6619,7 @@ Place.create(
     latitude: -33.497157,
     longitude: -70.611181,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6632,7 +6632,7 @@ Place.create(
     latitude: -33.496777,
     longitude: -70.613876,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6645,7 +6645,7 @@ Place.create(
     latitude: -33.499990,
     longitude: -70.613255,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6658,7 +6658,7 @@ Place.create(
     latitude: -33.500318,
     longitude: -70.612582,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6671,7 +6671,7 @@ Place.create(
     latitude: -33.497452,
     longitude: -70.610290,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6684,7 +6684,7 @@ Place.create(
     latitude: -33.498476,
     longitude: -70.610066,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6697,7 +6697,7 @@ Place.create(
     latitude: -33.498265,
     longitude: -70.610226,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6710,7 +6710,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6723,7 +6723,7 @@ Place.create(
     latitude: -33.497883,
     longitude: -70.610197,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6736,7 +6736,7 @@ Place.create(
     latitude: -33.497705,
     longitude: -70.610213,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6749,7 +6749,7 @@ Place.create(
     latitude: -33.497607,
     longitude: -70.610231,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6762,7 +6762,7 @@ Place.create(
     latitude: -33.497590,
     longitude: -70.610101,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6775,7 +6775,7 @@ Place.create(
     latitude: -33.497591,
     longitude: -70.610100,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6788,7 +6788,7 @@ Place.create(
     latitude: -33.497561,
     longitude: -70.610157,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6801,7 +6801,7 @@ Place.create(
     latitude: -33.497634,
     longitude: -70.610160,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6814,7 +6814,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6827,7 +6827,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6840,7 +6840,7 @@ Place.create(
     latitude: -33.499205,
     longitude: -70.609959,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6853,7 +6853,7 @@ Place.create(
     latitude: -33.499288,
     longitude: -70.609944,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6866,7 +6866,7 @@ Place.create(
     latitude: -33.499199,
     longitude: -70.610045,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6879,7 +6879,7 @@ Place.create(
     latitude: -33.499259,
     longitude: -70.610035,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6892,7 +6892,7 @@ Place.create(
     latitude: -33.498573,
     longitude: -70.610247,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6905,7 +6905,7 @@ Place.create(
     latitude: -33.498546,
     longitude: -70.610128,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6918,7 +6918,7 @@ Place.create(
     latitude: -33.498644,
     longitude: -70.610114,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6931,7 +6931,7 @@ Place.create(
     latitude: -33.498708,
     longitude: -70.610111,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6944,7 +6944,7 @@ Place.create(
     latitude: -33.498850,
     longitude: -70.610091,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6957,7 +6957,7 @@ Place.create(
     latitude: -33.498897,
     longitude: -70.610077,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6970,7 +6970,7 @@ Place.create(
     latitude: -33.498623,
     longitude: -70.610247,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6983,7 +6983,7 @@ Place.create(
     latitude: -33.498986,
     longitude: -70.610068,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -6996,7 +6996,7 @@ Place.create(
     latitude: -33.499041,
     longitude: -70.610057,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7009,7 +7009,7 @@ Place.create(
     latitude: -33.499084,
     longitude: -70.610048,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7022,7 +7022,7 @@ Place.create(
     latitude: -33.499108,
     longitude: -70.610045,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7035,7 +7035,7 @@ Place.create(
     latitude: -33.499149,
     longitude: -70.610046,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7048,7 +7048,7 @@ Place.create(
     latitude: -33.499149,
     longitude: -70.610046,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7061,7 +7061,7 @@ Place.create(
     latitude: -33.499149,
     longitude: -70.610046,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7074,7 +7074,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7087,7 +7087,7 @@ Place.create(
     latitude: -33.498723,
     longitude: -70.610235,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7100,7 +7100,7 @@ Place.create(
     latitude: -33.498854,
     longitude: -70.610223,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7113,7 +7113,7 @@ Place.create(
     latitude: -33.498954,
     longitude: -70.610211,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7126,7 +7126,7 @@ Place.create(
     latitude: -33.499037,
     longitude: -70.610217,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7139,7 +7139,7 @@ Place.create(
     latitude: -33.499105,
     longitude: -70.610199,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7152,7 +7152,7 @@ Place.create(
     latitude: -33.500502,
     longitude: -70.610026,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7165,7 +7165,7 @@ Place.create(
     latitude: -33.500310,
     longitude: -70.610241,
     floor: '3?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7178,7 +7178,7 @@ Place.create(
     latitude: -33.440524,
     longitude: -70.640507,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7191,7 +7191,7 @@ Place.create(
     latitude: -33.497403,
     longitude: -70.609997,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7204,7 +7204,7 @@ Place.create(
     latitude: -33.440874,
     longitude: -70.640760,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7217,7 +7217,7 @@ Place.create(
     latitude: -33.499330,
     longitude: -70.614910,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7230,7 +7230,7 @@ Place.create(
     latitude: -33.419602,
     longitude: -70.618646,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7243,7 +7243,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7256,7 +7256,7 @@ Place.create(
     latitude: -33.500199,
     longitude: -70.613298,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7269,7 +7269,7 @@ Place.create(
     latitude: -33.500440,
     longitude: -70.610050,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7282,7 +7282,7 @@ Place.create(
     latitude: -33.500342,
     longitude: -70.610029,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7295,7 +7295,7 @@ Place.create(
     latitude: -33.497513,
     longitude: -70.614442,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7308,7 +7308,7 @@ Place.create(
     latitude: -33.500714,
     longitude: -70.609947,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7321,7 +7321,7 @@ Place.create(
     latitude: -33.498485,
     longitude: -70.611747,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7334,7 +7334,7 @@ Place.create(
     latitude: -33.498024,
     longitude: -70.613468,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7347,7 +7347,7 @@ Place.create(
     latitude: -33.498133,
     longitude: -70.613326,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7360,7 +7360,7 @@ Place.create(
     latitude: -33.498422,
     longitude: -70.616321,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7373,7 +7373,7 @@ Place.create(
     latitude: -33.498673,
     longitude: -70.615933,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7386,7 +7386,7 @@ Place.create(
     latitude: -33.441339,
     longitude: -70.640445,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7399,7 +7399,7 @@ Place.create(
     latitude: -33.445916,
     longitude: -70.594023,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7412,7 +7412,7 @@ Place.create(
     latitude: -33.419313,
     longitude: -70.617777,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7425,7 +7425,7 @@ Place.create(
     latitude: -33.498133,
     longitude: -70.613326,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7438,7 +7438,7 @@ Place.create(
     latitude: -33.498131,
     longitude: -70.610109,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7451,7 +7451,7 @@ Place.create(
     latitude: -33.500001,
     longitude: -70.612645,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7464,7 +7464,7 @@ Place.create(
     latitude: -33.497675,
     longitude: -70.609681,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7477,7 +7477,7 @@ Place.create(
     latitude: -33.500081,
     longitude: -70.613177,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7490,7 +7490,7 @@ Place.create(
     latitude: -33.498104,
     longitude: -70.610312,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7503,7 +7503,7 @@ Place.create(
     latitude: -33.498191,
     longitude: -70.610032,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7516,7 +7516,7 @@ Place.create(
     latitude: -33.500629,
     longitude: -70.610926,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7529,7 +7529,7 @@ Place.create(
     latitude: -33.498024,
     longitude: -70.613468,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7542,7 +7542,7 @@ Place.create(
     latitude: -33.441339,
     longitude: -70.640445,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7555,7 +7555,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7568,7 +7568,7 @@ Place.create(
     latitude: -33.498727,
     longitude: -70.610705,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7581,7 +7581,7 @@ Place.create(
     latitude: -33.498747,
     longitude: -70.610851,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7594,7 +7594,7 @@ Place.create(
     latitude: -33.497225,
     longitude: -70.613910,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7607,7 +7607,7 @@ Place.create(
     latitude: -33.497260,
     longitude: -70.613914,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7620,7 +7620,7 @@ Place.create(
     latitude: -33.497310,
     longitude: -70.613903,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7633,7 +7633,7 @@ Place.create(
     latitude: -33.497315,
     longitude: -70.613897,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7646,7 +7646,7 @@ Place.create(
     latitude: -33.497386,
     longitude: -70.613892,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7659,7 +7659,7 @@ Place.create(
     latitude: -33.497443,
     longitude: -70.613891,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7672,7 +7672,7 @@ Place.create(
     latitude: -33.499558,
     longitude: -70.611290,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7685,7 +7685,7 @@ Place.create(
     latitude: -33.498803,
     longitude: -70.613518,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7698,7 +7698,7 @@ Place.create(
     latitude: -33.498160,
     longitude: -70.614603,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7711,7 +7711,7 @@ Place.create(
     latitude: -33.440567,
     longitude: -70.640589,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7724,7 +7724,7 @@ Place.create(
     latitude: -33.498163,
     longitude: -70.613738,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7733,24 +7733,24 @@ Place.create(
 Place.create(
     identifier: 'REFECTORIO',
     name: 'Refectorio',
-    area: @sj,
+    area: @lc,
     latitude: -33.419566,
     longitude: -70.617850,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
     )
 
 Place.create(
-    identifier: 'S. Alfero',
+    identifier: 'S. ALFERO',
     name: 'S. Alfero',
-    area: @sj,
+    area: @lc,
     latitude: 0.0,
     longitude: 0.0,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7763,7 +7763,7 @@ Place.create(
     latitude: -33.496864,
     longitude: -70.613156,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7776,7 +7776,7 @@ Place.create(
     latitude: -33.496887,
     longitude: -70.613170,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7789,7 +7789,7 @@ Place.create(
     latitude: -33.497132,
     longitude: -70.613161,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7802,7 +7802,7 @@ Place.create(
     latitude: -33.497141,
     longitude: -70.613143,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7815,7 +7815,7 @@ Place.create(
     latitude: -33.497182,
     longitude: -70.613124,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7828,7 +7828,7 @@ Place.create(
     latitude: -33.497383,
     longitude: -70.613498,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7841,7 +7841,7 @@ Place.create(
     latitude: -33.496817,
     longitude: -70.613182,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7854,7 +7854,7 @@ Place.create(
     latitude: -33.497421,
     longitude: -70.613549,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7867,7 +7867,7 @@ Place.create(
     latitude: -33.496698,
     longitude: -70.614087,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7880,7 +7880,7 @@ Place.create(
     latitude: -33.497435,
     longitude: -70.613608,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7893,7 +7893,7 @@ Place.create(
     latitude: -33.496692,
     longitude: -70.613535,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7906,7 +7906,7 @@ Place.create(
     latitude: -33.496694,
     longitude: -70.613511,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7919,7 +7919,7 @@ Place.create(
     latitude: -33.496722,
     longitude: -70.613891,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7932,7 +7932,7 @@ Place.create(
     latitude: -33.496708,
     longitude: -70.613865,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7945,7 +7945,7 @@ Place.create(
     latitude: -33.496697,
     longitude: -70.613638,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7958,7 +7958,7 @@ Place.create(
     latitude: -33.496716,
     longitude: -70.613611,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7971,7 +7971,7 @@ Place.create(
     latitude: -33.496824,
     longitude: -70.613170,
     floor: '-1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7984,7 +7984,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -7997,7 +7997,7 @@ Place.create(
     latitude: -33.419039,
     longitude: -70.618115,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8010,7 +8010,7 @@ Place.create(
     latitude: -33.418951,
     longitude: -70.618211,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8023,7 +8023,7 @@ Place.create(
     latitude: -33.418788,
     longitude: -70.618074,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8036,7 +8036,7 @@ Place.create(
     latitude: -33.418875,
     longitude: -70.617942,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8049,7 +8049,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8062,7 +8062,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8075,7 +8075,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8088,7 +8088,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8101,7 +8101,7 @@ Place.create(
     latitude: -33.440914,
     longitude: -70.640452,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8114,7 +8114,7 @@ Place.create(
     latitude: -33.440893,
     longitude: -70.640419,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8127,7 +8127,7 @@ Place.create(
     latitude: -33.440707,
     longitude: -70.640220,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8140,7 +8140,7 @@ Place.create(
     latitude: -33.440563,
     longitude: -70.640322,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8153,7 +8153,7 @@ Place.create(
     latitude: -33.419265,
     longitude: -70.618428,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8166,7 +8166,7 @@ Place.create(
     latitude: -33.419571,
     longitude: -70.618607,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8179,7 +8179,7 @@ Place.create(
     latitude: -33.419548,
     longitude: -70.618573,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8192,7 +8192,7 @@ Place.create(
     latitude: -33.419525,
     longitude: -70.618548,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8205,7 +8205,7 @@ Place.create(
     latitude: -33.419499,
     longitude: -70.618520,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8218,7 +8218,7 @@ Place.create(
     latitude: -33.419473,
     longitude: -70.618496,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8231,7 +8231,7 @@ Place.create(
     latitude: -33.419452,
     longitude: -70.618480,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8244,7 +8244,7 @@ Place.create(
     latitude: -33.419424,
     longitude: -70.618443,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8257,7 +8257,7 @@ Place.create(
     latitude: -33.419602,
     longitude: -70.618646,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8270,7 +8270,7 @@ Place.create(
     latitude: -33.419571,
     longitude: -70.618607,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8283,7 +8283,7 @@ Place.create(
     latitude: -33.419548,
     longitude: -70.618573,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8296,7 +8296,7 @@ Place.create(
     latitude: -33.419525,
     longitude: -70.618548,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8309,7 +8309,7 @@ Place.create(
     latitude: -33.419499,
     longitude: -70.618520,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8322,7 +8322,7 @@ Place.create(
     latitude: -33.419473,
     longitude: -70.618496,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8335,7 +8335,7 @@ Place.create(
     latitude: -33.419452,
     longitude: -70.618480,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8348,7 +8348,7 @@ Place.create(
     latitude: -33.419424,
     longitude: -70.618443,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8361,7 +8361,7 @@ Place.create(
     latitude: -33.419393,
     longitude: -70.618427,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8374,7 +8374,7 @@ Place.create(
     latitude: -33.419398,
     longitude: -70.618452,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8387,7 +8387,7 @@ Place.create(
     latitude: -33.419801,
     longitude: -70.617692,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8400,7 +8400,7 @@ Place.create(
     latitude: -33.419745,
     longitude: -70.617717,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8413,7 +8413,7 @@ Place.create(
     latitude: -33.419192,
     longitude: -70.618529,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8426,7 +8426,7 @@ Place.create(
     latitude: -33.499006,
     longitude: -70.615169,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8439,7 +8439,7 @@ Place.create(
     latitude: -33.499385,
     longitude: -70.610568,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8452,7 +8452,7 @@ Place.create(
     latitude: -33.440486,
     longitude: -70.640420,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8465,7 +8465,7 @@ Place.create(
     latitude: -33.440633,
     longitude: -70.640274,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8478,7 +8478,7 @@ Place.create(
     latitude: -33.441678,
     longitude: -70.639273,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8491,7 +8491,7 @@ Place.create(
     latitude: -33.440707,
     longitude: -70.640166,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8504,7 +8504,7 @@ Place.create(
     latitude: -33.497092,
     longitude: -70.611379,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8517,7 +8517,7 @@ Place.create(
     latitude: -33.498282,
     longitude: -70.610148,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8530,7 +8530,7 @@ Place.create(
     latitude: -33.498067,
     longitude: -70.609861,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8543,7 +8543,7 @@ Place.create(
     latitude: -33.497049,
     longitude: -70.609266,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8556,7 +8556,7 @@ Place.create(
     latitude: -33.500431,
     longitude: -70.610636,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8569,7 +8569,7 @@ Place.create(
     latitude: -33.500314,
     longitude: -70.610349,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8582,7 +8582,7 @@ Place.create(
     latitude: -33.498915,
     longitude: -70.610654,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8595,7 +8595,7 @@ Place.create(
     latitude: -33.498906,
     longitude: -70.613458,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8608,7 +8608,7 @@ Place.create(
     latitude: -33.496956,
     longitude: -70.611759,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8621,7 +8621,7 @@ Place.create(
     latitude: -33.498037,
     longitude: -70.614733,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8634,7 +8634,7 @@ Place.create(
     latitude: -33.497282,
     longitude: -70.613603,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8647,7 +8647,7 @@ Place.create(
     latitude: -33.499069,
     longitude: -70.613138,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8660,7 +8660,7 @@ Place.create(
     latitude: -33.498861,
     longitude: -70.613910,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8673,7 +8673,7 @@ Place.create(
     latitude: -33.499164,
     longitude: -70.612049,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8686,7 +8686,7 @@ Place.create(
     latitude: -33.500046,
     longitude: -70.613357,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8699,7 +8699,7 @@ Place.create(
     latitude: -33.499632,
     longitude: -70.612851,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8712,7 +8712,7 @@ Place.create(
     latitude: -33.498830,
     longitude: -70.613133,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8725,7 +8725,7 @@ Place.create(
     latitude: -33.441733,
     longitude: -70.639850,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8738,7 +8738,7 @@ Place.create(
     latitude: -33.441566,
     longitude: -70.640499,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8751,7 +8751,7 @@ Place.create(
     latitude: -33.441641,
     longitude: -70.639680,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8764,7 +8764,7 @@ Place.create(
     latitude: -33.446282,
     longitude: -70.594125,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8777,7 +8777,7 @@ Place.create(
     latitude: -33.445500,
     longitude: -70.593583,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8790,7 +8790,7 @@ Place.create(
     latitude: -33.445589,
     longitude: -70.593302,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8803,7 +8803,7 @@ Place.create(
     latitude: -33.499535,
     longitude: -70.613223,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8816,7 +8816,7 @@ Place.create(
     latitude: -33.498773,
     longitude: -70.609780,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8829,7 +8829,7 @@ Place.create(
     latitude: -33.500335,
     longitude: -70.610305,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8842,7 +8842,7 @@ Place.create(
     latitude: -33.500335,
     longitude: -70.610305,
     floor: '2?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8855,7 +8855,7 @@ Place.create(
     latitude: -33.497772,
     longitude: -70.613086,
     floor: '3',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8868,7 +8868,7 @@ Place.create(
     latitude: -33.498501,
     longitude: -70.610128,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8881,7 +8881,7 @@ Place.create(
     latitude: -33.496698,
     longitude: -70.614087,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8894,7 +8894,7 @@ Place.create(
     latitude: -33.497414,
     longitude: -70.613503,
     floor: '-1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8907,7 +8907,7 @@ Place.create(
     latitude: -33.498054,
     longitude: -70.613483,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8920,7 +8920,7 @@ Place.create(
     latitude: -33.496978,
     longitude: -70.610896,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8933,7 +8933,7 @@ Place.create(
     latitude: -33.502811,
     longitude: -70.611480,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8946,7 +8946,7 @@ Place.create(
     latitude: -33.441281,
     longitude: -70.640093,
     floor: '1-2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8959,7 +8959,7 @@ Place.create(
     latitude: -33.497342,
     longitude: -70.613580,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8972,7 +8972,7 @@ Place.create(
     latitude: -33.499087,
     longitude: -70.613693,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8985,7 +8985,7 @@ Place.create(
     latitude: -33.499634,
     longitude: -70.613803,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -8998,7 +8998,7 @@ Place.create(
     latitude: -33.499729,
     longitude: -70.609654,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9011,7 +9011,7 @@ Place.create(
     latitude: -33.496555,
     longitude: -70.609043,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9024,7 +9024,7 @@ Place.create(
     latitude: -33.497868,
     longitude: -70.609826,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9037,7 +9037,7 @@ Place.create(
     latitude: -33.498054,
     longitude: -70.613483,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9050,7 +9050,7 @@ Place.create(
     latitude: -33.498272,
     longitude: -70.616351,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9063,7 +9063,7 @@ Place.create(
     latitude: -33.441281,
     longitude: -70.640093,
     floor: '1-2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9076,7 +9076,7 @@ Place.create(
     latitude: -33.499729,
     longitude: -70.609654,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9089,7 +9089,7 @@ Place.create(
     latitude: -33.498104,
     longitude: -70.610312,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9102,7 +9102,7 @@ Place.create(
     latitude: -33.497125,
     longitude: -70.611542,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9115,7 +9115,7 @@ Place.create(
     latitude: -33.496938,
     longitude: -70.611674,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9128,7 +9128,7 @@ Place.create(
     latitude: -33.498403,
     longitude: -70.610134,
     floor: '?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9141,7 +9141,7 @@ Place.create(
     latitude: -33.441761,
     longitude: -70.640545,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9154,7 +9154,7 @@ Place.create(
     latitude: -33.498096,
     longitude: -70.614412,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9167,7 +9167,7 @@ Place.create(
     latitude: -33.498136,
     longitude: -70.614242,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9180,7 +9180,7 @@ Place.create(
     latitude: -33.498077,
     longitude: -70.614145,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9193,7 +9193,7 @@ Place.create(
     latitude: -33.498087,
     longitude: -70.614106,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9206,7 +9206,7 @@ Place.create(
     latitude: -33.498055,
     longitude: -70.613960,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9219,7 +9219,7 @@ Place.create(
     latitude: -33.498060,
     longitude: -70.613911,
     floor: '2',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9232,7 +9232,7 @@ Place.create(
     latitude: -33.499052,
     longitude: -70.610896,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9245,7 +9245,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9258,7 +9258,7 @@ Place.create(
     latitude: -33.446029,
     longitude: -70.594659,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9271,7 +9271,7 @@ Place.create(
     latitude: -33.445984,
     longitude: -70.593746,
     floor: '1?',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9280,11 +9280,11 @@ Place.create(
 Place.create(
     identifier: 'TUNEL_ORIE',
     name: 'Túnel Oriente',
-    area: @sj,
+    area: @lc,
     latitude: -33.419707,
     longitude: -70.618311,
     floor: '1',
-    description: 'Túnel oriente',
+    information: 'Túnel oriente',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9293,11 +9293,11 @@ Place.create(
 Place.create(
     identifier: 'TUNEL_PONI',
     name: 'Túnel Poniente',
-    area: @sj,
+    area: @lc,
     latitude: -33.419707,
     longitude: -70.618311,
     floor: '1',
-    description: 'Túnel Poniente.',
+    information: 'Túnel Poniente.',
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9310,7 +9310,7 @@ Place.create(
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
@@ -9323,12 +9323,16 @@ Place.create(
     latitude: -33.499558,
     longitude: -70.611290,
     floor: '1',
-    description: nil,
+    information: nil,
     zoom: 0.0,
     angle: 0.0,
     tilt: 0.0
     )
 
 Place.all.each do |p|
-  puts('Created place: ' +p.name)
+    if p.name.present?
+        puts('Created place: ' +p.name)
+    else
+      puts p.inspect
+      end
 end

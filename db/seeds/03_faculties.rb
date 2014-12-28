@@ -8,14 +8,13 @@ puts('Creating faculties')
 #  abbreviation :string           not null
 #  short_name   :string           not null
 #  name         :string           not null
-#  slug         :string           not null
 #  campus_id    :integer          not null
 #  address      :string
 #  phone        :string
 #  email        :string
 #  url          :string
 #  facebook     :string
-#  description  :text
+#  information  :text
 #  twitter      :string
 #  place_id     :integer
 #  created_at   :datetime
@@ -36,7 +35,7 @@ puts('Creating faculties')
 #     twitter: nil,
 #     phone: nil,
 #     email: nil,
-#     description: nil,
+#     information: nil,
 #     latitude: 0.0, 
 #     longitude: 0.0,
 #     area: @uc,
@@ -56,13 +55,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/AgroyForestalUC',
     phone: '(56 2) 2354 4895',
     email: 'agroforestal@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'AGC',
         name: "Facultad de Agronomía e Ingeniería Forestal",
         latitude: -33.496591,
         longitude: -70.609579,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -80,13 +79,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/FADEU_UC',
     phone: '(56) (2) 2354 7750',
     email: 'fadeu@uc.cl',
-    description: 'Facultad de Arquitectura, Diseño y Estudios Urbanos de la Pontificia Universidad Católica de Chile.\nLa facultad está compuesta por 3 unidades: la Escuela de Arquitectura, la Escuela de Diseño y el Instituto de Estudios Urbanos.',
+    information: 'Facultad de Arquitectura, Diseño y Estudios Urbanos de la Pontificia Universidad Católica de Chile.\nLa facultad está compuesta por 3 unidades: la Escuela de Arquitectura, la Escuela de Diseño y el Instituto de Estudios Urbanos.',
     localization: Place.create(
         identifier: 'FADEU',
         name: "Facultad de Arquitectura, Diseño y Estudios Urbanos",
         latitude: -33.419495,
         longitude: -70.618351,
-        area: @uc, 
+        area: @lc,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -104,13 +103,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/@facartesuc',
     phone: '+562 2354 2000',
     email: 'mjleon@uc.cl',
-    description: 'Somos una red dedicada a generar espacios diálogo y comunicar las actividades de los estudiantes, egresados y profesores de la Facultad de Artes UC y de otros núcleos de desarrollo artístico en Chile. Escríbenos a mjleon@uc.cl',
+    information: 'Somos una red dedicada a generar espacios diálogo y comunicar las actividades de los estudiantes, egresados y profesores de la Facultad de Artes UC y de otros núcleos de desarrollo artístico en Chile. Escríbenos a mjleon@uc.cl',
     localization: Place.create(
         identifier: 'ART',
         name: "Facultad de Artes",
         latitude: -33.446092,
         longitude: -70.593395,
-        area: @uc, 
+        area: @co,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -128,13 +127,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: nil,
     email: 'decanato@bio.puc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'BIO',
         name: "Facultad de Ciencias Biológicas",
         latitude: -33.441677,
         longitude:  -70.639494,
-        area: @uc, 
+        area: @cc,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -152,13 +151,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: nil,
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'ECO',
         name: "Facultad de Ciencias Económicas y Administrativas",
         latitude: -33.497020,
         longitude: -70.611462,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -176,13 +175,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: nil,
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'SOC',
         name: "Facultad de Ciencias Sociales",
         latitude: -33.498357,
         longitude: -70.610006,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -200,13 +199,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/fcomuc',
     phone: '(56-2) 23542020',
     email: 'fcomunicaciones@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.441442,
         longitude: -70.640749,
-        area: @uc,
+        area: @cc,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -224,13 +223,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '223542000',
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.496700,
         longitude: -70.613790,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -248,13 +247,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/derechouc',
     phone: '(56) (2) 2 354 2000',
     email: 'comunicacionesderechouc@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.441022,
         longitude: -70.640158,
-        area: @uc, 
+        area: @cc,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -272,13 +271,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '+56 (2) 22354 5350',
     email: 'educacionuc@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.498128,
         longitude: -70.614241,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -296,13 +295,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: nil,
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.497217,
         longitude: -70.613997,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -320,13 +319,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '(56) (2) 354 4470',
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.499441,
         longitude: -70.611044,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -344,13 +343,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '3547808',
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.497075,
         longitude: -70.613188,
-        area: @uc,
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -368,13 +367,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '6864565',
     email: 'webeccuc@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.498969,
         longitude: -70.613837,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -392,13 +391,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/ingenieriaUC',
     phone: '+56 2 354 11 93',
     email: 'comunicaciones@ing.puc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.500000,
         longitude: -70.612870,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -416,13 +415,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '(56 2) 354 4511',
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.499796,
         longitude: -70.610610,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -440,13 +439,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/Enfermeria_UC',
     phone: '(56-2) 2354 5831',
     email: 'escueladeenfermeria@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.498938,
         longitude: -70.613059,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -464,13 +463,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '(56) (2) 354 2000',
     email: 'escuelamedicina@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: 'XXXXXX',
         name: "CXXXXXX",
         latitude: -33.441458,
         longitude: -70.640379,
-        area: @uc, 
+        area: @cc,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -488,13 +487,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '(56) (2) 2354 2000',
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: "",
         name: "",
         latitude: -33.499016,
         longitude: -70.611008,
-        area: @uc,
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -512,13 +511,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '(56) (2) 2354 1634',
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: "",
         name: "",
         latitude: -33.497833,
         longitude: -70.610808,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -536,13 +535,13 @@ puts('Creating faculties')
     twitter: 'https://twitter.com/villarricauc',
     phone: '(45) 2411830',
     email: nil,
-    description: nil,
+    information: nil,
     localization: Place.create(
     identifier: "",
     name: "",
         latitude: 0.0,
         longitude: 0.0,
-        area: @uc, 
+        area: @vr,
         zoom: 0,
         angle: 0,
         tilt: 0
@@ -560,13 +559,13 @@ puts('Creating faculties')
     twitter: nil,
     phone: '(56) (2) 2354 5774',
     email: 'contactocollege@uc.cl',
-    description: nil,
+    information: nil,
     localization: Place.create(
         identifier: "",
         name: "",
         latitude: -33.500481,
         longitude: -70.610954,
-        area: @uc, 
+        area: @sj,
         zoom: 0,
         angle: 0,
         tilt: 0

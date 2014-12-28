@@ -5,11 +5,11 @@
 #  id          :integer          not null, primary key
 #  user_id     :integer          not null
 #  content     :text             default(""), not null
-#  notify      :boolean          default("false"), not null
+#  notify      :boolean          default(FALSE), not null
 #  entity_id   :integer
-#  entity_type :string
+#  entity_type :string(255)
 #  target_id   :integer          not null
-#  target_type :string           not null
+#  target_type :string(255)      not null
 #  place_id    :integer
 #  event_id    :integer
 #  created_at  :datetime

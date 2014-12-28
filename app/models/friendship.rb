@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  user_id    :integer          not null
 #  friend_id  :integer          not null
-#  accepted   :boolean          default("false")
+#  accepted   :boolean          default(FALSE)
 #  created_at :datetime
 #  updated_at :datetime
 #

@@ -5,11 +5,12 @@
 #  id               :integer          not null, primary key
 #  user_id          :integer          not null
 #  commentable_id   :integer          not null
-#  commentable_type :string           not null
+#  commentable_type :string(255)      not null
 #  comment          :text             default(""), not null
-#  hidden           :boolean          default("false"), not null
+#  hidden           :boolean          default(FALSE), not null
 #  created_at       :datetime
 #  updated_at       :datetime
+#  anonymous        :boolean          default(FALSE), not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

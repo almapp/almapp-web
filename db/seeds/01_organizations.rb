@@ -16,8 +16,9 @@ puts('Creating organizations')
 #  twitter     :string
 
 @uc = Organization.create(
-    slug: 'UC',
+    abbreviation: 'UC',
     name: 'Pontificia Universidad Católica de Chile',
+    short_name: 'Universidad Católica',
     url: 'http://www.uc.cl',
     facebook: 'https://www.facebook.com/ucatolica',
     twitter: 'https://twitter.com/ucatolica',

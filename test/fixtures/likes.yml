@@ -4,9 +4,9 @@
 #
 #  id            :integer          not null, primary key
 #  user_id       :integer          not null
-#  valuation     :integer          default("0"), not null
+#  valuation     :integer          default(0), not null
 #  likeable_id   :integer          not null
-#  likeable_type :string           not null
+#  likeable_type :string(255)      not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

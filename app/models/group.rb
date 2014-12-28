@@ -3,20 +3,19 @@
 # Table name: groups
 #
 #  id          :integer          not null, primary key
-#  name        :string           not null
-#  slug        :string           not null
-#  email       :string           not null
-#  url         :string
-#  facebook    :string
-#  twitter     :string
-#  information :text
+#  name        :string(255)      not null
+#  email       :string(255)      not null
+#  url         :string(255)
+#  facebook    :string(255)
+#  twitter     :string(255)
+#  information :text             default("")
 #  created_at  :datetime
 #  updated_at  :datetime
 #
 
 class Group < ActiveRecord::Base
   include Commentable
-  include Posteable
+  include PostTarget
   include PostPublisher
   include EventPublisher
   include Likeable
@@ -29,16 +28,5 @@ class Group < ActiveRecord::Base
 
   has_many :groups_subscribers
   has_many :subscribers, through: :groups_subscribers, source: :user
-
-  extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged # you must do User.friendly.find('foo')
-
-  # Try building a slug based on the following fields in
-  # increasing order of specificity.
-  def slug_candidates
-    [
-    :name,
-    [:name, :id],
-    ]
-  end
+  has_many :events, -> { order(to_date: :desc) }, as: :host
 end

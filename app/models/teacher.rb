@@ -3,11 +3,10 @@
 # Table name: teachers
 #
 #  id          :integer          not null, primary key
-#  name        :string
-#  slug        :string           not null
-#  email       :string
-#  url         :string
-#  information :text
+#  name        :string(255)
+#  email       :string(255)
+#  url         :string(255)
+#  information :text             default("")
 #  created_at  :datetime
 #  updated_at  :datetime
 #
@@ -21,21 +20,11 @@ class Teacher < ActiveRecord::Base
   has_and_belongs_to_many :sections
   has_and_belongs_to_many :academic_unities
 
-  def faculty
-    # self.academic_unity.faculty 
+  def faculties
+    Faculty.joins(:academic_unities).merge(academic_unities)
   end
 
-  def courses
-    self.sections.courses
-  end
-
-  extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged
-
-  def slug_candidates
-    [
-    :name,
-    [:name, :id]
-    ]
+  def courses(year = current_year, semester = current_semester)
+    Course.joins(:sections).merge(sections.period(year, semester))#.order('courses.initials ASC')
   end
 end

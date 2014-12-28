@@ -4,9 +4,9 @@
 #
 #  id            :integer          not null, primary key
 #  user_id       :integer          not null
-#  valuation     :integer          default("0"), not null
+#  valuation     :integer          default(0), not null
 #  likeable_id   :integer          not null
-#  likeable_type :string           not null
+#  likeable_type :string(255)      not null
 #
 
 class Like < ActiveRecord::Base
@@ -18,5 +18,6 @@ class Like < ActiveRecord::Base
   scope :positive, -> { where(valuation: 1) }
   scope :negative, -> { where(valuation: -1) }
 
+  belongs_to :user
   belongs_to :likeable, polymorphic: true
 end

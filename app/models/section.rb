@@ -13,7 +13,7 @@
 
 class Section < ActiveRecord::Base
   include Commentable
-  include Posteable
+  include PostTarget
   include PostPublisher
   include EventPublisher
 
@@ -23,18 +23,38 @@ class Section < ActiveRecord::Base
   validates_uniqueness_of :course_id, scope: [:number, :year, :semester]
 
   belongs_to :course
-  has_many :schedule_items
 
+  has_many :schedule_items
   has_many :schedule_modules, through: :schedule_items
   has_many :places, through: :schedule_items
 
-  has_and_belongs_to_many :students, class_name: 'User'
+  has_and_belongs_to_many :section_students, class_name: 'User'
   has_and_belongs_to_many :teachers
 
   has_many :assistantships
-  has_many :assistants, through: :assistantships, class_name: 'User'
+  has_many :assistants, through: :assistantships, source: :user, class_name: 'User'
+
+  scope :period, lambda { |year, semester| where(year: year, semester: semester) }
+
+  #def self.period(course, year, semester)
+  #  where(course: course, year: year, semester: semester)
+  #end
+
+  def self.available_periods_for(course)
+    where(course: course).pluck(:year, :semester).uniq
+  end
 
   def identifier
     "#{self.course.initials}-#{self.number}"
   end
+
+  def self.find_by_identifier(identifier = '', year = current_year, semester = current_semester)
+    array = identifier.split('-')
+    find_by_name_and_number(array[0], array[1], year, semester) if array.size == 2
+  end
+
+  def self.find_by_name_and_number(initials, number, year = current_year, semester = current_semester)
+    period(year, semester).joins(:course).merge(Course.where(initials: initials))
+  end
+
 end

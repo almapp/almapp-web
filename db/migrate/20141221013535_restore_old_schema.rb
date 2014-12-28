@@ -1,14 +1,14 @@
 class RestoreOldSchema < ActiveRecord::Migration
   def change
     create_table "academic_unities", force: true do |t|
-      t.string   "short_name",  null: false
+      t.string   "abbreviation"
+      t.string   "short_name"
       t.string   "name"
       t.integer  "faculty_id"
-      t.string   "slug",        null: false
       t.string   "url"
       t.string   "email"
       t.string   "address"
-      t.text     "information"
+      t.text     "information", default: ""
       t.string   "facebook"
       t.string   "twitter"
       t.integer  "place_id"
@@ -16,9 +16,9 @@ class RestoreOldSchema < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
+    add_index "academic_unities", ["abbreviation", "faculty_id"], name: "index_academic_unities_on_abbreviation_and_organization_id", unique: true, using: :btree
     add_index "academic_unities", ["faculty_id"], name: "index_academic_unities_on_faculty_id", using: :btree
     add_index "academic_unities", ["place_id"], name: "index_academic_unities_on_place_id", using: :btree
-    add_index "academic_unities", ["slug", "faculty_id"], name: "index_academic_unities_on_slug_and_faculty_id", unique: true, using: :btree
 
     create_table "assistantships", force: true do |t|
       t.integer  "section_id", null: false
@@ -32,9 +32,9 @@ class RestoreOldSchema < ActiveRecord::Migration
     add_index "assistantships", ["section_id", "user_id"], name:"index_assistantships_sections_and_users", unique: true, using: :btree
 
     create_table "campuses", force: true do |t|
-      t.string   "abbreviation",                  null: false
-      t.string   "name",                          null: false
-      t.string   "slug",                          null: false
+      t.string   "abbreviation"
+      t.string   "short_name"
+      t.string   "name"
       t.integer  "organization_id",               null: false
       t.string   "address"
       t.string   "url"
@@ -42,7 +42,7 @@ class RestoreOldSchema < ActiveRecord::Migration
       t.string   "twitter"
       t.string   "phone"
       t.string   "email"
-      t.text     "description"
+      t.text     "information", default: ""
       t.integer  "place_id"
       t.datetime "created_at"
       t.datetime "updated_at"
@@ -51,30 +51,26 @@ class RestoreOldSchema < ActiveRecord::Migration
     add_index "campuses", ["abbreviation", "organization_id"], name: "index_campuses_on_cid_and_organization_id", unique: true, using: :btree
     add_index "campuses", ["place_id"], name: "index_campuses_on_place_id", using: :btree
     add_index "campuses", ["organization_id"], name: "index_campuses_on_organization_id", using: :btree
-    add_index "campuses", ["slug", "organization_id"], name: "index_campuses_on_slug_and_organization_id", unique: true, using: :btree
 
     create_table "careers", force: true do |t|
       t.string   "name",              null: false
       t.string   "url"
-      t.string   "slug",              null: false
       t.string   "curriculum_url"
       t.integer  "academic_unity_id"
-      t.text     "information"
+      t.text     "information", default: ""
       t.datetime "created_at"
       t.datetime "updated_at"
     end
 
     add_index "careers", ["academic_unity_id"], name: "index_careers_on_academic_unity_id", using: :btree
-    add_index "careers", ["slug", "academic_unity_id"], name: "index_careers_on_slug_and_academic_unity_id", unique: true, using: :btree
 
     create_table "courses", force: true do |t|
       t.string   "initials",                         null: false
       t.string   "name"
-      t.string   "slug",                             null: false
       t.integer  "credits"
       t.boolean  "availability",      default: true
       t.integer  "academic_unity_id"
-      t.text     "description"
+      t.text     "information", default: ""
       t.integer  "capacity"
       t.integer  "enrolled"
       t.datetime "created_at"
@@ -83,7 +79,6 @@ class RestoreOldSchema < ActiveRecord::Migration
 
     add_index "courses", ["academic_unity_id"], name: "index_courses_on_academic_unity_id", using: :btree
     add_index "courses", ["initials"], name: "index_courses_on_initials", unique: true, using: :btree
-    add_index "courses", ["slug", "academic_unity_id"], name: "index_courses_on_slug_and_academic_unity_id", unique: true, using: :btree
 
     create_table "enrolled_careers", force: true do |t|
       t.integer  "user_id",     null: false
@@ -113,9 +108,8 @@ class RestoreOldSchema < ActiveRecord::Migration
 
     create_table "events", force: true do |t|
       t.string   "title",                           null: false
-      t.string   "slug",                            null: false
       t.boolean  "private",         default: false
-      t.text     "description",                     null: false
+      t.text     "information",     default: "",    null: false
       t.datetime "publish_date",                    null: false
       t.integer  "place_id"
       t.datetime "from_date"
@@ -130,7 +124,6 @@ class RestoreOldSchema < ActiveRecord::Migration
     end
 
     add_index "events", ["place_id"], name: "index_events_on_place_id", using: :btree
-    add_index "events", ["slug"], name: "index_events_on_slug", unique: true, using: :btree
     add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
     add_index "events", ["host_id", "host_type"], name: "index_events_on_host_id_and_host_type", using: :btree
 
@@ -146,17 +139,16 @@ class RestoreOldSchema < ActiveRecord::Migration
     add_index "events_assistances", ["user_id", "event_id"], name: "index_events_assistances_on_user_id_and_event_id", unique: true, using: :btree
 
     create_table "faculties", force: true do |t|
-      t.string   "abbreviation",              null: false
-      t.string   "short_name",                null: false
-      t.string   "name",                      null: false
-      t.string   "slug",                      null: false
+      t.string   "abbreviation"
+      t.string   "short_name"
+      t.string   "name"
       t.integer  "campus_id",                 null: false
       t.string   "address"
       t.string   "phone"
       t.string   "email"
       t.string   "url"
       t.string   "facebook"
-      t.text     "description"
+      t.text     "information", default: ""
       t.string   "twitter"
       t.integer  "place_id"
       t.datetime "created_at"
@@ -167,21 +159,6 @@ class RestoreOldSchema < ActiveRecord::Migration
     add_index "faculties", ["place_id"], name: "index_faculties_on_place_id", using: :btree
     add_index "faculties", ["abbreviation", "campus_id"], name: "index_faculties_on_abbreviation_and_campus_id", unique: true, using: :btree
     add_index "faculties", ["short_name", "campus_id"], name: "index_faculties_on_short_name_and_campus_id", unique: true, using: :btree
-    add_index "faculties", ["slug", "campus_id"], name: "index_faculties_on_slug_and_campus_id", unique: true, using: :btree
-
-    ## Better use clean setup
-    # create_table "friendly_id_slugs", force: true do |t|
-    #   t.string   "slug",                      null: false
-    #   t.integer  "sluggable_id",              null: false
-    #   t.string   "sluggable_type", limit: 50
-    #   t.string   "scope"
-    #   t.datetime "created_at"
-    # end
-    #
-    # add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
-    # add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
-    # add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
-    # add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
     create_table "friendships", index: false, force: true do |t|
       t.integer  "user_id",                    null: false
@@ -197,17 +174,14 @@ class RestoreOldSchema < ActiveRecord::Migration
 
     create_table "groups", force: true do |t|
       t.string   "name",            null: false
-      t.string   "slug",            null: false
       t.string   "email",           null: false
       t.string   "url"
       t.string   "facebook"
       t.string   "twitter"
-      t.text     "information"
+      t.text     "information", default: ""
       t.datetime "created_at"
       t.datetime "updated_at"
     end
-
-    add_index "groups", ["slug"], name: "index_groups_on_slug", unique: true, using: :btree
 
     create_table "faculties_groups", index: false, force: true do |t|
       t.integer  "group_id",                    null: false
@@ -241,30 +215,31 @@ class RestoreOldSchema < ActiveRecord::Migration
     add_index "groups_subscribers", ["user_id", "group_id"], name: "index_groups_subscribers_on_user_id_and_group_id", unique: true, using: :btree
 
     create_table "organizations", force: true do |t|
-      t.string   "name",        null: false
-      t.string   "slug",        null: false
-      t.text     "information"
+      t.string   "name"
+      t.string   "short_name"
+      t.string   "abbreviation", null: false
+      t.text     "information",  default: ""
       t.string   "image"
       t.string   "url"
       t.datetime "created_at"
       t.datetime "updated_at"
       t.string   "facebook"
       t.string   "twitter"
+      t.integer  "place_id"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
 
-    add_index "organizations", ["slug"], name: "index_organizations_on_slug", unique: true, using: :btree
+    add_index "organizations", ["place_id"], name: "index_organizations_on_place_id", using: :btree
+    add_index "organizations", ["abbreviation"], name: "index_organizations_on_abbreviation", unique: true, using: :btree
 
     create_table "places", force: true do |t| # TODO polymorphic
       t.string   "identifier",                  null: false
-      #t.string   "slug",                        null: false
       t.string   "name"
       t.boolean  "service",     default: false, null: false
-      # t.integer  "campus_id"
       t.integer  "area_id",                     null: false
       t.string   "area_type",                   null: false
-      t.text     "description", default: ""
+      t.text     "information", default: ""
       t.float    "zoom",        default: 0.0
       t.float    "angle",       default: 0.0
       t.float    "tilt",        default: 0.0
@@ -275,9 +250,7 @@ class RestoreOldSchema < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
-    # add_index "places", ["campus_id"], name: "index_places_on_campus_id", using: :btree
     add_index "places", ["identifier", "area_id", "area_type"], name: "index_places_on_identifier_and_area", unique: true, using: :btree
-    # add_index "places", ["slug", "campus_id"], name: "index_places_on_slug_and_campus_id", unique: true, using: :btree
     add_index "places", ["area_id", "area_type"], name: "index_places_on_area_id_and_area_type", using: :btree
 
     create_table "posts", force: true do |t|
@@ -353,17 +326,13 @@ class RestoreOldSchema < ActiveRecord::Migration
 
     create_table "teachers", force: true do |t|
       t.string   "name"
-      t.string   "slug",              null: false
       t.string   "email"
       t.string   "url"
-      # t.integer  "academic_unity_id"
-      t.text     "information"
+      t.text     "information", default: ""
       t.datetime "created_at"
       t.datetime "updated_at"
     end
 
-    # add_index "teachers", ["academic_unity_id"], name: "index_teachers_on_academic_unity_id", using: :btree
-    add_index "teachers", ["slug"], name: "index_teachers_on_slug", unique: true, using: :btree
     add_index "teachers", ["name"], name: "index_teachers_on_name", using: :btree
 
     create_table "academic_unities_teachers", id: false, force: true do |t|
@@ -379,7 +348,6 @@ class RestoreOldSchema < ActiveRecord::Migration
       t.string   "name"
       t.string   "username",                               null: false
       t.string   "email",                  default: "",    null: false
-      t.string   "slug"
       t.string   "student_id"
       t.integer  "organization_id",                        null: false
       t.boolean  "admin",                  default: false
@@ -392,7 +360,6 @@ class RestoreOldSchema < ActiveRecord::Migration
 
     # add_index "users", ["email", "subdomain"], name: "index_users_on_email_and_subdomain", unique: true, using: :btree
     add_index "users", ["organization_id"], name: "index_users_on_organization_id", using: :btree
-    add_index "users", ["slug", "organization_id"], name: "index_users_on_slug_and_organization_id", unique: true, using: :btree
 
   end
 end

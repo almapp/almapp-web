@@ -5,9 +5,12 @@
 #  id                 :integer          not null, primary key
 #  schedule_module_id :integer
 #  section_id         :integer          not null
-#  class_type         :string
-#  place_name         :string
-#  campus_name        :string
+#  class_type         :string(255)
+#  place_name         :string(255)
+#  campus_name        :string(255)
+#  place_id           :integer
+#  created_at         :datetime
+#  updated_at         :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

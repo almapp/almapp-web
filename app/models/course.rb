@@ -3,13 +3,12 @@
 # Table name: courses
 #
 #  id                :integer          not null, primary key
-#  initials          :string           not null
-#  name              :string
-#  slug              :string           not null
+#  initials          :string(255)      not null
+#  name              :string(255)
 #  credits           :integer
-#  availability      :boolean          default("true")
+#  availability      :boolean          default(TRUE)
 #  academic_unity_id :integer
-#  description       :text
+#  information       :text             default("")
 #  capacity          :integer
 #  enrolled          :integer
 #  created_at        :datetime
@@ -18,7 +17,7 @@
 
 class Course < ActiveRecord::Base
   include Commentable
-  include Posteable
+  include PostTarget
   include PostPublisher
   include EventPublisher
   include Likeable
@@ -34,12 +33,32 @@ class Course < ActiveRecord::Base
   belongs_to :academic_unity
 
   has_many :sections
+  has_many :section_students, through: :sections, source: :section_students, class_name: 'User'
   has_many :teachers, through: :sections
 
-  extend FriendlyId
-  friendly_id :initials, use: :scoped, scope: :academic_unity # http://www.rubydoc.info/github/norman/friendly_id/FriendlyId/Scoped
-
-  def normalize_friendly_id(string)
-    super.upcase
+  def available_periods
+    Section.available_periods_for(self)
   end
+
+  def available_period?(year = current_year, semester = current_semester)
+    available_periods.include? [year, semester]
+  end
+
+  def self.for_period(year = current_year, semester = current_semester)
+    self.joins(:sections).merge(Section.period(year, semester))
+  end
+
+  def sections_for_period(year = current_year, semester = current_semester)
+    sections.period(year, semester)
+  end
+
+  def section_students_for_period(year = current_year, semester = current_semester)
+    section_students.joins(:sections).merge(Section.period(year, semester))
+  end
+
+  def teachers_for_period(year = current_year, semester = current_semester)
+    teachers.joins(:sections).merge(Section.period(year, semester))
+  end
+
+  # merge: http://api.rubyonrails.org/classes/ActiveRecord/SpawnMethods.html#method-i-merge
 end
