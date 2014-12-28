@@ -41,7 +41,37 @@ class User < ActiveRecord::Base
 
   # User.create(email: 'pelopez2@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
   # curl -H "Content-Type: application/json" -d '{"email":"cicontreras1@uc.cl","password":"miaumiaumiau", "organization_id":"1", "provider":"email", "password_confirmation":"miaumiaumiau", "confirm_success_url":"http://uc.lvh.me:3000/"}' -X POST http://uc.lvh.me:3000/api/v1/auth.json
-  # curl -H "Content-Type: application/json" -d '{"email":"pelopez2@uc.cl","password":"randompassword"}' -X POST http://localhost:3000/auth/sign_in.json
+
+  # http://uc.lvh.me:3000/api/v1/auth/sign_in.json?email=pelopez2@uc.cl&password=randompassword
+  # curl -H "Content-Type: application/json" -d '{"email":"pelopez2@uc.cl","password":"randompassword"}' -X POST http://uc.lvh.me:3000/api/v1/auth/sign_in.json
+
+  #Access-Token: XeyGZdFYdiYk7kQ0RfliLA
+  #Cache-Control: max-age=0, private, must-revalidate
+  #Client: Uunq7PSfOADXmFUXxTClag
+  #Connection: close
+  #Content-Length: 214
+  #Content-Type: application/json; charset=utf-8
+  #Date: Sun, 28 Dec 2014 02:01:42 GMT
+  #Etag: "3333e8169d1d6131fe90102bfd45483d"
+  #Expiry: 1420941702
+  #Server: WEBrick/1.3.1 (Ruby/2.1.4/2014-10-27)
+  #Token-Type: Bearer
+  #Uid: pelopez2@uc.cl
+  #X-Content-Type-Options: nosniff
+  #X-Frame-Options: SAMEORIGIN
+  #X-Request-Id: b4280d3c-911f-4a35-b813-df15431933e3
+  #X-Runtime: 0.516963
+  #X-Xss-Protection: 1; mode=block
+
+  # On GET add:
+  #"access-token": "XeyGZdFYdiYk7kQ0RfliLA",
+  #"token-type":   "Bearer",
+  #"client":       "Uunq7PSfOADXmFUXxTClag",
+  #"expiry":       "1420941702",
+  #"uid":          "pelopez2@uc.cl"
+
+  # URL: http://uc.lvh.me:3000/api/v1/campuses
+
 
   validates :organization_id, presence: true
   validates :username, presence: true

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
   end
 
   def current_organization
-    current_organization ||= Organization.find_with_subdomain(request.subdomain)
+    current_organization ||= Organization.first # Organization.find_with_subdomain(request.subdomain)
   end
 
   def current_subdomain
@@ -35,4 +35,5 @@ class ApplicationController < ActionController::API
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :organization_id
   end
+
 end

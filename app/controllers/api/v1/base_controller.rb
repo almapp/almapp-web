@@ -1,7 +1,7 @@
 module Api
   module V1
     class BaseController < ApplicationController
-      before_action :authenticate_user!, only: [:index, :create, :destroy, :update]
+      before_action :authenticate_user!, only: [:create, :destroy, :update]
       before_action :set_parent, only: [:index, :create]
       before_action :set_resource, only: [:show, :update, :destroy]
 
