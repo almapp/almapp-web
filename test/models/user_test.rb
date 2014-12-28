@@ -30,7 +30,6 @@
 #  unconfirmed_email      :string(255)
 #  tokens                 :text
 #  findeable              :boolean          default(TRUE), not null
-#  public_email           :boolean          default(TRUE), not null
 #
 
 require 'test_helper'
