@@ -1,10 +1,11 @@
-json.partial! template_for_resource, resource: @resource
+json.set! json_root do
+  json.partial! template_for_resource, resource: @resource
 
-json.organization do
-  json.cache! ['compact', @resource.organization] do
-    json.partial! template_for_resource(@resource.organization, 'compact'), resource: @resource.organization
+  json.organization do
+    json.cache! ['compact', @resource.organization] do
+      json.partial! template_for_resource(@resource.organization, 'compact'), resource: @resource.organization
+    end
   end
-end
 
 #json.sections do
 #  json.cache_collection! @resource.sections, key: 'compact', expires_in: normal do |section|
@@ -47,4 +48,4 @@ end
 #    json.partial! template_for_resource(content, 'compact'), resource: content
 #  end
 #end
-
+end

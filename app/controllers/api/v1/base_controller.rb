@@ -110,6 +110,10 @@ module Api
         end
       end
 
+      def json_root(resource = @resource)
+        resource.class.name.underscore.downcase
+      end
+
       def template_for_collections
         'api/v1/collections'
       end
@@ -140,7 +144,7 @@ module Api
       end
 
       helper Expiration
-      helper_method :template_for_resource, :polymorphic_type, :resource_path_for, :resource_url_for, :nested_resource_count, :template_for_collections, :get_periods
+      helper_method :json_root, :template_for_resource, :polymorphic_type, :resource_path_for, :resource_url_for, :nested_resource_count, :template_for_collections, :get_periods
 
       #=================
       #==== Methods ====
