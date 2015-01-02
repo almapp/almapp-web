@@ -13,6 +13,6 @@ json.set! json_root do
   end
 
   json.cache! ['collection', @resource], expires_in: normal do
-    json.partial! template_for_collections, collection: %w(courses places teachers comments events posts published_posts likes dislikes)
+    json.partial! template_for_collections, collection: %w(comments events posts likes dislikes)
   end
 end
