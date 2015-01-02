@@ -1,4 +1,4 @@
-json.extract! resource, :id, :abbreviation, :short_name, :name, :url, :facebook, :twitter, :like_count, :dislike_count, :information
+json.extract! resource, :id, :abbreviation, :short_name, :name, :address, :phone, :url, :facebook, :twitter, :like_count, :dislike_count, :information
 
 json.localization do
   if resource.localization.present?
