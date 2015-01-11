@@ -14,6 +14,8 @@
 #  facebook     :string(255)
 #  twitter      :string(255)
 #  place_id     :integer
+#  address      :string(255)
+#  phone        :string(255)
 #
 
 class Organization < ActiveRecord::Base
@@ -49,6 +51,7 @@ class Organization < ActiveRecord::Base
   has_and_belongs_to_many :groups
   has_many :enrolled_students, through: :faculties, source: :enrolled_students, class_name: 'User'
 
+  has_many :webpages
 
   # Overrides has_many relationship from Mapable
   def places

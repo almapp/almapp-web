@@ -102,10 +102,13 @@ Rails.application.routes.draw do
         resources :organizations, shallow: true do
           resources :schedule_modules
           resources :campuses
+          resources :webpages
         end
 
         resources :comments, only: [:show, :index],  concerns: :likeable
         resources :posts, :events, :places, only: [:show, :index], concerns: [:commentable, :likeable]
+
+        resources :webpages, only: [:show, :index]
 
         resources :likes, only: [:show]
         get '/likes' => 'likes#likes', as: :likes           # /likes
