@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   #=================
 
   # Each organization has a subdomain determined by their 'abbreviation' column, this column can't be null.
-  constraints(Subdomain) do
+  #constraints(Subdomain) do
 
     # https://github.com/lynndylanhurley/ng-token-auth/issues/75#issuecomment-66254414
     mount_devise_token_auth_for 'User', at: '/api/v1/auth', controllers: {
@@ -87,13 +87,21 @@ Rails.application.routes.draw do
         end
 
         #==================
+        #= Testing route ==
+        #==================
+
+        get '/testing/public_resource' => 'testing/tests#public_resource', as: :public_resource
+        get '/testing/private_resource' => 'testing/tests#private_resource', as: :private_resource
+
+        #==================
         #= General Routes =
         #==================
 
         resources :users
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
-        resources :organizations do
-          resources :schedule_modules, shallow: true
+        resources :organizations, shallow: true do
+          resources :schedule_modules
+          resources :campuses
         end
 
         resources :comments, only: [:show, :index],  concerns: :likeable
@@ -128,7 +136,7 @@ Rails.application.routes.draw do
         end
       end
     end
-  end
+  #end
 end
 
 
