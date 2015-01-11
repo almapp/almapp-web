@@ -28,12 +28,15 @@ class Campus < ActiveRecord::Base
   include Mapable
   include Nameable
 
-  validates :abbreviation, presence: true, uniqueness: {scope: :organization_id}
   validates :name, presence: true
   validates :organization_id, presence: true
 
+  validates :abbreviation, presence: true, uniqueness: {scope: :organization_id}
+  validates :short_name, presence: true, uniqueness: {scope: :organization_id}
+
   belongs_to :organization
 
+  has_many :buildings
   has_many :faculties
   has_many :academic_unities, through: :faculties
   has_many :careers, through: :faculties
@@ -45,12 +48,12 @@ class Campus < ActiveRecord::Base
 
   # Overrides has_many relationship from Mapable
   def places
-    Place.where('(places.area_id = ? AND places.area_type = \'Campus\') OR (places.area_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND places.area_type = \'Faculty\') OR (places.area_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND places.area_type = \'AcademicUnity\')', id, id, id)
+    Place.where('(places.area_id = ? AND places.area_type = \'Campus\') OR (places.area_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND places.area_type = \'Faculty\') OR (places.area_id IN (SELECT buildings.id FROM buildings WHERE buildings.campus_id = ?) AND places.area_type = \'Building\') OR (places.area_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND places.area_type = \'AcademicUnity\')', id, id, id, id)
   end
 
   # Overrides has_many relationship from EventPublisher
   def events
-    Event.where('(events.host_id = ? AND events.host_type = \'Campus\') OR (events.host_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND events.host_type = \'Faculty\') OR (events.host_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND events.host_type = \'AcademicUnity\')', id, id, id)
+    Event.where('(events.host_id = ? AND events.host_type = \'Campus\') OR (events.host_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND events.host_type = \'Faculty\') OR (events.host_id IN (SELECT buildings.id FROM buildings WHERE buildings.campus_id = ?) AND events.host_type = \'Building\') OR (events.host_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND events.host_type = \'AcademicUnity\')', id, id, id, id)
   end
 
   def campus

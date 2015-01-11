@@ -40,6 +40,7 @@ class Organization < ActiveRecord::Base
 
   has_many :campuses
   has_many :faculties, through: :campuses
+  has_many :buildings, through: :campuses
   has_many :academic_unities, through: :faculties
 
   has_many :careers, through: :academic_unities

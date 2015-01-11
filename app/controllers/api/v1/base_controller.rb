@@ -157,6 +157,8 @@ module Api
           AcademicUnity.find_by_id(params[:academic_unity_id])
         elsif params[:faculty_id]
           Faculty.find_by_id(params[:faculty_id])
+        elsif params[:building_id]
+          Building.find_by_id(params[:building_id])
         elsif params[:campus_id]
           Campus.find_by_id(params[:campus_id])
         else
@@ -187,6 +189,8 @@ module Api
           @parent = AcademicUnity.find(params[:academic_unity_id])
         elsif params[:faculty_id]
           @parent = Faculty.find(params[:faculty_id])
+        elsif params[:building_id]
+          Building.find_by_id(params[:building_id])
         elsif params[:campus_id]
           @parent = Campus.find(params[:campus_id])
         else

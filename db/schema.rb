@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111015304) do
+ActiveRecord::Schema.define(version: 20150111131428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,26 @@ ActiveRecord::Schema.define(version: 20150111015304) do
   add_index "assistantships", ["section_id", "user_id"], name: "index_assistantships_sections_and_users", unique: true, using: :btree
   add_index "assistantships", ["section_id"], name: "index_assistantships_on_section_id", using: :btree
   add_index "assistantships", ["user_id"], name: "index_assistantships_on_user_id", using: :btree
+
+  create_table "buildings", force: true do |t|
+    t.string   "abbreviation"
+    t.string   "short_name"
+    t.string   "name"
+    t.integer  "campus_id",                 null: false
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "url"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.text     "information",  default: ""
+    t.integer  "place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "buildings", ["campus_id"], name: "index_buildings_on_campus_id", using: :btree
+  add_index "buildings", ["place_id"], name: "index_buildings_on_place_id", using: :btree
 
   create_table "campuses", force: true do |t|
     t.string   "abbreviation"

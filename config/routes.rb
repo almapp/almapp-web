@@ -114,7 +114,7 @@ Rails.application.routes.draw do
         get '/likes' => 'likes#likes', as: :likes           # /likes
         get '/dislikes' => 'likes#dislikes', as: :dislikes  # /dislikes
 
-        resources :faculties, :academic_unities, :teachers, :careers, only: [:show, :index]
+        resources :faculties, :buildings, :academic_unities, :teachers, :careers, only: [:show, :index]
         resources :courses, only: [:show, :index], shallow: true do
           resources :sections, shallow: true do
             resources :schedule_items
@@ -136,6 +136,7 @@ Rails.application.routes.draw do
               resources :careers, :courses, :teachers, concerns: :likeable
             end
           end
+          resources :buildings, concerns: [:event_hosting, :commentable, :posteable, :likeable, :mapable]
         end
       end
     end

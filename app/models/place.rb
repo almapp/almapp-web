@@ -26,6 +26,7 @@ class Place < ActiveRecord::Base
   validates :identifier, presence: true
   validates :area_id, presence: true
   validates :area_type, presence: true
+  validates :identifier, uniqueness: { scope: [:area_type, :area_id] }
 
   belongs_to :area, polymorphic: true
 

@@ -478,7 +478,7 @@ Place.create(
 Place.create(
     identifier: 'AL1',
     name: 'AL1',
-    area: @sj,
+    area: @al,
     latitude: -33.497508,
     longitude: -70.609004,
     floor: '1',
@@ -491,7 +491,7 @@ Place.create(
 Place.create(
     identifier: 'AL2',
     name: 'AL2',
-    area: @sj,
+    area: @al,
     latitude: -33.497569,
     longitude: -70.608890,
     floor: '1',
@@ -504,7 +504,7 @@ Place.create(
 Place.create(
     identifier: 'AL3',
     name: 'AL3',
-    area: @sj,
+    area: @al,
     latitude: -33.497710,
     longitude: -70.608824,
     floor: '1',
@@ -517,7 +517,7 @@ Place.create(
 Place.create(
     identifier: 'AL4',
     name: 'AL4',
-    area: @sj,
+    area: @al,
     latitude: -33.497820,
     longitude: -70.608866,
     floor: '1',
@@ -569,7 +569,7 @@ Place.create(
 Place.create(
     identifier: 'AM1',
     name: 'AM1',
-    area: @sj,
+    area: @al,
     latitude: -33.498054,
     longitude: -70.609414,
     floor: '1',
@@ -582,7 +582,7 @@ Place.create(
 Place.create(
     identifier: 'AM2',
     name: 'AM2',
-    area: @sj,
+    area: @al,
     latitude: -33.498102,
     longitude: -70.609270,
     floor: '1',
@@ -595,7 +595,7 @@ Place.create(
 Place.create(
     identifier: 'AM3',
     name: 'AM3',
-    area: @sj,
+    area: @al,
     latitude: -33.498032,
     longitude: -70.609080,
     floor: '1',
@@ -2844,7 +2844,7 @@ Place.create(
 Place.create(
     identifier: 'CDI-102',
     name: 'CDI-102',
-    area: @sj,
+    area: @cdi,
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '1',
@@ -2857,7 +2857,7 @@ Place.create(
 Place.create(
     identifier: 'CDI-103',
     name: 'CDI-103',
-    area: @sj,
+    area: @cdi,
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '1',
@@ -2870,7 +2870,7 @@ Place.create(
 Place.create(
     identifier: 'CDI-201',
     name: 'CDI-201',
-    area: @sj,
+    area: @cdi,
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '2',
@@ -2883,7 +2883,7 @@ Place.create(
 Place.create(
     identifier: 'CDI-202',
     name: 'CDI-202',
-    area: @sj,
+    area: @cdi,
     latitude: -33.497796,
     longitude: -70.615314,
     floor: '2',

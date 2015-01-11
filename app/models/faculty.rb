@@ -30,11 +30,11 @@ class Faculty < ActiveRecord::Base
 
   validates :name, presence: true
   validates :campus_id, presence: true
-  validates :abbreviation, presence: true #, uniqueness: {scope: 'campus.organization'}
-  validates :short_name, presence: true   #,   uniqueness: {scope: 'campus.organization'}
+  validates :abbreviation, presence: true, uniqueness: {scope: :campus_id}
+  validates :short_name, presence: true, uniqueness: {scope: :campus_id}
 
   belongs_to :campus
-  delegate :organization, :to => :camp, :allow_nil => true
+  delegate :organization, :to => :campus, :allow_nil => true
 
   has_many :academic_unities
   has_many :courses, through: :academic_unities
