@@ -23,13 +23,13 @@ module Api
 
 			# Set strong params for the resource. Remember to change :resource for the actual name
 			def resource_params
-				params.require(:webpage).permit(:identifier, :name, :owner, :organization_id, :information, :available, :secure_protocol, :requires_login, :should_open_in_browser, :home_url, :base_url)
+				params.require(:webpage).permit(:identifier, :name, :owner, :organization_id, :page_type, :information, :available, :secure_protocol, :requires_login, :should_open_in_browser, :home_url, :base_url)
 			end
 
 			# Custom params to filter
 			def query_params
 				# allowing us to filter by this
-				params.permit(:identifier, :name)
+				params.permit(:identifier, :name, :page_type)
 			end
 
 		end
