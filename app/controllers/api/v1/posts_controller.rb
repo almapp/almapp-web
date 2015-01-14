@@ -24,7 +24,7 @@ module Api
 
 			# Set a parent to the resource if needed. This is called before saving on create.
 			def set_resource_parent
-				@resource.commentable = @parent
+				@resource.target = @parent
 			end
 
 			# Set strong params for the resource. Remember to change :resource for the actual name
