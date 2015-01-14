@@ -17,6 +17,9 @@ class Friendship < ActiveRecord::Base
   belongs_to :user
   belongs_to :friend, class_name: 'User'
 
+  scope :accepted_friends, -> { where(accepted: true) }
+  scope :pending_friends, -> { where(accepted: false) }
+
   def self.accept(user1, user2)
     friendship = Friendship.find_by_user_id_and_friend_id(user1, user2)
     friendship = Friendship.find_by_user_id_and_friend_id(user2, user1) unless friendship.present?

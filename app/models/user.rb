@@ -82,7 +82,18 @@ class User < ActiveRecord::Base
   end
 
   belongs_to :organization
+
   has_many :friendships
+
+  # Users who want to be my friends
+  has_many :pending_friendships, -> { where accepted: false }, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :pending_friends, through: :pending_friendships, source: :user, class_name: 'User'
+
+
+  # Users I want to be friends with
+  has_many :requested_friendships, -> { where accepted: false }, class_name: 'Friendship'
+  has_many :requested_friends, through: :requested_friendships, source: :friend
+
   has_and_belongs_to_many :sections
 
   has_many :assistantships
@@ -103,6 +114,15 @@ class User < ActiveRecord::Base
     self.public_email? ? read_attribute(:email) : 'private'
   end
 
+  def send_friend_request(user)
+    pending_friendship = Friendship.where(user: user, friend: self).first
+    if pending_friendship.present?
+      pending_friendship.accepted = true
+      pending_friendship.save!
+    else
+      Friendship.create!(user: self, friend: user)
+    end
+  end
 
   def friends
     # (friends.all + inverse_friends.all).uniq
@@ -110,7 +130,4 @@ class User < ActiveRecord::Base
     User.where('users.id IN ((SELECT friend_id FROM friendships WHERE user_id = (?) AND accepted = true) UNION (SELECT user_id FROM friendships WHERE friend_id = (?)  AND accepted = true))', self.id, self.id) #, :skip_logging)
   end
 
-  def pending_friends
-    User.where('users.id IN ((SELECT friend_id FROM friendships WHERE user_id = (?) AND accepted = false) UNION (SELECT user_id FROM friendships WHERE friend_id = (?)  AND accepted = false))', self.id, self.id)
-  end
 end
