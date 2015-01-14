@@ -51,13 +51,17 @@ class Campus < ActiveRecord::Base
     Place.where('(places.area_id = ? AND places.area_type = \'Campus\') OR (places.area_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND places.area_type = \'Faculty\') OR (places.area_id IN (SELECT buildings.id FROM buildings WHERE buildings.campus_id = ?) AND places.area_type = \'Building\') OR (places.area_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND places.area_type = \'AcademicUnity\')', id, id, id, id)
   end
 
+  # Overrides has_many relationship from PostTarget
+  def posts
+    Post.where('(posts.target_id = ? AND posts.target_type = \'Campus\') OR (posts.target_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND posts.target_type = \'Faculty\') OR (posts.target_id IN (SELECT buildings.id FROM buildings WHERE buildings.campus_id = ?) AND posts.target_type = \'Building\') OR (posts.target_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND posts.target_type = \'AcademicUnity\')', id, id, id, id)
+  end
+
   # Overrides has_many relationship from EventPublisher
   def events
     Event.where('(events.host_id = ? AND events.host_type = \'Campus\') OR (events.host_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND events.host_type = \'Faculty\') OR (events.host_id IN (SELECT buildings.id FROM buildings WHERE buildings.campus_id = ?) AND events.host_type = \'Building\') OR (events.host_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND events.host_type = \'AcademicUnity\')', id, id, id, id)
   end
 
   def campus
-    events.to_partial_path
-    return self
+    self
   end
 end

@@ -8,7 +8,7 @@ end
 
 json.extract! resource, :like_count, :dislike_count
 
-if controller.action_name == 'posts' || controller.action_name == 'index'
+# if controller.action_name == 'posts' || controller.action_name == 'index'
   json.entity do
     if resource.entity.present?
       polymorphic_type = polymorphic_type(resource.entity)
@@ -23,9 +23,9 @@ if controller.action_name == 'posts' || controller.action_name == 'index'
       json.null!
     end
   end
-end
+# end
 
-if controller.action_name == 'published_posts'
+# if controller.action_name == 'published_posts'
   json.target do
     if resource.target.present?
       polymorphic_type = polymorphic_type(resource.target)
@@ -40,7 +40,7 @@ if controller.action_name == 'published_posts'
       json.null!
     end
   end
-end
+# end
 
 json.localization do
   if resource.localization.present?
@@ -62,4 +62,4 @@ json.event do
   end
 end
 
-json.extract! resource, :content, :notify, :like_count, :dislike_count, :created_at, :updated_at
+json.extract! resource, :content, :notify, :hidden, :like_count, :dislike_count, :created_at, :updated_at

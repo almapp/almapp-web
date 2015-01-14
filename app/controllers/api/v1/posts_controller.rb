@@ -29,13 +29,13 @@ module Api
 
 			# Set strong params for the resource. Remember to change :resource for the actual name
 			def resource_params
-				params.require(:comment).permit(:user_id, :commentable_id, :commentable_type, :comment, :anonymous)
+				params.require(:comment).permit(:user_id, :commentable_id, :commentable_type, :comment, :hidden)
 			end
 
 			# Custom params to filter
 			def query_params
 				# allowing us to filter by this
-				params.permit(:user_id, :commentable_id, :commentable_type, :anonymous)
+				params.permit(:user_id, :commentable_id, :commentable_type, :hidden)
 			end
 
 		end

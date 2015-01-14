@@ -34,7 +34,6 @@
 
 class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
-  include PostPublisher
 
   before_create :skip_confirmation!
 
@@ -97,6 +96,8 @@ class User < ActiveRecord::Base
 
   has_many :commented_content, class_name: 'Comment'
   has_many :liked_content, class_name: 'Like'
+
+  has_many :published_posts, -> { order(created_at: :desc) }, :foreign_key => 'user_id', :class_name => 'Post'
 
   def email_with_override
     self.public_email? ? read_attribute(:email) : 'private'

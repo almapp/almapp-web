@@ -14,6 +14,7 @@
 #  event_id    :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  hidden      :boolean          default(FALSE), not null
 #
 
 class Post < ActiveRecord::Base
@@ -23,6 +24,8 @@ class Post < ActiveRecord::Base
   validates :user, presence: true
   validates :target_id, presence: true
   validates :target_type, presence: true
+  # validates :notify, presence: true, on: :update
+  # validates :hidden, presence: true, on: :update
   validates :content, length: {
                     minimum: 2,
                     maximum: 700,

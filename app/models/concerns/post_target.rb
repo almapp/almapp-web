@@ -2,17 +2,7 @@ module PostTarget
   extend ActiveSupport::Concern
 
   included do
-    has_many :posts, -> { order(created_at: :desc) }, as: :target
-  end
-
-  # for the given article/event returns the first comment
-  def find_first_comment
-    comments.first
-  end
-
-  module ClassMethods
-    def least_commented
-      #returns the article/event which has the least number of comments
-    end
+    has_many :direct_posts, as: :target, class_name: 'Post'
+    has_many :posts, as: :target, class_name: 'Post' # Override with custom method if needed
   end
 end

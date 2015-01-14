@@ -47,16 +47,21 @@ class Faculty < ActiveRecord::Base
   has_and_belongs_to_many :groups
 
   has_many :academic_unity_places, through: :academic_unities, source: :places, class_name: 'Place'
-
+  has_many :academic_unity_posts, through: :academic_unities, source: :posts, class_name: 'Post'
   has_many :academic_unity_events, through: :academic_unities, source: :events, class_name: 'Event'
 
   # Overrides has_many relationship from Mapable
   def places
-    first_level_places.append(academic_unity_places)
+    Place.where('(places.area_id = ? AND places.area_type = \'Faculty\') OR (places.area_id IN (SELECT academic_unities.id FROM academic_unities WHERE academic_unities.faculty_id = ?) AND places.area_type = \'AcademicUnity\')', id, id)
+  end
+
+  # Overrides has_many relationship from PostTarget
+  def posts
+    Post.where('(posts.target_id = ? AND posts.target_type = \'Faculty\') OR (posts.target_id IN (SELECT academic_unities.id FROM academic_unities WHERE academic_unities.faculty_id = ?) AND posts.target_type = \'AcademicUnity\')', id, id)
   end
 
   # Overrides has_many relationship from EventPublisher
   def events
-    hosting_events.append(academic_unity_events)
+    Event.where('(events.host_id = ? AND events.host_type = \'Faculty\') OR (events.host_id IN (SELECT academic_unities.id FROM academic_unities WHERE academic_unities.faculty_id = ?) AND events.host_type = \'AcademicUnity\')', id, id)
   end
 end
