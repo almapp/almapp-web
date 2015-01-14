@@ -45,6 +45,7 @@ class Event < ActiveRecord::Base
     end
   end
 
+  belongs_to :user
   belongs_to :host, polymorphic: true
   belongs_to :localization, :class_name => 'Place', :foreign_key => 'place_id'
 
