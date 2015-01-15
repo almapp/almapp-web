@@ -5,58 +5,21 @@ puts('Creating campuses')
 # Table name: campuses
 #
 #  id              :integer          not null, primary key
-#  abbreviation    :string           not null
-#  name            :string           not null
-#  organization :integer          not null
-#  address         :string
-#  url             :string
-#  facebook        :string
-#  twitter         :string
-#  phone           :string
-#  email           :string
-#  information     :text
+#  abbreviation    :string(255)
+#  short_name      :string(255)
+#  name            :string(255)
+#  organization_id :integer          not null
+#  address         :string(255)
+#  url             :string(255)
+#  facebook        :string(255)
+#  twitter         :string(255)
+#  phone           :string(255)
+#  email           :string(255)
+#  information     :text             default("")
 #  place_id        :integer
 #  created_at      :datetime
 #  updated_at      :datetime
-
-# Table name: places
 #
-#  id          :integer          not null, primary key
-#  identifier  :string           not null
-#  name        :string
-#  service     :boolean          default("false"), not null
-#  area_id     :integer          not null
-#  area_type   :string           not null
-#  information :text             default("")
-#  zoom        :float            default("0.0")
-#  angle       :float            default("0.0")
-#  tilt        :float            default("0.0")
-#  latitude    :float            default("0.0")
-#  longitude   :float            default("0.0")
-#  floor       :string
-
-### Template:
-# Campus.create( abbreviation: '',
-#                name: '',
-#                organization: @uc,
-#                address: '',
-#                url: nil,
-#                facebook: nil,
-#                twitter: nil,
-#                phone: nil,
-#                email: nil,
-#                information: nil,
-#                localization: Place.new( identifier: 'CAMPUS SJ',
-#                                         name: "Campus San Joaquín",
-#                                         area: @uc,
-#                                         latitude: -33.498386,
-#                                         longitude: -70.611716,
-#                                         zoom: 17,
-#                                         angle: 90,
-#                                         tilt: 30,
-#                                         floor: 1
-#                                         )
-# )
 
 @sj = Campus.create( abbreviation: 'SJ',
                      name: 'San Joaquín',
@@ -82,7 +45,7 @@ puts('Creating campuses')
 
 @cc = Campus.create( abbreviation: 'CC',
                      name: 'Casa Central',
-                     organization_id: @uc.id,
+                     organization: @uc,
                      address: 'Av. Alameda 340, Santiago, Chile',
                      url: nil,
                      facebook: nil,
@@ -104,7 +67,7 @@ puts('Creating campuses')
 
 @lc = Campus.create( abbreviation: 'LC',
                      name: 'Lo Contador',
-                     organization_id: @uc.id,
+                     organization: @uc,
                      address: 'El Comendador 1916, Providencia, Chile',
                      url: nil,
                      facebook: nil,
@@ -126,7 +89,7 @@ puts('Creating campuses')
 
 @co = Campus.create( abbreviation: 'OR',
                      name: 'Campus Oriente',
-                     organization_id: @uc.id,
+                     organization: @uc,
                      address: 'Av. Jaime Guzmán Errázuriz 3300, Providencia, Chile',
                      url: nil,
                      facebook: nil,
@@ -148,7 +111,7 @@ puts('Creating campuses')
 
 @vr = Campus.create( abbreviation: 'VR',
                      name: 'Villarica',
-                     organization_id: @uc.id,
+                     organization: @uc,
                      address: 'Bernardo O''Higgins 501, Villarrica, Chile',
                      url: nil,
                      facebook: nil,
@@ -170,7 +133,7 @@ puts('Creating campuses')
 
 @ex = Campus.create( abbreviation: 'EX',
                      name: 'Campus Externo',
-                     organization_id: @uc.id,
+                     organization: @uc,
                      address: nil,
                      url: nil,
                      facebook: nil,

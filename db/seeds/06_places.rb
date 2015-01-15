@@ -5,33 +5,21 @@ puts('Creating places')
 # Table name: places
 #
 #  id          :integer          not null, primary key
-#  identifier  :string           not null
-#  name        :string
-#  service     :boolean          default("false"), not null
+#  identifier  :string(255)      not null
+#  name        :string(255)
+#  service     :boolean          default(FALSE), not null
 #  area_id     :integer          not null
-#  area_type   :string           not null
+#  area_type   :string(255)      not null
 #  information :text             default("")
-#  zoom        :float            default("0.0")
-#  angle       :float            default("0.0")
-#  tilt        :float            default("0.0")
-#  latitude    :float            default("0.0")
-#  longitude   :float            default("0.0")
-#  floor       :string
+#  zoom        :float            default(0.0)
+#  angle       :float            default(0.0)
+#  tilt        :float            default(0.0)
+#  latitude    :float            default(0.0)
+#  longitude   :float            default(0.0)
+#  floor       :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
-
-### Template:
-# Place.create(
-# 	identifier: '',
-# 	name: '',
-# 	faculty_id: nil,
-# 	coords: '',
-# 	floor: ,
-# 	# 	information: nil,
-# 	zoom: 0.0,
-# 	angle: 0.0,
-# 	tilt: 0.0
-# )
+#
 
 Place.create(
     identifier: 'ENF_117',

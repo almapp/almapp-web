@@ -1,10 +1,31 @@
 puts('Creating buildings')
 
+# == Schema Information
+#
+# Table name: buildings
+#
+#  id           :integer          not null, primary key
+#  abbreviation :string(255)
+#  short_name   :string(255)
+#  name         :string(255)
+#  campus_id    :integer          not null
+#  address      :string(255)
+#  phone        :string(255)
+#  email        :string(255)
+#  url          :string(255)
+#  facebook     :string(255)
+#  twitter      :string(255)
+#  information  :text             default("")
+#  place_id     :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 @cdi = Building.create(
     abbreviation: 'CDI',
     name: 'Centro de Innovación UC - Anacleto Angelini',
     short_name: 'Centro de Innovación',
-    campus_id: @sj.id,
+    campus: @sj,
     address: 'Av. Vicuña Mackenna 4860, Macul, Santiago, Chile',
     url: 'http://centrodeinnovacion.uc.cl/',
     facebook: 'https://www.facebook.com/pages/Centro-de-Innovación-UC/673851555989524',
@@ -29,7 +50,7 @@ El Centro aspira a hacer una contribución muy significativa en nuestra sociedad
     abbreviation: 'Hall SJ',
     name: 'Hall Universitario - San Joaquín',
     short_name: 'Hall Universitario',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: '',
     facebook: '',
@@ -53,7 +74,7 @@ El Centro aspira a hacer una contribución muy significativa en nuestra sociedad
     abbreviation: 'AL',
     name: 'Aula Magna',
     short_name: 'Aula Magna',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: '',
     facebook: '',
@@ -77,7 +98,7 @@ El Centro aspira a hacer una contribución muy significativa en nuestra sociedad
     abbreviation: 'Templo',
     name: 'Templo',
     short_name: 'Templo',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: '',
     facebook: '',

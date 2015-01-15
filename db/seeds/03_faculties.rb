@@ -1,54 +1,33 @@
 puts('Creating faculties')
 
+# Source: http://www.uc.cl/es/facultades-y-unidades-academicas
+
 # == Schema Information
 #
 # Table name: faculties
 #
 #  id           :integer          not null, primary key
-#  abbreviation :string           not null
-#  short_name   :string           not null
-#  name         :string           not null
+#  abbreviation :string(255)
+#  short_name   :string(255)
+#  name         :string(255)
 #  campus_id    :integer          not null
-#  address      :string
-#  phone        :string
-#  email        :string
-#  url          :string
-#  facebook     :string
-#  information  :text
-#  twitter      :string
+#  address      :string(255)
+#  phone        :string(255)
+#  email        :string(255)
+#  url          :string(255)
+#  facebook     :string(255)
+#  information  :text             default("")
+#  twitter      :string(255)
 #  place_id     :integer
 #  created_at   :datetime
 #  updated_at   :datetime
 #
 
-# Source: http://www.uc.cl/es/facultades-y-unidades-academicas
-
-### Template:
-# Faculty.create(
-#     abbreviation: '',
-#     name: '',
-#     short_name: '',
-#     campus_id: nil,
-#     address: '',
-#     url: nil,
-#     facebook: nil,
-#     twitter: nil,
-#     phone: nil,
-#     email: nil,
-#     information: nil,
-#     latitude: 0.0, 
-#     longitude: 0.0,
-#     area: @uc,
-#     zoom: 0,
-#     angle: 0,
-#     tilt: 0
-# )
-
 @agro = Faculty.create(
     abbreviation: 'AGC',
     name: 'Facultad de Agronomía e Ingeniería Forestal',
     short_name: 'Agronomía e Ingeniería Forestal',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://agronomia.uc.cl/',
     facebook: 'https://www.facebook.com/faifuc',
@@ -57,8 +36,6 @@ puts('Creating faculties')
     email: 'agroforestal@uc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'AGC',
-        name: "Facultad de Agronomía e Ingeniería Forestal",
         latitude: -33.496591,
         longitude: -70.609579,
         area: @sj,
@@ -72,7 +49,7 @@ puts('Creating faculties')
     abbreviation: 'FADEU',
     name: 'Facultad de Arquitectura, Diseño y Estudios Urbanos',
     short_name: 'Arquitectura, Diseño y Estudios Urbanos',
-    campus_id: @lc.id,
+    campus: @lc,
     address: '',
     url: 'http://fadeu.puc.cl/',
     facebook: 'https://www.facebook.com/fadeuuc',
@@ -81,8 +58,6 @@ puts('Creating faculties')
     email: 'fadeu@uc.cl',
     information: 'Facultad de Arquitectura, Diseño y Estudios Urbanos de la Pontificia Universidad Católica de Chile.\nLa facultad está compuesta por 3 unidades: la Escuela de Arquitectura, la Escuela de Diseño y el Instituto de Estudios Urbanos.',
     localization: Place.create(
-        identifier: 'FADEU',
-        name: "Facultad de Arquitectura, Diseño y Estudios Urbanos",
         latitude: -33.419495,
         longitude: -70.618351,
         area: @lc,
@@ -96,7 +71,7 @@ puts('Creating faculties')
     abbreviation: 'ART',
     name: 'Facultad de Artes',
     short_name: 'Artes',
-    campus_id: @co.id,
+    campus: @co,
     address: 'Avda. Jaime Guzmán Errázuriz 3300, Providencia, Santiago, Chile.',
     url: 'http://artes.uc.cl/',
     facebook: 'https://www.facebook.com/ExtensionFacultadArtesUC',
@@ -105,8 +80,6 @@ puts('Creating faculties')
     email: 'mjleon@uc.cl',
     information: 'Somos una red dedicada a generar espacios diálogo y comunicar las actividades de los estudiantes, egresados y profesores de la Facultad de Artes UC y de otros núcleos de desarrollo artístico en Chile. Escríbenos a mjleon@uc.cl',
     localization: Place.create(
-        identifier: 'ART',
-        name: "Facultad de Artes",
         latitude: -33.446092,
         longitude: -70.593395,
         area: @co,
@@ -120,7 +93,7 @@ puts('Creating faculties')
     abbreviation: 'BIO',
     name: 'Facultad de Ciencias Biológicas',
     short_name: 'Ciencias Biológicas',
-    campus_id: @cc.id,
+    campus: @cc,
     address: '',
     url: 'http://biologia.uc.cl/es/',
     facebook: nil,
@@ -129,8 +102,6 @@ puts('Creating faculties')
     email: 'decanato@bio.puc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'BIO',
-        name: "Facultad de Ciencias Biológicas",
         latitude: -33.441677,
         longitude:  -70.639494,
         area: @cc,
@@ -141,10 +112,10 @@ puts('Creating faculties')
 )
 
 @eco = Faculty.create(
-    abbreviation: 'ECO',
+    abbreviation: 'EA',
     name: 'Facultad de Ciencias Económicas y Administrativas',
     short_name: 'Ciencias Económicas y Administrativas',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://economiayadministracion.uc.cl/',
     facebook: nil,
@@ -153,8 +124,6 @@ puts('Creating faculties')
     email: nil,
     information: nil,
     localization: Place.create(
-        identifier: 'ECO',
-        name: "Facultad de Ciencias Económicas y Administrativas",
         latitude: -33.497020,
         longitude: -70.611462,
         area: @sj,
@@ -168,7 +137,7 @@ puts('Creating faculties')
     abbreviation: 'SOC',
     name: 'Facultad de Ciencias Sociales',
     short_name: 'Ciencias Sociales',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: nil,
     facebook: nil,
@@ -177,8 +146,6 @@ puts('Creating faculties')
     email: nil,
     information: nil,
     localization: Place.create(
-        identifier: 'SOC',
-        name: "Facultad de Ciencias Sociales",
         latitude: -33.498357,
         longitude: -70.610006,
         area: @sj,
@@ -192,7 +159,7 @@ puts('Creating faculties')
     abbreviation: 'COM',
     name: 'Facultad de Comunicaciones',
     short_name: 'Comunicaciones',
-    campus_id: @cc.id,
+    campus: @cc,
     address: '',
     url: 'http://comunicaciones.uc.cl/',
     facebook: 'https://www.facebook.com/fcomuc',
@@ -201,8 +168,6 @@ puts('Creating faculties')
     email: 'fcomunicaciones@uc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.441442,
         longitude: -70.640749,
         area: @cc,
@@ -216,7 +181,7 @@ puts('Creating faculties')
     abbreviation: 'LET',
     name: 'Facultad de Letras',
     short_name: 'Letras',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://www7.uc.cl/letras/',
     facebook: 'https://www.facebook.com/letrasuc',
@@ -225,8 +190,6 @@ puts('Creating faculties')
     email: nil,
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.496700,
         longitude: -70.613790,
         area: @sj,
@@ -237,10 +200,10 @@ puts('Creating faculties')
 )
 
 @derecho = Faculty.create(
-    abbreviation: 'DEC',
+    abbreviation: 'DE',
     name: 'Facultad de Derecho',
     short_name: 'Derecho',
-    campus_id: @cc.id,
+    campus: @cc,
     address: '',
     url: 'http://derecho.uc.cl/',
     facebook: 'https://www.facebook.com/derechouc',
@@ -249,8 +212,6 @@ puts('Creating faculties')
     email: 'comunicacionesderechouc@uc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.441022,
         longitude: -70.640158,
         area: @cc,
@@ -264,7 +225,7 @@ puts('Creating faculties')
     abbreviation: 'EDU',
     name: 'Facultad de Educación',
     short_name: 'Educación',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://educacion.uc.cl/',
     facebook: nil,
@@ -273,8 +234,6 @@ puts('Creating faculties')
     email: 'educacionuc@uc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.498128,
         longitude: -70.614241,
         area: @sj,
@@ -288,7 +247,7 @@ puts('Creating faculties')
     abbreviation: 'FIL',
     name: 'Facultad de Filosofía',
     short_name: 'Filosofía',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: nil,
     facebook: nil,
@@ -297,8 +256,6 @@ puts('Creating faculties')
     email: nil,
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.497217,
         longitude: -70.613997,
         area: @sj,
@@ -312,7 +269,7 @@ puts('Creating faculties')
     abbreviation: 'FIS',
     name: 'Facultad de Física',
     short_name: 'Física',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://fisica.uc.cl/',
     facebook: nil,
@@ -321,8 +278,6 @@ puts('Creating faculties')
     email: nil,
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.499441,
         longitude: -70.611044,
         area: @sj,
@@ -336,7 +291,7 @@ puts('Creating faculties')
     abbreviation: 'HIS',
     name: 'Facultad de Historia, Geografía y Ciencia Política',
     short_name: 'Historia, Geografía y Ciencia Política',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://www7.uc.cl/historiageografiaycienciapolitica/',
     facebook: nil,
@@ -345,8 +300,6 @@ puts('Creating faculties')
     email: nil,
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.497075,
         longitude: -70.613188,
         area: @sj,
@@ -360,7 +313,7 @@ puts('Creating faculties')
     abbreviation: 'CCL',
     name: 'Escuela de Construcción Civil',
     short_name: 'Construcción Civil',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://www7.uc.cl/construc_civil',
     facebook: nil,
@@ -369,8 +322,6 @@ puts('Creating faculties')
     email: 'webeccuc@uc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.498969,
         longitude: -70.613837,
         area: @sj,
@@ -384,7 +335,7 @@ puts('Creating faculties')
     abbreviation: 'ING',
     name: 'Escuela de Ingeniería',
     short_name: 'Ingeniería',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://www.ing.puc.cl/',
     facebook: 'https://www.facebook.com/EscueladeIngenieriaUniversidadCatolica',
@@ -393,8 +344,6 @@ puts('Creating faculties')
     email: 'comunicaciones@ing.puc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.500000,
         longitude: -70.612870,
         area: @sj,
@@ -408,7 +357,7 @@ puts('Creating faculties')
     abbreviation: 'MAT',
     name: 'Facultad de Matemática',
     short_name: 'Matemática',
-    campus_id: @sj.id,
+    campus: @sj,
     address: 'Edificio Rolando Chuaqui. Facultad de Matemáticas. Avda. Vicuña Mackenna #4860. Macul, Santiago. Chile.',
     url: 'http://www.mat.uc.cl/',
     facebook: nil,
@@ -417,8 +366,6 @@ puts('Creating faculties')
     email: nil,
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.499796,
         longitude: -70.610610,
         area: @sj,
@@ -432,7 +379,7 @@ puts('Creating faculties')
     abbreviation: 'ENF',
     name: 'Escuela de Enfermería',
     short_name: 'Enfermería',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: nil,
     facebook: 'https://www.facebook.com/escueladeenfermeria.uc',
@@ -441,8 +388,6 @@ puts('Creating faculties')
     email: 'escueladeenfermeria@uc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.498938,
         longitude: -70.613059,
         area: @sj,
@@ -456,7 +401,7 @@ puts('Creating faculties')
     abbreviation: 'MED',
     name: 'Escuela de Medicina',
     short_name: 'Medicina',
-    campus_id: @cc.id,
+    campus: @cc,
     address: 'Alameda Libertador Bernardo O´Higgins 340, 8331150 Santiago de Chile',
     url: 'http://medicina.uc.cl/',
     facebook: 'https://www.facebook.com/escuelamedicinauc',
@@ -465,8 +410,6 @@ puts('Creating faculties')
     email: 'escuelamedicina@uc.cl',
     information: nil,
     localization: Place.create(
-        identifier: 'XXXXXX',
-        name: "CXXXXXX",
         latitude: -33.441458,
         longitude: -70.640379,
         area: @cc,
@@ -480,7 +423,7 @@ puts('Creating faculties')
     abbreviation: 'QIM',
     name: 'Facultad de Química',
     short_name: 'Química',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://www.quimica.uc.cl/',
     facebook: nil,
@@ -504,7 +447,7 @@ puts('Creating faculties')
     abbreviation: 'TTF',
     name: 'Facultad de Teología',
     short_name: 'Teología',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://teologia.uc.cl/',
     facebook: nil,
@@ -528,7 +471,7 @@ puts('Creating faculties')
     abbreviation: 'VR',
     name: 'Campus Villarrica',
     short_name: 'Villarrica',
-    campus_id: @vr.id,
+    campus: @vr,
     address: 'Pontificia Universidad Católica de Chile - Bernardo OHiggins 501 - Villarrica - Chile',
     url: 'http://villarrica.uc.cl/',
     facebook: nil,
@@ -552,7 +495,7 @@ puts('Creating faculties')
     abbreviation: 'D',
     name: 'College',
     short_name: 'College',
-    campus_id: @sj.id,
+    campus: @sj,
     address: '',
     url: 'http://college.uc.cl/',
     facebook: nil,

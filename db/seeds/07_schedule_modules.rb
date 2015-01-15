@@ -1,17 +1,20 @@
 puts('Creating schedule modules')
 
+# == Schema Information
+#
 # Table name: schedule_modules
 #
 #  id              :integer          not null, primary key
 #  organization_id :integer          not null
-#  initials        :string           not null
+#  initials        :string(255)      not null
 #  day             :integer          not null
 #  block           :integer          not null
-#  start_time      :string           not null
-#  end_time        :string           not null
+#  start_time      :string(255)      not null
+#  end_time        :string(255)      not null
 #
 
 @uc = Organization.find_by_abbreviation('UC')
+
 def create_modules(days, blocks, start_times, end_times)
   days.each do |day|
     blocks.each do |block|

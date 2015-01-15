@@ -36,7 +36,8 @@ class Place < ActiveRecord::Base
   before_validation :set_missing_name
 
   def set_missing_name
-    self.name = identifier unless self.name.present?
+    self.identifier = self.area.abbreviation if self.identifier.blank?
+    self.name = identifier if self.name.blank?
   end
 
   # TODO validate uniqueness on campus
