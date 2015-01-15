@@ -32,7 +32,7 @@ if testing
   Post.create!(user: pato, content:'short post', target: Campus.first )
   Post.create!(user: pato, content:'Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. ', target: Campus.first.faculties.first )
   Post.create!(user: consuelo, content:'Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.', target: Campus.first.faculties.first.academic_unities.first)
-  Post.create!(user: consuelo, content:'Lorem ipsum ad his scripta blandit partiendo', target: Campus.first, localization:Place.find(40))
+  Post.create!(user: consuelo, content:'Lorem ipsum ad his scripta blandit partiendo', target: Campus.first, localization:Place.find_by_identifier('ENF_219'))
   Post.create!(user: consuelo, content:'Ius id vidit volumus mandamus, vide veritus democritum te nec', target: Campus.first.buildings.first, event: event)
 
   event.participants << consuelo
