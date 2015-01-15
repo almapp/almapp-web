@@ -57,20 +57,20 @@ class Organization < ActiveRecord::Base
   # Overrides has_many relationship from Mapable
   def places
     #first_level_places.append(campuses_places) # TODO create query
-    result = first_level_places.to_a
-    campuses.all.each do |campus|
-      result.append(campus.places.to_a)
-    end
-    return result
+    # result = first_level_places.to_a
+    # campuses.all.each do |campus|
+    #   result.append(campus.places.to_a)
+    # end
+    # return result
   end
 
   # Overrides has_many relationship from PostTarget
   def posts
-    result = direct_posts
-    campuses.all.each do |campus|
-      result.append(campus.posts)
-    end
-    return result
+    # result = direct_posts
+    # campuses.all.each do |campus|
+    #   result.append(campus.posts)
+    # end
+    # return result
   end
 
   # Overrides has_many relationship from EventPublisher
