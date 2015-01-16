@@ -22,6 +22,8 @@ end
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
 
 if testing
+  puts 'Creating testing resources'
+
   pato = User.create(name:'Patricio López', email: 'pelopez2@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
   consuelo = User.create(name: 'Consuelo Contreras', email: 'cicontreras1@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
   consuelo.send_friend_request(pato)
@@ -39,4 +41,11 @@ if testing
   event.participants << pato
   event.save!
 
+  Post.first.set_like_by(consuelo)
+  Campus.first.set_like_by(pato)
+
+  group = Group.create!(name: 'Example Group', email:'example@example.ex', information:'Lorem ipsum ad his scripta blandit partiendo.', url:'http://www.google.cl')
+  group.subscribers << pato
+  group.subscribers << consuelo
+  group.save!
 end
