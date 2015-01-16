@@ -22,8 +22,8 @@ end
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
 
 if testing
-  pato = User.create(email: 'pelopez2@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
-  consuelo = User.create(email: 'cicontreras1@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
+  pato = User.create(name:'Patricio López', email: 'pelopez2@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
+  consuelo = User.create(name: 'Consuelo Contreras', email: 'cicontreras1@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
   consuelo.send_friend_request(pato)
   pato.send_friend_request(consuelo)
 
