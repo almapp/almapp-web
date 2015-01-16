@@ -89,10 +89,12 @@ class User < ActiveRecord::Base
   has_many :pending_friendships, -> { where accepted: false }, class_name: 'Friendship', foreign_key: 'friend_id'
   has_many :pending_friends, through: :pending_friendships, source: :user, class_name: 'User'
 
-
   # Users I want to be friends with
   has_many :requested_friendships, -> { where accepted: false }, class_name: 'Friendship'
   has_many :requested_friends, through: :requested_friendships, source: :friend
+
+  has_many :groups_subscribers
+  has_many :subscribed_groups, through: :groups_subscribers, source: :group, class_name: 'Group'
 
   has_and_belongs_to_many :sections
 

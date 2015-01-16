@@ -20,10 +20,10 @@ class Group < ActiveRecord::Base
   include EventPublisher
   include Likeable
 
-  validates :email, presence: true, uniqueness: true, format: /\A[a-z0-9]+[a-z0-9\._-]*@[a-z0-9\.]+\.[a-z]{2,5}\z/i
   validates :name, presence: true
+  validates :email, presence: true, uniqueness: true, format: /\A[a-z0-9]+[a-z0-9\._-]*@[a-z0-9\.]+\.[a-z]{2,5}\z/i
 
-  has_and_belongs_to_many :organizations
+  has_and_belongs_to_many :organizations #TODO create polymorphic n-to-n
   has_and_belongs_to_many :faculties
 
   has_many :groups_subscribers
