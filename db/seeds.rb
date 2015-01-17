@@ -37,6 +37,22 @@ if testing
   Post.create!(user: consuelo, content:'Lorem ipsum ad his scripta blandit partiendo', target: Campus.first, localization:Place.find_by_identifier('ENF_219'))
   Post.create!(user: consuelo, content:'Ius id vidit volumus mandamus, vide veritus democritum te nec', target: Campus.first.buildings.first, event: event)
 
+  contents = ['Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in',
+              'Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos.',
+              'Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.',
+              'Ius id vidit volumus mandamus, vide veritus democritum te nec',
+              'Lorem'
+  ]
+  number_of_generated_posts = 100
+  number_of_generated_posts.times do
+    user = rand(0 .. 1) == 0 ? pato : consuelo
+    place = Place.find(rand(1 .. Place.count - 1)) if rand(0 .. 1) == 1
+    target = [Organization, Campus, Faculty, AcademicUnity, Building]
+    target = target[rand(target.size)].first
+    content = contents[rand(contents.size)]
+    Post.create!(user: user, target: target, localization:place, content:content)
+  end
+
   event.participants << consuelo
   event.participants << pato
   event.save!
