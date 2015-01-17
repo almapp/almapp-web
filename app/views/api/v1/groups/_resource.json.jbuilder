@@ -1,5 +1,7 @@
 json.extract! resource, :id, :name, :email, :facebook, :twitter, :like_count, :dislike_count, :information
 
+json.set! 'subscribers_count', resource.subscribers.size
+
 json.organizations resource.organizations do |organization|
   json.cache! ['compact', organization] do
     json.partial! template_for_resource(organization, 'compact'), resource: organization
