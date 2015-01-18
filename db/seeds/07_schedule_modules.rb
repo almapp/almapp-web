@@ -22,12 +22,17 @@ def create_modules(days, blocks, start_times, end_times)
       d = days.index(day) + 1
       initial = day + ':' + block.to_s
 
+      start_time = start_times[i].split(':')
+      end_time = end_times[i].split(':')
+
       ScheduleModule.create(
           initials: initial,
           day: d,
           block: block,
-          start_time: start_times[i],
-          end_time: end_times[i],
+          start_hour: start_time[0],
+          start_minute: start_time[1],
+          end_hour: end_time[0],
+          end_minute: end_time[1],
           organization: @uc
       )
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113184948) do
+ActiveRecord::Schema.define(version: 20150118232633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -347,12 +347,14 @@ ActiveRecord::Schema.define(version: 20150113184948) do
   add_index "schedule_items", ["section_id"], name: "index_schedule_items_on_section_id", using: :btree
 
   create_table "schedule_modules", force: true do |t|
-    t.integer "organization_id", null: false
-    t.string  "initials",        null: false
-    t.integer "day",             null: false
-    t.integer "block",           null: false
-    t.string  "start_time",      null: false
-    t.string  "end_time",        null: false
+    t.integer "organization_id",             null: false
+    t.string  "initials",                    null: false
+    t.integer "day",                         null: false
+    t.integer "block",                       null: false
+    t.integer "start_hour",      default: 0, null: false
+    t.integer "start_minute",    default: 0, null: false
+    t.integer "end_hour",        default: 0, null: false
+    t.integer "end_minute",      default: 0, null: false
   end
 
   add_index "schedule_modules", ["initials", "organization_id"], name: "index_schedule_modules_on_initials_and_organization_id", unique: true, using: :btree

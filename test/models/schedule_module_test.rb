@@ -7,8 +7,10 @@
 #  initials        :string(255)      not null
 #  day             :integer          not null
 #  block           :integer          not null
-#  start_time      :string(255)      not null
-#  end_time        :string(255)      not null
+#  start_hour      :integer          default(0), not null
+#  start_minute    :integer          default(0), not null
+#  end_hour        :integer          default(0), not null
+#  end_minute      :integer          default(0), not null
 #
 
 require 'test_helper'

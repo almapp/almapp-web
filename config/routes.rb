@@ -99,6 +99,7 @@ Rails.application.routes.draw do
 
         resources :users
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
+        resources :schedule_modules, only: [:index, :show]
         resources :organizations, shallow: true do
           resources :schedule_modules
           resources :campuses
