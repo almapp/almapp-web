@@ -58,6 +58,12 @@ class UCCoursesLoader < CoursesLoader
   def relations
     # {UNITY : Faculty}
     r = Hash.new
+    r[28] = get_unity('Comunicaciones')
+    r[1] = get_unity('Construcción Civil')
+    r[17] = get_unity('Derecho')
+    r[59] = get_unity('Diseño')
+    r[20] = get_unity('Educación')
+    r[13] = get_unity('Enfermería')
     #r[91] = f('Antropología') Same as Sociologia
     r[11] = get_unity('Agronomía e Ingeniería Forestal')
     r[94] = get_unity('Arquitectura')
@@ -68,12 +74,6 @@ class UCCoursesLoader < CoursesLoader
     r[5] = get_unity('Ciencias Económicas y Administrativas')
     r[45] = get_unity('Ciencia Política')
     #r[9] = f('College') Diferent layout http://admisionyregistros.uc.cl/dara/libcursos/periodo21/ua94_3.html
-    r[28] = get_unity('Comunicaciones')
-    r[1] = get_unity('Construcción Civil')
-    r[17] = get_unity('Derecho')
-    r[59] = get_unity('Diseño')
-    r[20] = get_unity('Educación')
-    r[13] = get_unity('Enfermería')
     r[51] = get_unity('Estética')
     r[95] = get_unity('Estudios Urbanos y Territoriales')
     r[67] = get_unity('Filosofía')
@@ -95,6 +95,35 @@ class UCCoursesLoader < CoursesLoader
     r[21] = get_unity('Villarrica')
     return r
   end
+
+  ROW_NO = 'No'
+  ROW_INITIALS = 'Sigla'
+  ROW_SECTION = 'Sec.'
+  ROW_CREDIT = 'Créd.'
+  ROW_CLASSNAME = 'Nombre Asignatura'
+  ROW_VAC_DISP = 'Vac.  Disp.'
+  ROW_TEACHERS = 'Profesores'
+  ROW_SCHEDULE = 'Horario'
+  ROW_ACTIVITY_TYPE = 'Actividad'
+  ROW_CLASSROOMS = 'Salas'
+  ROW_CAMPUS = 'Campus'
+  ROW_TITLES = 'Títulos'
+
+  def row_names
+    [ROW_NO,
+    ROW_INITIALS,
+    ROW_SECTION,
+    ROW_CREDIT,
+    ROW_CLASSNAME,
+    ROW_VAC_DISP,
+    ROW_TEACHERS,
+    ROW_SCHEDULE,
+    ROW_ACTIVITY_TYPE,
+    ROW_CLASSROOMS,
+    ROW_CAMPUS,
+    ROW_TITLES]
+  end
+
 
   def get_website(url)
     url = URI.parse(url)
@@ -123,21 +152,33 @@ class UCCoursesLoader < CoursesLoader
           unity.name = title.titleize
           unity.save
 
-          table = doc.xpath('//body/table/tr[9]/td/table/tr')
+          table = doc.xpath('//body/table/tr[9]/td/table')
+
+          columns = Hash.new
+          (0..table.xpath('tr[1]/td').count).each do |column|
+            column_name = table.xpath("tr[1]/td[#{column}]").text
+            row_index = row_names.index(column_name)
+            columns[column_name] = row_index
+            puts column_name
+            puts row_index
+          end
+
+          table = table.xpath('tr')
           doc = nil
+
           table = table[2..table.size] # Remove table titles
           table.each do |cell|
             attributes = cell.xpath('td')
             puts '///////////////////////////////'
-            puts "// Number: #{attributes[0].text}"
+            puts "// Number: #{attributes[columns[ROW_NO]].text}"
 
-            initial = attributes[1].text
+            initial = attributes[columns[ROW_INITIALS]].text
             course = Course.find_by_initials(initial)
             if course.present?
               puts 'Course found: '.concat(course.initials)
             else
-              credits = remove_shitty_chars(attributes[3].text)
-              name = remove_shitty_chars(attributes[4].text)
+              credits = remove_shitty_chars(attributes[columns[ROW_CREDIT]].text)
+              name = remove_shitty_chars(attributes[columns[ROW_CLASSNAME]].text)
               course = Course.create(initials: initial,
                                      name: name,
                                      credits: credits,
@@ -145,7 +186,7 @@ class UCCoursesLoader < CoursesLoader
               puts 'Course not found, created: '.concat(course.inspect)
             end
 
-            section_number = remove_shitty_chars(attributes[2].text)
+            section_number = remove_shitty_chars(attributes[columns[ROW_SECTION]].text)
             section = Section.find_by_course_id_and_year_and_semester_and_number(course.id, year, semester, section_number)
             if section.present?
               puts 'Section found: '.concat(section.identifier)
@@ -161,7 +202,7 @@ class UCCoursesLoader < CoursesLoader
             #slots_opt = remove_blank_prefix(attributes[6].text)
             #slots_ofg = remove_blank_prefix(attributes[7].text)
 
-            teachers = attributes[8].xpath('font')
+            teachers = attributes[columns[ROW_TEACHERS]].xpath('font')
             teachers.children.each do |t|
               if t.text?
                 t_name = remove_shitty_chars(t.text)
@@ -184,10 +225,10 @@ class UCCoursesLoader < CoursesLoader
             section.save
             puts section.inspect
 
-            schedules = attributes[9].xpath('font').children
-            module_types = attributes[10].xpath('font').children
-            classrooms = attributes[11].xpath('font').children
-            campus = remove_shitty_chars(attributes[12].xpath('font').children.first.text) rescue ''
+            schedules = attributes[columns[ROW_SCHEDULE]].xpath('font').children
+            module_types = attributes[columns[ROW_ACTIVITY_TYPE]].xpath('font').children
+            classrooms = attributes[columns[ROW_CLASSROOMS]].xpath('font').children
+            campus = remove_shitty_chars(attributes[columns[ROW_CAMPUS]].xpath('font').children.first.text) rescue ''
 
             for i in 0..module_types.length-1 do
               if module_types[i].text?
