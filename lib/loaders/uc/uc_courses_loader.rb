@@ -2,6 +2,9 @@ class UCCoursesLoader < CoursesLoader
   require 'net/http'
   require 'nokogiri'
 
+  # On console: ActiveRecord::Base.logger.level = 1; u = UCCoursesLoader.new; u.load_courses(2015,1)
+
+
   def initialize
     @organization = Organization.find_by_abbreviation('UC')
     @sj = Campus.find_by_abbreviation('SJ')
