@@ -1,15 +1,15 @@
 json.set! json_root do
-  json.partial! template_for_resource, resource: @resource
+  json.partial! template_for_item, item: @item
 
   json.subscribers do
-    json.cache_collection! @resource.subscribers, key: 'compact' do |subscriber|
+    json.cache_collection! @item.subscribers, key: 'compact' do |subscriber|
       json.set! json_root(subscriber) do
-        json.partial! template_for_resource(subscriber, 'compact'), resource: subscriber
+        json.partial! template_for_item(subscriber, 'compact'), item: subscriber
       end
     end
   end
 
-  json.cache! ['collection', @resource], expires_in: normal do
+  json.cache! ['collection', @item], expires_in: normal do
     json.partial! template_for_collections, collection: %w(comments events posts published_posts likes dislikes)
   end
 end

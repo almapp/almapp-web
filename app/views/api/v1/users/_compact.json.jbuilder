@@ -1,1 +1,1 @@
-json.extract! resource, :id, :name, :username, :findeable, :email, :male, :organization_id
+json.extract! item, :id, :name, :username, :findeable, :email, :male, :organization_id

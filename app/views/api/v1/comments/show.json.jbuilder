@@ -1,18 +1,18 @@
 json.set! json_root do
-  json.partial! template_for_resource, resource: @resource
+  json.partial! template_for_item, item: @item
 
   json.commentable do
-    polymorphic_type = polymorphic_type(@resource.commentable)
+    polymorphic_type = polymorphic_type(@item.commentable)
     json.set! 'commentable_type', polymorphic_type
-    json.extract! @resource, :commentable_id
+    json.extract! @item, :commentable_id
     json.set! polymorphic_type do
-      json.cache! ['compact', @resource.commentable], expires_in: 30.minutes do
-        json.partial! template_for_resource(@resource.commentable, 'compact'), resource: @resource.commentable
+      json.cache! ['compact', @item.commentable], expires_in: 30.minutes do
+        json.partial! template_for_item(@item.commentable, 'compact'), item: @item.commentable
       end
     end
   end
 
-  json.cache! ['collection', @resource], expires_in: normal do
+  json.cache! ['collection', @item], expires_in: normal do
     json.partial! template_for_collections, collection: %w(likes dislikes)
   end
 end

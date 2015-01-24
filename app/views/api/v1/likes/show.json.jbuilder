@@ -1,13 +1,13 @@
 json.set! json_root do
-  json.partial! template_for_resource, resource: @resource
+  json.partial! template_for_item, item: @item
 
   json.likeable do
-    polymorphic_type = polymorphic_type(@resource.likeable)
+    polymorphic_type = polymorphic_type(@item.likeable)
     json.set! 'likeable_type', polymorphic_type
-    json.extract! @resource, :likeable_id
+    json.extract! @item, :likeable_id
     json.set! polymorphic_type do
-      json.cache! ['compact', @resource.likeable], expires_in: 30.minutes do
-        json.partial! template_for_resource(@resource.likeable, 'compact'), resource: @resource.likeable
+      json.cache! ['compact', @item.likeable], expires_in: 30.minutes do
+        json.partial! template_for_item(@item.likeable, 'compact'), item: @item.likeable
       end
     end
   end

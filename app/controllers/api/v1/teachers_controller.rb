@@ -4,25 +4,25 @@ module Api
 
 			# Return an array to display in the index view.
 			# @return Relation array
-			def get_resources
+			def get_items
 				@parent.teachers
 				# Or
 				# Campus.all
 			end
 
-			# Set @parent var to the respective parent of the resource, see the routes.
+			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
 			def set_parent
-				@parent = resource_hierarchical_parent
+				@parent = item_hierarchical_parent
 			end
 
-			# Set a parent to the resource if needed. This is called before saving on create.
-			def set_resource_parent
-				@resource.academic_unity << @parent
+			# Set a parent to the item if needed. This is called before saving on create.
+			def set_item_parent
+				@item.academic_unity << @parent
 			end
 
-			# Set strong params for the resource. Remember to change :resource for the actual name
-			def resource_params
+			# Set strong params for the item. Remember to change :item for the actual name
+			def item_params
 				params.require(:teacher).permit(:name, :email, :url, :information) # TODO complete params
 			end
 

@@ -1,0 +1,2 @@
+json.extract! item, :id, :identifier, :name, :owner, :organization_id, :page_type, :information, :available, :secure_protocol, :requires_login, :should_open_in_browser, :home_url, :base_url
+json.extract! item, :created_at, :updated_at

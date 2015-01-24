@@ -1,9 +1,9 @@
 json.set! json_root do
-  json.partial! template_for_resource, resource: @resource
+  json.partial! template_for_item, item: @item
 
   json.section do
-    json.cache! ['compact', @resource.section] do
-      json.partial! template_for_resource(@resource.section, 'compact'), resource: @resource.section
+    json.cache! ['compact', @item.section] do
+      json.partial! template_for_item(@item.section, 'compact'), item: @item.section
     end
   end
 end

@@ -1,0 +1,1 @@
+json.extract! item, :id, :name, :email, :like_count, :dislike_count, :information , :created_at, :updated_at

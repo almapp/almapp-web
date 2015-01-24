@@ -5,7 +5,7 @@ json.set! 'session' do
 
   json.user do
     json.cache! ['full', @resource] do
-      json.partial! "api/v1/users/full", resource: @resource
+      json.partial! "api/v1/users/full", item: @resource
     end
   end
 end

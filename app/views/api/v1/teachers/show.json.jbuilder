@@ -1,9 +1,9 @@
 json.set! json_root do
-  json.partial! template_for_resource, resource: @resource
+  json.partial! template_for_item, item: @item
 
   json.academic_unities do
-    json.cache_collection! @resource.academic_unities, key: 'compact' do |unity|
-      json.partial! template_for_resource(unity, 'compact'), resource: unity
+    json.cache_collection! @item.academic_unities, key: 'compact' do |unity|
+      json.partial! template_for_item(unity, 'compact'), item: unity
     end
   end
 
@@ -12,13 +12,13 @@ json.set! json_root do
       json.array! periods.periods do |period|
         json.set! period do
           json.courses do
-            json.cache_collection! @resource.courses(periods.year, period), key: 'compact', expires_in: long do |course|
-              json.partial! template_for_resource(course, 'compact'), resource: course
+            json.cache_collection! @item.courses(periods.year, period), key: 'compact', expires_in: long do |course|
+              json.partial! template_for_item(course, 'compact'), item: course
             end
           end
           json.sections do
-            json.cache_collection! @resource.sections.period(periods.year, period), key: 'compact' do |section|
-              json.partial! template_for_resource(section, 'compact'), resource: section
+            json.cache_collection! @item.sections.period(periods.year, period), key: 'compact' do |section|
+              json.partial! template_for_item(section, 'compact'), item: section
             end
           end
         end
@@ -26,7 +26,7 @@ json.set! json_root do
     end
   end
 
-  json.cache! ['collection', @resource], expires_in: normal do
+  json.cache! ['collection', @item], expires_in: normal do
     json.partial! template_for_collections, collection: %w(comments likes dislikes)
   end
 end

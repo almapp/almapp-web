@@ -1,1 +1,1 @@
-json.partial! "api/v1/#{@resource.class.name.pluralize.underscore.downcase}/resource", resource: @resource
+json.partial! "api/v1/#{@item.class.name.pluralize.underscore.downcase}/item", item: @item

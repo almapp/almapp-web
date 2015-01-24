@@ -60,45 +60,45 @@ module ControllerHelpers
       end
     end
 
-    def json_root(resource = @resource)
-      resource.class.name.underscore.downcase
+    def json_root(item = @item)
+      item.class.name.underscore.downcase
     end
 
     def template_for_collections
       'api/v1/collections'
     end
 
-    def template_for_resource(resource = nil, layout = 'resource')
-      if resource.present?
-        "api/v1/#{resource.class.name.pluralize.underscore.downcase}/#{layout}"
+    def template_for_item(item = nil, layout = 'item')
+      if item.present?
+        "api/v1/#{item.class.name.pluralize.underscore.downcase}/#{layout}"
       else
         "api/v1/#{self.controller_name}/#{layout}"
       end
     end
 
-    def polymorphic_type(polymorphic_resource_attr)
-      polymorphic_resource_attr.class.name.underscore.downcase
+    def polymorphic_type(polymorphic_item_attr)
+      polymorphic_item_attr.class.name.underscore.downcase
     end
 
-    def resource_path_for(nested_resource)
-      #url_for([:api, :v1, resource, nested_resource])
-      "/api/v1/#{self.controller_name}/#{@resource.id}/#{nested_resource}"
+    def item_path_for(nested_item)
+      #url_for([:api, :v1, item, nested_item])
+      "/api/v1/#{self.controller_name}/#{@item.id}/#{nested_item}"
     end
 
-    def resource_url_for(nested_resource)
-      request.host.concat(resource_path_for(nested_resource))
+    def item_url_for(nested_item)
+      request.host.concat(item_path_for(nested_item))
     end
 
-    def nested_resource_count(nested_resource)
-      @resource.send(nested_resource).send('size')
+    def nested_item_count(nested_item)
+      @item.send(nested_item).send('size')
     end
 
     #helper Expiration
-    #helper_method :json_root, :template_for_resource, :polymorphic_type, :resource_path_for, :resource_url_for, :nested_resource_count, :template_for_collections, :get_periods
+    #helper_method :json_root, :template_for_item, :polymorphic_type, :item_path_for, :item_url_for, :nested_item_count, :template_for_collections, :get_periods
 
     def self.included(c)
       c.helper Expiration
-      c.helper_method :json_root, :template_for_resource, :polymorphic_type, :resource_path_for, :resource_url_for, :nested_resource_count, :template_for_collections, :get_periods
+      c.helper_method :json_root, :template_for_item, :polymorphic_type, :item_path_for, :item_url_for, :nested_item_count, :template_for_collections, :get_periods
     end
 
     #=================
@@ -107,7 +107,7 @@ module ControllerHelpers
 
     protected
 
-    def resource_organizational_parent
+    def item_organizational_parent
       if params[:academic_unity_id]
         AcademicUnity.find_by_id(params[:academic_unity_id])
       elsif params[:faculty_id]
@@ -121,7 +121,7 @@ module ControllerHelpers
       end
     end
 
-    def resource_hierarchical_parent
+    def item_hierarchical_parent
       if params[:group_id]
         @parent = Group.find(params[:group_id])
       elsif params[:teacher_id]
@@ -153,16 +153,16 @@ module ControllerHelpers
       end
     end
 
-    # The resource class based on the controller
+    # The item class based on the controller
     # @return [Class]
-    def get_resource_class
-      @resource_class ||= get_resource_name.classify.constantize
+    def get_item_class
+      @item_class ||= get_item_name.classify.constantize
     end
 
-    # The singular name for the resource class based on the controller
+    # The singular name for the item class based on the controller
     # @return [String]
-    def get_resource_name
-      @resource_name ||= self.controller_name.singularize
+    def get_item_name
+      @item_name ||= self.controller_name.singularize
     end
   end
 end
