@@ -25,4 +25,5 @@ class Career < ActiveRecord::Base
 
   has_many :enrolled_careers
   has_many :enrolled_students, through: :enrolled_careers, source: :user, class_name: 'User'
+
 end

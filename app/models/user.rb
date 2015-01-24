@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   #Content-Type: application/json; charset=utf-8
   #Date: Sun, 28 Dec 2014 02:01:42 GMT
   #Etag: "3333e8169d1d6131fe90102bfd45483d"
-  #Expiry: 1420941702
+  #Expiry: 1420941702 // Seconds since 2015-01-21 16:13:46 -0300 // Time.at(Time.now.to_i)
   #Server: WEBrick/1.3.1 (Ruby/2.1.4/2014-10-27)
   #Token-Type: Bearer
   #Uid: pelopez2@uc.cl
