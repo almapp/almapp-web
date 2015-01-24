@@ -41,7 +41,8 @@ Rails.application.routes.draw do
 
     # https://github.com/lynndylanhurley/ng-token-auth/issues/75#issuecomment-66254414
     mount_devise_token_auth_for 'User', at: '/api/v1/auth', controllers: {
-                                      registrations:      'api/v1/auth/registrations'
+                                      registrations:      'api/v1/auth/registrations',
+                                      sessions:           'api/v1/auth/sessions'
                                       #token_validations:  'api/v1/auth/token_validations'
                                       }
 
@@ -118,6 +119,7 @@ Rails.application.routes.draw do
         resources :faculties, :buildings, :academic_unities, :teachers, :careers, only: [:show, :index]
         resources :courses, only: [:show, :index], shallow: true do
           resources :sections, shallow: true do
+            resources :teachers
             resources :schedule_items
             resources :places
             resources :schedule_modules
