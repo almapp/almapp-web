@@ -29,6 +29,17 @@ if testing
   consuelo.send_friend_request(pato)
   pato.send_friend_request(consuelo)
 
+  pato.admin = true
+  pato.careers << Career.create(name: 'Ingeniería Civil', academic_unity: AcademicUnity.find_by_short_name('Ingeniería'))
+  pato.save!
+
+  consuelo.careers << Career.create(name: 'Arquitectura', academic_unity: AcademicUnity.find_by_short_name('Arquitectura'))
+  consuelo.save!
+
+  api_key = ApiKey.create!(client: 'Almapp iOS Development', contact_name: pato.name, contact_email: pato.email)
+  api_key.key = 'DevelopmentKey'
+  api_key.save!
+
   event = Event.create!(title:'Example Event', user:pato, to_date:2.days.from_now, host: Campus.first)
 
   Post.create!(user: pato, content:'short post', target: Campus.first )
@@ -64,4 +75,6 @@ if testing
   group.subscribers << pato
   group.subscribers << consuelo
   group.save!
+
+  puts "Development Api-key: #{api_key.key}"
 end
