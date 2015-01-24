@@ -7,8 +7,28 @@ class ApplicationController < ActionController::API
 
   SUBDOMAINS = Organization.pluck(:abbreviation).map(&:downcase)
 
+  before_action :authenticate_api if Rails.env.production?
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_filter :validate_subdomain
+
+  def authenticate_api
+    api_key = request.headers['X-Api-Key']
+
+    unless api_key.present?
+      render :json => {:error => 'Missing Api-key in X-Api-Key header'}.to_json, :status => 401
+      return
+    end
+
+    api_key = ApiKey.find_by_key(api_key)
+    unless api_key.present?
+      render :json => {:error => 'Provided Api-key is not registered'}.to_json, :status => 401
+      return
+    end
+
+    unless api_key.valid_key?
+      render :json => {:error => 'Provided Api-key was invalidated'}.to_json, :status => 401
+    end
+  end
 
   def validate_subdomain
     render :json => {:error => 'Invalid Subdomain'}.to_json, :status => 404 unless request.subdomain == '' || valid_subdomain?(request.subdomain)

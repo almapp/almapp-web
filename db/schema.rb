@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118232633) do
+ActiveRecord::Schema.define(version: 20150123025229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20150118232633) do
   add_index "academic_unities_teachers", ["academic_unity_id"], name: "index_academic_unities_teachers_on_academic_unity_id", using: :btree
   add_index "academic_unities_teachers", ["teacher_id", "academic_unity_id"], name: "index_academic_teachers_on_teacher_id_and_academic_unity_id", unique: true, using: :btree
   add_index "academic_unities_teachers", ["teacher_id"], name: "index_academic_unities_teachers_on_teacher_id", using: :btree
+
+  create_table "api_keys", force: true do |t|
+    t.string   "client",        default: "",   null: false
+    t.string   "key",           default: "",   null: false
+    t.string   "contact_name",  default: "",   null: false
+    t.string   "contact_email", default: "",   null: false
+    t.boolean  "valid_key",     default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "assistantships", force: true do |t|
     t.integer  "section_id", null: false
