@@ -1,7 +1,7 @@
 module Api
 	module V1
 		class CampusesController < BaseController
-			
+
 			# Return an array to display in the index view.
 			# @return Relation array
 			def get_items

@@ -68,7 +68,7 @@ module ControllerHelpers
       'api/v1/collections'
     end
 
-    def template_for_item(item = nil, layout = 'item')
+    def template_for_item(item = @item, layout = 'item')
       if item.present?
         "api/v1/#{item.class.name.pluralize.underscore.downcase}/#{layout}"
       else
@@ -90,7 +90,8 @@ module ControllerHelpers
     end
 
     def nested_item_count(nested_item)
-      @item.send(nested_item).send('size')
+      property = @item.send(nested_item)
+      property.present? ? property.send('size') : 0
     end
 
     #helper Expiration

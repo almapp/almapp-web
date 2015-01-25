@@ -99,6 +99,8 @@ Rails.application.routes.draw do
         #==================
 
         resources :users
+        resource :me, controller: 'me'
+
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
         resources :schedule_modules, only: [:index, :show]
         resources :organizations, shallow: true do
