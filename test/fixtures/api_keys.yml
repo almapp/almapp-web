@@ -7,7 +7,7 @@
 #  key           :string(255)      default(""), not null
 #  contact_name  :string(255)      default(""), not null
 #  contact_email :string(255)      default(""), not null
-#  valid         :boolean          default(TRUE), not null
+#  valid_key     :boolean          default(TRUE), not null
 #  created_at    :datetime
 #  updated_at    :datetime
 #
