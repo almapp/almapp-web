@@ -2960,6 +2960,19 @@ Place.create(
     )
 
 Place.create(
+    identifier: 'COM309',
+    name: 'COM309',
+    area: @cc,
+    latitude: -33.441368,
+    longitude: -70.640897,
+    floor: '3?',
+    information: nil,
+    zoom: 0.0,
+    angle: 0.0,
+    tilt: 0.0
+)
+
+Place.create(
     identifier: 'COM310',
     name: 'COM310',
     area: @cc,
