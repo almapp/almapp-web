@@ -17,7 +17,9 @@ json.set! json_root do
         json.set! period do
           json.sections do
             json.cache_collection! sections.period(periods.year, period), key: 'item' do |section|
-              json.partial! template_for_item(section, 'item'), item: section
+              json.set! 'section' do
+                json.partial! template_for_item(section, 'item'), item: section
+              end
             end
           end
         end
