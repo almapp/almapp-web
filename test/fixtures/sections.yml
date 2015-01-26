@@ -9,6 +9,7 @@
 #  year       :integer          not null
 #  created_at :datetime
 #  updated_at :datetime
+#  vacancy    :integer          default(-1)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

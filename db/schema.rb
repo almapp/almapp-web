@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125215612) do
+ActiveRecord::Schema.define(version: 20150126141543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -348,8 +348,12 @@ ActiveRecord::Schema.define(version: 20150125215612) do
     t.string   "campus_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "place_id"
+    t.integer  "campus_id"
   end
 
+  add_index "schedule_items", ["campus_id"], name: "index_schedule_items_on_campus_id", using: :btree
+  add_index "schedule_items", ["place_id"], name: "index_schedule_items_on_place_id", using: :btree
   add_index "schedule_items", ["schedule_module_id"], name: "index_schedule_items_on_schedule_module_id", using: :btree
   add_index "schedule_items", ["section_id"], name: "index_schedule_items_on_section_id", using: :btree
 
@@ -367,12 +371,13 @@ ActiveRecord::Schema.define(version: 20150125215612) do
   add_index "schedule_modules", ["initials", "organization_id"], name: "index_schedule_modules_on_initials_and_organization_id", unique: true, using: :btree
 
   create_table "sections", force: true do |t|
-    t.integer  "course_id",  null: false
-    t.integer  "number",     null: false
-    t.integer  "semester",   null: false
-    t.integer  "year",       null: false
+    t.integer  "course_id",               null: false
+    t.integer  "number",                  null: false
+    t.integer  "semester",                null: false
+    t.integer  "year",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "vacancy",    default: -1
   end
 
   add_index "sections", ["course_id"], name: "index_sections_on_course_id", using: :btree

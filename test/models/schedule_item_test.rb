@@ -10,6 +10,8 @@
 #  campus_name        :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime
+#  place_id           :integer
+#  campus_id          :integer
 #
 
 require 'test_helper'

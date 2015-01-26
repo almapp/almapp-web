@@ -9,6 +9,7 @@
 #  year       :integer          not null
 #  created_at :datetime
 #  updated_at :datetime
+#  vacancy    :integer          default(-1)
 #
 
 class Section < ActiveRecord::Base
@@ -54,7 +55,7 @@ class Section < ActiveRecord::Base
   end
 
   def self.find_by_name_and_number(initials, number, year = current_year, semester = current_semester)
-    period(year, semester).joins(:course).merge(Course.where(initials: initials))
+    period(year, semester).joins(:course).merge(Course.where(initials: initials)).first
   end
 
 end
