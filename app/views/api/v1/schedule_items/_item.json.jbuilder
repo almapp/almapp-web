@@ -8,10 +8,10 @@ end
 
 json.extract! item, :place_name, :campus_name
 
-json.place do
-  if item.place.present?
-    json.cache! ['compact', item.place] do
-      json.partial! template_for_item(item.place, 'compact'), item: item.place
+json.localization do
+  if item.localization.present?
+    json.cache! ['compact', item.localization] do
+      json.partial! template_for_item(item.localization, 'compact'), item: item.localization
     end
   else
     json.null!
