@@ -13,11 +13,11 @@ module Api
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
 			def set_parent
-				@parent = item_hierarchical_parent
+				item_hierarchical_parent
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.
-			def set_item_parent
+			def set_item_parent(parent)
 				# @item.campus = @parent
 			end
 
@@ -31,7 +31,6 @@ module Api
 				# allowing us to filter by this
 				#params.permit(:attribute1, :attribute2)
 			end
-
 		end
 	end
 end

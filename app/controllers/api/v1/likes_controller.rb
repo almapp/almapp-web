@@ -3,7 +3,7 @@ module Api
 		class LikesController < BaseController
 			before_action :authenticate_user!, only: [:create, :destroy, :update]
 			before_action :set_parent, only: [:index, :likes, :dislikes, :create]
-			before_action :set_item, only: [:show, :update, :destroy]
+			before_action :get_item, only: [:show, :update, :destroy]
 
 			def likes
 				@items = get_items
@@ -23,13 +23,13 @@ module Api
 
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
-			def set_parent
-				@parent = item_hierarchical_parent
+			def get_parent
+				item_hierarchical_parent
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.
-			def set_item_parent
-				@item.likeable = @parent
+			def set_item_parent(parent)
+				@item.likeable = parent
 			end
 
 			# Set strong params for the item. Remember to change :item for the actual name

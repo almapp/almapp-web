@@ -13,12 +13,12 @@ module Api
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
 			def set_parent
-				@parent = current_organization
+				current_organization
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.
-			def set_item_parent
-				@item.organization = @parent
+			def set_item_parent(parent)
+				@item.organization = parent
 			end
 
 			# Set strong params for the item. Remember to change :item for the actual name

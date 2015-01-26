@@ -10,14 +10,8 @@ module Api
 				Organization.all
 			end
 
-			# Set @parent var to the respective parent of the item, see the routes.
-			# Can be null.
-			def set_parent
-				# @parent = Campus.find(params[:campus_id])
-			end
-
 			# Set a parent to the item if needed. This is called before saving on create.
-			def set_item_parent
+			def set_item_parent(parent)
 				# @item.campus = @parent
 			end
 

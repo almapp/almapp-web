@@ -10,13 +10,13 @@ module Api
 
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
-			def set_parent
-				@parent = item_hierarchical_parent
+			def get_parent
+				item_hierarchical_parent
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.
-			def set_item_parent
-				@item.commentable = @parent
+			def set_item_parent(parent)
+				@item.commentable = parent
 			end
 
 			# Set strong params for the item. Remember to change :item for the actual name

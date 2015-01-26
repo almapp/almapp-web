@@ -12,14 +12,14 @@ module Api
 
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
-			def set_parent
-				@parent = item_organizational_parent
+			def get_parent
+				item_organizational_parent
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.
-			def set_item_parent
+			def set_item_parent(parent)
 				if params[:faculty_id]
-					@item.faculty << @parent
+					@item.faculty << parent
 				else
 					@item.organizations << current_organization
 				end

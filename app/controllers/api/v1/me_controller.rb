@@ -12,9 +12,8 @@ module Api
 				render 'api/v1/sections/index'
 			end
 
-			def set_item
-				@item = current_user
-				render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @item.present?
+			def get_item
+				current_user
 			end
 
 			def get_item_name

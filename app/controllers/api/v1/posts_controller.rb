@@ -3,7 +3,7 @@ module Api
 		class PostsController < BaseController
 			before_action :authenticate_user!, only: [:create, :destroy, :update]
 			before_action :set_parent, only: [:index, :published_posts, :create]
-			before_action :set_item, only: [:show, :update, :destroy]
+			before_action :get_item, only: [:show, :update, :destroy]
 
 			def published_posts
 				@items = @parent.published_posts
@@ -16,15 +16,9 @@ module Api
 				@parent.posts
 			end
 
-			# Set @parent var to the respective parent of the item, see the routes.
-			# Can be null.
-			def set_parent
-				@parent = item_hierarchical_parent
-			end
-
 			# Set a parent to the item if needed. This is called before saving on create.
-			def set_item_parent
-				@item.target = @parent
+			def set_item_parent(parent)
+				@item.target = parent
 			end
 
 			# Set strong params for the item. Remember to change :item for the actual name
