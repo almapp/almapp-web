@@ -54,6 +54,11 @@ class Organization < ActiveRecord::Base
 
   has_many :webpages
 
+  # Every area model has a campus associated
+  def campus
+    nil
+  end
+
   # Overrides has_many relationship from Mapable
   def places
     #first_level_places.append(campuses_places) # TODO create query

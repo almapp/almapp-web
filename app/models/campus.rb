@@ -20,6 +20,8 @@
 #
 
 class Campus < ActiveRecord::Base
+  searchkick
+
   include Commentable
   include PostTarget
   include PostPublisher
@@ -48,9 +50,19 @@ class Campus < ActiveRecord::Base
 
   def place_with_identifier(identifier)
     results = Place.search(identifier)
+
+    no_campus_items = Array.new
+
     results.each do |place|
-      return place if place.campus.id == self.id
+      campus = place.campus
+      if campus.present? && campus.id == self.id
+        return place
+      elsif !campus.present?
+        no_campus_items << place
+      end
     end
+
+    return no_campus_items.first
   end
 
   # Overrides has_many relationship from Mapable

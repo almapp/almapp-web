@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123025229) do
+ActiveRecord::Schema.define(version: 20150125215612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
 
   create_table "academic_unities", force: true do |t|
     t.string   "abbreviation"
@@ -347,12 +346,10 @@ ActiveRecord::Schema.define(version: 20150123025229) do
     t.string   "class_type"
     t.string   "place_name"
     t.string   "campus_name"
-    t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "schedule_items", ["place_id"], name: "index_schedule_items_on_place_id", using: :btree
   add_index "schedule_items", ["schedule_module_id"], name: "index_schedule_items_on_schedule_module_id", using: :btree
   add_index "schedule_items", ["section_id"], name: "index_schedule_items_on_section_id", using: :btree
 

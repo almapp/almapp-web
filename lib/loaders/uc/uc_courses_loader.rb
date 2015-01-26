@@ -231,11 +231,11 @@ class UCCoursesLoader < CoursesLoader
             schedules = attributes[columns[ROW_SCHEDULE]].xpath('font').children
             module_types = attributes[columns[ROW_ACTIVITY_TYPE]].xpath('font').children
             classrooms = attributes[columns[ROW_CLASSROOMS]].xpath('font').children
-            campus = remove_shitty_chars(attributes[columns[ROW_CAMPUS]].xpath('font').children.first.text) rescue ''
+            campus_name = remove_shitty_chars(attributes[columns[ROW_CAMPUS]].xpath('font').children.first.text) rescue ''
 
             for i in 0..module_types.length-1 do
               if module_types[i].text?
-                module_type = remove_shitty_chars(module_types[i].text) rescue ''
+                class_type = remove_shitty_chars(module_types[i].text) rescue ''
                 module_block = remove_shitty_chars(schedules[i].text) rescue ''
                 module_place = remove_shitty_chars(classrooms[i].text) rescue ''
 
@@ -243,9 +243,9 @@ class UCCoursesLoader < CoursesLoader
                 puts 'Vars:'
                 puts 'Unity: '.concat(unity.short_name)
                 puts 'Course: '.concat(section.identifier)
-                puts 'Module type: '.concat(module_type)
+                puts 'Class type: '.concat(class_type)
                 puts 'Module blocks: '.concat(module_block)
-                puts 'Campus: '.concat(campus)
+                puts 'Campus: '.concat(campus_name)
                 puts 'Place: '.concat(module_place)
 
                 c_array = module_place.split(': ')
@@ -262,33 +262,35 @@ class UCCoursesLoader < CoursesLoader
                 #  place = Place.find_by_insensitive_pid(module_place)
                 #end
 
-                place_campus = Campus.where("lower(unaccent(short_name)) = ? AND organization_id = ?", campus.downcase, @organization.id).first
-                normalized = module_place.downcase.gsub(/([-,., ,_])/, '#') if module_place.present?
-                normalized ||= nil
-                p = place_campus.places.where("regexp_replace(lower(unaccent(identifier)), '([-,., ,_])', '#')  = ?", normalized).first if place_campus.present? && normalized.present?
+                # place_campus = (Campus.search campus_name , where: {organization_id: @organization.id}, limit: 1).first
+                # normalized = module_place.downcase.gsub(/([-,., ,_])/, '#') if module_place.present?
+                # normalized ||= nil
+                # p = place_campus.places.where("regexp_replace(lower(unaccent(identifier)), '([-,., ,_])', '#')  = ?", normalized).first if place_campus.present? && normalized.present?
 
                 if module_block.present? && regex(module_block)
                   matches = ScheduleModule.modules_for_loader(@organization, module_block)
-                  matches.each do |s|
+                  matches.each do |schedule_module|
 
                     # Drawing.where("drawing_number REGEXP ?", 'A\d{4}')
 
-                    created_item = ScheduleItem.create(class_type: module_type,
+                    created_item = ScheduleItem.create(
+                                            class_type: class_type,
                                             section: section,
                                             place_name: module_place,
-                                            campus_name: campus,
-                                            place: p,
-                                            schedule_module: s)
-                    puts "Created item: #{section.identifier} | #{module_type} | #{s.initials} | place: #{p.present? ? p.id : 'none'} - #{module_place} @ #{campus}"
+                                            campus_name: campus_name,
+                                            schedule_module: schedule_module)
+                    place = created_item.localization
+                    puts "Created item: #{section.identifier} | #{class_type} | #{schedule_module.initials} | place: #{place.present? ? place.identifier : 'Not found'} - #{module_place} @ #{campus_name}"
                   end
                 else
-                  created_item = ScheduleItem.create(class_type: module_type,
+                  created_item = ScheduleItem.create(class_type: class_type,
                                           section: section,
                                           place_name: module_place,
-                                          campus_name: campus,
-                                          place: p,
+                                          campus_name: campus_name,
+                                          # place: p,
                                           schedule_module: nil)
-                  puts "Created item: #{section.identifier} | #{module_type} | No ModuleBlock | place: #{p.present? ? p.id : 'none'} - #{module_place} @ #{campus}"
+                  place = created_item.localization
+                  puts "Created item: #{section.identifier} | #{class_type} | No ModuleBlock | place: #{place.present? ? place.identifier : 'Not found'} - #{module_place} @ #{campus_name}"
                 end
 
                 # SELECT DISTINCT schedule_items.id, schedule_items.place_name, schedule_items.campus_name, schedule_items.place_id FROM schedule_items LEFT OUTER JOIN places ON places.id = schedule_items.place_id;

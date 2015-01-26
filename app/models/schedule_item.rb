@@ -17,11 +17,10 @@ class ScheduleItem < ActiveRecord::Base
 
   belongs_to :section
   belongs_to :schedule_module
-  belongs_to :place
   belongs_to :campus
 
   def localization
-    campus.place_with_identifier(place_name)
+    campus.place_with_identifier(place_name) if campus.present?
   end
 
   def semester
@@ -37,6 +36,6 @@ class ScheduleItem < ActiveRecord::Base
   end
 
   def campus
-    organization.campuses.find_by_short_name(campus_name)
+    (Campus.search campus_name, limit: 1).first
   end
 end
