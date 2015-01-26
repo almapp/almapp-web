@@ -99,7 +99,9 @@ Rails.application.routes.draw do
         #==================
 
         resources :users
-        resource :me, controller: 'me'
+        resource :me, controller: 'me' do
+          get '/sections' => 'me#sections', as: :me_sections
+        end
 
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
         resources :schedule_modules, only: [:index, :show]
