@@ -8,7 +8,6 @@
 #  class_type         :string(255)
 #  place_name         :string(255)
 #  campus_name        :string(255)
-#  place_id           :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #
@@ -20,6 +19,10 @@ class ScheduleItem < ActiveRecord::Base
   belongs_to :schedule_module
   belongs_to :place
   belongs_to :campus
+
+  def localization
+    campus.place_with_identifier(place_name)
+  end
 
   def semester
     self.section.semester

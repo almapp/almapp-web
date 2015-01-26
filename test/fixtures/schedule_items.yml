@@ -8,7 +8,6 @@
 #  class_type         :string(255)
 #  place_name         :string(255)
 #  campus_name        :string(255)
-#  place_id           :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #

@@ -20,6 +20,8 @@
 #
 
 class Place < ActiveRecord::Base
+  searchkick
+
   include Commentable
   include Likeable
 

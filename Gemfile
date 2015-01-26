@@ -12,6 +12,10 @@ gem 'jbuilder_cache_multi'
 gem 'oj'
 gem 'oj_mimic_json'
 
+# Searching
+# https://shellycloud.com/blog/2013/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch
+gem "searchkick" # rake searchkick:reindex CLASS=Place
+
 group :development, :test do
   # gem 'debugger'
   gem 'spring'

@@ -46,6 +46,13 @@ class Campus < ActiveRecord::Base
   has_many :courses_students,  through: :faculties,   source: :courses_students,    class_name: 'User'
   has_many :enrolled_students, through: :faculties,   source: :enrolled_students,   class_name: 'User'
 
+  def place_with_identifier(identifier)
+    results = Place.search(identifier)
+    results.each do |place|
+      return place if place.campus.id == self.id
+    end
+  end
+
   # Overrides has_many relationship from Mapable
   def places
     Place.where('(places.area_id = ? AND places.area_type = \'Campus\') OR (places.area_id IN (SELECT faculties.id FROM faculties WHERE faculties.campus_id = ?) AND places.area_type = \'Faculty\') OR (places.area_id IN (SELECT buildings.id FROM buildings WHERE buildings.campus_id = ?) AND places.area_type = \'Building\') OR (places.area_id IN (SELECT academic_unities.id FROM academic_unities INNER JOIN faculties ON academic_unities.faculty_id = faculties.id WHERE faculties.campus_id = ?) AND places.area_type = \'AcademicUnity\')', id, id, id, id)

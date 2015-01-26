@@ -90,6 +90,14 @@ GEM
     devise_token_auth (0.1.30)
       devise (~> 3.3)
       rails (~> 4.1)
+    elasticsearch (1.0.6)
+      elasticsearch-api (= 1.0.6)
+      elasticsearch-transport (= 1.0.6)
+    elasticsearch-api (1.0.6)
+      multi_json
+    elasticsearch-transport (1.0.6)
+      faraday
+      multi_json
     erubis (2.7.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
@@ -165,6 +173,10 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    searchkick (0.8.5)
+      activemodel
+      elasticsearch (>= 1)
+      hashie
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -210,5 +222,6 @@ DEPENDENCIES
   rails-api
   sass
   sdoc (~> 0.4.0)
+  searchkick
   spring
   validates_timeliness (~> 3.0)
