@@ -58,9 +58,14 @@ class UCCoursesLoader < CoursesLoader
     end
   end
 
+  def test_relation
+    { 4 => AcademicUnity.find_by_short_name('Ingeniería') }
+  end
+
   def relations
     # {UNITY : Faculty}
     r = Hash.new
+    r[4] = get_unity('Ingeniería')
     r[28] = get_unity('Comunicaciones')
     r[1] = get_unity('Construcción Civil')
     r[17] = get_unity('Derecho')
@@ -83,7 +88,6 @@ class UCCoursesLoader < CoursesLoader
     r[3] = get_unity('Física')
     r[57] = get_unity('Geografía')
     r[56] = get_unity('Historia')
-    r[4] = get_unity('Ingeniería')
     r[64] = get_unity('Letras')
     r[6] = get_unity('Matemática')
     r[14] = get_unity('Medicina')
@@ -135,8 +139,11 @@ class UCCoursesLoader < CoursesLoader
   end
 
   def load_courses(year, semester)
-    relations_array = relations
-    relations_array.each do |number, unity|
+    load_courses_for(relations, year, semester)
+  end
+
+  def load_courses_for(relations_hash, year, semester)
+    relations_hash.each do |number, unity|
       keep_going = true
       page = 0
       puts '====================================='
@@ -176,12 +183,16 @@ class UCCoursesLoader < CoursesLoader
             puts "// Number: #{attributes[columns[ROW_NO]].text}"
 
             initial = attributes[columns[ROW_INITIALS]].text
+            credits = remove_shitty_chars(attributes[columns[ROW_CREDIT]].text)
+            name = remove_shitty_chars(attributes[columns[ROW_CLASSNAME]].text)
+
             course = Course.find_by_initials(initial)
             if course.present?
+              course.name = name
+              course.credits = credits
+              course.save!
               puts 'Course found: '.concat(course.initials)
             else
-              credits = remove_shitty_chars(attributes[columns[ROW_CREDIT]].text)
-              name = remove_shitty_chars(attributes[columns[ROW_CLASSNAME]].text)
               course = Course.create(initials: initial,
                                      name: name,
                                      credits: credits,
@@ -190,14 +201,17 @@ class UCCoursesLoader < CoursesLoader
             end
 
             section_number = remove_shitty_chars(attributes[columns[ROW_SECTION]].text)
+            vacancy = remove_shitty_chars(attributes[columns[ROW_VAC_DISP]].text)
             section = Section.find_by_course_id_and_year_and_semester_and_number(course.id, year, semester, section_number)
             if section.present?
+              section.vacancy = vacancy
               puts 'Section found: '.concat(section.identifier)
             else
               section = Section.create(course: course,
                                        year: year,
                                        semester: semester,
-                                       number: section_number)
+                                       number: section_number,
+                                       vacancy: vacancy)
               puts 'Section not found, created: '.concat(section.identifier)
             end
 
@@ -225,7 +239,7 @@ class UCCoursesLoader < CoursesLoader
                 end
               end
             end
-            section.save
+            section.save!
             puts section.inspect
 
             schedules = attributes[columns[ROW_SCHEDULE]].xpath('font').children
@@ -267,6 +281,9 @@ class UCCoursesLoader < CoursesLoader
                 # normalized ||= nil
                 # p = place_campus.places.where("regexp_replace(lower(unaccent(identifier)), '([-,., ,_])', '#')  = ?", normalized).first if place_campus.present? && normalized.present?
 
+                # Reset schedule items in section
+                section.schedule_items.destroy_all
+
                 if module_block.present? && regex(module_block)
                   matches = ScheduleModule.modules_for_loader(@organization, module_block)
                   matches.each do |schedule_module|
@@ -274,22 +291,22 @@ class UCCoursesLoader < CoursesLoader
                     # Drawing.where("drawing_number REGEXP ?", 'A\d{4}')
 
                     created_item = ScheduleItem.create(
-                                            class_type: class_type,
-                                            section: section,
-                                            place_name: module_place,
-                                            campus_name: campus_name,
-                                            schedule_module: schedule_module)
-                    place = created_item.localization
+                    class_type: class_type,
+                    section: section,
+                    place_name: module_place,
+                    campus_name: campus_name,
+                    schedule_module: schedule_module)
+                    place = created_item.place
                     puts "Created item: #{section.identifier} | #{class_type} | #{schedule_module.initials} | place: #{place.present? ? place.identifier : 'Not found'} - #{module_place} @ #{campus_name}"
                   end
                 else
                   created_item = ScheduleItem.create(class_type: class_type,
-                                          section: section,
-                                          place_name: module_place,
-                                          campus_name: campus_name,
-                                          # place: p,
-                                          schedule_module: nil)
-                  place = created_item.localization
+                                                     section: section,
+                                                     place_name: module_place,
+                                                     campus_name: campus_name,
+                                                     # place: p,
+                                                     schedule_module: nil)
+                  place = created_item.place
                   puts "Created item: #{section.identifier} | #{class_type} | No ModuleBlock | place: #{place.present? ? place.identifier : 'Not found'} - #{module_place} @ #{campus_name}"
                 end
 

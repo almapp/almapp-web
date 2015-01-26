@@ -76,5 +76,13 @@ if testing
   group.subscribers << consuelo
   group.save!
 
+  ActiveRecord::Base.logger.level = 1
+  u = UCCoursesLoader.new
+  u.load_courses_for(u.test_relation, 2015,1)
+  ActiveRecord::Base.logger.level = 0
+
+  pato.sections << %w(ICH1104-2 ICS2123-4 IIC1253-1 IIC2233-1).map { |section_schedule_identifier| Section.find_by_identifier(section_schedule_identifier, 2015, 1) }
+  pato.save!
+
   puts "Development Api-key: #{api_key.key}"
 end
