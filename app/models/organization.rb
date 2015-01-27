@@ -67,6 +67,7 @@ class Organization < ActiveRecord::Base
     #   result.append(campus.places.to_a)
     # end
     # return result
+    Place.none
   end
 
   # Overrides has_many relationship from PostTarget
@@ -76,12 +77,13 @@ class Organization < ActiveRecord::Base
     #   result.append(campus.posts)
     # end
     # return result
+    Post.none
   end
 
   # Overrides has_many relationship from EventPublisher
   def events
     #first_level_places.append(campuses_places) # TODO create query
-    []
+    Event.none
   end
 
 
