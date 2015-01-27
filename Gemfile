@@ -18,6 +18,8 @@ gem "searchkick" # rake searchkick:reindex CLASS=Place
 
 group :development, :test do
   # gem 'debugger'
+  gem "bullet"
+  gem 'meta_request' # https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg
   gem 'spring'
   gem 'awesome_print'
   gem 'better_errors'
