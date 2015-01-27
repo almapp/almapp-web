@@ -3,7 +3,9 @@ json.set! json_root do
 
   json.academic_unities do
     json.cache_collection! @item.academic_unities, key: 'compact' do |unity|
-      json.partial! template_for_item(unity, 'compact'), item: unity
+      json.set! json_root(unity) do
+        json.partial! template_for_item(unity, 'compact'), item: unity
+      end
     end
   end
 
@@ -13,12 +15,16 @@ json.set! json_root do
         json.set! period do
           json.courses do
             json.cache_collection! @item.courses(periods.year, period), key: 'compact', expires_in: long do |course|
-              json.partial! template_for_item(course, 'compact'), item: course
+              json.set! json_root(course) do
+                json.partial! template_for_item(course, 'compact'), item: course
+              end
             end
           end
           json.sections do
             json.cache_collection! @item.sections.period(periods.year, period), key: 'compact' do |section|
-              json.partial! template_for_item(section, 'compact'), item: section
+              json.set! json_root(section) do
+                json.partial! template_for_item(section, 'compact'), item: section
+              end
             end
           end
         end

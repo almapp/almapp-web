@@ -4,7 +4,9 @@ json.extract! item, :id, :name, :username, :findeable, :email, :male, :organizat
 
 json.careers do
   json.cache_collection! item.careers, key: 'compact', expires_in: normal do |career|
-    json.partial! template_for_item(career, 'compact'), item: career
+    json.set! json_root(career) do
+      json.partial! template_for_item(career, 'compact'), item: career
+    end
   end
 end
 

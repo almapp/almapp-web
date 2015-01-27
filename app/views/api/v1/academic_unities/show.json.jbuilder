@@ -2,9 +2,9 @@ json.set! json_root do
   json.partial! template_for_item, item: @item
   json.extract! @item, :like_count, :dislike_count
 
-  json.faculty do
-    json.cache! ['compact', @item.faculty], expires_in: very_long do
-      json.partial! template_for_item(@item.faculty, 'compact'), item: @item.faculty
+  json.cache! ['compact', @item.faculty], expires_in: very_long do
+    json.faculty do
+        json.partial! template_for_item(@item.faculty, 'compact'), item: @item.faculty
     end
   end
 

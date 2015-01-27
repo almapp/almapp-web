@@ -17,7 +17,7 @@ json.set! json_root do
         json.set! period do
           json.sections do
             json.cache_collection! sections.period(periods.year, period), key: 'item' do |section|
-              json.set! 'section' do
+              json.section do
                 json.partial! template_for_item(section, 'item'), item: section
               end
             end
@@ -27,8 +27,8 @@ json.set! json_root do
     end
   end
 
-  json.academic_unity do
-    json.cache! ['compact', @item.academic_unity], expires_in: 1.hours do
+  json.cache! ['compact', @item.academic_unity], expires_in: 1.hours do
+    json.academic_unity do
       json.partial! template_for_item(@item.academic_unity, 'compact'), item: @item.academic_unity
     end
   end

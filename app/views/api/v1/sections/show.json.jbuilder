@@ -1,8 +1,8 @@
 json.set! json_root do
   json.partial! template_for_item, item: @item
 
-  json.course do
-    json.cache! ['compact', @item.course] do
+  json.cache! ['compact', @item.course] do
+    json.course do
       json.partial! template_for_item(@item.course, 'compact'), item: @item.course
     end
   end

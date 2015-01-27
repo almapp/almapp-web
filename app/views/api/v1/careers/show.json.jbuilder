@@ -1,8 +1,8 @@
 json.set! json_root do
   json.partial! template_for_item, item: @item
 
-  json.academic_unity do
-    json.cache! ['compact', @item.academic_unity], expires_in: 1.hours do
+  json.cache! ['compact', @item.academic_unity], expires_in: 1.hours do
+    json.academic_unity do
       json.partial! template_for_item(@item.academic_unity, 'compact'), item: @item.academic_unity
     end
   end

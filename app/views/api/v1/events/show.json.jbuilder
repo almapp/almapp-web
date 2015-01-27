@@ -1,8 +1,8 @@
 json.set! json_root do
   json.partial! template_for_item, item: @item
 
-  json.user do
-    json.cache! ['compact', @item.user] do
+  json.cache! ['compact', @item.user] do
+    json.user do
       json.partial! template_for_item(@item.user, 'compact'), item: @item.user
     end
   end
@@ -19,8 +19,8 @@ json.set! json_root do
     polymorphic_type = polymorphic_type(@item.host)
     json.set! 'host_type', polymorphic_type
     json.extract! @item, :host_id
-    json.set! polymorphic_type do
-      json.cache! ['compact', @item.host], expires_in: 30.minutes do
+    json.cache! ['compact', @item.host], expires_in: 30.minutes do
+      json.set! polymorphic_type do
         json.partial! template_for_item(@item.host, 'compact'), item: @item.host
       end
     end

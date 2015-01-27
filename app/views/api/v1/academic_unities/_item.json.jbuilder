@@ -1,12 +1,12 @@
 json.extract! item, :id, :abbreviation, :short_name, :name, :faculty_id, :address, :url, :email, :facebook, :twitter, :information
 
-json.localization do
-  if item.localization.present?
-    json.cache! ['compact', item.localization], expires_in: very_long do
+json.cache! ['compact', item.localization] do
+  json.localization do
+    if item.localization.present?
       json.partial! template_for_item(item.localization, 'compact'), item: item.localization
+    else
+      json.null!
     end
-  else
-    json.null!
   end
 end
 
