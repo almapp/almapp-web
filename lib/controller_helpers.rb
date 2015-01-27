@@ -94,25 +94,39 @@ module ControllerHelpers
       property.present? ? property.send('size') : 0
     end
 
+    def should_show_paths(item = @item)
+      false
+    end
+
+    def json_path_key(item = @item)
+      'path'
+    end
+
+    def json_path(item = @item)
+      eval("api_v1_#{item.class.name.underscore.downcase}_path(item)")
+    end
+
     #helper Expiration
     #helper_method :json_root, :template_for_item, :polymorphic_type, :item_path_for, :item_url_for, :nested_item_count, :template_for_collections, :get_periods
 
     def self.included(c)
       c.helper Expiration
-      c.helper_method :json_root, :template_for_item, :polymorphic_type, :item_path_for, :item_url_for, :nested_item_count, :template_for_collections, :get_periods
+      c.helper_method :json_root,
+                      :template_for_item,
+                      :polymorphic_type,
+                      :item_path_for,
+                      :item_url_for,
+                      :nested_item_count,
+                      :template_for_collections,
+                      :get_periods,
+                      :should_show_paths,
+                      :json_path_key,
+                      :json_path
     end
 
     #=================
     #==== Methods ====
     #=================
-
-    def items_includes
-      { }
-    end
-
-    def item_include
-
-    end
 
     ORGANIZATIONAL_PARENT_HASH = {
       academic_unity_id: AcademicUnity,
@@ -138,10 +152,10 @@ module ControllerHelpers
     def parent_includes(parent_types, parent_include = nil, parent_references = nil)
       parent_types.each do |param, parent_type|
         if params[param].present?
-          if parent_include.present? && parent_references.present?
-            return parent_type.includes(parent_include).references(parent_references).find(params[param])
+          if parent_include.present?
+            return parent_type.includes(parent_include).references(parent_references).find_by_id(params[param])
           else
-            return parent_type.find(params[param])
+            return parent_type.find_by_id(params[param])
           end
         end
       end
@@ -152,9 +166,9 @@ module ControllerHelpers
       parent_types.each do |param, parent_type|
         if params[param].present?
           if parent_eager_load.present?
-            return parent_type.eager_load(parent_eager_load).find(params[param])
+            return parent_type.eager_load(parent_eager_load).find_by_id(params[param])
           else
-            return parent_type.find(params[param])
+            return parent_type.find_by_id(params[param])
           end
         end
       end
