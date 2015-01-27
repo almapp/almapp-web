@@ -1,2 +1,2 @@
 json.extract! item, :id, :day, :block
-json.set! 'path', api_v1_schedule_module_path(item)
+json.set! json_path_key, json_path(item) if should_show_paths(item)

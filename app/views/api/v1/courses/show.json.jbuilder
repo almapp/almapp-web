@@ -33,7 +33,7 @@ json.set! json_root do
     end
   end
 
-  json.cache! ['collection', @item], expires_in: normal do
-    json.partial! template_for_collections, collection: %w(teachers section_students comments events posts published_posts likes dislikes)
-  end
+  # json.cache! ['collection', @item], expires_in: normal do
+  #   json.partial! template_for_collections, collection: %w(teachers section_students comments events posts published_posts likes dislikes)
+  # end
 end

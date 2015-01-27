@@ -1,2 +1,2 @@
 json.extract! item, :id, :title, :private, :host_id, :host_type, :publish_date, :from_date, :to_date
-json.set! 'path', api_v1_event_path(item)
+json.set! json_path_key, json_path(item) if should_show_paths(item)

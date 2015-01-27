@@ -1,2 +1,2 @@
 json.extract! item, :id, :name, :email
-json.set! 'path', api_v1_teacher_path(item)
+json.set! json_path_key, json_path(item) if should_show_paths(item)

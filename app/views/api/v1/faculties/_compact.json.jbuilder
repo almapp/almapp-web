@@ -1,2 +1,2 @@
 json.extract! item, :id, :abbreviation, :short_name, :name, :campus_id, :address
-json.set! 'path', api_v1_faculty_path(item)
+json.set! json_path_key, json_path(item) if should_show_paths(item)

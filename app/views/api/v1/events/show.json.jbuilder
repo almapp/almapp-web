@@ -15,17 +15,6 @@ json.set! json_root do
     end
   end
 
-  json.host do
-    polymorphic_type = polymorphic_type(@item.host)
-    json.set! 'host_type', polymorphic_type
-    json.extract! @item, :host_id
-    json.cache! ['compact', @item.host], expires_in: 30.minutes do
-      json.set! polymorphic_type do
-        json.partial! template_for_item(@item.host, 'compact'), item: @item.host
-      end
-    end
-  end
-
   json.cache! ['collection', @item], expires_in: normal do
     json.partial! template_for_collections, collection: %w(comments posts published_posts likes dislikes)
   end

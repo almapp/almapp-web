@@ -1,2 +1,2 @@
 json.extract! item, :id, :number, :vacancy, :course_id, :semester, :year
-json.set! 'path', api_v1_section_path(item)
+json.set! json_path_key, json_path(item) if should_show_paths(item)
