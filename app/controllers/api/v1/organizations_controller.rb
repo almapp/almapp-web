@@ -7,7 +7,11 @@ module Api
 			def get_items
 				# @parent.campuses
 				# Or
-				Organization.all
+				Organization.all.eager_load(:localization)
+			end
+
+			def get_item
+				get_item_class.eager_load(:localization).find(params[:id])
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.

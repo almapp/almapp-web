@@ -106,52 +106,76 @@ module ControllerHelpers
     #==== Methods ====
     #=================
 
-    protected
-
-    def item_organizational_parent
-      if params[:academic_unity_id]
-        AcademicUnity.find_by_id(params[:academic_unity_id])
-      elsif params[:faculty_id]
-        Faculty.find_by_id(params[:faculty_id])
-      elsif params[:building_id]
-        Building.find_by_id(params[:building_id])
-      elsif params[:campus_id]
-        Campus.find_by_id(params[:campus_id])
-      else
-        current_organization
-      end
+    def items_includes
+      { }
     end
 
-    def item_hierarchical_parent
-      if params[:group_id]
-        @parent = Group.find(params[:group_id])
-      elsif params[:teacher_id]
-        @parent = Teacher.find(params[:teacher_id])
-      elsif params[:section_id]
-        @parent = Section.find(params[:section_id])
-      elsif params[:course_id]
-        @parent = Course.find(params[:course_id])
-      elsif params[:career_id]
-        @parent = Career.find(params[:career_id])
-      elsif params[:event_id]
-        @parent = Event.find(params[:event_id])
-      elsif params[:place_id]
-        @parent = Place.find(params[:place_id])
-      elsif params[:post_id]
-        @parent = Post.find(params[:post_id])
-      elsif params[:user_id]
-        @parent = User.find(params[:user_id])
-      elsif params[:academic_unity_id]
-        @parent = AcademicUnity.find(params[:academic_unity_id])
-      elsif params[:faculty_id]
-        @parent = Faculty.find(params[:faculty_id])
-      elsif params[:building_id]
-        Building.find_by_id(params[:building_id])
-      elsif params[:campus_id]
-        @parent = Campus.find(params[:campus_id])
-      else
-        @parent = current_organization
+    def item_include
+
+    end
+
+    ORGANIZATIONAL_PARENT_HASH = {
+      academic_unity_id: AcademicUnity,
+      faculty_id: Faculty,
+      building_id: Building,
+      campus_id: Campus
+    }
+
+    HIERARCHICAL_PARENT_HASH = {
+      group_id: Group,
+      teacher_id: Teacher,
+      section_id: Section,
+      course_id: Course,
+      career_id: Career,
+      event_id: Event,
+      place_id: Place,
+      post_id: Post,
+      user_id: User
+    }.merge(ORGANIZATIONAL_PARENT_HASH)
+
+    protected
+
+    def parent_includes(parent_types, parent_include = nil, parent_references = nil)
+      parent_types.each do |param, parent_type|
+        if params[param].present?
+          if parent_include.present? && parent_references.present?
+            return parent_type.includes(parent_include).references(parent_references).find(params[param])
+          else
+            return parent_type.find(params[param])
+          end
+        end
       end
+      current_organization
+    end
+
+    def parent_eager(parent_types, parent_eager_load = nil)
+      parent_types.each do |param, parent_type|
+        if params[param].present?
+          if parent_eager_load.present?
+            return parent_type.eager_load(parent_eager_load).find(params[param])
+          else
+            return parent_type.find(params[param])
+          end
+        end
+      end
+      current_organization
+    end
+
+    def item_organizational_parent_eager(parent_eager_load = nil)
+      parent_eager(ORGANIZATIONAL_PARENT_HASH, parent_eager_load)
+    end
+
+    def item_hierarchical_parent_eager(parent_eager_load = nil)
+      parent_eager(HIERARCHICAL_PARENT_HASH, parent_eager_load)
+    end
+
+    def item_organizational_parent(parent_include = nil, parent_references = nil)
+      parent_includes(ORGANIZATIONAL_PARENT_HASH, parent_include, parent_references)
+    end
+
+
+    def item_hierarchical_parent(parent_include = nil, parent_references = nil)
+      parent_includes(HIERARCHICAL_PARENT_HASH, parent_include, parent_references)
     end
 
     # The item class based on the controller

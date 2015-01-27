@@ -5,15 +5,19 @@ module Api
 			# Return an array to display in the index view.
 			# @return Relation array
 			def get_items
-				@parent.academic_unities
+				@parent.academic_unities.eager_load(:localization)
 				# Or
 				# Campus.all
+			end
+
+			def get_item
+				get_item_class.eager_load(:localization, :faculty).find(params[:id])
 			end
 
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
 			def get_parent
-				item_organizational_parent
+				item_organizational_parent# ([academic_unities:[:localization]], [:places, :faculties])
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.
