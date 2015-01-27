@@ -66,7 +66,7 @@ module Api
 
       def set_and_validate_items
         @items = get_items
-        render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @item.present?
+        # render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @items.present?
       end
 
 
@@ -79,7 +79,7 @@ module Api
       # Set @parent var to the respective parent of the item, see the routes.
       # Can be null.
       def get_parent
-        @parent = item_hierarchical_parent
+        item_hierarchical_parent
       end
 
       # Return an array to display in the index view.
