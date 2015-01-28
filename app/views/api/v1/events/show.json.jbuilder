@@ -14,8 +14,9 @@ json.set! json_root do
       end
     end
   end
-
+=begin
   json.cache_if! should_cache?, ['collection', @item], expires_in: normal do
     json.partial! template_for_collections, collection: %w(comments posts published_posts likes dislikes)
   end
+=end
 end
