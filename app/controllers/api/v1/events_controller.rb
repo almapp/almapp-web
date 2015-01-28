@@ -5,7 +5,11 @@ module Api
 			# Return an array to display in the index view.
 			# @return Relation array
 			def get_items
-				@parent.events
+				@parent.events.eager_load(:localization)
+			end
+
+			def get_item
+				get_item_class.eager_load(:user, :localization, :participants).find_by_id(params[:id])
 			end
 
 			# Set @parent var to the respective parent of the item, see the routes.

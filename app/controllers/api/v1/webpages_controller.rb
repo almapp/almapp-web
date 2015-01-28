@@ -10,6 +10,10 @@ module Api
 				# Campus.all
 			end
 
+			def get_item
+				get_item_class.eager_load(:organization).find(params[:id])
+			end
+
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
 			def set_parent

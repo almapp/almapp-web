@@ -6,19 +6,23 @@ module Api
 			before_action :set_and_validate_item, only: [:show, :update, :destroy]
 
 			def likes
-				@items = get_items
+				@items = @parent.likes.eager_load(:user)
 				render :index
 			end
 
 			def dislikes
-				@items = @parent.dislikes
+				@items = @parent.dislikes.eager_load(:user)
 				render :index
 			end
 
 			# Return an array to display in the index view.
 			# @return Relation array
 			def get_items
-				@parent.likes
+				@parent.likes.eager_load(:user)
+			end
+
+			def get_item
+				get_item_class.eager_load(:user).find_by_id(params[:id])
 			end
 
 			# Set @parent var to the respective parent of the item, see the routes.

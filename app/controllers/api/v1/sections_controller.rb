@@ -5,9 +5,13 @@ module Api
 			# Return an array to display in the index view.
 			# @return Relation array
 			def get_items
-				@parent.sections
+				@parent.sections.eager_load(:schedule_items, :teachers, :assistants)
 				# Or
 				# Campus.all
+			end
+
+			def get_item
+				get_item_class.eager_load(:course, :schedule_items, :teachers, :assistants).find(params[:id])
 			end
 
 			# Set @parent var to the respective parent of the item, see the routes.

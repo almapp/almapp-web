@@ -10,6 +10,11 @@ module Api
 				# Campus.all
 			end
 
+			def get_item
+				get_item_class.eager_load(:academic_unity, [sections: [:schedule_items, :teachers, :assistants]]).find_by_id(params[:id])
+				#get_item_class.includes(:academic_unity, [sections: [:schedule_items, :teachers, :assistants]]).references(:academic_unities, :sections, :schedule_items, :teachers, :users).find_by_id(params[:id])
+			end
+
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
 			def get_parent
