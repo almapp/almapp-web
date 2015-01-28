@@ -1,4 +1,4 @@
-json.extract! item, :id, :anonymous, :hidden, :like_count, :dislike_count
+json.extract! item, :id, :anonymous, :hidden, :likes_count, :dislikes_count
 
 json.cache_if! should_cache?, ['compact', item.user] do
   json.user do

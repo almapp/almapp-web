@@ -11,6 +11,9 @@
 #  created_at       :datetime
 #  updated_at       :datetime
 #  anonymous        :boolean          default(FALSE), not null
+#  comments_count   :integer          default(0), not null
+#  likes_count      :integer          default(0), not null
+#  dislikes_count   :integer          default(0), not null
 #
 
 require 'test_helper'

@@ -1,4 +1,4 @@
-json.extract! item, :id, :title, :private, :publish_date, :to_date, :facebook_url, :external_url, :like_count, :dislike_count, :information
+json.extract! item, :id, :title, :private, :publish_date, :to_date, :facebook_url, :external_url, :likes_count, :dislikes_count, :information
 
 json.set! 'participants_count', item.participants.size
 

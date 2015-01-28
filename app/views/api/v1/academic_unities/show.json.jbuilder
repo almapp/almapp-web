@@ -1,6 +1,6 @@
 json.set! json_root do
   json.partial! template_for_item, item: @item
-  json.extract! @item, :like_count, :dislike_count
+  json.extract! @item, :likes_count, :dislikes_count
 
   json.cache_if! should_cache?, ['compact', @item.faculty], expires_in: very_long do
     json.faculty do

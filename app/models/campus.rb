@@ -17,6 +17,9 @@
 #  place_id        :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  comments_count  :integer          default(0), not null
+#  likes_count     :integer          default(0), not null
+#  dislikes_count  :integer          default(0), not null
 #
 
 class Campus < ActiveRecord::Base

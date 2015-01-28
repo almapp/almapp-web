@@ -6,7 +6,7 @@ json.user do
   end
 end
 
-json.extract! item, :like_count, :dislike_count
+json.extract! item, :likes_count, :dislikes_count
 
 # if controller.action_name == 'posts' || controller.action_name == 'index'
   json.entity do
@@ -62,4 +62,4 @@ json.event do
   end
 end
 
-json.extract! item, :content, :notify, :hidden, :like_count, :dislike_count, :created_at, :updated_at
+json.extract! item, :content, :notify, :hidden, :likes_count, :dislikes_count, :created_at, :updated_at

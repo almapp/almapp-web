@@ -68,8 +68,8 @@ if testing
   event.participants << pato
   event.save!
 
-  Post.first.set_like_by(consuelo)
-  Campus.first.set_like_by(pato)
+  Post.first.add_like_by(consuelo)
+  Campus.first.add_like_by(pato)
 
   group = Group.create!(name: 'Example Group', email:'example@example.ex', information:'Lorem ipsum ad his scripta blandit partiendo.', url:'http://www.google.cl')
   group.subscribers << pato

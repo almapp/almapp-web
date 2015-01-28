@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126141543) do
+ActiveRecord::Schema.define(version: 20150128022507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,15 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.string   "url"
     t.string   "email"
     t.string   "address"
-    t.text     "information",  default: ""
+    t.text     "information",    default: ""
     t.string   "facebook"
     t.string   "twitter"
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   add_index "academic_unities", ["abbreviation", "faculty_id"], name: "index_academic_unities_on_abbreviation_and_organization_id", unique: true, using: :btree
@@ -70,17 +73,20 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.string   "abbreviation"
     t.string   "short_name"
     t.string   "name"
-    t.integer  "campus_id",                 null: false
+    t.integer  "campus_id",                   null: false
     t.string   "address"
     t.string   "phone"
     t.string   "email"
     t.string   "url"
     t.string   "facebook"
     t.string   "twitter"
-    t.text     "information",  default: ""
+    t.text     "information",    default: ""
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   add_index "buildings", ["campus_id"], name: "index_buildings_on_campus_id", using: :btree
@@ -101,6 +107,9 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count",  default: 0,  null: false
+    t.integer  "likes_count",     default: 0,  null: false
+    t.integer  "dislikes_count",  default: 0,  null: false
   end
 
   add_index "campuses", ["abbreviation", "organization_id"], name: "index_campuses_on_cid_and_organization_id", unique: true, using: :btree
@@ -115,6 +124,9 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.text     "information",       default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count",    default: 0,  null: false
+    t.integer  "likes_count",       default: 0,  null: false
+    t.integer  "dislikes_count",    default: 0,  null: false
   end
 
   add_index "careers", ["academic_unity_id"], name: "index_careers_on_academic_unity_id", using: :btree
@@ -128,6 +140,9 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "anonymous",        default: false, null: false
+    t.integer  "comments_count",   default: 0,     null: false
+    t.integer  "likes_count",      default: 0,     null: false
+    t.integer  "dislikes_count",   default: 0,     null: false
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
@@ -144,6 +159,9 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.integer  "enrolled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count",    default: 0,    null: false
+    t.integer  "likes_count",       default: 0,    null: false
+    t.integer  "dislikes_count",    default: 0,    null: false
   end
 
   add_index "courses", ["academic_unity_id"], name: "index_courses_on_academic_unity_id", using: :btree
@@ -163,20 +181,23 @@ ActiveRecord::Schema.define(version: 20150126141543) do
   add_index "enrolled_careers", ["user_id"], name: "index_enrolled_careers_on_user_id", using: :btree
 
   create_table "events", force: true do |t|
-    t.string   "title",                        null: false
-    t.boolean  "private",      default: false
-    t.text     "information",  default: "",    null: false
-    t.datetime "publish_date",                 null: false
+    t.string   "title",                          null: false
+    t.boolean  "private",        default: false
+    t.text     "information",    default: "",    null: false
+    t.datetime "publish_date",                   null: false
     t.integer  "place_id"
     t.datetime "from_date"
-    t.datetime "to_date",                      null: false
+    t.datetime "to_date",                        null: false
     t.integer  "user_id"
-    t.integer  "host_id",                      null: false
-    t.string   "host_type",                    null: false
+    t.integer  "host_id",                        null: false
+    t.string   "host_type",                      null: false
     t.string   "facebook_url"
     t.string   "external_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0,     null: false
+    t.integer  "likes_count",    default: 0,     null: false
+    t.integer  "dislikes_count", default: 0,     null: false
   end
 
   add_index "events", ["host_id", "host_type"], name: "index_events_on_host_id_and_host_type", using: :btree
@@ -198,17 +219,20 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.string   "abbreviation"
     t.string   "short_name"
     t.string   "name"
-    t.integer  "campus_id",                 null: false
+    t.integer  "campus_id",                   null: false
     t.string   "address"
     t.string   "phone"
     t.string   "email"
     t.string   "url"
     t.string   "facebook"
-    t.text     "information",  default: ""
+    t.text     "information",    default: ""
     t.string   "twitter"
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   add_index "faculties", ["abbreviation", "campus_id"], name: "index_faculties_on_abbreviation_and_campus_id", unique: true, using: :btree
@@ -238,14 +262,17 @@ ActiveRecord::Schema.define(version: 20150126141543) do
   add_index "friendships", ["user_id"], name: "index_friendships_on_user_id", using: :btree
 
   create_table "groups", force: true do |t|
-    t.string   "name",                     null: false
-    t.string   "email",                    null: false
+    t.string   "name",                        null: false
+    t.string   "email",                       null: false
     t.string   "url"
     t.string   "facebook"
     t.string   "twitter"
-    t.text     "information", default: ""
+    t.text     "information",    default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   create_table "groups_organizations", force: true do |t|
@@ -271,10 +298,12 @@ ActiveRecord::Schema.define(version: 20150126141543) do
   add_index "groups_subscribers", ["user_id"], name: "index_groups_subscribers_on_user_id", using: :btree
 
   create_table "likes", force: true do |t|
-    t.integer "user_id",                   null: false
-    t.integer "valuation",     default: 0, null: false
-    t.integer "likeable_id",               null: false
-    t.string  "likeable_type",             null: false
+    t.integer  "user_id",                   null: false
+    t.integer  "valuation",     default: 1, null: false
+    t.integer  "likeable_id",               null: false
+    t.string   "likeable_type",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "likes", ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", using: :btree
@@ -283,8 +312,8 @@ ActiveRecord::Schema.define(version: 20150126141543) do
   create_table "organizations", force: true do |t|
     t.string   "name"
     t.string   "short_name"
-    t.string   "abbreviation",              null: false
-    t.text     "information",  default: ""
+    t.string   "abbreviation",                null: false
+    t.text     "information",    default: ""
     t.string   "image"
     t.string   "url"
     t.datetime "created_at"
@@ -294,44 +323,53 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.integer  "place_id"
     t.string   "address"
     t.string   "phone"
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   add_index "organizations", ["abbreviation"], name: "index_organizations_on_abbreviation", unique: true, using: :btree
   add_index "organizations", ["place_id"], name: "index_organizations_on_place_id", using: :btree
 
   create_table "places", force: true do |t|
-    t.string   "identifier",                  null: false
+    t.string   "identifier",                     null: false
     t.string   "name"
-    t.boolean  "service",     default: false, null: false
-    t.integer  "area_id",                     null: false
-    t.string   "area_type",                   null: false
-    t.text     "information", default: ""
-    t.float    "zoom",        default: 0.0
-    t.float    "angle",       default: 0.0
-    t.float    "tilt",        default: 0.0
-    t.float    "latitude",    default: 0.0
-    t.float    "longitude",   default: 0.0
+    t.boolean  "service",        default: false, null: false
+    t.integer  "area_id",                        null: false
+    t.string   "area_type",                      null: false
+    t.text     "information",    default: ""
+    t.float    "zoom",           default: 0.0
+    t.float    "angle",          default: 0.0
+    t.float    "tilt",           default: 0.0
+    t.float    "latitude",       default: 0.0
+    t.float    "longitude",      default: 0.0
     t.string   "floor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0,     null: false
+    t.integer  "likes_count",    default: 0,     null: false
+    t.integer  "dislikes_count", default: 0,     null: false
   end
 
   add_index "places", ["area_id", "area_type"], name: "index_places_on_area_id_and_area_type", using: :btree
   add_index "places", ["identifier", "area_id", "area_type"], name: "index_places_on_identifier_and_area", unique: true, using: :btree
 
   create_table "posts", force: true do |t|
-    t.integer  "user_id",                     null: false
-    t.text     "content",     default: "",    null: false
-    t.boolean  "notify",      default: false, null: false
+    t.integer  "user_id",                        null: false
+    t.text     "content",        default: "",    null: false
+    t.boolean  "notify",         default: false, null: false
     t.integer  "entity_id"
     t.string   "entity_type"
-    t.integer  "target_id",                   null: false
-    t.string   "target_type",                 null: false
+    t.integer  "target_id",                      null: false
+    t.string   "target_type",                    null: false
     t.integer  "place_id"
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "hidden",      default: false, null: false
+    t.boolean  "hidden",         default: false, null: false
+    t.integer  "comments_count", default: 0,     null: false
+    t.integer  "likes_count",    default: 0,     null: false
+    t.integer  "dislikes_count", default: 0,     null: false
   end
 
   add_index "posts", ["entity_id", "entity_type"], name: "index_posts_on_entity_id_and_entity_type", using: :btree
@@ -404,9 +442,12 @@ ActiveRecord::Schema.define(version: 20150126141543) do
     t.string   "name"
     t.string   "email"
     t.string   "url"
-    t.text     "information", default: ""
+    t.text     "information",    default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   add_index "teachers", ["name"], name: "index_teachers_on_name", using: :btree

@@ -13,6 +13,9 @@
 #  enrolled          :integer
 #  created_at        :datetime
 #  updated_at        :datetime
+#  comments_count    :integer          default(0), not null
+#  likes_count       :integer          default(0), not null
+#  dislikes_count    :integer          default(0), not null
 #
 
 require 'test_helper'

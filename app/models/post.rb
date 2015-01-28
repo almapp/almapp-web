@@ -2,19 +2,22 @@
 #
 # Table name: posts
 #
-#  id          :integer          not null, primary key
-#  user_id     :integer          not null
-#  content     :text             default(""), not null
-#  notify      :boolean          default(FALSE), not null
-#  entity_id   :integer
-#  entity_type :string(255)
-#  target_id   :integer          not null
-#  target_type :string(255)      not null
-#  place_id    :integer
-#  event_id    :integer
-#  created_at  :datetime
-#  updated_at  :datetime
-#  hidden      :boolean          default(FALSE), not null
+#  id             :integer          not null, primary key
+#  user_id        :integer          not null
+#  content        :text             default(""), not null
+#  notify         :boolean          default(FALSE), not null
+#  entity_id      :integer
+#  entity_type    :string(255)
+#  target_id      :integer          not null
+#  target_type    :string(255)      not null
+#  place_id       :integer
+#  event_id       :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  hidden         :boolean          default(FALSE), not null
+#  comments_count :integer          default(0), not null
+#  likes_count    :integer          default(0), not null
+#  dislikes_count :integer          default(0), not null
 #
 
 class Post < ActiveRecord::Base

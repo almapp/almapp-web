@@ -2,20 +2,23 @@
 #
 # Table name: academic_unities
 #
-#  id           :integer          not null, primary key
-#  abbreviation :string(255)
-#  short_name   :string(255)
-#  name         :string(255)
-#  faculty_id   :integer
-#  url          :string(255)
-#  email        :string(255)
-#  address      :string(255)
-#  information  :text             default("")
-#  facebook     :string(255)
-#  twitter      :string(255)
-#  place_id     :integer
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id             :integer          not null, primary key
+#  abbreviation   :string(255)
+#  short_name     :string(255)
+#  name           :string(255)
+#  faculty_id     :integer
+#  url            :string(255)
+#  email          :string(255)
+#  address        :string(255)
+#  information    :text             default("")
+#  facebook       :string(255)
+#  twitter        :string(255)
+#  place_id       :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  comments_count :integer          default(0), not null
+#  likes_count    :integer          default(0), not null
+#  dislikes_count :integer          default(0), not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

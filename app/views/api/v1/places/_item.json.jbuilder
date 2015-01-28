@@ -1,4 +1,4 @@
-json.extract! item, :id, :identifier, :name, :service, :like_count, :dislike_count, :information, :zoom, :angle, :tilt, :latitude, :longitude, :floor
+json.extract! item, :id, :identifier, :name, :service, :likes_count, :dislikes_count, :information, :zoom, :angle, :tilt, :latitude, :longitude, :floor
 
 json.area do
   polymorphic_type = polymorphic_type(item.area)
