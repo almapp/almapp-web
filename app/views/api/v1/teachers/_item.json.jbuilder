@@ -1,1 +1,1 @@
-json.extract! item, :id, :name, :email, :likes_count, :dislikes_count, :information , :created_at, :updated_at
+json.extract! item, :id, :name, :email, :likes_count, :dislikes_count, :comments_count, :information , :created_at, :updated_at

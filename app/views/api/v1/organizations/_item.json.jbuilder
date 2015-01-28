@@ -1,4 +1,4 @@
-json.extract! item, :id, :abbreviation, :short_name, :name, :address, :phone, :url, :facebook, :twitter, :likes_count, :dislikes_count, :information
+json.extract! item, :id, :abbreviation, :short_name, :name, :address, :phone, :url, :facebook, :twitter, :likes_count, :dislikes_count, :comments_count, :information
 
 json.cache_if! should_cache?, ['compact', item.localization] do
   json.localization do

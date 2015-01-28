@@ -62,4 +62,4 @@ json.event do
   end
 end
 
-json.extract! item, :content, :notify, :hidden, :likes_count, :dislikes_count, :created_at, :updated_at
+json.extract! item, :content, :notify, :hidden, :likes_count, :dislikes_count, :comments_count, :created_at, :updated_at
