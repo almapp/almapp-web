@@ -4,7 +4,7 @@ json.area do
   polymorphic_type = polymorphic_type(item.area)
   json.set! 'area_type', polymorphic_type
   json.extract! item, :area_id
-  json.cache! ['compact', item.area], expires_in: 10.minutes do
+  json.cache_if! should_cache?, ['compact', item.area], expires_in: 10.minutes do
     json.set! polymorphic_type do
       json.partial! template_for_item(item.area, 'compact'), item: item.area
     end

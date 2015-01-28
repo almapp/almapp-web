@@ -1,6 +1,6 @@
 json.partial! template_for_item(item), item: item
 
-json.cache! ['compact', item.organization] do
+json.cache_if! should_cache?, ['compact', item.organization] do
   json.organization do
     json.partial! template_for_item(item.organization, 'compact'), item: item.organization
   end

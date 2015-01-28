@@ -105,7 +105,10 @@ module ControllerHelpers
     def json_path(item = @item)
       eval("api_v1_#{item.class.name.underscore.downcase}_path(item)")
     end
-    
+
+    def should_cache?
+      Rails.env.production?
+    end
 
     def self.included(c)
       c.helper Expiration
@@ -118,6 +121,7 @@ module ControllerHelpers
                       :template_for_collections,
                       :get_periods,
                       :should_show_paths?,
+                      :should_cache?,
                       :json_path_key,
                       :json_path
     end

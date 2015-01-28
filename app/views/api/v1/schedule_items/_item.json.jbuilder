@@ -1,6 +1,6 @@
 json.extract! item, :id, :schedule_module_id, :class_type
 
-json.cache! ['compact', item.schedule_module] do
+json.cache_if! should_cache?, ['compact', item.schedule_module] do
   json.schedule_module do
     json.partial! template_for_item(item.schedule_module, 'compact'), item: item.schedule_module
   end
@@ -14,7 +14,7 @@ place = item.place
 # json.set! 'campus_id', (campus.present?) ? campus.id : nil
 # json.set! 'place_id', (place.present?) ? place.id : nil
 
-json.cache! ['compact', place] do
+json.cache_if! should_cache?, ['compact', place] do
   json.place do
     if place.present?
       json.partial! template_for_item(place, 'compact'), item: place

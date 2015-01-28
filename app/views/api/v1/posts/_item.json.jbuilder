@@ -1,7 +1,7 @@
 json.extract! item, :id
 
 json.user do
-  json.cache! ['compact', item.user] do
+  json.cache_if! should_cache?, ['compact', item.user] do
     json.partial! template_for_item(item.user, 'compact'), item: item.user
   end
 end
@@ -15,7 +15,7 @@ json.extract! item, :like_count, :dislike_count
       json.set! 'entity_type', polymorphic_type
       json.extract! item, :entity_id
       json.set! polymorphic_type do
-        json.cache! ['compact', item.entity] do
+        json.cache_if! should_cache?, ['compact', item.entity] do
           json.partial! template_for_item(item.entity, 'compact'), item: item.entity
         end
       end
@@ -32,7 +32,7 @@ json.extract! item, :like_count, :dislike_count
       json.set! 'target_type', polymorphic_type
       json.extract! item, :target_id
       json.set! polymorphic_type do
-        json.cache! ['compact', item.target] do
+        json.cache_if! should_cache?, ['compact', item.target] do
           json.partial! template_for_item(item.target, 'compact'), item: item.target
         end
       end
@@ -42,7 +42,7 @@ json.extract! item, :like_count, :dislike_count
   end
 # end
 
-json.cache! ['compact', item.localization] do
+json.cache_if! should_cache?, ['compact', item.localization] do
   json.localization do
     if item.localization.present?
       json.partial! template_for_item(item.localization, 'compact'), item: item.localization
@@ -54,7 +54,7 @@ end
 
 json.event do
   if item.event.present?
-    json.cache! ['compact', item.event] do
+    json.cache_if! should_cache?, ['compact', item.event] do
       json.partial! template_for_item(item.event, 'compact'), item: item.event
     end
   else
