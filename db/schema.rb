@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128022507) do
+ActiveRecord::Schema.define(version: 20150128030312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,30 @@ ActiveRecord::Schema.define(version: 20150128022507) do
   end
 
   add_index "careers", ["academic_unity_id"], name: "index_careers_on_academic_unity_id", using: :btree
+
+  create_table "chat_participantships", force: true do |t|
+    t.integer  "chat_id"
+    t.integer  "user_id"
+    t.boolean  "muted",       default: false, null: false
+    t.boolean  "banned",      default: false, null: false
+    t.string   "appointment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chat_participantships", ["chat_id"], name: "index_chat_participantships_on_chat_id", using: :btree
+  add_index "chat_participantships", ["user_id"], name: "index_chat_participantships_on_user_id", using: :btree
+
+  create_table "chats", force: true do |t|
+    t.integer  "conversable_id"
+    t.string   "conversable_type"
+    t.string   "title",            default: ""
+    t.boolean  "available",        default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chats", ["conversable_id", "conversable_type"], name: "index_chats_on_conversable_id_and_conversable_type", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id",                          null: false

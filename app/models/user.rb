@@ -96,6 +96,9 @@ class User < ActiveRecord::Base
   has_many :groups_subscribers
   has_many :subscribed_groups, through: :groups_subscribers, source: :group, class_name: 'Group'
 
+  has_many :chat_participantships
+  has_many :chats, through: :chat_participantships
+
   has_and_belongs_to_many :sections
 
   has_many :assistantships
