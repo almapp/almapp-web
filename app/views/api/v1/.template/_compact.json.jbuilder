@@ -1,1 +1,0 @@
-json.extract! item, :id, :short_name, :name, :address
