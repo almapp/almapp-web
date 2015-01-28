@@ -24,7 +24,9 @@ class Teacher < ActiveRecord::Base
     Faculty.joins(:academic_unities).merge(academic_unities)
   end
 
-  def courses(year = current_year, semester = current_semester)
-    Course.joins(:sections).merge(sections.period(year, semester))#.order('courses.initials ASC')
+  has_many :courses, through: :sections
+
+  def courses_for_period(year = current_year, semester = current_semester)
+    Course.joins(:sections).merge(sections.period(year, semester)) #.order('courses.initials ASC')
   end
 end
