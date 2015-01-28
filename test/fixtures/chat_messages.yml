@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: chat_messages
+#
+#  id                      :integer          not null, primary key
+#  chat_participantship_id :integer
+#  content                 :text             default(""), not null
+#  flagged                 :boolean          default(FALSE), not null
+#  hidden                  :boolean          default(FALSE), not null
+#  created_at              :datetime
+#  updated_at              :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chat_participantship_id: 
+  content: MyString
+  flagged: false
+  hidden: false
+
+two:
+  chat_participantship_id: 
+  content: MyString
+  flagged: false
+  hidden: false

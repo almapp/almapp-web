@@ -24,5 +24,11 @@ module AlmappWeb
 
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/loaders/**/"]
+
+    config.middleware.delete Rack::Lock
+    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25 do
+      map '/chat' => ChatManagerController
+      map :default => :block
+    end
   end
 end

@@ -5,9 +5,10 @@
 #  id          :integer          not null, primary key
 #  chat_id     :integer
 #  user_id     :integer
+#  active      :boolean          default(FALSE), not null
 #  muted       :boolean          default(FALSE), not null
 #  banned      :boolean          default(FALSE), not null
-#  appointment :string(255)
+#  appointment :text
 #  created_at  :datetime
 #  updated_at  :datetime
 #

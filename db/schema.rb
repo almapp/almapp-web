@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128030312) do
+ActiveRecord::Schema.define(version: 20150128033946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,12 +131,24 @@ ActiveRecord::Schema.define(version: 20150128030312) do
 
   add_index "careers", ["academic_unity_id"], name: "index_careers_on_academic_unity_id", using: :btree
 
+  create_table "chat_messages", force: true do |t|
+    t.integer  "chat_participantship_id"
+    t.text     "content",                 default: "",    null: false
+    t.boolean  "flagged",                 default: false, null: false
+    t.boolean  "hidden",                  default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chat_messages", ["chat_participantship_id"], name: "index_chat_messages_on_chat_participantship_id", using: :btree
+
   create_table "chat_participantships", force: true do |t|
     t.integer  "chat_id"
     t.integer  "user_id"
+    t.boolean  "active",      default: false, null: false
     t.boolean  "muted",       default: false, null: false
     t.boolean  "banned",      default: false, null: false
-    t.string   "appointment"
+    t.text     "appointment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

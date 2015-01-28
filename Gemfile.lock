@@ -175,8 +175,6 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.1)
-    private_pub (1.0.3)
-      faye
     rack (1.5.2)
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
@@ -268,7 +266,6 @@ DEPENDENCIES
   omniauth-github!
   omniauth-google-oauth2!
   pg
-  private_pub
   rails (= 4.1.6)
   rails-api
   sass

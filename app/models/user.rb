@@ -98,6 +98,7 @@ class User < ActiveRecord::Base
 
   has_many :chat_participantships
   has_many :chats, through: :chat_participantships
+  has_many :chat_messages, through: :chat_participantships
 
   has_and_belongs_to_many :sections
 
