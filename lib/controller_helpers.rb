@@ -94,7 +94,7 @@ module ControllerHelpers
       property.present? ? property.send('size') : 0
     end
 
-    def should_show_paths(item = @item)
+    def should_show_paths?(item = @item)
       false
     end
 
@@ -105,9 +105,7 @@ module ControllerHelpers
     def json_path(item = @item)
       eval("api_v1_#{item.class.name.underscore.downcase}_path(item)")
     end
-
-    #helper Expiration
-    #helper_method :json_root, :template_for_item, :polymorphic_type, :item_path_for, :item_url_for, :nested_item_count, :template_for_collections, :get_periods
+    
 
     def self.included(c)
       c.helper Expiration
@@ -119,7 +117,7 @@ module ControllerHelpers
                       :nested_item_count,
                       :template_for_collections,
                       :get_periods,
-                      :should_show_paths,
+                      :should_show_paths?,
                       :json_path_key,
                       :json_path
     end
