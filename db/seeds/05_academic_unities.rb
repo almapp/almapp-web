@@ -20,7 +20,7 @@ puts('Creating Academic Unities')
 #  updated_at   :datetime
 #
 
-AcademicUnity.create(
+@a_agro = AcademicUnity.create(
 	abbreviation: @agro.abbreviation,
 	short_name: 'Agronomía e Ingeniería Forestal',
 	faculty: @agro,
@@ -37,7 +37,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_arq = AcademicUnity.create(
 	abbreviation: 'ARQ',
 	short_name: 'Arquitectura',
 	faculty: @fadeu,
@@ -54,14 +54,14 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_art = AcademicUnity.create(
 	abbreviation: 'ART',
 	short_name: 'Arte',
 	faculty: @artes,
 	url: ''
 )
 
-AcademicUnity.create(
+@a_astro = AcademicUnity.create(
 	abbreviation: 'ASTFIS',
 	short_name: 'Astrofísica',
 	faculty: @fisica,
@@ -78,7 +78,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_bio = AcademicUnity.create(
 	abbreviation: 'BIO',
 	short_name: 'Ciencias Biológicas',
 	faculty: @bio,
@@ -95,7 +95,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_salud = AcademicUnity.create(
 	abbreviation: 'CS',
 	short_name: 'Ciencias de la Salud',
 	faculty: @bio,
@@ -112,7 +112,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_eco = AcademicUnity.create(
 	abbreviation: @eco.abbreviation,
 	short_name: 'Ciencias Económicas y Administrativas',
 	faculty: @eco,
@@ -129,7 +129,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_politica = AcademicUnity.create(
 	abbreviation: 'ICP',
 	short_name: 'Ciencia Política',
 	faculty: @historia,
@@ -146,7 +146,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_college = AcademicUnity.create(
 	abbreviation: @college.abbreviation,
 	short_name: 'College',
 	faculty: @college,
@@ -163,7 +163,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_com = AcademicUnity.create(
 	abbreviation: @comunicaciones.abbreviation,
 	short_name: 'Comunicaciones',
 	faculty: @comunicaciones,
@@ -180,7 +180,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_cc = AcademicUnity.create(
 	abbreviation: @construccion.abbreviation,
 	short_name: 'Construcción Civil',
 	faculty: @construccion,
@@ -197,7 +197,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_der = AcademicUnity.create(
 	abbreviation: @derecho.abbreviation,
 	short_name: 'Derecho',
 	faculty: @derecho,
@@ -214,7 +214,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_dno = AcademicUnity.create(
 	abbreviation: 'DNO',
 	short_name: 'Diseño',
 	faculty: @fadeu,
@@ -231,7 +231,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_edu = AcademicUnity.create(
 	abbreviation: @educacion.abbreviation,
 	short_name: 'Educación',
 	faculty: @educacion,
@@ -248,7 +248,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_enf = AcademicUnity.create(
 	abbreviation: @enfermeria.abbreviation,
 	short_name: 'Enfermería',
 	faculty: @enfermeria,
@@ -265,14 +265,14 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_est = AcademicUnity.create(
 	abbreviation: 'EST',
 	short_name: 'Estética',
 	faculty: @artes,
 	url: ''
 )
 
-AcademicUnity.create(
+@a_urb = AcademicUnity.create(
 	abbreviation: 'IEU',
 	short_name: 'Estudios Urbanos y Territoriales',
 	faculty: @fadeu,
@@ -289,7 +289,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_fil = AcademicUnity.create(
 	abbreviation: @filosofia.abbreviation,
 	short_name: 'Filosofía',
 	faculty: @filosofia,
@@ -306,7 +306,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_fis = AcademicUnity.create(
 	abbreviation: @fisica.abbreviation,
 	short_name: 'Física',
 	faculty: @fisica,
@@ -323,7 +323,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_geo = AcademicUnity.create(
 	abbreviation: 'GEO',
 	short_name: 'Geografía',
 	faculty: @historia,
@@ -340,7 +340,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_his = AcademicUnity.create(
 	abbreviation: 'HIS',
 	short_name: 'Historia',
 	faculty: @historia,
@@ -357,7 +357,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_ing = AcademicUnity.create(
 	abbreviation: @ingenieria.abbreviation,
 	short_name: 'Ingeniería',
 	faculty: @ingenieria,
@@ -374,7 +374,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_let = AcademicUnity.create(
 	abbreviation: @letras.abbreviation,
 	short_name: 'Letras',
 	faculty: @letras,
@@ -391,7 +391,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_mat = AcademicUnity.create(
 	abbreviation: @matematica.abbreviation,
 	short_name: 'Matemática',
 	faculty: @matematica,
@@ -408,7 +408,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_med = AcademicUnity.create(
 	abbreviation: @medicina.abbreviation,
 	short_name: 'Medicina',
 	faculty: @medicina,
@@ -425,14 +425,14 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_musica = AcademicUnity.create(
 	abbreviation: 'MUC',
 	short_name: 'Música',
 	faculty: @artes,
 	url: ''
 )
 
-AcademicUnity.create(
+@a_odonto = AcademicUnity.create(
 	abbreviation: 'ODO',
 	short_name: 'Odontología',
 	faculty: @medicina,
@@ -449,7 +449,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_psi = AcademicUnity.create(
 	abbreviation: 'PSI',
 	short_name: 'Psicología',
 	faculty: @sociales,
@@ -466,7 +466,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_quim = AcademicUnity.create(
 	abbreviation: @quimica.abbreviation,
 	short_name: 'Química',
 	faculty: @quimica,
@@ -483,7 +483,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_socio = AcademicUnity.create(
 	abbreviation: 'SOL',
 	short_name: 'Sociología',
 	faculty: @sociales,
@@ -500,14 +500,14 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_act = AcademicUnity.create(
 	abbreviation: 'ACT',
 	short_name: 'Actuación',
 	faculty: @artes,
 	url: ''
 )
 
-AcademicUnity.create(
+@a_teo = AcademicUnity.create(
 	abbreviation: @teologia.abbreviation,
 	short_name: 'Teología',
 	faculty: @teologia,
@@ -524,7 +524,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_social = AcademicUnity.create(
 	abbreviation: 'TS',
 	short_name: 'Trabajo Social',
 	faculty: @sociales,
@@ -541,7 +541,7 @@ AcademicUnity.create(
 	)
 )
 
-AcademicUnity.create(
+@a_vr = AcademicUnity.create(
 	abbreviation: @villarica.abbreviation,
 	short_name: 'Villarrica',
 	faculty: @villarica,
