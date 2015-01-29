@@ -159,7 +159,7 @@ ActiveRecord::Schema.define(version: 20150128033946) do
   create_table "chats", force: true do |t|
     t.integer  "conversable_id"
     t.string   "conversable_type"
-    t.string   "title",            default: ""
+    t.string   "title",                           null: false
     t.boolean  "available",        default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -445,13 +445,16 @@ ActiveRecord::Schema.define(version: 20150128033946) do
   add_index "schedule_modules", ["initials", "organization_id"], name: "index_schedule_modules_on_initials_and_organization_id", unique: true, using: :btree
 
   create_table "sections", force: true do |t|
-    t.integer  "course_id",               null: false
-    t.integer  "number",                  null: false
-    t.integer  "semester",                null: false
-    t.integer  "year",                    null: false
+    t.integer  "course_id",                   null: false
+    t.integer  "number",                      null: false
+    t.integer  "semester",                    null: false
+    t.integer  "year",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "vacancy",    default: -1
+    t.integer  "vacancy",        default: -1
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   add_index "sections", ["course_id"], name: "index_sections_on_course_id", using: :btree

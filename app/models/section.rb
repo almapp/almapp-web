@@ -14,6 +14,7 @@
 
 class Section < ActiveRecord::Base
   include Commentable
+  include Likeable
   include PostTarget
   include PostPublisher
   include EventPublisher

@@ -65,8 +65,11 @@ module Api
       end
 
       def set_and_validate_items
-        @items = get_items
-        # render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @items.present?
+        begin
+          @items = get_items
+        rescue
+          render :json => {:error => 'Parent does not exist.'}.to_json, :status => 404 unless @items.present?
+        end
       end
 
 

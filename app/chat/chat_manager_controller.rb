@@ -1,4 +1,8 @@
 class ChatManagerController < FayeRails::Controller
+  observe ChatMessage, :after_create do |message|
+    # ChatManagerController.publish('/chat', message.attributes)
+  end
+
   channel '/chat' do
     monitor :subscribe do
       puts "Client #{client_id} subscribed to #{channel}."
@@ -12,7 +16,12 @@ class ChatManagerController < FayeRails::Controller
 
     filter :in do
       puts "Inbound message #{message}."
-      pass
+      pass #modify, block drop
+    end
+
+    filter :out do
+      puts "Outbound message #{message}."
+      pass #modify, block drop
     end
   end
 end

@@ -27,7 +27,10 @@ module AlmappWeb
 
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25 do
-      map '/chat' => ChatManagerController
+      # curl http://localhost:3000/faye -d 'message={"channel":"/chat/A3", "data":"hello"}'
+      add_extension(ChatMessageValidator.new)
+
+      map '/chat/**' => ChatManagerController
       map :default => :block
     end
   end
