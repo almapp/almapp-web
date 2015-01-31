@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  use_doorkeeper
   # https://github.com/lynndylanhurley/devise_token_auth_demo
   # https://github.com/lynndylanhurley/devise_token_auth
 
@@ -40,11 +41,14 @@ Rails.application.routes.draw do
   #constraints(Subdomain) do
 
     # https://github.com/lynndylanhurley/ng-token-auth/issues/75#issuecomment-66254414
-    mount_devise_token_auth_for 'User', at: '/api/v1/auth', controllers: {
-                                      registrations:      'api/v1/auth/registrations',
-                                      sessions:           'api/v1/auth/sessions'
-                                      #token_validations:  'api/v1/auth/token_validations'
-                                      }
+    #mount_devise_token_auth_for 'User', at: '/api/v1/auth', controllers: {
+    #                                  registrations:      'api/v1/auth/registrations',
+    #                                  sessions:           'api/v1/auth/sessions'
+    #                                  #token_validations:  'api/v1/auth/token_validations'
+    #                                  }
+
+    use_doorkeeper
+    devise_for :users
 
     # let AngularJS manage routes
     get '/', to: redirect('/')

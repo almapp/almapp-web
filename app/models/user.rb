@@ -33,15 +33,29 @@
 #
 
 class User < ActiveRecord::Base
-  include DeviseTokenAuth::Concerns::User
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  before_create :skip_confirmation!
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  #devise :database_authenticatable, :registerable,
+  #       :recoverable, :rememberable, :trackable, :validatable
+
+  #before_create :skip_confirmation!
+
+  # Create app
+  # ap app = Doorkeeper::Application.create!(:name => 'AlmappCore-iOS', :redirect_uri => 'almapp://oauth/callback')
+  # ap app = Doorkeeper::Application.create!(:name => 'Paw', :redirect_uri => 'almapp://callback')
 
   # User.create(email: 'pelopez2@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword', provider:'email')
   # curl -H "Content-Type: application/json" -d '{"email":"cicontreras1@uc.cl","password":"miaumiaumiau", "organization_id":"1", "provider":"email", "password_confirmation":"miaumiaumiau", "confirm_success_url":"http://uc.lvh.me:3000/"}' -X POST http://uc.lvh.me:3000/api/v1/auth.json
 
   # http://uc.lvh.me:3000/api/v1/auth/sign_in.json?email=pelopez2@uc.cl&password=randompassword
   # curl -H "Content-Type: application/json" -d '{"email":"pelopez2@uc.cl","password":"randompassword"}' -X POST http://uc.lvh.me:3000/api/v1/auth/sign_in.json
+
+  #"scope": "profile email",
+  #"redirect_uris": ["myapp://oauth/callback"],
 
   #Access-Token: XeyGZdFYdiYk7kQ0RfliLA
   #Cache-Control: max-age=0, private, must-revalidate
@@ -115,10 +129,6 @@ class User < ActiveRecord::Base
   has_many :liked_content, class_name: 'Like'
 
   has_many :published_posts, -> { order(created_at: :desc) }, :foreign_key => 'user_id', :class_name => 'Post'
-
-  def email_with_override
-    self.public_email? ? read_attribute(:email) : 'private'
-  end
 
   def send_friend_request(user)
     pending_friendship = Friendship.where(user: user, friend: self).first

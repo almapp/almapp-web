@@ -3,10 +3,15 @@ module Api
     class BaseController < ApplicationController
       include ControllerHelpers::V1
 
+      before_action :doorkeeper_authorize!
       before_action :authenticate_user!, only: [:create, :destroy, :update]
       before_action :set_and_validate_parent, only: [:index, :create]
       before_action :set_and_validate_items, only: [:index]
       before_action :set_and_validate_item, only: [:show, :update, :destroy]
+
+      def doorkeeper_unauthorized_render_options
+        {json: '{"status": "failure", "message":"401 Unauthorized"}'}
+      end
 
       #=================
       #==== Actions ====
