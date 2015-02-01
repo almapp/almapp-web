@@ -26,6 +26,7 @@ module AlmappWeb
     config.autoload_paths += Dir["#{config.root}/lib/loaders/**/"]
 
     config.middleware.delete Rack::Lock
+    #config.middleware.use FayeRails::Middleware, mount: '/faye', engine: {type: Faye::Redis, host: 'localhost'}, :timeout => 25 do
     config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25 do
       # curl http://localhost:3000/faye -d 'message={"channel":"/chat/A3", "data":"hello"}'
       add_extension(ChatMessageValidator.new)

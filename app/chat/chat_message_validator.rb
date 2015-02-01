@@ -5,7 +5,7 @@ class ChatMessageValidator
     puts message.inspect
 
     if MONITORED_CHANNELS.include?(message['channel'])
-      puts message['channel']
+      puts message['META CHANNEL']
 
     else
 

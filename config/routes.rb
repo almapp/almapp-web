@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   # Each organization has a subdomain determined by their 'abbreviation' column, this column can't be null.
   #constraints(Subdomain) do
-  
+
     use_doorkeeper
     devise_for :users
 
@@ -100,6 +100,10 @@ Rails.application.routes.draw do
           resources :schedule_modules
           resources :campuses
           resources :webpages
+        end
+
+        resources :chats, shallow: true do
+          resources :chat_messages
         end
 
         resources :comments, only: [:show, :index],  concerns: :likeable
