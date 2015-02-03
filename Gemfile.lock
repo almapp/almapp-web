@@ -1,26 +1,3 @@
-GIT
-  remote: git://github.com/intridea/omniauth-github.git
-  revision: 21fa5e1a7295a11eae42846690b1eee88e57c23a
-  specs:
-    omniauth-github (1.1.2)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
-
-GIT
-  remote: git://github.com/mkdynamic/omniauth-facebook.git
-  revision: 9f729037e5c27d102462ebbb205b5da17f9aaf86
-  specs:
-    omniauth-facebook (2.0.0)
-      omniauth-oauth2 (~> 1.2)
-
-GIT
-  remote: git://github.com/zquestz/omniauth-google-oauth2.git
-  revision: 74d9e4fa4ec369bbb088628b1f400e54d3094fd9
-  specs:
-    omniauth-google-oauth2 (0.2.6)
-      omniauth (>= 1.1.1)
-      omniauth-oauth2 (>= 1.1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,12 +29,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
     awesome_print (1.6.1)
-    bcrypt (3.1.9)
+    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -65,7 +43,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    bullet (4.14.2)
+    bullet (4.14.3)
       activesupport (>= 3.0.0)
       uniform_notifier (>= 1.6.0)
     callsite (0.0.11)
@@ -83,6 +61,8 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+    cookiejar (0.3.2)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -91,9 +71,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise_token_auth (0.1.30)
-      devise (~> 3.3)
-      rails (~> 4.1)
+    doorkeeper (2.1.0)
+      railties (>= 3.1)
     elasticsearch (1.0.6)
       elasticsearch-api (= 1.0.6)
       elasticsearch-transport (= 1.0.6)
@@ -102,12 +81,41 @@ GEM
     elasticsearch-transport (1.0.6)
       faraday
       multi_json
+    em-http-request (1.1.2)
+      addressable (>= 2.3.4)
+      cookiejar
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.0)
+      eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
+    eventmachine (1.0.4)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    faye (1.0.3)
+      cookiejar (>= 0.3.0)
+      em-http-request (>= 0.3.0)
+      eventmachine (>= 0.12.0)
+      faye-websocket (>= 0.7.0)
+      multi_json (>= 1.0.0)
+      rack (>= 1.0.0)
+      websocket-driver (>= 0.3.0)
+    faye-rails (2.0.0)
+      eventmachine (~> 1.0.0)
+      faye (~> 1.0.1)
+    faye-websocket (0.9.2)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
     ffi (1.9.6)
+    gmail (0.5.0)
+      gmail_xoauth (>= 0.3.0)
+      mail (>= 2.2.1)
+    gmail_xoauth (0.4.1)
+      oauth (>= 0.3.6)
     hashie (3.3.2)
     hike (1.2.3)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -130,6 +138,7 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -138,14 +147,6 @@ GEM
       rack (~> 1.2)
     oj (2.11.4)
     oj_mimic_json (1.0.1)
-    omniauth (1.2.2)
-      hashie (>= 1.2, < 4)
-      rack (~> 1.0)
-    omniauth-oauth2 (1.2.0)
-      faraday (>= 0.8, < 0.10)
-      multi_json (~> 1.3)
-      oauth2 (~> 1.0)
-      omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.1)
     rack (1.5.2)
@@ -179,7 +180,7 @@ GEM
       json (~> 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    sass (3.4.10)
+    sass (3.4.11)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -197,6 +198,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -208,6 +213,9 @@ GEM
       timeliness (~> 0.3.6)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket-driver (0.5.1)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.1)
 
 PLATFORMS
   ruby
@@ -220,16 +228,17 @@ DEPENDENCIES
   binding_of_caller
   bullet
   compass
-  devise_token_auth
+  devise
+  doorkeeper
+  faye-rails
+  gmail
   jbuilder
   jbuilder_cache_multi
   meta_request
   nokogiri
+  oauth2
   oj
   oj_mimic_json
-  omniauth-facebook!
-  omniauth-github!
-  omniauth-google-oauth2!
   pg
   rails (= 4.1.6)
   rails-api
@@ -237,4 +246,5 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   searchkick
   spring
+  thin
   validates_timeliness (~> 3.0)

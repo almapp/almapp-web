@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128022507) do
+ActiveRecord::Schema.define(version: 20150203133307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,42 @@ ActiveRecord::Schema.define(version: 20150128022507) do
   end
 
   add_index "careers", ["academic_unity_id"], name: "index_careers_on_academic_unity_id", using: :btree
+
+  create_table "chat_messages", force: true do |t|
+    t.integer  "chat_participantship_id"
+    t.text     "content",                 default: "",    null: false
+    t.boolean  "flagged",                 default: false, null: false
+    t.boolean  "hidden",                  default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chat_messages", ["chat_participantship_id"], name: "index_chat_messages_on_chat_participantship_id", using: :btree
+
+  create_table "chat_participantships", force: true do |t|
+    t.integer  "chat_id"
+    t.integer  "user_id"
+    t.boolean  "active",      default: false, null: false
+    t.boolean  "muted",       default: false, null: false
+    t.boolean  "banned",      default: false, null: false
+    t.text     "appointment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chat_participantships", ["chat_id"], name: "index_chat_participantships_on_chat_id", using: :btree
+  add_index "chat_participantships", ["user_id"], name: "index_chat_participantships_on_user_id", using: :btree
+
+  create_table "chats", force: true do |t|
+    t.integer  "conversable_id"
+    t.string   "conversable_type"
+    t.string   "title",                           null: false
+    t.boolean  "available",        default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chats", ["conversable_id", "conversable_type"], name: "index_chats_on_conversable_id_and_conversable_type", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id",                          null: false
@@ -309,6 +345,46 @@ ActiveRecord::Schema.define(version: 20150128022507) do
   add_index "likes", ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
+  create_table "oauth_access_grants", force: true do |t|
+    t.integer  "resource_owner_id", null: false
+    t.integer  "application_id",    null: false
+    t.string   "token",             null: false
+    t.integer  "expires_in",        null: false
+    t.text     "redirect_uri",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "revoked_at"
+    t.string   "scopes"
+  end
+
+  add_index "oauth_access_grants", ["token"], name: "index_oauth_access_grants_on_token", unique: true, using: :btree
+
+  create_table "oauth_access_tokens", force: true do |t|
+    t.integer  "resource_owner_id"
+    t.integer  "application_id"
+    t.string   "token",             null: false
+    t.string   "refresh_token"
+    t.integer  "expires_in"
+    t.datetime "revoked_at"
+    t.datetime "created_at",        null: false
+    t.string   "scopes"
+  end
+
+  add_index "oauth_access_tokens", ["refresh_token"], name: "index_oauth_access_tokens_on_refresh_token", unique: true, using: :btree
+  add_index "oauth_access_tokens", ["resource_owner_id"], name: "index_oauth_access_tokens_on_resource_owner_id", using: :btree
+  add_index "oauth_access_tokens", ["token"], name: "index_oauth_access_tokens_on_token", unique: true, using: :btree
+
+  create_table "oauth_applications", force: true do |t|
+    t.string   "name",                      null: false
+    t.string   "uid",                       null: false
+    t.string   "secret",                    null: false
+    t.text     "redirect_uri",              null: false
+    t.string   "scopes",       default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true, using: :btree
+
   create_table "organizations", force: true do |t|
     t.string   "name"
     t.string   "short_name"
@@ -409,13 +485,16 @@ ActiveRecord::Schema.define(version: 20150128022507) do
   add_index "schedule_modules", ["initials", "organization_id"], name: "index_schedule_modules_on_initials_and_organization_id", unique: true, using: :btree
 
   create_table "sections", force: true do |t|
-    t.integer  "course_id",               null: false
-    t.integer  "number",                  null: false
-    t.integer  "semester",                null: false
-    t.integer  "year",                    null: false
+    t.integer  "course_id",                   null: false
+    t.integer  "number",                      null: false
+    t.integer  "semester",                    null: false
+    t.integer  "year",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "vacancy",    default: -1
+    t.integer  "vacancy",        default: -1
+    t.integer  "comments_count", default: 0,  null: false
+    t.integer  "likes_count",    default: 0,  null: false
+    t.integer  "dislikes_count", default: 0,  null: false
   end
 
   add_index "sections", ["course_id"], name: "index_sections_on_course_id", using: :btree
@@ -455,7 +534,6 @@ ActiveRecord::Schema.define(version: 20150128022507) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "username",                               null: false
-    t.string   "email",                  default: "",    null: false
     t.string   "student_id"
     t.integer  "organization_id",                        null: false
     t.boolean  "admin",                  default: false
@@ -463,8 +541,8 @@ ActiveRecord::Schema.define(version: 20150128022507) do
     t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider",                               null: false
-    t.string   "uid",                    default: "",    null: false
+    t.boolean  "findeable",              default: true,  null: false
+    t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -472,19 +550,13 @@ ActiveRecord::Schema.define(version: 20150128022507) do
     t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.text     "tokens"
-    t.boolean  "findeable",              default: true,  null: false
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["organization_id"], name: "index_users_on_organization_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   create_table "webpages", force: true do |t|
     t.string   "identifier",                             null: false
@@ -498,7 +570,7 @@ ActiveRecord::Schema.define(version: 20150128022507) do
     t.boolean  "requires_login",         default: false, null: false
     t.boolean  "should_open_in_browser", default: true,  null: false
     t.string   "home_url",                               null: false
-    t.string   "base_url"
+    t.string   "login_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

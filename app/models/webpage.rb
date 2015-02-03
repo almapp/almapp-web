@@ -14,7 +14,7 @@
 #  requires_login         :boolean          default(FALSE), not null
 #  should_open_in_browser :boolean          default(TRUE), not null
 #  home_url               :string(255)      not null
-#  base_url               :string(255)
+#  login_url              :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
 #

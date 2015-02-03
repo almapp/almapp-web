@@ -12,13 +12,23 @@ gem 'jbuilder_cache_multi'
 gem 'oj'
 gem 'oj_mimic_json'
 
+# Chat
+gem 'thin'
+gem 'faye-rails'
+# gem 'faye-redis'
+
+# Email
+gem 'gmail'
+
 # Searching
 # https://shellycloud.com/blog/2013/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch
-gem "searchkick" # rake searchkick:reindex CLASS=Place
+# To Deploy: https://gist.github.com/gourneau/66e0bd90c92ad829590b
+gem 'searchkick' # rake searchkick:reindex CLASS=Place
 
 group :development, :test do
   # gem 'debugger'
-  gem "bullet"
+  gem 'oauth2'
+  gem 'bullet'
   gem 'meta_request' # https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg
   gem 'spring'
   gem 'awesome_print'
@@ -36,10 +46,8 @@ group :production do
 
 end
 
-gem 'devise_token_auth'
-gem 'omniauth-github',        :git => 'git://github.com/intridea/omniauth-github.git'
-gem 'omniauth-facebook',      :git => 'git://github.com/mkdynamic/omniauth-facebook.git'
-gem 'omniauth-google-oauth2', :git => 'git://github.com/zquestz/omniauth-google-oauth2.git'
+gem 'devise'
+gem 'doorkeeper'
 
 gem 'sass'
 gem 'compass'

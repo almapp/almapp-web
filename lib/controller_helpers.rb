@@ -138,6 +138,7 @@ module ControllerHelpers
     }
 
     HIERARCHICAL_PARENT_HASH = {
+      chat_id: Chat,
       group_id: Group,
       teacher_id: Teacher,
       section_id: Section,

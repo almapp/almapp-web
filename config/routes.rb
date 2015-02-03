@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  # https://github.com/lynndylanhurley/devise_token_auth_demo
-  # https://github.com/lynndylanhurley/devise_token_auth
-
-
-
   #=================
   #=== Some info ===
   #=================
@@ -39,12 +34,8 @@ Rails.application.routes.draw do
   # Each organization has a subdomain determined by their 'abbreviation' column, this column can't be null.
   #constraints(Subdomain) do
 
-    # https://github.com/lynndylanhurley/ng-token-auth/issues/75#issuecomment-66254414
-    mount_devise_token_auth_for 'User', at: '/api/v1/auth', controllers: {
-                                      registrations:      'api/v1/auth/registrations',
-                                      sessions:           'api/v1/auth/sessions'
-                                      #token_validations:  'api/v1/auth/token_validations'
-                                      }
+    use_doorkeeper
+    devise_for :users
 
     # let AngularJS manage routes
     get '/', to: redirect('/')
@@ -109,6 +100,10 @@ Rails.application.routes.draw do
           resources :schedule_modules
           resources :campuses
           resources :webpages
+        end
+
+        resources :chats, shallow: true do
+          resources :chat_messages
         end
 
         resources :comments, only: [:show, :index],  concerns: :likeable

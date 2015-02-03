@@ -11,6 +11,7 @@ class AddSocialCount < ActiveRecord::Migration
                :events,
                :groups,
                :posts,
+               :sections,
                :teachers]
 
   def up

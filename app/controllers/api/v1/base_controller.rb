@@ -3,10 +3,18 @@ module Api
     class BaseController < ApplicationController
       include ControllerHelpers::V1
 
-      before_action :authenticate_user!, only: [:create, :destroy, :update]
+      before_action :doorkeeper_authorize!
       before_action :set_and_validate_parent, only: [:index, :create]
       before_action :set_and_validate_items, only: [:index]
       before_action :set_and_validate_item, only: [:show, :update, :destroy]
+
+      def doorkeeper_unauthorized_render_options
+        {json: '{"status": "failure", "message":"401 Unauthorized"}'}
+      end
+
+      def current_resource_owner
+        User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+      end
 
       #=================
       #==== Actions ====
@@ -65,8 +73,11 @@ module Api
       end
 
       def set_and_validate_items
-        @items = get_items
-        # render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @items.present?
+        begin
+          @items = get_items
+        rescue
+          render :json => {:error => 'Parent does not exist.'}.to_json, :status => 404 unless @items.present?
+        end
       end
 
 

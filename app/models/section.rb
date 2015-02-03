@@ -2,18 +2,22 @@
 #
 # Table name: sections
 #
-#  id         :integer          not null, primary key
-#  course_id  :integer          not null
-#  number     :integer          not null
-#  semester   :integer          not null
-#  year       :integer          not null
-#  created_at :datetime
-#  updated_at :datetime
-#  vacancy    :integer          default(-1)
+#  id             :integer          not null, primary key
+#  course_id      :integer          not null
+#  number         :integer          not null
+#  semester       :integer          not null
+#  year           :integer          not null
+#  created_at     :datetime
+#  updated_at     :datetime
+#  vacancy        :integer          default(-1)
+#  comments_count :integer          default(0), not null
+#  likes_count    :integer          default(0), not null
+#  dislikes_count :integer          default(0), not null
 #
 
 class Section < ActiveRecord::Base
   include Commentable
+  include Likeable
   include PostTarget
   include PostPublisher
   include EventPublisher
