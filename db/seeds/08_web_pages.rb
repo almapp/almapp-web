@@ -32,11 +32,11 @@ Webpage.create(
       secure_protocol: true,
       requires_login: true,
       home_url: 'https://portal.uc.cl',
-      base_url: 'https://portal.uc.cl'
+      login_url: 'https://portal.uc.cl/web/home-community/inicio'
 )
 
 Webpage.create(
-      identifier: 'WEBCURSO',
+      identifier: 'WEBCURSOS',
       name: 'WEBCURSOS UC',
       owner: 'Dirección de Informática UC',
       organization: @uc,
@@ -46,7 +46,7 @@ Webpage.create(
       secure_protocol: true,
       requires_login: true,
       home_url: 'http://webcurso.uc.cl/portal',
-      base_url: 'http://webcurso.uc.cl/portal'
+      login_url: 'http://webcurso.uc.cl/portal/pda/?force.login=yes'
 )
 
 Webpage.create(
@@ -60,7 +60,7 @@ Webpage.create(
       secure_protocol: false,
       requires_login: true,
       home_url: 'http://www.ing.puc.cl/',
-      base_url: 'http://www.ing.puc.cl/'
+      login_url: 'https://intrawww.ing.puc.cl/siding/dirdes/ingcursos/cursos/index.phtml'
 )
 
 Webpage.create(
@@ -74,7 +74,7 @@ Webpage.create(
       secure_protocol: true,
       requires_login: true,
       home_url: 'http://www.labmat.puc.cl/',
-      base_url: 'http://www.labmat.puc.cl/'
+      login_url: 'http://www.labmat.puc.cl/'
 )
 
 
@@ -89,7 +89,7 @@ Webpage.create(
       secure_protocol: true,
       requires_login: true,
       home_url: 'http://aleph.uc.cl/',
-      base_url: 'http://aleph.uc.cl/'
+      login_url: 'http://aleph.uc.cl/'
 )
 
 Webpage.create(
@@ -102,8 +102,7 @@ Webpage.create(
       available: true,
       secure_protocol: false,
       requires_login: false,
-      home_url: 'http://www3.uc.cl/buscacursos/',
-      base_url: 'http://www3.uc.cl/buscacursos/'
+      home_url: 'http://www3.uc.cl/buscacursos/'
 )
 
 Webpage.create(
@@ -116,8 +115,7 @@ Webpage.create(
       available: true,
       secure_protocol: false,
       requires_login: false,
-      home_url: 'http://formaciongeneral.uc.cl/certificados-academicos',
-      base_url: 'http://formaciongeneral.uc.cl/certificados-academicos'
+      home_url: 'http://formaciongeneral.uc.cl/certificados-academicos'
 )
 
 Webpage.create(
@@ -130,8 +128,7 @@ Webpage.create(
       available: true,
       secure_protocol: false,
       requires_login: false,
-      home_url: 'http://admisionyregistros.uc.cl/alumnos/programas-estudio/carreras-y-programas2/mallas-carreras-pregrado',
-      base_url: 'http://admisionyregistros.uc.cl/alumnos/programas-estudio/carreras-y-programas2/mallas-carreras-pregrado'
+      home_url: 'http://admisionyregistros.uc.cl/alumnos/programas-estudio/carreras-y-programas2/mallas-carreras-pregrado'
 )
 
 Webpage.create(
@@ -144,8 +141,7 @@ Webpage.create(
       available: true,
       secure_protocol: false,
       requires_login: false,
-      home_url: 'http://guiastematicas.bibliotecas.uc.cl/audiovisuales/',
-      base_url: 'http://guiastematicas.bibliotecas.uc.cl/audiovisuales/'
+      home_url: 'http://guiastematicas.bibliotecas.uc.cl/audiovisuales/'
 )
 
 Webpage.create(
@@ -158,8 +154,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'http://www.feuc.cl/sitio2015/',
-       base_url: 'http://www.feuc.cl/sitio2015/'
+       home_url: 'http://www.feuc.cl/sitio2015/'
 )
 
 
@@ -173,8 +168,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: '',
-       base_url: ''
+       home_url: ''
 )
 
 Webpage.create(
@@ -187,8 +181,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'https://www.facebook.com/laresistenciafanpage',
-       base_url: 'https://www.facebook.com/laresistenciafanpage'
+       home_url: 'https://www.facebook.com/laresistenciafanpage'
 )
 
 Webpage.create(
@@ -201,8 +194,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'http://animaliauc.cl/',
-       base_url: 'http://animaliauc.cl/'
+       home_url: 'http://animaliauc.cl/'
 )
 
 Webpage.create(
@@ -215,8 +207,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'https://www.facebook.com/confesionesuc2',
-       base_url: 'https://www.facebook.com/confesionesuc2'
+       home_url: 'https://www.facebook.com/confesionesuc2'
 )
 
 Webpage.create(
@@ -229,8 +220,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'https://www.facebook.com/cumplidosUC',
-       base_url: 'https://www.facebook.com/cumplidosUC'
+       home_url: 'https://www.facebook.com/cumplidosUC'
 )
 
 Webpage.create(
@@ -243,8 +233,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'http://treep.cl/',
-       base_url: 'http://treep.cl/'
+       home_url: 'http://treep.cl/'
 )
 
 
@@ -258,8 +247,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'http://www.nau.cl/',
-       base_url: 'http://www.nau.cl/'
+       home_url: 'http://www.nau.cl/'
 )
 
 Webpage.create(
@@ -272,8 +260,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'http://www.solidaridad.cl/',
-       base_url: 'http://www.solidaridad.cl/'
+       home_url: 'http://www.solidaridad.cl/'
 )
 
 Webpage.create(
@@ -286,8 +273,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'http://www.mguc.cl/',
-       base_url: 'http://www.mguc.cl/'
+       home_url: 'http://www.mguc.cl/'
 )
 
 Webpage.create(
@@ -300,8 +286,7 @@ Webpage.create(
        available: true,
        secure_protocol: false,
        requires_login: false,
-       home_url: 'https://www.facebook.com/crecer.uc',
-       base_url: 'https://www.facebook.com/crecer.uc'
+       home_url: 'https://www.facebook.com/crecer.uc'
 )
 
 

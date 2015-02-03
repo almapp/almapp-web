@@ -29,6 +29,7 @@ module AlmappWeb
     #config.middleware.use FayeRails::Middleware, mount: '/faye', engine: {type: Faye::Redis, host: 'localhost'}, :timeout => 25 do
     config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25 do
       # curl http://localhost:3000/faye -d 'message={"channel":"/chat/A3", "data":"hello"}'
+      # listen(9292)
       add_extension(ChatMessageValidator.new)
 
       map '/chat/**' => ChatManagerController

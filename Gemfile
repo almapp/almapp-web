@@ -15,6 +15,7 @@ gem 'oj_mimic_json'
 # Chat
 gem 'thin'
 gem 'faye-rails'
+# gem 'faye-redis'
 
 # Email
 gem 'gmail'
