@@ -92,7 +92,12 @@ Rails.application.routes.draw do
         resources :users
         resource :me, controller: 'me' do
           get '/sections' => 'me#sections', as: :me_sections
+          resource :mail_client, controller: 'mail_client' do
+            resources :mails
+          end
         end
+
+
 
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
         resources :schedule_modules, only: [:index, :show]

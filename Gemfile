@@ -19,6 +19,7 @@ gem 'faye-rails'
 
 # Email
 gem 'gmail'
+gem 'google-api-client', require: 'google/api_client'
 
 # Searching
 # https://shellycloud.com/blog/2013/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch

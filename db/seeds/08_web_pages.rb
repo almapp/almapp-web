@@ -32,7 +32,7 @@ Webpage.create(
       secure_protocol: true,
       requires_login: true,
       home_url: 'https://portal.uc.cl',
-      login_url: 'https://portal.uc.cl/web/home-community/inicio'
+      login_url: 'https://sso.uc.cl/cas/login?service=https%3A%2F%2Fportal.uc.cl%2Fc%2Fportal%2Flogin'
 )
 
 Webpage.create(
@@ -60,7 +60,7 @@ Webpage.create(
       secure_protocol: false,
       requires_login: true,
       home_url: 'http://www.ing.puc.cl/',
-      login_url: 'https://intrawww.ing.puc.cl/siding/dirdes/ingcursos/cursos/index.phtml'
+      login_url: 'https://intrawww.ing.puc.cl/siding/dirdes/ingcursos/cursos/vista.phtml'
 )
 
 Webpage.create(
@@ -75,6 +75,20 @@ Webpage.create(
       requires_login: true,
       home_url: 'http://www.labmat.puc.cl/',
       login_url: 'http://www.labmat.puc.cl/'
+)
+
+Webpage.create(
+      identifier: 'MAIL_UC',
+      name: 'Mail UC',
+      owner: 'UC',
+      organization: @uc,
+      page_type: 'official',
+      information: '',
+      available: true,
+      secure_protocol: true,
+      requires_login: true,
+      home_url: 'https://webaccess.uc.cl',
+      login_url: 'https://webaccess.uc.cl'
 )
 
 
@@ -149,7 +163,7 @@ Webpage.create(
        name: 'FEUC',
        owner: 'FEUC',
        organization: @uc,
-       page_type: 'community',
+       page_type: 'political_party',
        information: 'Federación de Estudiantes de la Universidad Católica',
        available: true,
        secure_protocol: false,
@@ -277,7 +291,7 @@ Webpage.create(
 )
 
 Webpage.create(
-       identifier: 'CRECER_UC',
+       identifier: 'CRECER',
        name: 'Crecer',
        owner: 'Crecer',
        organization: @uc,

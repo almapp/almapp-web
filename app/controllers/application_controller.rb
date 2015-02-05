@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
   SUBDOMAINS = Organization.pluck(:abbreviation).map(&:downcase)
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_filter :validate_subdomain
+  #before_filter :validate_subdomain
 
   def current_resource_owner
     User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token

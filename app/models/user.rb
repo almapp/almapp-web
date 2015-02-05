@@ -88,6 +88,8 @@ class User < ActiveRecord::Base
     self.username = self.email.split('@').first
   end
 
+  has_one :token
+
   belongs_to :organization
 
   has_many :friendships
