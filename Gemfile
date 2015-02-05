@@ -12,6 +12,9 @@ gem 'jbuilder_cache_multi'
 gem 'oj'
 gem 'oj_mimic_json'
 
+# Images
+gem 'paperclip'
+
 # Chat
 gem 'thin'
 gem 'faye-rails'

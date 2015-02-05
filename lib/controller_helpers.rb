@@ -110,6 +110,10 @@ module ControllerHelpers
       Rails.env.production?
     end
 
+    def path_image_named(name)
+      "/images/#{name}"
+    end
+
     def self.included(c)
       c.helper Expiration
       c.helper_method :json_root,
@@ -123,7 +127,8 @@ module ControllerHelpers
                       :should_show_paths?,
                       :should_cache?,
                       :json_path_key,
-                      :json_path
+                      :json_path,
+                      :path_image_named
     end
 
     #=================
