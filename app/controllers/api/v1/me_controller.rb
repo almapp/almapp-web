@@ -8,9 +8,14 @@ module Api
 			end
 
 			def sections
-				@items = current_resource_owner.sections
+				@items = current_resource_owner.sections_for_period
 				render 'api/v1/sections/index'
-			end
+      end
+
+      def courses
+        @items = current_resource_owner.courses_for_period
+        render 'api/v1/courses/index'
+      end
 
 			def get_item
         current_resource_owner

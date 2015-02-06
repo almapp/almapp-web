@@ -108,6 +108,15 @@ class User < ActiveRecord::Base
   has_many :chat_messages, through: :chat_participantships
 
   has_and_belongs_to_many :sections
+  has_many :courses, through: :sections
+
+  def sections_for_period(year=current_year, period=current_semester)
+    self.sections.period(year, period)
+  end
+
+  def courses_for_period(year=current_year, period=current_semester)
+    self.courses.for_period(year, period)
+  end
 
   has_many :assistantships
   has_many :assisting_sections, through: :assistantships, source: :section

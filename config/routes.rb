@@ -92,6 +92,7 @@ Rails.application.routes.draw do
         resources :users
         resource :me, controller: 'me' do
           get '/sections' => 'me#sections', as: :me_sections
+          get '/courses' => 'me#courses', as: :me_courses
         end
 
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
