@@ -36,7 +36,7 @@ puts('Creating campuses')
                                               area: @uc,
                                               latitude: -33.498386,
                                               longitude: -70.611716,
-                                              zoom: 17,
+                                              zoom: 14.6,
                                               angle: 90,
                                               tilt: 30,
                                               floor: 1
@@ -80,7 +80,7 @@ puts('Creating campuses')
                                               area: @uc,
                                               latitude: -33.419247,
                                               longitude: -70.617861,
-                                              zoom: 0,
+                                              zoom: 16.5,
                                               angle: 150,
                                               tilt: 30,
                                               floor: 1
@@ -102,7 +102,7 @@ puts('Creating campuses')
                                               area: @uc,
                                               latitude: -33.445714,
                                               longitude: -70.593499,
-                                              zoom: 0,
+                                              zoom: 16,
                                               angle: 0,
                                               tilt: 0,
                                               floor: 1
@@ -124,7 +124,7 @@ puts('Creating campuses')
                                               area: @uc,
                                               latitude: -39.277704,
                                               longitude: -72.225615,
-                                              zoom: 0,
+                                              zoom: 16,
                                               angle: 0,
                                               tilt: 0,
                                               floor: 1
