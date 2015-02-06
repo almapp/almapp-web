@@ -2,6 +2,24 @@ module Api
 	module V1
 		class CoursesController < BaseController
 
+      def search
+        query = params[:q]
+
+        unless query.present?
+          render :json => [].to_json unless query.present?
+          return
+        end
+
+        @items = get_items.search(query,
+                                  fields: [{'initials^10' => :word_start},
+                                           {'name^5' => :text_middle}],
+                                  boost_by: {comments_count: {factor: 10},
+                                            likes_count: {factor: 5},
+                                             dislikes_count: {factor: 2}},
+                                  limit: 5)
+        render 'api/v1/courses/index'
+      end
+
 			# Return an array to display in the index view.
 			# @return Relation array
 			def get_items

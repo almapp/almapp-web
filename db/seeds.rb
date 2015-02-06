@@ -29,6 +29,8 @@ if testing
   consuelo.send_friend_request(pato)
   pato.send_friend_request(consuelo)
 
+  testguy = User.create(name:'Lorena Ipsum', email: 'lorem1@uc.cl', organization: Organization.first, password:'randompassword', password_confirmation:'randompassword')
+
   pato.admin = true
   pato.careers << Career.create(name: 'Ingeniería Civil', academic_unity: AcademicUnity.find_by_short_name('Ingeniería'))
   pato.save!

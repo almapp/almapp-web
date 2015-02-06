@@ -51,6 +51,12 @@ Rails.application.routes.draw do
         #=== Concerns ====
         #=================
 
+        concern :searchable do
+          collection do
+              get 'search' # /:resources/search
+            end
+        end
+
         concern :likeable do
           get '/likes' => 'likes#likes', as: :likes           # /resource/1/likes
           get '/dislikes' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
@@ -118,6 +124,7 @@ Rails.application.routes.draw do
 
         resources :faculties, :buildings, :academic_unities, :teachers, :careers, only: [:show, :index]
         resources :courses, only: [:show, :index], shallow: true do
+          concerns :searchable
           resources :sections, shallow: true do
             resources :teachers
             resources :schedule_items

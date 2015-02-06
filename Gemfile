@@ -27,6 +27,7 @@ gem 'gmail'
 # https://shellycloud.com/blog/2013/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch
 # To Deploy: https://gist.github.com/gourneau/66e0bd90c92ad829590b
 gem 'searchkick' # rake searchkick:reindex CLASS=Place
+gem 'typhoeus'
 
 group :development, :test do
   # gem 'debugger'
