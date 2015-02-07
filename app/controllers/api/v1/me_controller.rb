@@ -3,6 +3,8 @@ module Api
 		class MeController < BaseController
 			# prepend_before_action :authenticate_user!
 
+      before_action :authorize_user
+
 			def show
 				render 'api/v1/users/show'
 			end

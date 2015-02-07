@@ -3,7 +3,9 @@ module Api
     class BaseController < ApplicationController
       include ControllerHelpers::V1
 
-      # before_action :doorkeeper_authorize!
+      before_action :doorkeeper_authorize!
+      before_action :current_resource_owner
+      before_action :authorize_user, only: [:create, :update, :destroy]
       before_action :set_and_validate_parent, only: [:index, :create, :search]
       before_action :set_and_validate_items, only: [:index]
       before_action :set_and_validate_item, only: [:show, :update, :destroy]
@@ -13,7 +15,11 @@ module Api
       end
 
       def current_resource_owner
-        User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+        @current_resource_owner ||= User.find_by_id(doorkeeper_token.resource_owner_id) if doorkeeper_token
+      end
+
+      def authorize_user
+        render :json => {:error => "Must authenticate as user"}.to_json, :status => 401 unless @current_resource_owner.present?
       end
 
       #=================
