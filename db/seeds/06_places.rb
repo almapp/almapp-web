@@ -375,7 +375,7 @@ Place.create(
 Place.create(
     identifier: 'AG1',
     name: 'AG1',
-    area: @sj,
+    area: @a_agro,
     latitude: -33.497122,
     longitude: -70.609658,
     floor: '1',
@@ -388,7 +388,7 @@ Place.create(
 Place.create(
     identifier: 'AG2',
     name: 'AG2',
-    area: @sj,
+    area: @a_agro,
     latitude: -33.497116,
     longitude: -70.609519,
     floor: '1',
@@ -401,7 +401,7 @@ Place.create(
 Place.create(
     identifier: 'AG3',
     name: 'AG3',
-    area: @sj,
+    area: @a_agro,
     latitude: -33.497106,
     longitude: -70.609405,
     floor: '1',
@@ -414,7 +414,7 @@ Place.create(
 Place.create(
     identifier: 'AG4',
     name: 'AG4',
-    area: @sj,
+    area: @a_agro,
     latitude: -33.496900,
     longitude: -70.609659,
     floor: '1',
@@ -427,7 +427,7 @@ Place.create(
 Place.create(
     identifier: 'AG5',
     name: 'AG5',
-    area: @sj,
+    area: @a_agro,
     latitude: -33.496895,
     longitude: -70.609568,
     floor: '1',
@@ -440,7 +440,7 @@ Place.create(
 Place.create(
     identifier: 'AG6',
     name: 'AG6',
-    area: @sj,
+    area: @a_agro,
     latitude: -33.496885,
     longitude: -70.609456,
     floor: '1',
@@ -453,7 +453,7 @@ Place.create(
 Place.create(
     identifier: 'AGCV',
     name: 'AGCV',
-    area: @sj,
+    area: @a_agro,
     latitude: -33.496999,
     longitude: -70.609272,
     floor: '1',
@@ -609,7 +609,7 @@ Place.create(
 Place.create(
     identifier: 'AGC',
     name: 'Agronomía e Ingeniería Forestal',
-    area: @sj,
+    area: @a_agro,
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
@@ -726,7 +726,7 @@ Place.create(
 Place.create(
     identifier: 'auditorio_college',
     name: 'Auditorio',
-    area: @sj,
+    area: @a_college,
     latitude: -33.500553,
     longitude: -70.611173,
     floor: '1',
@@ -1168,7 +1168,7 @@ Place.create(
 Place.create(
     identifier: 'B11',
     name: 'B11',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500466,
     longitude: -70.613094,
     floor: '1',
@@ -1181,7 +1181,7 @@ Place.create(
 Place.create(
     identifier: 'B12',
     name: 'B12',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500427,
     longitude: -70.613135,
     floor: '1',
@@ -1194,7 +1194,7 @@ Place.create(
 Place.create(
     identifier: 'B13',
     name: 'B13',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500400,
     longitude: -70.613138,
     floor: '1',
@@ -1207,7 +1207,7 @@ Place.create(
 Place.create(
     identifier: 'B14',
     name: 'B14',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500397,
     longitude: -70.612830,
     floor: '1',
@@ -1220,7 +1220,7 @@ Place.create(
 Place.create(
     identifier: 'B15',
     name: 'B15',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500397,
     longitude: -70.612720,
     floor: '1',
@@ -1233,7 +1233,7 @@ Place.create(
 Place.create(
     identifier: 'B16',
     name: 'B16',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500397,
     longitude: -70.612629,
     floor: '1',
@@ -1246,7 +1246,7 @@ Place.create(
 Place.create(
     identifier: 'B17',
     name: 'B17',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500317,
     longitude: -70.612466,
     floor: '1',
@@ -1259,7 +1259,7 @@ Place.create(
 Place.create(
     identifier: 'B18',
     name: 'B18',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500386,
     longitude: -70.612463,
     floor: '1',
@@ -1311,7 +1311,7 @@ Place.create(
 Place.create(
     identifier: 'B21',
     name: 'B21',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500397,
     longitude: -70.612830,
     floor: '2',
@@ -1324,7 +1324,7 @@ Place.create(
 Place.create(
     identifier: 'B22',
     name: 'B22',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500397,
     longitude: -70.612720,
     floor: '2',
@@ -1337,7 +1337,7 @@ Place.create(
 Place.create(
     identifier: 'B23',
     name: 'B23',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500397,
     longitude: -70.612629,
     floor: '2',
@@ -1350,7 +1350,7 @@ Place.create(
 Place.create(
     identifier: 'B24',
     name: 'B24',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500317,
     longitude: -70.612466,
     floor: '2',
@@ -1363,7 +1363,7 @@ Place.create(
 Place.create(
     identifier: 'B25',
     name: 'B25',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500386,
     longitude: -70.612463,
     floor: '2',
@@ -2585,7 +2585,7 @@ Place.create(
 Place.create(
     identifier: 'biblio_biomed',
     name: 'Biblioteca Biomédica',
-    area: @sj,
+    area: @cc,
     latitude: -33.441312,
     longitude: -70.640322,
     floor: '-1',
@@ -2598,7 +2598,7 @@ Place.create(
 Place.create(
     identifier: 'biblio_der_com',
     name: 'Biblioteca Derecho y Comunicaciones',
-    area: @sj,
+    area: @cc,
     latitude: -33.441325,
     longitude: -70.640317,
     floor: '-1',
@@ -2611,7 +2611,7 @@ Place.create(
 Place.create(
     identifier: 'biblio_contador',
     name: 'Biblioteca Lo Contador',
-    area: @sj,
+    area: @lc,
     latitude: -33.419372,
     longitude: -70.618268,
     floor: '-1',
@@ -2624,7 +2624,7 @@ Place.create(
 Place.create(
     identifier: 'biblio_oriente',
     name: 'Biblioteca Oriente',
-    area: @sj,
+    area: @co,
     latitude: -33.445472,
     longitude: -70.593408,
     floor: '1?',
@@ -2637,7 +2637,7 @@ Place.create(
 Place.create(
     identifier: 'biblio_cs',
     name: 'Biblioteca de Ciencias Sociales',
-    area: @sj,
+    area: @sociales,
     latitude: -33.498421,
     longitude: -70.609898,
     floor: '2',
@@ -2663,7 +2663,7 @@ Place.create(
 Place.create(
     identifier: 'biblio_mat',
     name: 'Biblioteca de Matemática',
-    area: @sj,
+    area: @matematica,
     latitude: -33.499831,
     longitude: -70.610784,
     floor: '-1',
@@ -2676,7 +2676,7 @@ Place.create(
 Place.create(
     identifier: 'biblio_teo',
     name: 'Biblioteca de Teología',
-    area: @sj,
+    area: @a_teo,
     latitude: -33.497838,
     longitude: -70.610826,
     floor: '2',
@@ -2741,7 +2741,7 @@ Place.create(
 Place.create(
     identifier: 'CC10',
     name: 'CC10',
-    area: @sj,
+    area: @a_cc,
     latitude: -33.498967,
     longitude: -70.613442,
     floor: '1',
@@ -2754,7 +2754,7 @@ Place.create(
 Place.create(
     identifier: 'CC201',
     name: 'CC201',
-    area: @sj,
+    area: @a_cc,
     latitude: -33.498928,
     longitude: -70.613394,
     floor: '2?',
@@ -2767,7 +2767,7 @@ Place.create(
 Place.create(
     identifier: 'CC202',
     name: 'CC202',
-    area: @sj,
+    area: @a_cc,
     latitude: -33.499013,
     longitude: -70.613368,
     floor: '2?',
@@ -3079,7 +3079,7 @@ Place.create(
 Place.create(
     identifier: 'CS-101',
     name: 'CS-101',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500629,
     longitude: -70.610383,
     floor: '-1',
@@ -3092,7 +3092,7 @@ Place.create(
 Place.create(
     identifier: 'CS-102',
     name: 'CS-102',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500645,
     longitude: -70.610194,
     floor: '-1',
@@ -3105,7 +3105,7 @@ Place.create(
 Place.create(
     identifier: 'CS-201',
     name: 'CS-201',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500629,
     longitude: -70.610410,
     floor: '2',
@@ -3118,7 +3118,7 @@ Place.create(
 Place.create(
     identifier: 'CS-202',
     name: 'CS-202',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500616,
     longitude: -70.610344,
     floor: '2',
@@ -3131,7 +3131,7 @@ Place.create(
 Place.create(
     identifier: 'CS-203',
     name: 'CS-203',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500640,
     longitude: -70.610269,
     floor: '2',
@@ -3144,7 +3144,7 @@ Place.create(
 Place.create(
     identifier: 'CS-204',
     name: 'CS-204',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500640,
     longitude: -70.610192,
     floor: '2',
@@ -3157,7 +3157,7 @@ Place.create(
 Place.create(
     identifier: 'CS-301',
     name: 'CS-301',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500629,
     longitude: -70.610410,
     floor: '3',
@@ -3170,7 +3170,7 @@ Place.create(
 Place.create(
     identifier: 'CS-302',
     name: 'CS-302',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500616,
     longitude: -70.610344,
     floor: '3',
@@ -3183,7 +3183,7 @@ Place.create(
 Place.create(
     identifier: 'CS-303',
     name: 'CS-303',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500640,
     longitude: -70.610269,
     floor: '3',
@@ -3196,7 +3196,7 @@ Place.create(
 Place.create(
     identifier: 'CS-304',
     name: 'CS-304',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500640,
     longitude: -70.610192,
     floor: '3',
@@ -3209,7 +3209,7 @@ Place.create(
 Place.create(
     identifier: 'CS-401',
     name: 'CS-401',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500629,
     longitude: -70.610410,
     floor: '4',
@@ -3222,7 +3222,7 @@ Place.create(
 Place.create(
     identifier: 'CS-402',
     name: 'CS-402',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500616,
     longitude: -70.610344,
     floor: '4',
@@ -3235,7 +3235,7 @@ Place.create(
 Place.create(
     identifier: 'CS-403',
     name: 'CS-403',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500640,
     longitude: -70.610269,
     floor: '4',
@@ -3248,7 +3248,7 @@ Place.create(
 Place.create(
     identifier: 'CS-404',
     name: 'CS-404',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500640,
     longitude: -70.610192,
     floor: '4',
@@ -3261,7 +3261,7 @@ Place.create(
 Place.create(
     identifier: 'CS-405',
     name: 'CS-405',
-    area: @sj,
+    area: @a_salud,
     latitude: -33.500669,
     longitude: -70.610021,
     floor: '4',
@@ -3404,7 +3404,7 @@ Place.create(
 Place.create(
     identifier: 'VIL',
     name: 'Campus Villarrica',
-    area: @sj,
+    area: @vr,
     latitude: 0.0,
     longitude: 0.0,
     floor: '1',
@@ -3430,7 +3430,7 @@ Place.create(
 Place.create(
     identifier: 'capilla_lc',
     name: 'Capilla',
-    area: @sj,
+    area: @lc,
     latitude: -33.420019,
     longitude: -70.618267,
     floor: '1',
@@ -3456,7 +3456,7 @@ Place.create(
 Place.create(
     identifier: 'capilla_or',
     name: 'Capilla Oriente',
-    area: @sj,
+    area: @co,
     latitude: -33.446352,
     longitude: -70.593928,
     floor: '1?',
@@ -3483,7 +3483,7 @@ Place.create(
 Place.create(
     identifier: 'cearq',
     name: 'Centro de Alumnos de Arquitectura',
-    area: @sj,
+    area: @a_arq,
     latitude: -33.419496,
     longitude: -70.618523,
     floor: '1',
@@ -3496,7 +3496,7 @@ Place.create(
 Place.create(
     identifier: 'ce_college',
     name: 'Centro de Alumnos de College',
-    area: @sj,
+    area: @a_college,
     latitude: -33.500660,
     longitude: -70.610596,
     floor: '1',
@@ -3509,7 +3509,7 @@ Place.create(
 Place.create(
     identifier: 'cai',
     name: 'Centro de Alumnos de Ingeniería (CAI)',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500030,
     longitude: -70.613225,
     floor: '1',
@@ -3522,7 +3522,7 @@ Place.create(
 Place.create(
     identifier: 'centroalumnos_med',
     name: 'Centro de Alumnos de Medicina',
-    area: @sj,
+    area: @a_med,
     latitude: -33.441425,
     longitude: -70.640525,
     floor: '?',
@@ -3535,7 +3535,7 @@ Place.create(
 Place.create(
     identifier: 'ca_teo',
     name: 'Centro de Alumnos de Teología',
-    area: @sj,
+    area: @a_teo,
     latitude: -33.497716,
     longitude: -70.610729,
     floor: '1',
@@ -3561,7 +3561,7 @@ Place.create(
 Place.create(
     identifier: 'CEEP',
     name: 'Centro de Estudiantes de Educación de Párvulos',
-    area: @sj,
+    area: @a_edu,
     latitude: -33.498147,
     longitude: -70.613745,
     floor: '1',
