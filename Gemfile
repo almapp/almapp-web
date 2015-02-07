@@ -11,6 +11,7 @@ gem 'jbuilder'
 gem 'jbuilder_cache_multi'
 gem 'oj'
 gem 'oj_mimic_json'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 # Images
 gem 'paperclip'

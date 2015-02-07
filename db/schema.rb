@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203133307) do
+ActiveRecord::Schema.define(version: 20150207184035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -408,11 +408,10 @@ ActiveRecord::Schema.define(version: 20150203133307) do
   add_index "organizations", ["place_id"], name: "index_organizations_on_place_id", using: :btree
 
   create_table "places", force: true do |t|
-    t.string   "identifier",                     null: false
+    t.string   "identifier",                   null: false
     t.string   "name"
-    t.boolean  "service",        default: false, null: false
-    t.integer  "area_id",                        null: false
-    t.string   "area_type",                      null: false
+    t.integer  "area_id",                      null: false
+    t.string   "area_type",                    null: false
     t.text     "information",    default: ""
     t.float    "zoom",           default: 0.0
     t.float    "angle",          default: 0.0
@@ -422,9 +421,9 @@ ActiveRecord::Schema.define(version: 20150203133307) do
     t.string   "floor"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comments_count", default: 0,     null: false
-    t.integer  "likes_count",    default: 0,     null: false
-    t.integer  "dislikes_count", default: 0,     null: false
+    t.integer  "comments_count", default: 0,   null: false
+    t.integer  "likes_count",    default: 0,   null: false
+    t.integer  "dislikes_count", default: 0,   null: false
   end
 
   add_index "places", ["area_id", "area_type"], name: "index_places_on_area_id_and_area_type", using: :btree
@@ -517,6 +516,26 @@ ActiveRecord::Schema.define(version: 20150203133307) do
   add_index "sections_users", ["user_id", "section_id"], name: "index_sections_users_on_user_id_and_section_id", unique: true, using: :btree
   add_index "sections_users", ["user_id"], name: "index_sections_users_on_teacher_id", using: :btree
 
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
   create_table "teachers", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -530,6 +549,17 @@ ActiveRecord::Schema.define(version: 20150203133307) do
   end
 
   add_index "teachers", ["name"], name: "index_teachers_on_name", using: :btree
+
+  create_table "tokens", force: true do |t|
+    t.string   "access_token"
+    t.string   "refresh_token"
+    t.datetime "expires_at"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tokens", ["user_id"], name: "index_tokens_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
