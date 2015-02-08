@@ -138,11 +138,11 @@ class UCCoursesLoader < CoursesLoader
     req.get(url.path)
   end
 
-  def load_courses(year, semester)
-    load_courses_for(relations, year, semester)
+  def load_courses(year, period)
+    load_courses_for(relations, year, period)
   end
 
-  def load_courses_for(relations_hash, year, semester)
+  def load_courses_for(relations_hash, year, period)
     relations_hash.each do |number, unity|
       keep_going = true
       page = 0
@@ -150,7 +150,7 @@ class UCCoursesLoader < CoursesLoader
       puts "== Unity: #{unity.short_name} (#{number})"
       puts '====================================='
       while keep_going
-        url = get_url(semester, number, page)
+        url = get_url(period, number, page)
         web = get_website(url)
         if web.code == '200'
           puts '====================================='
@@ -202,14 +202,14 @@ class UCCoursesLoader < CoursesLoader
 
             section_number = remove_shitty_chars(attributes[columns[ROW_SECTION]].text)
             vacancy = remove_shitty_chars(attributes[columns[ROW_VAC_DISP]].text)
-            section = Section.find_by_course_id_and_year_and_semester_and_number(course.id, year, semester, section_number)
+            section = Section.find_by_course_id_and_year_and_period_and_number(course.id, year, period, section_number)
             if section.present?
               section.vacancy = vacancy
               puts 'Section found: '.concat(section.identifier)
             else
               section = Section.create(course: course,
                                        year: year,
-                                       semester: semester,
+                                       period: period,
                                        number: section_number,
                                        vacancy: vacancy)
               puts 'Section not found, created: '.concat(section.identifier)

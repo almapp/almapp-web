@@ -3,9 +3,9 @@ module Api
     class BaseController < ApplicationController
       include ControllerHelpers::V1
 
-      before_action :doorkeeper_authorize!
+      #before_action :doorkeeper_authorize!
       before_action :current_resource_owner
-      before_action :authorize_user, only: [:create, :update, :destroy]
+      #before_action :authorize_user # , only: [:create, :update, :destroy]
       before_action :set_and_validate_parent, only: [:index, :create, :search]
       before_action :set_and_validate_items, only: [:index]
       before_action :set_and_validate_item, only: [:show, :update, :destroy]

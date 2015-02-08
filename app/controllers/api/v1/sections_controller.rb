@@ -5,7 +5,7 @@ module Api
 			# Return an array to display in the index view.
 			# @return Relation array
 			def get_items
-				@parent.sections.eager_load(:schedule_items, :teachers, :assistants)
+				@parent.sections.eager_load(:course, :schedule_items, :teachers, :assistants)
 				# Or
 				# Campus.all
 			end
@@ -27,13 +27,13 @@ module Api
 
 			# Set strong params for the item. Remember to change :item for the actual name
 			def item_params
-				params.require(:item).permit(:course_id, :number, :semester, :year)
+				params.require(:item).permit(:course_id, :number, :period, :year)
 			end
 
 			# Custom params to filter
 			def query_params
 				# allowing us to filter by this
-				params.permit(:course_id, :number, :semester, :year)
+				params.permit(:course_id, :number, :period, :year)
 			end
 
 		end

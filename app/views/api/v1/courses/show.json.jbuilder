@@ -3,8 +3,8 @@ json.set! json_root do
 
   sections = @item.sections
 
-  if params[:year] && params[:semester]
-    periods = [[params[:year], params[:semester]]]
+  if params[:year] && params[:period]
+    periods = [[params[:year], params[:period]]]
   elsif params[:year]
     periods = [[params[:year], 1], [params[:year], 2]]
   else

@@ -10,12 +10,24 @@ module Api
 			end
 
 			def sections
-				@items = current_resource_owner.sections_for_period
+        year = params[:year]
+        year ||= current_year
+
+        period = params[:period]
+        period ||= current_period
+
+				@items = current_resource_owner.sections_for_period(year, period)
 				render 'api/v1/sections/index'
       end
 
       def courses
-        @items = current_resource_owner.courses_for_period
+        year = params[:year]
+        year ||= current_year
+
+        period = params[:period]
+        period ||= current_period
+
+        @items = current_resource_owner.courses_for_period(year, period)
         render 'api/v1/courses/index'
       end
 

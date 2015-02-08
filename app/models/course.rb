@@ -45,24 +45,24 @@ class Course < ActiveRecord::Base
     Section.available_periods_for(self)
   end
 
-  def available_period?(year = current_year, semester = current_semester)
-    available_periods.include? [year, semester]
+  def available_period?(year = current_year, period = current_period)
+    available_periods.include? [year, period]
   end
 
-  def self.for_period(year = current_year, semester = current_semester)
-    self.joins(:sections).merge(Section.period(year, semester))
+  def self.for_period(year = current_year, period = current_period)
+    self.joins(:sections).merge(Section.period(year, period))
   end
 
-  def sections_for_period(year = current_year, semester = current_semester)
-    sections.period(year, semester)
+  def sections_for_period(year = current_year, period = current_period)
+    sections.period(year, period)
   end
 
-  def section_students_for_period(year = current_year, semester = current_semester)
-    section_students.joins(:sections).merge(Section.period(year, semester))
+  def section_students_for_period(year = current_year, period = current_period)
+    section_students.joins(:sections).merge(Section.period(year, period))
   end
 
-  def teachers_for_period(year = current_year, semester = current_semester)
-    teachers.joins(:sections).merge(Section.period(year, semester))
+  def teachers_for_period(year = current_year, period = current_period)
+    teachers.joins(:sections).merge(Section.period(year, period))
   end
 
   # merge: http://api.rubyonrails.org/classes/ActiveRecord/SpawnMethods.html#method-i-merge

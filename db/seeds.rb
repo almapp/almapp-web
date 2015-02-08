@@ -38,10 +38,6 @@ if testing
   consuelo.careers << Career.create(name: 'Arquitectura', academic_unity: AcademicUnity.find_by_short_name('Arquitectura'))
   consuelo.save!
 
-  api_key = ApiKey.create!(client: 'Almapp iOS Development', contact_name: pato.name, contact_email: pato.email)
-  api_key.key = 'DevelopmentKey'
-  api_key.save!
-
   event = Event.create!(title:'Example Event', user:pato, to_date:2.days.from_now, host: Campus.first)
 
   Post.create!(user: pato, content:'short post', target: Campus.first )
@@ -86,5 +82,6 @@ if testing
   pato.sections << %w(ICH1104-2 ICS2123-4 IIC1253-1 IIC2233-1).map { |section_schedule_identifier| Section.find_by_identifier(section_schedule_identifier, 2015, 1) }
   pato.save!
 
-  puts "Development Api-key: #{api_key.key}"
+  testguy.sections << pato.sections
+  testguy.save!
 end

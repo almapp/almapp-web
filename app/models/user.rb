@@ -110,11 +110,11 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :sections
   has_many :courses, through: :sections
 
-  def sections_for_period(year=current_year, period=current_semester)
+  def sections_for_period(year=current_year, period=current_period)
     self.sections.period(year, period)
   end
 
-  def courses_for_period(year=current_year, period=current_semester)
+  def courses_for_period(year=current_year, period=current_period)
     self.courses.for_period(year, period)
   end
 

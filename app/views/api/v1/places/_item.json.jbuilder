@@ -1,4 +1,10 @@
-json.extract! item, :id, :identifier, :name, :service, :likes_count, :dislikes_count, :comments_count, :information, :zoom, :angle, :tilt, :latitude, :longitude, :floor
+json.extract! item, :id, :identifier, :name, :likes_count, :dislikes_count, :comments_count, :information, :zoom, :angle, :tilt, :latitude, :longitude, :floor
+
+json.categories do
+  json.array! item.category_list do |category|
+    json.set! 'category', category
+  end
+end
 
 json.area do
   polymorphic_type = polymorphic_type(item.area)

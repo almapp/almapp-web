@@ -1,4 +1,10 @@
-json.extract! item, :id, :identifier, :course_id, :number, :vacancy, :semester, :year
+json.extract! item, :id, :identifier, :course_id, :number, :vacancy, :period, :year
+
+json.cache_if! should_cache?, ['compact', item.course] do
+  json.course do
+    json.partial! template_for_item(item.course, 'compact'), item: item.course
+  end
+end
 
 json.schedule_items  do
   json.cache_collection! item.schedule_items, key: 'compact' do |item|

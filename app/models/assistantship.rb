@@ -20,8 +20,8 @@ class Assistantship < ActiveRecord::Base
     self.section.teachers
   end
 
-  def semester
-    self.section.semester
+  def period
+    self.section.period
   end
 
   def year

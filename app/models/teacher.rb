@@ -29,7 +29,7 @@ class Teacher < ActiveRecord::Base
 
   has_many :courses, through: :sections
 
-  def courses_for_period(year = current_year, semester = current_semester)
-    Course.joins(:sections).merge(sections.period(year, semester)) #.order('courses.initials ASC')
+  def courses_for_period(year = current_year, period = current_period)
+    Course.joins(:sections).merge(sections.period(year, period)) #.order('courses.initials ASC')
   end
 end

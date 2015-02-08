@@ -37,12 +37,12 @@ module ControllerHelpers
         my_hash = Hash.new
         params[:periods].each do |period|
           year = period.split('-')[0]
-          semester = period.split('-')[1]
+          period = period.split('-')[1]
 
           if my_hash[year]
-            my_hash[year] << semester
+            my_hash[year] << period
           else
-            my_hash[year] = [semester]
+            my_hash[year] = [period]
           end
         end
 
@@ -51,12 +51,12 @@ module ControllerHelpers
         end
         array
 
-      elsif params[:year] && params[:semester]
-        [Periods.new(params[:year], [params[:semester]])]
+      elsif params[:year] && params[:period]
+        [Periods.new(params[:year], [params[:period]])]
       elsif params[:year]
-        [Periods.new(params[:year], [current_semester])]
+        [Periods.new(params[:year], [current_period])]
       else
-        [Periods.new(current_year, [current_semester])]
+        [Periods.new(current_year, [current_period])]
       end
     end
 

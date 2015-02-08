@@ -36,8 +36,8 @@ class ScheduleItem < ActiveRecord::Base
     end
   end
 
-  def semester
-    self.section.semester
+  def period
+    self.section.period
   end
 
   def year
