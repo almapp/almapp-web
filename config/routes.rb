@@ -85,41 +85,41 @@ Rails.application.routes.draw do
       #= General Routes =
       #==================
 
-      resources :users, only: [:index, :show]
+      resources :users, only: [:index, :show], concerns: :searchable
       resource :me, controller: 'me' do
         get '/sections' => 'me#sections', as: :me_sections
         get '/courses' => 'me#courses', as: :me_courses
       end
 
-      resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
+      resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable, :searchable]
 
-      resources :organizations, only: [:index]
+      resources :organizations, only: [:index], concerns: :searchable
       scope ":organization" do
         get '/' => 'organizations#show'
 
-        resources :users
+        resources :users, concerns: :searchable
 
         resources :schedule_modules, only: [:index, :show]
         resources :comments, only: [:show, :index],  concerns: :likeable
-        resources :posts, :events, :places, only: [:show, :index], concerns: [:commentable, :likeable]
+        resources :posts, :events, :places, only: [:show, :index], concerns: [:commentable, :likeable, :searchable]
         resources :likes, only: [:show]
         get '/likes' => 'likes#likes', as: :likes           # /likes
         get '/dislikes' => 'likes#dislikes', as: :dislikes  # /dislikes
 
         resources :faculties, :buildings, :academic_unities, :teachers, :careers, only: [:show, :index]
         resources :campuses, shallow: true do
-          concerns :event_hosting, :commentable, :posteable, :likeable, :mapable
+          concerns :event_hosting, :commentable, :posteable, :likeable, :mapable, :searchable
           resources :academic_unities, only: [:index]
           resources :careers, :courses, :teachers, only: [:index]
           resources :faculties, shallow: true do
-            concerns :event_hosting, :commentable, :posteable, :likeable, :mapable
+            concerns :event_hosting, :commentable, :posteable, :likeable, :mapable, :searchable
             resources :careers, :courses, :teachers, only: [:index]
             resources :academic_unities, shallow: true do
-              concerns :event_hosting, :commentable, :posteable, :likeable, :mapable
+              concerns :event_hosting, :commentable, :posteable, :likeable, :mapable, :searchable
               resources :careers, :courses, :teachers, concerns: :likeable
             end
           end
-          resources :buildings, concerns: [:event_hosting, :commentable, :posteable, :likeable, :mapable]
+          resources :buildings, concerns: [:event_hosting, :commentable, :posteable, :likeable, :mapable, :searchable]
         end
 
         resources :courses, only: [:show, :index], shallow: true do
@@ -133,7 +133,8 @@ Rails.application.routes.draw do
           resources :teachers
         end
 
-        resources :webpages
+        resources :webpages, concerns: :searchable
+        resources :teachers, only: [:index], concerns: :searchable
 
         resources :chats, shallow: true do
           resources :chat_messages
