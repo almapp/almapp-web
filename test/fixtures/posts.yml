@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id             :integer          not null, primary key
+#  user_id        :integer          not null
+#  content        :text             default(""), not null
+#  notify         :boolean          default(FALSE), not null
+#  entity_id      :integer
+#  entity_type    :string(255)
+#  target_id      :integer          not null
+#  target_type    :string(255)      not null
+#  place_id       :integer
+#  event_id       :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  hidden         :boolean          default(FALSE), not null
+#  comments_count :integer          default(0), not null
+#  likes_count    :integer          default(0), not null
+#  dislikes_count :integer          default(0), not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+#  column: value

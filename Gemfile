@@ -1,12 +1,40 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2'
+gem 'rails', '4.1.6'
 gem 'rails-api'
+
+# Must add extension:
+# CREATE EXTENSION unaccent;
 gem 'pg'
+
 gem 'jbuilder'
+gem 'jbuilder_cache_multi'
+gem 'oj'
+gem 'oj_mimic_json'
+gem 'acts-as-taggable-on', '~> 3.4'
+
+# Images
+gem 'paperclip'
+
+# Chat
+gem 'thin'
+gem 'faye-rails'
+# gem 'faye-redis'
+
+# Email
+gem 'gmail'
+
+# Searching
+# https://shellycloud.com/blog/2013/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch
+# To Deploy: https://gist.github.com/gourneau/66e0bd90c92ad829590b
+gem 'searchkick' # rake searchkick:reindex CLASS=Place
+gem 'typhoeus'
 
 group :development, :test do
   # gem 'debugger'
+  gem 'oauth2'
+  gem 'bullet'
+  gem 'meta_request' # https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg
   gem 'spring'
   gem 'awesome_print'
   gem 'better_errors'
@@ -20,11 +48,19 @@ group :doc do
 end
 
 group :production do
-
+  gem 'rails_12factor'
 end
+
+gem 'devise'
+gem 'doorkeeper'
 
 gem 'sass'
 gem 'compass'
+
+gem 'validates_timeliness', '~> 3.0'
+gem 'active_record_union'
+
+gem 'nokogiri'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

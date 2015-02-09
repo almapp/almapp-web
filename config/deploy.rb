@@ -13,7 +13,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 set :domain,      '104.131.127.246'
 set :deploy_to,   '/home/deploy/almapp'
 set :repository,  'https://github.com/almapp/almapp-web.git'
-set :branch,      'production'
+set :branch,      'faye'
 set :user,        'deploy'
 set :port,        '1813'
 

@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: api_keys
+#
+#  id            :integer          not null, primary key
+#  client        :string(255)      default(""), not null
+#  key           :string(255)      default(""), not null
+#  contact_name  :string(255)      default(""), not null
+#  contact_email :string(255)      default(""), not null
+#  valid_key     :boolean          default(TRUE), not null
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: MyString
+  key: MyString
+  contact_name: MyString
+  contact_email: MyString
+  valid: false
+
+two:
+  client: MyString
+  key: MyString
+  contact_name: MyString
+  contact_email: MyString
+  valid: false
