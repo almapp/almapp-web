@@ -34,106 +34,79 @@ Rails.application.routes.draw do
   # Each organization has a subdomain determined by their 'abbreviation' column, this column can't be null.
   #constraints(Subdomain) do
 
-    use_doorkeeper
-    devise_for :users
+  use_doorkeeper
+  devise_for :users
 
-    # let AngularJS manage routes
-    get '/', to: redirect('/')
+  # Namespace for APIs
+  namespace :api, defaults: {format: :json} do
 
-    # Namespace for APIs
-    namespace :api, defaults: {format: :json} do
+    # First version
+    # url style: http://subdomain.domain.host/api/v1/resources/action
+    namespace :v1 do
 
-      # First version
-      # url style: http://subdomain.domain.host/api/v1/resources/action
-      namespace :v1 do
+      #=================
+      #=== Concerns ====
+      #=================
 
-        #=================
-        #=== Concerns ====
-        #=================
-
-        concern :searchable do
-          collection do
-              get 'search' # /:resources/search
-            end
+      concern :searchable do
+        collection do
+          get 'search' # /:resources/search
         end
+      end
 
-        concern :likeable do
-          get '/likes' => 'likes#likes', as: :likes           # /resource/1/likes
-          get '/dislikes' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
-        end
+      concern :likeable do
+        get '/likes' => 'likes#likes', as: :likes           # /resource/1/likes
+        get '/dislikes' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
+      end
 
-        concern :commentable do
-          resources :comments, shallow: true # /resource/1/comments
-        end
+      concern :commentable do
+        resources :comments, shallow: true # /resource/1/comments
+      end
 
-        concern :posteable do
-          resources :posts, shallow: true                                         # /resource/1/posts
-          get '/published_posts' => 'posts#published_posts', as: :published_posts # /resource/1/published_posts
-        end
+      concern :posteable do
+        resources :posts, shallow: true                                         # /resource/1/posts
+        get '/published_posts' => 'posts#published_posts', as: :published_posts # /resource/1/published_posts
+      end
 
-        concern :event_hosting do
-          resources :events, shallow: true # /resource/1/events
-        end
+      concern :event_hosting do
+        resources :events, shallow: true # /resource/1/events
+      end
 
-        concern :mapable do
-          resources :places, shallow: true # /resource/1/places
-        end
+      concern :mapable do
+        resources :places, shallow: true # /resource/1/places
+      end
 
-        concern :has_students do
-          get '/courses_students' => 'likes#likes', as: :likes           # /resource/1/likes
-          get '/enrolled_students' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
-        end
+      concern :has_students do
+        get '/courses_students' => 'likes#likes', as: :likes           # /resource/1/likes
+        get '/enrolled_students' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
+      end
 
-        #==================
-        #= Testing route ==
-        #==================
+      #==================
+      #= General Routes =
+      #==================
 
-        get '/testing/public_resource' => 'testing/tests#public_resource', as: :public_resource
-        get '/testing/private_resource' => 'testing/tests#private_resource', as: :private_resource
+      resources :users, only: [:index, :show]
+      resource :me, controller: 'me' do
+        get '/sections' => 'me#sections', as: :me_sections
+        get '/courses' => 'me#courses', as: :me_courses
+      end
 
-        #==================
-        #= General Routes =
-        #==================
+      resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
+
+      resources :organizations, only: [:index]
+      scope ":organization" do
+        get '/' => 'organizations#show'
 
         resources :users
-        resource :me, controller: 'me' do
-          get '/sections' => 'me#sections', as: :me_sections
-          get '/courses' => 'me#courses', as: :me_courses
-        end
 
-        resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable]
         resources :schedule_modules, only: [:index, :show]
-        resources :organizations, shallow: true do
-          resources :schedule_modules
-          resources :campuses
-          resources :webpages
-        end
-
-        resources :chats, shallow: true do
-          resources :chat_messages
-        end
-
         resources :comments, only: [:show, :index],  concerns: :likeable
         resources :posts, :events, :places, only: [:show, :index], concerns: [:commentable, :likeable]
-
-        resources :webpages, only: [:show, :index]
-
         resources :likes, only: [:show]
         get '/likes' => 'likes#likes', as: :likes           # /likes
         get '/dislikes' => 'likes#dislikes', as: :dislikes  # /dislikes
 
         resources :faculties, :buildings, :academic_unities, :teachers, :careers, only: [:show, :index]
-        resources :courses, only: [:show, :index], shallow: true do
-          concerns :searchable
-          resources :sections, shallow: true do
-            resources :teachers
-            resources :schedule_items
-            resources :places
-            resources :schedule_modules
-          end
-          resources :teachers
-        end
-
         resources :campuses, shallow: true do
           concerns :event_hosting, :commentable, :posteable, :likeable, :mapable
           resources :academic_unities, only: [:index]
@@ -148,9 +121,26 @@ Rails.application.routes.draw do
           end
           resources :buildings, concerns: [:event_hosting, :commentable, :posteable, :likeable, :mapable]
         end
+
+        resources :courses, only: [:show, :index], shallow: true do
+          concerns :searchable
+          resources :sections, shallow: true do
+            resources :teachers
+            resources :schedule_items
+            resources :places
+            resources :schedule_modules
+          end
+          resources :teachers
+        end
+
+        resources :webpages
+
+        resources :chats, shallow: true do
+          resources :chat_messages
+        end
       end
     end
-  #end
+  end
 end
 
 

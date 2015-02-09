@@ -167,7 +167,7 @@ module ControllerHelpers
           end
         end
       end
-      current_organization
+      get_item_class
     end
 
     def parent_eager(parent_types, parent_eager_load = nil)
@@ -180,7 +180,7 @@ module ControllerHelpers
           end
         end
       end
-      current_organization
+      get_item_class
     end
 
     def item_organizational_parent_eager(parent_eager_load = nil)

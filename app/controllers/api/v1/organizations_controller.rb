@@ -11,7 +11,11 @@ module Api
 			end
 
 			def get_item
-				get_item_class.eager_load(:localization).find(params[:id])
+        if params[:organization]
+          get_item_class.eager_load(:localization).find_with_subdomain(params[:organization])
+        else
+          get_item_class.eager_load(:localization).find(params[:id])
+        end
 			end
 
 			# Set a parent to the item if needed. This is called before saving on create.

@@ -15,23 +15,17 @@ class ApplicationController < ActionController::API
 
 
   def validate_subdomain
-    render :json => {:error => 'Invalid Subdomain'}.to_json, :status => 404 unless request.subdomain == '' || valid_subdomain?(request.subdomain)
+    if params[:organization] && !valid_organization?(params[:organization])
+      render :json => {:error => 'Invalid organization'}.to_json, :status => 404
+    end
   end
 
   def current_organization
-    current_organization ||= Organization.first # Organization.find_with_subdomain(request.subdomain)
+    current_organization ||= Organization.find_with_subdomain(params[:organization])
   end
 
-  def current_subdomain
-    current_subdomain ||= request.subdomain
-  end
-
-  def get_subdomain_for_organization(organization)
-    organization.abbreviation.downcase
-  end
-
-  def valid_subdomain?(subdomain)
-    SUBDOMAINS.include? subdomain.downcase
+  def valid_organization?(abbreviation)
+    SUBDOMAINS.include? abbreviation.downcase
   end
 
   protected
