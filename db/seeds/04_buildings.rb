@@ -121,5 +121,3 @@ El Centro aspira a hacer una contribución muy significativa en nuestra sociedad
 Building.all.each do |b|
   puts('Created building: ' +b.name)
 end
-
-Building.reindex

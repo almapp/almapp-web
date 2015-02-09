@@ -12118,5 +12118,3 @@ Place.all.each do |p|
       puts p.inspect
     end
 end
-
-Place.reindex

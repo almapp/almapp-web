@@ -288,6 +288,3 @@ Webpage.create(
        requires_login: false,
        home_url: 'https://www.facebook.com/crecer.uc'
 )
-
-Webpage.reindex
-

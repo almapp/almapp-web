@@ -518,5 +518,3 @@ puts('Creating faculties')
 Faculty.all.each do |f|
   puts('Created faculty: ' +f.name)
 end
-
-Faculty.reindex
