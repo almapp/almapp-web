@@ -86,10 +86,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: unicode
-  username: postgres
-  host: localhost
-  password: <%= ENV['ALMAPP_DATABASE_PASSWORD'] %>
-  pool: 5
-  database: almapp
+  url: <%= ENV['DATABASE_URL'] %>
