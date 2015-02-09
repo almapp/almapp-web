@@ -289,5 +289,5 @@ Webpage.create(
        home_url: 'https://www.facebook.com/crecer.uc'
 )
 
-
+Webpage.reindex
 

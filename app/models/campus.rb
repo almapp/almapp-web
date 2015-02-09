@@ -23,7 +23,7 @@
 #
 
 class Campus < ActiveRecord::Base
-  searchkick
+  searchkick word_start: [:abbreviation, :short_name], text_middle: [:name]
 
   include Commentable
   include PostTarget

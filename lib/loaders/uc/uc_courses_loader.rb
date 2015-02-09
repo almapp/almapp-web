@@ -323,5 +323,8 @@ class UCCoursesLoader < CoursesLoader
         end
       end
     end
+    Course.reindex
+    Teacher.reindex
+    AcademicUnity.reindex
   end
 end

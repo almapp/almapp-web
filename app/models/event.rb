@@ -23,6 +23,8 @@
 #
 
 class Event < ActiveRecord::Base
+  searchkick text_middle: [:title, :information]
+
   include Commentable
   include PostTarget
   include PostPublisher

@@ -147,3 +147,5 @@ puts('Creating campuses')
 Campus.all.each do |c|
   puts('Created campus: ' +c.name)
 end
+
+Campus.reindex

@@ -560,4 +560,6 @@ puts('Creating Academic Unities')
 
 AcademicUnity.all.each do |f|
     puts('Created academic unity: ' +f.	short_name)
-	end	
+	end
+
+AcademicUnity.reindex

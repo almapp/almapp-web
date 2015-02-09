@@ -26,6 +26,8 @@
 #
 
 class User < ActiveRecord::Base
+  searchkick word_start: [:email, :username], text_middle: [:name]
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 

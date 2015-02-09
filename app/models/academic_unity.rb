@@ -22,6 +22,8 @@
 #
 
 class AcademicUnity < ActiveRecord::Base
+  searchkick word_start: [:abbreviation, :short_name], text_middle: [:name]
+
   include Commentable
   include PostTarget
   include PostPublisher

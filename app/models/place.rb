@@ -22,7 +22,7 @@
 #
 
 class Place < ActiveRecord::Base
-  searchkick
+  searchkick word_start: [:identifier], text_middle: [:name]
 
   include Commentable
   include Likeable

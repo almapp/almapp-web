@@ -15,6 +15,8 @@
 #
 
 class Teacher < ActiveRecord::Base
+  searchkick word_start: [:email], text_middle: [:name]
+
   include Commentable
   include Likeable
 

@@ -21,6 +21,8 @@
 #
 
 class Post < ActiveRecord::Base
+  searchkick text_middle: [:content]
+
   include Commentable
   include Likeable
 

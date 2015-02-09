@@ -20,6 +20,8 @@
 #
 
 class Webpage < ActiveRecord::Base
+  searchkick word_start: [:identifier], text_middle: [:name]
+
   validates :identifier, presence: true
   validates :name, presence: true
   validates :home_url, presence: true

@@ -17,6 +17,8 @@
 #
 
 class Group < ActiveRecord::Base
+  searchkick text_middle: [:name]
+
   include Commentable
   include PostTarget
   include PostPublisher

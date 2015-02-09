@@ -10055,23 +10055,6 @@ place.save!
 #-------------------------------------------------
 
 place = Place.new(
-    identifier: 'S. ALFERO',
-    name: 'S. Alfero',
-    area: @lc,
-    latitude: 0.0,
-    longitude: 0.0,
-    floor: '?',
-    information: nil,
-    zoom: 0.0,
-    angle: 0.0,
-    tilt: 0.0
-    )
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.new(
     identifier: 'S11',
     name: 'S11',
     area: @sj,
@@ -12130,8 +12113,10 @@ place.save!
 
 Place.all.each do |p|
     if p.name.present?
-        puts('newd place: ' +p.name)
+        puts('new place: ' +p.name)
     else
       puts p.inspect
-      end
+    end
 end
+
+Place.reindex

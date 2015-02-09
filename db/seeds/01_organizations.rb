@@ -33,3 +33,5 @@ puts('Creating organizations')
 Organization.all.each do |o|
     puts('Created organization: ' +o.name)
 end
+
+Organization.reindex
