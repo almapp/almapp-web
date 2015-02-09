@@ -180,6 +180,11 @@ GEM
     rails-api (0.4.0)
       actionpack (>= 3.2.11)
       railties (>= 3.2.11)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.1.6)
       actionpack (= 4.1.6)
       activesupport (= 4.1.6)
@@ -259,6 +264,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.6)
   rails-api
+  rails_12factor
   sass
   sdoc (~> 0.4.0)
   searchkick
