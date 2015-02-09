@@ -27,8 +27,7 @@ puts('Creating places')
 # area
 # classroom
 
-# bath_men
-# bath_women
+# bath
 # trash
 # park_bicycle
 # park_car
@@ -42,11 +41,12 @@ puts('Creating places')
 # cash_machine
 # bank
 # library
+# other
 
 place = Place.new(
     identifier: 'ENF_117',
     name: '117',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.499013,
     longitude: -70.613039,
     floor: '1',
@@ -55,7 +55,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
@@ -63,7 +63,7 @@ place.save!
 place = Place.new(
     identifier: 'ENF_118',
     name: '118',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.498915,
     longitude: -70.613041,
     floor: '1',
@@ -80,7 +80,7 @@ place.save!
 place = Place.new(
     identifier: 'ENF_119',
     name: '119',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.498937,
     longitude: -70.613039,
     floor: '1',
@@ -97,7 +97,7 @@ place.save!
 place = Place.new(
     identifier: 'ENF_120',
     name: '120',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.499013,
     longitude: -70.613039,
     floor: '1',
@@ -106,7 +106,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
@@ -114,7 +114,7 @@ place.save!
 place = Place.new(
     identifier: 'ENF_121',
     name: '121',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.499013,
     longitude: -70.613039,
     floor: '1',
@@ -123,7 +123,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
@@ -131,7 +131,7 @@ place.save!
 place = Place.new(
     identifier: '209',
     name: '209',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497114,
     longitude: -70.611485,
     floor: '2?',
@@ -148,7 +148,7 @@ place.save!
 place = Place.new(
     identifier: 'comercial_211',
     name: '211',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497119,
     longitude: -70.611482,
     floor: '2?',
@@ -165,7 +165,7 @@ place.save!
 place = Place.new(
     identifier: '218',
     name: '218',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496961,
     longitude: -70.611022,
     floor: '2?',
@@ -182,7 +182,7 @@ place.save!
 place = Place.new(
     identifier: 'ENF_219',
     name: '219',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.498915,
     longitude: -70.613092,
     floor: '2',
@@ -199,7 +199,7 @@ place.save!
 place = Place.new(
     identifier: '220',
     name: '220',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.498912,
     longitude: -70.613125,
     floor: '2',
@@ -216,7 +216,7 @@ place.save!
 place = Place.new(
     identifier: 'comercial_220',
     name: '220',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496966,
     longitude: -70.611006,
     floor: '2?',
@@ -233,7 +233,7 @@ place.save!
 place = Place.new(
     identifier: 'ENF_221',
     name: '221',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.498901,
     longitude: -70.613162,
     floor: '2',
@@ -250,7 +250,7 @@ place.save!
 place = Place.new(
     identifier: 'ENF_222',
     name: '222',
-    area: @sj,
+    area: @a_enf,
     latitude: -33.499004,
     longitude: -70.613127,
     floor: '2',
@@ -267,7 +267,7 @@ place.save!
 place = Place.new(
     identifier: '225',
     name: '225',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497020,
     longitude: -70.610998,
     floor: '2?',
@@ -284,7 +284,7 @@ place.save!
 place = Place.new(
     identifier: 'A-SALA1',
     name: 'A-SALA1',
-    area: @lc,
+    area: @a_arq,
     latitude: -33.419557,
     longitude: -70.618506,
     floor: '-1',
@@ -318,7 +318,7 @@ place.save!
 place = Place.new(
     identifier: 'A-SALA2',
     name: 'A-SALA2',
-    area: @lc,
+    area: @a_arq,
     latitude: -33.419566,
     longitude: -70.618533,
     floor: '-1',
@@ -335,7 +335,7 @@ place.save!
 place = Place.new(
     identifier: 'A-SALA3',
     name: 'A-SALA3',
-    area: @lc,
+    area: @a_arq,
     latitude: -33.419544,
     longitude: -70.618509,
     floor: '-1',
@@ -352,7 +352,7 @@ place.save!
 place = Place.new(
     identifier: 'A-SALA4',
     name: 'A-SALA4',
-    area: @lc,
+    area: @a_arq,
     latitude: -33.419535,
     longitude: -70.618498,
     floor: '-1',
@@ -369,7 +369,7 @@ place.save!
 place = Place.new(
     identifier: 'A1',
     name: 'A1',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500288,
     longitude: -70.612476,
     floor: '1',
@@ -386,7 +386,7 @@ place.save!
 place = Place.new(
     identifier: 'A2',
     name: 'A2',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500288,
     longitude: -70.612476,
     floor: '1',
@@ -403,7 +403,7 @@ place.save!
 place = Place.new(
     identifier: 'A3',
     name: 'A3',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500141,
     longitude: -70.612511,
     floor: '1',
@@ -420,7 +420,7 @@ place.save!
 place = Place.new(
     identifier: 'A4',
     name: 'A4',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500141,
     longitude: -70.612511,
     floor: '1',
@@ -437,7 +437,7 @@ place.save!
 place = Place.new(
     identifier: 'A5',
     name: 'A5',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.499965,
     longitude: -70.612540,
     floor: '1',
@@ -454,7 +454,7 @@ place.save!
 place = Place.new(
     identifier: 'A6',
     name: 'A6',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.499965,
     longitude: -70.612540,
     floor: '1',
@@ -471,7 +471,7 @@ place.save!
 place = Place.new(
     identifier: 'A7',
     name: 'A7',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.499809,
     longitude: -70.612569,
     floor: '1',
@@ -488,7 +488,7 @@ place.save!
 place = Place.new(
     identifier: 'A8',
     name: 'A8',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.499703,
     longitude: -70.612068,
     floor: '1',
@@ -692,7 +692,7 @@ place.save!
 place = Place.new(
     identifier: 'almacen_uc_cc',
     name: 'ALMACÉN UC',
-    area: @sj,
+    area: @cc,
     latitude: -33.440890,
     longitude: -70.640925,
     floor: '1',
@@ -701,7 +701,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
@@ -718,7 +718,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
@@ -726,7 +726,7 @@ place.save!
 place = Place.new(
     identifier: 'ALT',
     name: 'ALT',
-    area: @sj,
+    area: @al,
     latitude: -33.497917,
     longitude: -70.608998,
     floor: '?',
@@ -794,7 +794,7 @@ place.save!
 place = Place.new(
     identifier: 'administracion_cc',
     name: 'Administración',
-    area: @sj,
+    area: @cc,
     latitude: -33.440929,
     longitude: -70.641053,
     floor: '?',
@@ -803,24 +803,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.new(
-    identifier: 'AGC',
-    name: 'Agronomía e Ingeniería Forestal',
-    area: @a_agro,
-    latitude: 0.0,
-    longitude: 0.0,
-    floor: '1',
-    information: nil,
-    zoom: 0.0,
-    angle: 0.0,
-    tilt: 0.0
-    )
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
@@ -837,7 +820,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'computers, printer'
 place.save!
 
 #-------------------------------------------------
@@ -845,7 +828,7 @@ place.save!
 place = Place.new(
     identifier: 'almuerzo13',
     name: 'Almuerzo',
-    area: @sj,
+    area: @lc,
     latitude: -33.419581,
     longitude: -70.617635,
     floor: '1',
@@ -854,49 +837,16 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'food_lunch'
 place.save!
 
-#-------------------------------------------------
-
-place = Place.new(
-    identifier: 'ARQ',
-    name: 'Arquitectura',
-    area: @sj,
-    latitude: 0.0,
-    longitude: 0.0,
-    floor: '1',
-    information: nil,
-    zoom: 0.0,
-    angle: 0.0,
-    tilt: 0.0
-    )
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.new(
-    identifier: 'ART',
-    name: 'Artes',
-    area: @sj,
-    latitude: 0.0,
-    longitude: 0.0,
-    floor: '1',
-    information: nil,
-    zoom: 0.0,
-    angle: 0.0,
-    tilt: 0.0
-    )
-place.category_list = 'classroom'
-place.save!
 
 #-------------------------------------------------
 
 place = Place.new(
     identifier: 'Auditorio_SA',
     name: 'Auditorio',
-    area: @sj,
+    area: @a_ing, #Check
     latitude: -33.499427,
     longitude: -70.615001,
     floor: '1',
@@ -913,7 +863,7 @@ place.save!
 place = Place.new(
     identifier: 'auditorio_Y',
     name: 'Auditorio',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.499094,
     longitude: -70.612009,
     floor: '-1',
@@ -930,7 +880,7 @@ place.save!
 place = Place.new(
     identifier: 'auditorio_acg',
     name: 'Auditorio',
-    area: @sj,
+    area: @a_agro, #check
     latitude: -33.497129,
     longitude: -70.609794,
     floor: '1',
@@ -947,7 +897,7 @@ place.save!
 place = Place.new(
     identifier: 'auditorio_cc',
     name: 'Auditorio',
-    area: @sj,
+    area: @a_cc,
     latitude: -33.498870,
     longitude: -70.613985,
     floor: '?',
@@ -981,7 +931,7 @@ place.save!
 place = Place.new(
     identifier: 'auditorio_h_1',
     name: 'Auditorio',
-    area: @sj,
+    area: @historia,
     latitude: -33.497383,
     longitude: -70.613498,
     floor: '?',
@@ -998,7 +948,7 @@ place.save!
 place = Place.new(
     identifier: 'auditorio_h_2',
     name: 'Auditorio',
-    area: @sj,
+    area: @historia,
     latitude: -33.496731,
     longitude: -70.614014,
     floor: '?',
@@ -1015,7 +965,7 @@ place.save!
 place = Place.new(
     identifier: 'auditorio_h_fil',
     name: 'Auditorio',
-    area: @sj,
+    area: @a_fil,
     latitude: -33.496929,
     longitude: -70.614026,
     floor: '?',
@@ -1032,7 +982,7 @@ place.save!
 place = Place.new(
     identifier: 'AUD_10',
     name: 'Auditorio 10',
-    area: @sj,
+    area: @cc,
     latitude: -33.440897,
     longitude: -70.640708,
     floor: '1?',
@@ -1049,7 +999,7 @@ place.save!
 place = Place.new(
     identifier: '102',
     name: 'Auditorio 102',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496987,
     longitude: -70.611897,
     floor: '1',
@@ -1066,7 +1016,7 @@ place.save!
 place = Place.new(
     identifier: '103',
     name: 'Auditorio 103',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497118,
     longitude: -70.611773,
     floor: '1',
@@ -1083,7 +1033,7 @@ place.save!
 place = Place.new(
     identifier: '104',
     name: 'Auditorio 104',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496974,
     longitude: -70.611846,
     floor: '1',
@@ -1100,7 +1050,7 @@ place.save!
 place = Place.new(
     identifier: '105',
     name: 'Auditorio 105',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497096,
     longitude: -70.611623,
     floor: '1',
@@ -1117,7 +1067,7 @@ place.save!
 place = Place.new(
     identifier: '106',
     name: 'Auditorio 106',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496965,
     longitude: -70.611680,
     floor: '1',
@@ -1134,7 +1084,7 @@ place.save!
 place = Place.new(
     identifier: '107',
     name: 'Auditorio 107',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497096,
     longitude: -70.611588,
     floor: '1',
@@ -1151,7 +1101,7 @@ place.save!
 place = Place.new(
     identifier: '108',
     name: 'Auditorio 108',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496957,
     longitude: -70.611376,
     floor: '1',
@@ -1168,7 +1118,7 @@ place.save!
 place = Place.new(
     identifier: '109',
     name: 'Auditorio 109',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497087,
     longitude: -70.611487,
     floor: '1',
@@ -1185,7 +1135,7 @@ place.save!
 place = Place.new(
     identifier: '110',
     name: 'Auditorio 110',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496979,
     longitude: -70.611219,
     floor: '1',
@@ -1202,7 +1152,7 @@ place.save!
 place = Place.new(
     identifier: '111',
     name: 'Auditorio 111',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497105,
     longitude: -70.611338,
     floor: '1',
@@ -1219,7 +1169,7 @@ place.save!
 place = Place.new(
     identifier: '112',
     name: 'Auditorio 112',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.496928,
     longitude: -70.611144,
     floor: '1',
@@ -1236,7 +1186,7 @@ place.save!
 place = Place.new(
     identifier: '113',
     name: 'Auditorio 113',
-    area: @sj,
+    area: @a_eco,
     latitude: -33.497094,
     longitude: -70.611230,
     floor: '1',
@@ -1253,7 +1203,7 @@ place.save!
 place = Place.new(
     identifier: 'AUD_21',
     name: 'Auditorio 21',
-    area: @sj,
+    area: @cc,
     latitude: -33.441155,
     longitude: -70.640779,
     floor: '2?',
@@ -1270,7 +1220,7 @@ place.save!
 place = Place.new(
     identifier: 'AUD_24',
     name: 'Auditorio 24',
-    area: @sj,
+    area: @cc,
     latitude: -33.440707,
     longitude: -70.640166,
     floor: '2?',
@@ -1321,7 +1271,7 @@ place.save!
 place = Place.new(
     identifier: 'auditorio_joaco_luco',
     name: 'Auditorio Dr. Joaquín Luco',
-    area: @sj,
+    area: @cc,
     latitude: -33.441573,
     longitude: -70.640652,
     floor: '?',
@@ -1338,7 +1288,7 @@ place.save!
 place = Place.new(
     identifier: 'FD-101',
     name: 'Auditorio FD101',
-    area: @sj,
+    area: @cc,
     latitude: -33.441060,
     longitude: -70.640345,
     floor: '1',
@@ -1440,7 +1390,7 @@ place.save!
 place = Place.new(
     identifier: 'AULAMAGNA',
     name: 'Aula Magna',
-    area: @sj,
+    area: @al,
     latitude: -33.497807,
     longitude: -70.609146,
     floor: '1',
@@ -1457,7 +1407,7 @@ place.save!
 place = Place.new(
     identifier: 'aulamagna_cc',
     name: 'Aula Magna',
-    area: @sj,
+    area: @cc,
     latitude: -33.440946,
     longitude: -70.640001,
     floor: '1',
@@ -1474,7 +1424,7 @@ place.save!
 place = Place.new(
     identifier: 'aulamagna_comercial',
     name: 'Aula Magna',
-    area: @sj,
+    area: @al,
     latitude: -33.497077,
     longitude: -70.611969,
     floor: '1',
@@ -1491,7 +1441,7 @@ place.save!
 place = Place.new(
     identifier: 'B-101',
     name: 'B-101',
-    area: @sj,
+    area: @bio,
     latitude: -33.441678,
     longitude: -70.639548,
     floor: '1?',
@@ -1508,7 +1458,7 @@ place.save!
 place = Place.new(
     identifier: 'B-102',
     name: 'B-102',
-    area: @sj,
+    area: @bio,
     latitude: -33.441571,
     longitude: -70.639651,
     floor: '1?',
@@ -1525,7 +1475,7 @@ place.save!
 place = Place.new(
     identifier: 'B-103',
     name: 'B-103',
-    area: @sj,
+    area: @bio,
     latitude: -33.441528,
     longitude: -70.639691,
     floor: '1?',
@@ -1678,7 +1628,7 @@ place.save!
 place = Place.new(
     identifier: 'B-201',
     name: 'B-201',
-    area: @cc,
+    area: @bio,
     latitude: -33.441733,
     longitude: -70.639850,
     floor: '2?',
@@ -1695,7 +1645,7 @@ place.save!
 place = Place.new(
     identifier: 'B-202',
     name: 'B-202',
-    area: @cc,
+    area: @bio,
     latitude: -33.441733,
     longitude: -70.639850,
     floor: '2?',
@@ -1712,7 +1662,7 @@ place.save!
 place = Place.new(
     identifier: 'B-203',
     name: 'B-203',
-    area: @cc,
+    area: @bio,
     latitude: -33.441733,
     longitude: -70.639850,
     floor: '2?',
@@ -1814,7 +1764,7 @@ place.save!
 place = Place.new(
     identifier: 'BC21',
     name: 'BC21',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500493,
     longitude: -70.613091,
     floor: '2',
@@ -1831,7 +1781,7 @@ place.save!
 place = Place.new(
     identifier: 'BC22',
     name: 'BC22',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500352,
     longitude: -70.613158,
     floor: '2',
@@ -1848,7 +1798,7 @@ place.save!
 place = Place.new(
     identifier: 'BC23',
     name: 'BC23',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500424,
     longitude: -70.613148,
     floor: '2',
@@ -1865,7 +1815,7 @@ place.save!
 place = Place.new(
     identifier: 'BC24',
     name: 'BC24',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500495,
     longitude: -70.613105,
     floor: '2',
@@ -1882,7 +1832,7 @@ place.save!
 place = Place.new(
     identifier: 'BC25',
     name: 'BC25',
-    area: @sj,
+    area: @a_ing,
     latitude: -33.500477,
     longitude: -70.613036,
     floor: '2',
@@ -1899,7 +1849,7 @@ place.save!
 place = Place.new(
     identifier: 'BC26',
     name: 'BC26',
-    area: @sj,
+    area: @a_ing,
     latitude: 0.0,
     longitude: 0.0,
     floor: '2',
@@ -1925,24 +1875,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.new(
-    identifier: 'banco_cropbanca',
-    name: 'Banco Corpbanca',
-    area: @sj,
-    latitude: -33.498158,
-    longitude: -70.610165,
-    floor: '1',
-    information: nil,
-    zoom: 0.0,
-    angle: 0.0,
-    tilt: 0.0
-    )
-place.category_list = 'classroom'
+place.category_list = 'bank'
 place.save!
 
 #-------------------------------------------------
@@ -1959,24 +1892,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.new(
-    identifier: 'banco_santander',
-    name: 'Banco Santander',
-    area: @sj,
-    latitude: -33.498113,
-    longitude: -70.613188,
-    floor: '1',
-    information: nil,
-    zoom: 0.0,
-    angle: 0.0,
-    tilt: 0.0
-    )
-place.category_list = 'classroom'
+place.category_list = 'bank'
 place.save!
 
 #-------------------------------------------------
@@ -1993,7 +1909,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2010,7 +1926,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2027,7 +1943,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2044,7 +1960,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2061,7 +1977,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2078,7 +1994,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2095,7 +2011,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2112,7 +2028,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2129,7 +2045,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2146,7 +2062,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2163,7 +2079,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2180,7 +2096,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2197,7 +2113,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2214,7 +2130,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2231,7 +2147,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2239,7 +2155,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje24',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @cc,
     latitude: -33.441271,
     longitude: -70.640637,
     floor: '1?',
@@ -2248,7 +2164,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2256,8 +2172,8 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje25',
     name: 'Basurero de reciclaje',
-    area: @sj,
-    latitude: -33.419454,
+    area: @lc,
+    latitude: -33.419454, 
     longitude: -70.618450,
     floor: '1',
     information: nil,
@@ -2265,7 +2181,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2282,7 +2198,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2299,7 +2215,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2307,7 +2223,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje28',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @cc,
     latitude: -33.441791,
     longitude: -70.640508,
     floor: '1',
@@ -2316,7 +2232,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2324,7 +2240,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje29',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @cc,
     latitude: -33.441351,
     longitude: -70.640007,
     floor: '1',
@@ -2333,7 +2249,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2350,7 +2266,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2358,7 +2274,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje30',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @lc,
     latitude: -33.419555,
     longitude: -70.618540,
     floor: '1',
@@ -2367,7 +2283,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2375,7 +2291,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje31',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @lc,
     latitude: -33.419170,
     longitude: -70.617931,
     floor: '1',
@@ -2384,7 +2300,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2392,7 +2308,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje32',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @lc,
     latitude: -33.418768,
     longitude: -70.618145,
     floor: '1',
@@ -2401,7 +2317,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2409,7 +2325,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje33',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @co,
     latitude: -33.445798,
     longitude: -70.594330,
     floor: '1',
@@ -2418,7 +2334,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2426,7 +2342,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje34',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @co,
     latitude: -33.445747,
     longitude: -70.593911,
     floor: '1',
@@ -2435,7 +2351,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2443,7 +2359,7 @@ place.save!
 place = Place.new(
     identifier: 'reciclaje35',
     name: 'Basurero de reciclaje',
-    area: @sj,
+    area: @co,
     latitude: -33.446120,
     longitude: -70.593421,
     floor: '1',
@@ -2452,7 +2368,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2469,7 +2385,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2486,7 +2402,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2503,7 +2419,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2520,7 +2436,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2537,7 +2453,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
@@ -2554,7 +2470,7 @@ place = Place.new(
     angle: 0.0,
     tilt: 0.0
     )
-place.category_list = 'classroom'
+place.category_list = 'trash'
 place.save!
 
 #-------------------------------------------------
