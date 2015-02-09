@@ -87,6 +87,9 @@ GEM
     elasticsearch-transport (1.0.6)
       faraday
       multi_json
+    em-hiredis (0.3.0)
+      eventmachine (~> 1.0)
+      hiredis (~> 0.5.0)
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
       cookiejar
@@ -112,6 +115,10 @@ GEM
     faye-rails (2.0.0)
       eventmachine (~> 1.0.0)
       faye (~> 1.0.1)
+    faye-redis (0.2.0)
+      em-hiredis (>= 0.2.0)
+      eventmachine (>= 0.12.0)
+      multi_json (>= 1.0.0)
     faye-websocket (0.9.2)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
@@ -123,6 +130,7 @@ GEM
       oauth (>= 0.3.6)
     hashie (3.4.0)
     hike (1.2.3)
+    hiredis (0.5.2)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.2.6)
@@ -162,6 +170,8 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.18.1)
+    puma (2.11.0)
+      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
@@ -252,6 +262,7 @@ DEPENDENCIES
   devise
   doorkeeper
   faye-rails
+  faye-redis
   gmail
   jbuilder
   jbuilder_cache_multi
@@ -262,6 +273,7 @@ DEPENDENCIES
   oj_mimic_json
   paperclip
   pg
+  puma
   rails (= 4.1.6)
   rails-api
   rails_12factor

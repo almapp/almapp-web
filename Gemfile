@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.1.2'
 
 gem 'rails', '4.1.6'
 gem 'rails-api'
 
-# Must add extension:
-# CREATE EXTENSION unaccent;
+# Database
 gem 'pg'
+
+# Server
+gem 'puma'
 
 gem 'jbuilder'
 gem 'jbuilder_cache_multi'
@@ -19,8 +21,9 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'paperclip'
 
 # Chat
-gem 'thin'
 gem 'faye-rails'
+gem 'faye-redis'
+gem 'thin'
 # gem 'faye-redis'
 
 # Email
