@@ -1,7 +1,15 @@
 module Api
 	module V1
 		class GroupsController < BaseController
-      include Searchable
+
+      def get_found_items(query, limit)
+        get_items.search(query,
+                         fields: [{'name^10' => :text_middle}],
+                         boost_by: {comments_count: {factor: COMMENT_BOOST},
+                                    likes_count: {factor: LIKE_BOOST},
+                                    dislikes_count: {factor: DISLIKE_BOOST}},
+                         limit: limit)
+      end
 
 			# Return an array to display in the index view.
 			# @return Relation array

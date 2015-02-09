@@ -1,7 +1,16 @@
 module Api
 	module V1
 		class PlacesController < BaseController
-      include Searchable
+
+      def get_found_items(query, limit)
+        get_items.search(query,
+                         fields: [{'identifier^10' => :word_start},
+                                  {'name^8' => :text_middle}],
+                         boost_by: {comments_count: {factor: COMMENT_BOOST},
+                                    likes_count: {factor: LIKE_BOOST},
+                                    dislikes_count: {factor: DISLIKE_BOOST}},
+                         limit: limit)
+      end
 
 			# Return an array to display in the index view.
 			# @return Relation array

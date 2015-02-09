@@ -1,7 +1,16 @@
 module Api
 	module V1
 		class AcademicUnitiesController < BaseController
-      include Searchable
+
+      def get_found_items(query, limit)
+        get_items.search(query,
+                         fields: [{'short_name^10' => :word_start},
+                                  {'abbreviation^5' => :word_start}],
+                         boost_by: {comments_count: {factor: COMMENT_BOOST},
+                                    likes_count: {factor: LIKE_BOOST},
+                                    dislikes_count: {factor: DISLIKE_BOOST}},
+                         limit: limit)
+      end
 
 			# Return an array to display in the index view.
 			# @return Relation array

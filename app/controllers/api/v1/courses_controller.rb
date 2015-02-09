@@ -1,16 +1,15 @@
 module Api
 	module V1
 		class CoursesController < BaseController
-      include Concerns::Searchable
 
       def get_found_items(query, limit)
         get_items.search(query,
-                                  fields: [{'initials^10' => :word_start},
-                                           {'name^5' => :text_middle}],
-                                  boost_by: {comments_count: {factor: 10},
-                                            likes_count: {factor: 5},
-                                             dislikes_count: {factor: 2}},
-                                  limit: 5)
+                         fields: [{'initials^10' => :word_start},
+                                  {'name^8' => :text_middle}],
+                         boost_by: {comments_count: {factor: COMMENT_BOOST},
+                                    likes_count: {factor: LIKE_BOOST},
+                                    dislikes_count: {factor: DISLIKE_BOOST}},
+                         limit: limit)
       end
 
 			# Return an array to display in the index view.

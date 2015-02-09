@@ -1,7 +1,13 @@
 module Api
 	module V1
 		class UsersController < BaseController
-      include Searchable
+
+      def get_found_items(query, limit)
+        get_items.search(query,
+                         fields: [{'username^10' => :word_start},
+                                  {'name^6' => :text_middle}],
+                         limit: 5)
+      end
 
 			# Return an array to display in the index view.
 			# @return Relation array

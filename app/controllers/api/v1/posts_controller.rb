@@ -1,12 +1,18 @@
 module Api
 	module V1
 		class PostsController < BaseController
-      include Searchable
 
 			before_action :authenticate_user!, only: [:create, :destroy, :update]
 			before_action :set_and_validate_parent, only: [:index, :published_posts, :create]
 			before_action :set_and_validate_items, only: [:index, :published_posts, :create]
 			before_action :set_and_validate_item, only: [:show, :update, :destroy]
+
+      def get_found_items(query, limit)
+        get_items.search(query, boost_by: {comments_count: {factor: COMMENT_BOOST},
+                                    likes_count: {factor: LIKE_BOOST},
+                                    dislikes_count: {factor: DISLIKE_BOOST}},
+                         limit: limit)
+      end
 
 			def published_posts
 				@items = @parent.published_posts.eager_load(:user, :localization, :event)

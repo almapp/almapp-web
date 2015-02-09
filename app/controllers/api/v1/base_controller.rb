@@ -3,6 +3,11 @@ module Api
     class BaseController < ApplicationController
       include ControllerHelpers::V1
 
+      MAX_ITEMS = 10
+      LIKE_BOOST = 5
+      DISLIKE_BOOST = 3
+      COMMENT_BOOST = 10
+
       #before_action :doorkeeper_authorize!
       before_action :current_resource_owner
       #before_action :authorize_user , only: [:create, :update, :destroy]
@@ -64,15 +69,25 @@ module Api
         head :no_content
       end
 
+      def search
+        query = params[:q]
+
+        unless query.present?
+          render :json => [].to_json unless query.present?
+          return
+        end
+
+        @items = get_found_items(query, MAX_ITEMS)
+        render "api/v1/#{self.controller_name.downcase}/index"
+      end
+
       #=================
       #==== Helpers ====
       #=================
 
       def set_and_validate_item
-        unless params[:id] == 'search'
-          @item = get_item
-          render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @item.present?
-        end
+        @item = get_item
+        render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @item.present?
       end
 
       def set_and_validate_parent
@@ -107,7 +122,9 @@ module Api
         # @parent.campuses
       end
 
+      def get_found_items(query, limit = MAX_ITEMS)
 
+      end
 
       # Set a parent to the item if needed. This is called before saving on create.
       def set_item_parent(parent)

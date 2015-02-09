@@ -1,7 +1,10 @@
 module Api
 	module V1
 		class WebpagesController < BaseController
-      include Searchable
+
+      def get_found_items(query, limit)
+        get_items.search(query)
+      end
 
 			# Return an array to display in the index view.
 			# @return Relation array
