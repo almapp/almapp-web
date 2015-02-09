@@ -1,6 +1,7 @@
 module Api
 	module V1
 		class GroupsController < BaseController
+      include Searchable
 
 			# Return an array to display in the index view.
 			# @return Relation array

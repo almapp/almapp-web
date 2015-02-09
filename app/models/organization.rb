@@ -90,9 +90,4 @@ class Organization < ActiveRecord::Base
     #first_level_places.append(campuses_places) # TODO create query
     Event.none
   end
-
-
-  def self.find_with_subdomain(subdomain)
-    self.where("lower(abbreviation) = ?", subdomain.downcase).first if (subdomain.present? && subdomain.size != 0)
-  end
 end

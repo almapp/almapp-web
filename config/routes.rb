@@ -50,7 +50,8 @@ Rails.application.routes.draw do
 
       concern :searchable do
         collection do
-          get 'search' # /:resources/search
+          # get 'search' # /:resources/search
+          get '/search', action: :search
         end
       end
 
@@ -94,7 +95,8 @@ Rails.application.routes.draw do
       resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable, :searchable]
 
       resources :organizations, only: [:index], concerns: :searchable
-      scope ":organization" do
+
+      scope ':organization' do
         get '/' => 'organizations#show'
 
         resources :users, concerns: :searchable

@@ -1,6 +1,8 @@
 module Api
 	module V1
 		class PostsController < BaseController
+      include Searchable
+
 			before_action :authenticate_user!, only: [:create, :destroy, :update]
 			before_action :set_and_validate_parent, only: [:index, :published_posts, :create]
 			before_action :set_and_validate_items, only: [:index, :published_posts, :create]

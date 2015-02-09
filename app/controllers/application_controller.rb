@@ -21,7 +21,8 @@ class ApplicationController < ActionController::API
   end
 
   def current_organization
-    current_organization ||= Organization.find_with_subdomain(params[:organization])
+    slug = params[:organization]
+    current_organization ||= Organization.where("lower(abbreviation) = ?", slug.downcase).first if (slug.present? && slug.size != 0)
   end
 
   def valid_organization?(abbreviation)

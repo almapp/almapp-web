@@ -3,9 +3,9 @@ module Api
     class BaseController < ApplicationController
       include ControllerHelpers::V1
 
-      before_action :doorkeeper_authorize!
+      #before_action :doorkeeper_authorize!
       before_action :current_resource_owner
-      before_action :authorize_user , only: [:create, :update, :destroy]
+      #before_action :authorize_user , only: [:create, :update, :destroy]
       before_action :set_and_validate_parent, only: [:index, :create, :search]
       before_action :set_and_validate_items, only: [:index]
       before_action :set_and_validate_item, only: [:show, :update, :destroy]
@@ -69,8 +69,10 @@ module Api
       #=================
 
       def set_and_validate_item
-        @item = get_item
-        render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @item.present?
+        unless params[:id] == 'search'
+          @item = get_item
+          render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @item.present?
+        end
       end
 
       def set_and_validate_parent
