@@ -86,18 +86,17 @@ Rails.application.routes.draw do
       #= General Routes =
       #==================
 
-      resources :users, only: [:index, :show], concerns: :searchable
-      resource :me, controller: 'me' do
-        get '/sections' => 'me#sections', as: :me_sections
-        get '/courses' => 'me#courses', as: :me_courses
-      end
-
-      resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable, :searchable]
-
-      resources :organizations, only: [:index], concerns: :searchable
+      # resources :organizations, only: [:index], concerns: :searchable
 
       scope ':organization' do
         get '/' => 'organizations#show'
+
+        resource :me, controller: 'me' do
+          get '/sections' => 'me#sections', as: :me_sections
+          get '/courses' => 'me#courses', as: :me_courses
+        end
+
+        resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable, :searchable]
 
         resources :users, concerns: :searchable
 
