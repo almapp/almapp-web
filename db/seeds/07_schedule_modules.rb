@@ -39,7 +39,7 @@ def create_modules(days, blocks, start_times, end_times)
   end
 end
 
-ScheduleModule.destroy_all
+@uc.schedule_modules.destroy_all
 create_modules(%w(L M W J V S), [*1..8], %w(8:30 10:00 11:30 14:00 15:30 17:00 18:30 20:00), %w(9:50 11:20 12:50 15:20 16:50 18:20 19:50 21:20))
 
 

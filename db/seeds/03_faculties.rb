@@ -23,497 +23,475 @@ puts('Creating faculties')
 #  updated_at   :datetime
 #
 
-@agro = Faculty.create(
-    abbreviation: 'AGC',
-    name: 'Facultad de Agronomía e Ingeniería Forestal',
-    short_name: 'Agronomía e Ingeniería Forestal',
-    campus: @sj,
-    address: '',
-    url: 'http://agronomia.uc.cl/',
-    facebook: 'https://www.facebook.com/faifuc',
-    twitter: 'https://twitter.com/AgroyForestalUC',
-    phone: '(56 2) 2354 4895',
-    email: 'agroforestal@uc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.496591,
-        longitude: -70.609579,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@agro = Faculty.where(abbreviation: 'AGC').first_or_initialize
+@agro.name = 'Facultad de Agronomía e Ingeniería Forestal'
+@agro.short_name = 'Agronomía e Ingeniería Forestal'
+@agro.campus = @sj
+@agro.address = ''
+@agro.url = 'http://agronomia.uc.cl/'
+@agro.facebook = 'https://www.facebook.com/faifuc'
+@agro.twitter = 'https://twitter.com/AgroyForestalUC'
+@agro.phone = '(56 2) 2354 4895'
+@agro.email = 'agroforestal@uc.cl'
+@agro.information = nil
+@agro.localization = Place.where(identifier: 'FACULTY AGC').first_or_initialize
+@agro.localization.latitude = -33.496591
+@agro.localization.longitude = -70.609579
+@agro.localization.area = @sj
+@agro.localization.zoom = 0
+@agro.localization.angle = 0
+@agro.localization.tilt = 0
+@agro.save!
 
-@fadeu = Faculty.create(
-    abbreviation: 'FADEU',
-    name: 'Facultad de Arquitectura, Diseño y Estudios Urbanos',
-    short_name: 'Arquitectura, Diseño y Estudios Urbanos',
-    campus: @lc,
-    address: '',
-    url: 'http://fadeu.puc.cl/',
-    facebook: 'https://www.facebook.com/fadeuuc',
-    twitter: 'https://twitter.com/FADEU_UC',
-    phone: '(56) (2) 2354 7750',
-    email: 'fadeu@uc.cl',
-    information: 'Facultad de Arquitectura, Diseño y Estudios Urbanos de la Pontificia Universidad Católica de Chile.\nLa facultad está compuesta por 3 unidades: la Escuela de Arquitectura, la Escuela de Diseño y el Instituto de Estudios Urbanos.',
-    localization: Place.create(
-        latitude: -33.419495,
-        longitude: -70.618351,
-        area: @lc,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@artes = Faculty.create(
-    abbreviation: 'ART',
-    name: 'Facultad de Artes',
-    short_name: 'Artes',
-    campus: @co,
-    address: 'Avda. Jaime Guzmán Errázuriz 3300, Providencia, Santiago, Chile.',
-    url: 'http://artes.uc.cl/',
-    facebook: 'https://www.facebook.com/ExtensionFacultadArtesUC',
-    twitter: 'https://twitter.com/@facartesuc',
-    phone: '+562 2354 2000',
-    email: 'mjleon@uc.cl',
-    information: 'Somos una red dedicada a generar espacios diálogo y comunicar las actividades de los estudiantes, egresados y profesores de la Facultad de Artes UC y de otros núcleos de desarrollo artístico en Chile. Escríbenos a mjleon@uc.cl',
-    localization: Place.create(
-        latitude: -33.446092,
-        longitude: -70.593395,
-        area: @co,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@fadeu = Faculty.where(abbreviation: 'FADEU').first_or_initialize
+@fadeu.name = 'Facultad de Arquitectura, Diseño y Estudios Urbanos'
+@fadeu.short_name = 'Arquitectura, Diseño y Estudios Urbanos'
+@fadeu.campus = @lc
+@fadeu.address = ''
+@fadeu.url = 'http://fadeu.puc.cl/'
+@fadeu.facebook = 'https://www.facebook.com/fadeuuc'
+@fadeu.twitter = 'https://twitter.com/FADEU_UC'
+@fadeu.phone = '(56) (2) 2354 7750'
+@fadeu.email = 'fadeu@uc.cl'
+@fadeu.information = 'Facultad de Arquitectura, Diseño y Estudios Urbanos de la Pontificia Universidad Católica de Chile.\nLa facultad está compuesta por 3 unidades: la Escuela de Arquitectura, la Escuela de Diseño y el Instituto de Estudios Urbanos.'
+@fadeu.localization = Place.where(identifier: 'FACULTY FADEU').first_or_initialize
+@fadeu.localization.latitude = -33.419495
+@fadeu.localization.longitude = -70.618351
+@fadeu.localization.area = @lc
+@fadeu.localization.zoom = 0
+@fadeu.localization.angle = 0
+@fadeu.localization.tilt = 0
+@fadeu.save!
 
-@bio = Faculty.create(
-    abbreviation: 'BIO',
-    name: 'Facultad de Ciencias Biológicas',
-    short_name: 'Ciencias Biológicas',
-    campus: @cc,
-    address: '',
-    url: 'http://biologia.uc.cl/es/',
-    facebook: nil,
-    twitter: nil,
-    phone: nil,
-    email: 'decanato@bio.puc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.441677,
-        longitude:  -70.639494,
-        area: @cc,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@eco = Faculty.create(
-    abbreviation: 'EA',
-    name: 'Facultad de Ciencias Económicas y Administrativas',
-    short_name: 'Ciencias Económicas y Administrativas',
-    campus: @sj,
-    address: '',
-    url: 'http://economiayadministracion.uc.cl/',
-    facebook: nil,
-    twitter: nil,
-    phone: nil,
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        latitude: -33.497020,
-        longitude: -70.611462,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@artes = Faculty.where(abbreviation: 'ART').first_or_initialize
+@artes.name = 'Facultad de Artes'
+@artes.short_name = 'Artes'
+@artes.campus = @co
+@artes.address = 'Avda. Jaime Guzmán Errázuriz 3300, Providencia, Santiago, Chile.'
+@artes.url = 'http://artes.uc.cl/'
+@artes.facebook = 'https://www.facebook.com/ExtensionFacultadArtesUC'
+@artes.twitter = 'https://twitter.com/@facartesuc'
+@artes.phone = '+562 2354 2000'
+@artes.email = 'mjleon@uc.cl'
+@artes.information = 'Somos una red dedicada a generar espacios diálogo y comunicar las actividades de los estudiantes, egresados y profesores de la Facultad de Artes UC y de otros núcleos de desarrollo artístico en Chile. Escríbenos a mjleon@uc.cl'
+@artes.localization = Place.where(identifier: 'FACULTY ART').first_or_initialize
+@artes.localization.latitude = -33.446092
+@artes.localization.longitude = -70.593395
+@artes.localization.area = @co
+@artes.localization.zoom = 0
+@artes.localization.angle = 0
+@artes.localization.tilt = 0
+@artes.save!
 
-@sociales = Faculty.create(
-    abbreviation: 'SOC',
-    name: 'Facultad de Ciencias Sociales',
-    short_name: 'Ciencias Sociales',
-    campus: @sj,
-    address: '',
-    url: nil,
-    facebook: nil,
-    twitter: nil,
-    phone: nil,
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        latitude: -33.498357,
-        longitude: -70.610006,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@comunicaciones = Faculty.create(
-    abbreviation: 'COM',
-    name: 'Facultad de Comunicaciones',
-    short_name: 'Comunicaciones',
-    campus: @cc,
-    address: '',
-    url: 'http://comunicaciones.uc.cl/',
-    facebook: 'https://www.facebook.com/fcomuc',
-    twitter: 'https://twitter.com/fcomuc',
-    phone: '(56-2) 23542020',
-    email: 'fcomunicaciones@uc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.441442,
-        longitude: -70.640749,
-        area: @cc,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@bio = Faculty.where(abbreviation: 'BIO').first_or_initialize
+@bio.name = 'Facultad de Ciencias Biológicas'
+@bio.short_name = 'Ciencias Biológicas'
+@bio.campus = @cc
+@bio.address = ''
+@bio.url = 'http://biologia.uc.cl/es/'
+@bio.facebook = nil
+@bio.twitter = nil
+@bio.phone = nil
+@bio.email = 'decanato@bio.puc.cl'
+@bio.information = nil
+@bio.localization = Place.where(identifier: 'FACULTY BIO').first_or_initialize
+@bio.localization.latitude = -33.441677
+@bio.localization.longitude =  -70.639494
+@bio.localization.area = @cc
+@bio.localization.zoom = 0
+@bio.localization.angle = 0
+@bio.localization.tilt = 0
+@bio.save!
 
-@letras = Faculty.create(
-    abbreviation: 'LET',
-    name: 'Facultad de Letras',
-    short_name: 'Letras',
-    campus: @sj,
-    address: '',
-    url: 'http://www7.uc.cl/letras/',
-    facebook: 'https://www.facebook.com/letrasuc',
-    twitter: nil,
-    phone: '223542000',
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        latitude: -33.496700,
-        longitude: -70.613790,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@derecho = Faculty.create(
-    abbreviation: 'DE',
-    name: 'Facultad de Derecho',
-    short_name: 'Derecho',
-    campus: @cc,
-    address: '',
-    url: 'http://derecho.uc.cl/',
-    facebook: 'https://www.facebook.com/derechouc',
-    twitter: 'https://twitter.com/derechouc',
-    phone: '(56) (2) 2 354 2000',
-    email: 'comunicacionesderechouc@uc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.441022,
-        longitude: -70.640158,
-        area: @cc,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@eco = Faculty.where(abbreviation: 'EA').first_or_initialize
+@eco.name = 'Facultad de Ciencias Económicas y Administrativas'
+@eco.short_name = 'Ciencias Económicas y Administrativas'
+@eco.campus = @sj
+@eco.address = ''
+@eco.url = 'http://economiayadministracion.uc.cl/'
+@eco.facebook = nil
+@eco.twitter = nil
+@eco.phone = nil
+@eco.email = nil
+@eco.information = nil
+@eco.localization = Place.where(identifier: 'FACULTY EA').first_or_initialize
+@eco.localization.latitude = -33.497020
+@eco.localization.longitude = -70.611462
+@eco.localization.area = @sj
+@eco.localization.zoom = 0
+@eco.localization.angle = 0
+@eco.localization.tilt = 0
+@eco.save!
 
-@educacion = Faculty.create(
-    abbreviation: 'EDU',
-    name: 'Facultad de Educación',
-    short_name: 'Educación',
-    campus: @sj,
-    address: '',
-    url: 'http://educacion.uc.cl/',
-    facebook: nil,
-    twitter: nil,
-    phone: '+56 (2) 22354 5350',
-    email: 'educacionuc@uc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.498128,
-        longitude: -70.614241,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@filosofia = Faculty.create(
-    abbreviation: 'FIL',
-    name: 'Facultad de Filosofía',
-    short_name: 'Filosofía',
-    campus: @sj,
-    address: '',
-    url: nil,
-    facebook: nil,
-    twitter: nil,
-    phone: nil,
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        latitude: -33.497217,
-        longitude: -70.613997,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@sociales = Faculty.where(abbreviation: 'SOC').first_or_initialize
+@sociales.name = 'Facultad de Ciencias Sociales'
+@sociales.short_name = 'Ciencias Sociales'
+@sociales.campus = @sj
+@sociales.address = ''
+@sociales.url = nil
+@sociales.facebook = nil
+@sociales.twitter = nil
+@sociales.phone = nil
+@sociales.email = nil
+@sociales.information = nil
+@sociales.localization = Place.where(identifier: 'FACULTY SOC').first_or_initialize
+@sociales.localization.latitude = -33.498357
+@sociales.localization.longitude = -70.610006
+@sociales.localization.area = @sj
+@sociales.localization.zoom = 0
+@sociales.localization.angle = 0
+@sociales.localization.tilt = 0
+@sociales.save!
 
-@fisica = Faculty.create(
-    abbreviation: 'FIS',
-    name: 'Facultad de Física',
-    short_name: 'Física',
-    campus: @sj,
-    address: '',
-    url: 'http://fisica.uc.cl/',
-    facebook: nil,
-    twitter: nil,
-    phone: '(56) (2) 354 4470',
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        latitude: -33.499441,
-        longitude: -70.611044,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@historia = Faculty.create(
-    abbreviation: 'HIS',
-    name: 'Facultad de Historia, Geografía y Ciencia Política',
-    short_name: 'Historia, Geografía y Ciencia Política',
-    campus: @sj,
-    address: '',
-    url: 'http://www7.uc.cl/historiageografiaycienciapolitica/',
-    facebook: nil,
-    twitter: nil,
-    phone: '3547808',
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        latitude: -33.497075,
-        longitude: -70.613188,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@comunicaciones = Faculty.where(abbreviation: 'COM').first_or_initialize
+@comunicaciones.name = 'Facultad de Comunicaciones'
+@comunicaciones.short_name = 'Comunicaciones'
+@comunicaciones.campus = @cc
+@comunicaciones.address = ''
+@comunicaciones.url = 'http://comunicaciones.uc.cl/'
+@comunicaciones.facebook = 'https://www.facebook.com/fcomuc'
+@comunicaciones.twitter = 'https://twitter.com/fcomuc'
+@comunicaciones.phone = '(56-2) 23542020'
+@comunicaciones.email = 'fcomunicaciones@uc.cl'
+@comunicaciones.information = nil
+@comunicaciones.localization = Place.where(identifier: 'FACULTY COM').first_or_initialize
+@comunicaciones.localization.latitude = -33.441442
+@comunicaciones.localization.longitude = -70.640749
+@comunicaciones.localization.area = @cc
+@comunicaciones.localization.zoom = 0
+@comunicaciones.localization.angle = 0
+@comunicaciones.localization.tilt = 0
+@comunicaciones.save!
 
-@construccion = Faculty.create(
-    abbreviation: 'CCL',
-    name: 'Escuela de Construcción Civil',
-    short_name: 'Construcción Civil',
-    campus: @sj,
-    address: '',
-    url: 'http://www7.uc.cl/construc_civil',
-    facebook: nil,
-    twitter: nil,
-    phone: '6864565',
-    email: 'webeccuc@uc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.498969,
-        longitude: -70.613837,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@ingenieria = Faculty.create(
-    abbreviation: 'ING',
-    name: 'Escuela de Ingeniería',
-    short_name: 'Ingeniería',
-    campus: @sj,
-    address: '',
-    url: 'http://www.ing.puc.cl/',
-    facebook: 'https://www.facebook.com/EscueladeIngenieriaUniversidadCatolica',
-    twitter: 'https://twitter.com/ingenieriaUC',
-    phone: '+56 2 354 11 93',
-    email: 'comunicaciones@ing.puc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.500000,
-        longitude: -70.612870,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@letras = Faculty.where(abbreviation: 'LET').first_or_initialize
+@letras.name = 'Facultad de Letras'
+@letras.short_name = 'Letras'
+@letras.campus = @sj
+@letras.address = ''
+@letras.url = 'http://www7.uc.cl/letras/'
+@letras.facebook = 'https://www.facebook.com/letrasuc'
+@letras.twitter = nil
+@letras.phone = '223542000'
+@letras.email = nil
+@letras.information = nil
+@letras.localization = Place.where(identifier: 'FACULTY LET').first_or_initialize
+@letras.localization.latitude = -33.496700
+@letras.localization.longitude = -70.613790
+@letras.localization.area = @sj
+@letras.localization.zoom = 0
+@letras.localization.angle = 0
+@letras.localization.tilt = 0
+@letras.save!
 
-@matematica = Faculty.create(
-    abbreviation: 'MAT',
-    name: 'Facultad de Matemática',
-    short_name: 'Matemática',
-    campus: @sj,
-    address: 'Edificio Rolando Chuaqui. Facultad de Matemáticas. Avda. Vicuña Mackenna #4860. Macul, Santiago. Chile.',
-    url: 'http://www.mat.uc.cl/',
-    facebook: nil,
-    twitter: nil,
-    phone: '(56 2) 354 4511',
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        latitude: -33.499796,
-        longitude: -70.610610,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@enfermeria = Faculty.create(
-    abbreviation: 'ENF',
-    name: 'Escuela de Enfermería',
-    short_name: 'Enfermería',
-    campus: @sj,
-    address: '',
-    url: nil,
-    facebook: 'https://www.facebook.com/escueladeenfermeria.uc',
-    twitter: 'https://twitter.com/Enfermeria_UC',
-    phone: '(56-2) 2354 5831',
-    email: 'escueladeenfermeria@uc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.498938,
-        longitude: -70.613059,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@derecho = Faculty.where(abbreviation: 'DE').first_or_initialize
+@derecho.name = 'Facultad de Derecho'
+@derecho.short_name = 'Derecho'
+@derecho.campus = @cc
+@derecho.address = ''
+@derecho.url = 'http://derecho.uc.cl/'
+@derecho.facebook = 'https://www.facebook.com/derechouc'
+@derecho.twitter = 'https://twitter.com/derechouc'
+@derecho.phone = '(56) (2) 2 354 2000'
+@derecho.email = 'comunicacionesderechouc@uc.cl'
+@derecho.information = nil
+@derecho.localization = Place.where(identifier: 'FACULTY DE').first_or_initialize
+@derecho.localization.latitude = -33.441022
+@derecho.localization.longitude = -70.640158
+@derecho.localization.area = @cc
+@derecho.localization.zoom = 0
+@derecho.localization.angle = 0
+@derecho.localization.tilt = 0
+@derecho.save!
 
-@medicina = Faculty.create(
-    abbreviation: 'MED',
-    name: 'Escuela de Medicina',
-    short_name: 'Medicina',
-    campus: @cc,
-    address: 'Alameda Libertador Bernardo O´Higgins 340, 8331150 Santiago de Chile',
-    url: 'http://medicina.uc.cl/',
-    facebook: 'https://www.facebook.com/escuelamedicinauc',
-    twitter: nil,
-    phone: '(56) (2) 354 2000',
-    email: 'escuelamedicina@uc.cl',
-    information: nil,
-    localization: Place.create(
-        latitude: -33.441458,
-        longitude: -70.640379,
-        area: @cc,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@quimica = Faculty.create(
-    abbreviation: 'QIM',
-    name: 'Facultad de Química',
-    short_name: 'Química',
-    campus: @sj,
-    address: '',
-    url: 'http://www.quimica.uc.cl/',
-    facebook: nil,
-    twitter: nil,
-    phone: '(56) (2) 2354 2000',
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        identifier: "",
-        name: "",
-        latitude: -33.499016,
-        longitude: -70.611008,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@educacion = Faculty.where(abbreviation: 'EDU').first_or_initialize
+@educacion.name = 'Facultad de Educación'
+@educacion.short_name = 'Educación'
+@educacion.campus = @sj
+@educacion.address = ''
+@educacion.url = 'http://educacion.uc.cl/'
+@educacion.facebook = nil
+@educacion.twitter = nil
+@educacion.phone = '+56 (2) 22354 5350'
+@educacion.email = 'educacionuc@uc.cl'
+@educacion.information = nil
+@educacion.localization = Place.where(identifier: 'FACULTY EDU').first_or_initialize
+@educacion.localization.latitude = -33.498128
+@educacion.localization.longitude = -70.614241
+@educacion.localization.area = @sj
+@educacion.localization.zoom = 0
+@educacion.localization.angle = 0
+@educacion.localization.tilt = 0
+@educacion.save!
 
-@teologia = Faculty.create(
-    abbreviation: 'TTF',
-    name: 'Facultad de Teología',
-    short_name: 'Teología',
-    campus: @sj,
-    address: '',
-    url: 'http://teologia.uc.cl/',
-    facebook: nil,
-    twitter: nil,
-    phone: '(56) (2) 2354 1634',
-    email: nil,
-    information: nil,
-    localization: Place.create(
-        identifier: "",
-        name: "",
-        latitude: -33.497833,
-        longitude: -70.610808,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@villarica = Faculty.create(
-    abbreviation: 'VR',
-    name: 'Campus Villarrica',
-    short_name: 'Villarrica',
-    campus: @vr,
-    address: 'Pontificia Universidad Católica de Chile - Bernardo OHiggins 501 - Villarrica - Chile',
-    url: 'http://villarrica.uc.cl/',
-    facebook: nil,
-    twitter: 'https://twitter.com/villarricauc',
-    phone: '(45) 2411830',
-    email: nil,
-    information: nil,
-    localization: Place.create(
-    identifier: "",
-    name: "",
-        latitude: 0.0,
-        longitude: 0.0,
-        area: @vr,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@filosofia = Faculty.where(abbreviation: 'FIL').first_or_initialize
+@filosofia.name = 'Facultad de Filosofía'
+@filosofia.short_name = 'Filosofía'
+@filosofia.campus = @sj
+@filosofia.address = ''
+@filosofia.url = nil
+@filosofia.facebook = nil
+@filosofia.twitter = nil
+@filosofia.phone = nil
+@filosofia.email = nil
+@filosofia.information = nil
+@filosofia.localization = Place.where(identifier: 'FACULTY FIL').first_or_initialize
+@filosofia.localization.latitude = -33.497217
+@filosofia.localization.longitude = -70.613997
+@filosofia.localization.area = @sj
+@filosofia.localization.zoom = 0
+@filosofia.localization.angle = 0
+@filosofia.localization.tilt = 0
+@filosofia.save!
 
-@college = Faculty.create(
-    abbreviation: 'D',
-    name: 'College',
-    short_name: 'College',
-    campus: @sj,
-    address: '',
-    url: 'http://college.uc.cl/',
-    facebook: nil,
-    twitter: nil,
-    phone: '(56) (2) 2354 5774',
-    email: 'contactocollege@uc.cl',
-    information: nil,
-    localization: Place.create(
-        identifier: "",
-        name: "",
-        latitude: -33.500481,
-        longitude: -70.610954,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+
+@fisica = Faculty.where(abbreviation: 'FIS').first_or_initialize
+@fisica.name = 'Facultad de Física'
+@fisica.short_name = 'Física'
+@fisica.campus = @sj
+@fisica.address = ''
+@fisica.url = 'http://fisica.uc.cl/'
+@fisica.facebook = nil
+@fisica.twitter = nil
+@fisica.phone = '(56) (2) 354 4470'
+@fisica.email = nil
+@fisica.information = nil
+@fisica.localization = Place.where(identifier: 'FACULTY FIS').first_or_initialize
+@fisica.localization.latitude = -33.499441
+@fisica.localization.longitude = -70.611044
+@fisica.localization.area = @sj
+@fisica.localization.zoom = 0
+@fisica.localization.angle = 0
+@fisica.localization.tilt = 0
+@fisica.save!
+
+
+@historia = Faculty.where(abbreviation: 'HIS').first_or_initialize
+@historia.name = 'Facultad de Historia, Geografía y Ciencia Política'
+@historia.short_name = 'Historia, Geografía y Ciencia Política'
+@historia.campus = @sj
+@historia.address = ''
+@historia.url = 'http://www7.uc.cl/historiageografiaycienciapolitica/'
+@historia.facebook = nil
+@historia.twitter = nil
+@historia.phone = '3547808'
+@historia.email = nil
+@historia.information = nil
+@historia.localization = Place.where(identifier: 'FACULTY HIS').first_or_initialize
+@historia.localization.latitude = -33.497075
+@historia.localization.longitude = -70.613188
+@historia.localization.area = @sj
+@historia.localization.zoom = 0
+@historia.localization.angle = 0
+@historia.localization.tilt = 0
+@historia.save!
+
+
+@construccion = Faculty.where(abbreviation: 'CCL').first_or_initialize
+@construccion.name = 'Escuela de Construcción Civil'
+@construccion.short_name = 'Construcción Civil'
+@construccion.campus = @sj
+@construccion.address = ''
+@construccion.url = 'http://www7.uc.cl/construc_civil'
+@construccion.facebook = nil
+@construccion.twitter = nil
+@construccion.phone = '6864565'
+@construccion.email = 'webeccuc@uc.cl'
+@construccion.information = nil
+@construccion.localization = Place.where(identifier: 'FACULTY CCL').first_or_initialize
+@construccion.localization.latitude = -33.498969
+@construccion.localization.longitude = -70.613837
+@construccion.localization.area = @sj
+@construccion.localization.zoom = 0
+@construccion.localization.angle = 0
+@construccion.localization.tilt = 0
+@construccion.save!
+
+
+@ingenieria = Faculty.where(abbreviation: 'ING').first_or_initialize
+@ingenieria.name = 'Escuela de Ingeniería'
+@ingenieria.short_name = 'Ingeniería'
+@ingenieria.campus = @sj
+@ingenieria.address = ''
+@ingenieria.url = 'http://www.ing.puc.cl/'
+@ingenieria.facebook = 'https://www.facebook.com/EscueladeIngenieriaUniversidadCatolica'
+@ingenieria.twitter = 'https://twitter.com/ingenieriaUC'
+@ingenieria.phone = '+56 2 354 11 93'
+@ingenieria.email = 'comunicaciones@ing.puc.cl'
+@ingenieria.information = nil
+@ingenieria.localization = Place.where(identifier: 'FACULTY ING').first_or_initialize
+@ingenieria.localization.latitude = -33.500000
+@ingenieria.localization.longitude = -70.612870
+@ingenieria.localization.area = @sj
+@ingenieria.localization.zoom = 0
+@ingenieria.localization.angle = 0
+@ingenieria.localization.tilt = 0
+@ingenieria.save!
+
+
+@matematica = Faculty.where(abbreviation: 'MAT').first_or_initialize
+@matematica.name = 'Facultad de Matemática'
+@matematica.short_name = 'Matemática'
+@matematica.campus = @sj
+@matematica.address = 'Edificio Rolando Chuaqui. Facultad de Matemáticas. Avda. Vicuña Mackenna #4860. Macul, Santiago. Chile.'
+@matematica.url = 'http://www.mat.uc.cl/'
+@matematica.facebook = nil
+@matematica.twitter = nil
+@matematica.phone = '(56 2) 354 4511'
+@matematica.email = nil
+@matematica.information = nil
+@matematica.localization = Place.where(identifier: 'FACULTY MAT').first_or_initialize
+@matematica.localization.latitude = -33.499796
+@matematica.localization.longitude = -70.610610
+@matematica.localization.area = @sj
+@matematica.localization.zoom = 0
+@matematica.localization.angle = 0
+@matematica.localization.tilt = 0
+@matematica.save!
+
+
+@enfermeria = Faculty.where(abbreviation: 'ENF').first_or_initialize
+@enfermeria.name = 'Escuela de Enfermería'
+@enfermeria.short_name = 'Enfermería'
+@enfermeria.campus = @sj
+@enfermeria.address = ''
+@enfermeria.url = nil
+@enfermeria.facebook = 'https://www.facebook.com/escueladeenfermeria.uc'
+@enfermeria.twitter = 'https://twitter.com/Enfermeria_UC'
+@enfermeria.phone = '(56-2) 2354 5831'
+@enfermeria.email = 'escueladeenfermeria@uc.cl'
+@enfermeria.information = nil
+@enfermeria.localization = Place.where(identifier: 'FACULTY ENF').first_or_initialize
+@enfermeria.localization.latitude = -33.498938
+@enfermeria.localization.longitude = -70.613059
+@enfermeria.localization.area = @sj
+@enfermeria.localization.zoom = 0
+@enfermeria.localization.angle = 0
+@enfermeria.localization.tilt = 0
+@enfermeria.save!
+
+
+@medicina = Faculty.where(abbreviation: 'MED').first_or_initialize
+@medicina.name = 'Escuela de Medicina'
+@medicina.short_name = 'Medicina'
+@medicina.campus = @cc
+@medicina.address = 'Alameda Libertador Bernardo O´Higgins 340, 8331150 Santiago de Chile'
+@medicina.url = 'http://medicina.uc.cl/'
+@medicina.facebook = 'https://www.facebook.com/escuelamedicinauc'
+@medicina.twitter = nil
+@medicina.phone = '(56) (2) 354 2000'
+@medicina.email = 'escuelamedicina@uc.cl'
+@medicina.information = nil
+@medicina.localization = Place.where(identifier: 'FACULTY MED').first_or_initialize
+@medicina.localization.latitude = -33.441458
+@medicina.localization.longitude = -70.640379
+@medicina.localization.area = @cc
+@medicina.localization.zoom = 0
+@medicina.localization.angle = 0
+@medicina.localization.tilt = 0
+@medicina.save!
+
+
+@quimica = Faculty.where(abbreviation: 'QIM').first_or_initialize
+@quimica.name = 'Facultad de Química'
+@quimica.short_name = 'Química'
+@quimica.campus = @sj
+@quimica.address = ''
+@quimica.url = 'http://www.quimica.uc.cl/'
+@quimica.facebook = nil
+@quimica.twitter = nil
+@quimica.phone = '(56) (2) 2354 2000'
+@quimica.email = nil
+@quimica.information = nil
+@quimica.localization = Place.where(identifier: 'FACULTY QIM').first_or_initialize
+@quimica.localization.identifier = ""
+@quimica.localization.name = ""
+@quimica.localization.latitude = -33.499016
+@quimica.localization.longitude = -70.611008
+@quimica.localization.area = @sj
+@quimica.localization.zoom = 0
+@quimica.localization.angle = 0
+@quimica.localization.tilt = 0
+@quimica.save!
+
+
+@teologia = Faculty.where(abbreviation: 'TTF').first_or_initialize
+@teologia.name = 'Facultad de Teología'
+@teologia.short_name = 'Teología'
+@teologia.campus = @sj
+@teologia.address = ''
+@teologia.url = 'http://teologia.uc.cl/'
+@teologia.facebook = nil
+@teologia.twitter = nil
+@teologia.phone = '(56) (2) 2354 1634'
+@teologia.email = nil
+@teologia.information = nil
+@teologia.localization = Place.where(identifier: 'FACULTY TTF').first_or_initialize
+@teologia.localization.identifier = ""
+@teologia.localization.name = ""
+@teologia.localization.latitude = -33.497833
+@teologia.localization.longitude = -70.610808
+@teologia.localization.area = @sj
+@teologia.localization.zoom = 0
+@teologia.localization.angle = 0
+@teologia.localization.tilt = 0
+@teologia.save!
+
+
+@villarica = Faculty.where(abbreviation: 'VR').first_or_initialize
+@villarica.name = 'Campus Villarrica'
+@villarica.short_name = 'Villarrica'
+@villarica.campus = @vr
+@villarica.address = 'Pontificia Universidad Católica de Chile - Bernardo OHiggins 501 - Villarrica - Chile'
+@villarica.url = 'http://villarrica.uc.cl/'
+@villarica.facebook = nil
+@villarica.twitter = 'https://twitter.com/villarricauc'
+@villarica.phone = '(45) 2411830'
+@villarica.email = nil
+@villarica.information = nil
+@villarica.localization = Place.where(identifier: 'FACULTY VR').first_or_initialize
+@villarica.localization.identifier = ""
+@villarica.localization.name = ""
+@villarica.localization.latitude = 0.0
+@villarica.localization.longitude = 0.0
+@villarica.localization.area = @vr
+@villarica.localization.zoom = 0
+@villarica.localization.angle = 0
+@villarica.localization.tilt = 0
+@villarica.save!
+
+
+@college = Faculty.where(abbreviation: 'D').first_or_initialize
+@college.name = 'College'
+@college.short_name = 'College'
+@college.campus = @sj
+@college.address = ''
+@college.url = 'http://college.uc.cl/'
+@college.facebook = nil
+@college.twitter = nil
+@college.phone = '(56) (2) 2354 5774'
+@college.email = 'contactocollege@uc.cl'
+@college.information = nil
+@college.localization = Place.where(identifier: 'FACULTY D').first_or_initialize
+@college.localization.identifier = ""
+@college.localization.name = ""
+@college.localization.latitude = -33.500481
+@college.localization.longitude = -70.610954
+@college.localization.area = @sj
+@college.localization.zoom = 0
+@college.localization.angle = 0
+@college.localization.tilt = 0 
+@college.save!
+
 
 Faculty.all.each do |f|
   puts('Created faculty: ' +f.name)

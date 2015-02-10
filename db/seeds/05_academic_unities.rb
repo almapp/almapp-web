@@ -20,543 +20,513 @@ puts('Creating Academic Unities')
 #  updated_at   :datetime
 #
 
-@a_agro = AcademicUnity.create(
-	abbreviation: @agro.abbreviation,
-	short_name: 'Agronomía e Ingeniería Forestal',
-	faculty: @agro,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @agro.latitude,
-		longitude: @agro.longitude,
-		area: @agro,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_agro = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_agro.abbreviation = @agro.abbreviation
+@a_agro.short_name = 'Agronomía e Ingeniería Forestal'
+@a_agro.faculty = @agro
+@a_agro.url = ''
+@a_agro.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_agro.localization.identifier = ''
+@a_agro.localization.name = ''
+@a_agro.localization.latitude = @agro.latitude
+@a_agro.localization.longitude = @agro.longitude
+@a_agro.localization.area = @agro
+@a_agro.localization.zoom = 0
+@a_agro.localization.angle = 0
+@a_agro.localization.tilt = 0
+@a_agro.save!
 
-@a_arq = AcademicUnity.create(
-	abbreviation: 'ARQ',
-	short_name: 'Arquitectura',
-	faculty: @fadeu,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.419454,
-		longitude: -70.618540,
-		area: @fadeu,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_arq = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_arq.abbreviation = 'ARQ'
+@a_arq.short_name = 'Arquitectura'
+@a_arq.faculty = @fadeu
+@a_arq.url = ''
+@a_arq.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_arq.localization.identifier = ''
+@a_arq.localization.name = ''
+@a_arq.localization.latitude = -33.419454
+@a_arq.localization.longitude = -70.618540
+@a_arq.localization.area = @fadeu
+@a_arq.localization.zoom = 0
+@a_arq.localization.angle = 0
+@a_arq.localization.tilt = 0
+@a_arq.save!
 
-@a_art = AcademicUnity.create(
-	abbreviation: 'ART',
-	short_name: 'Arte',
-	faculty: @artes,
-	url: ''
-)
+@a_art = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_art.abbreviation = 'ART'
+@a_art.short_name = 'Arte'
+@a_art.faculty = @artes
+@a_art.url = ''
+@a_art.save!
 
-@a_astro = AcademicUnity.create(
-	abbreviation: 'ASTFIS',
-	short_name: 'Astrofísica',
-	faculty: @fisica,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.499853,
-		longitude: -70.611439,
-		area: @fisica,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_astro = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_astro.abbreviation = 'ASTFIS'
+@a_astro.short_name = 'Astrofísica'
+@a_astro.faculty = @fisica
+@a_astro.url = ''
+@a_astro.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_astro.localization.identifier = ''
+@a_astro.localization.name = ''
+@a_astro.localization.latitude = -33.499853
+@a_astro.localization.longitude = -70.611439
+@a_astro.localization.area = @fisica
+@a_astro.localization.zoom = 0
+@a_astro.localization.angle = 0
+@a_astro.localization.tilt = 0
+@a_astro.save!
 
-@a_bio = AcademicUnity.create(
-	abbreviation: 'BIO',
-	short_name: 'Ciencias Biológicas',
-	faculty: @bio,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.441702,
-		longitude: -70.639786,
-		area: @bio,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_bio = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_bio.abbreviation = 'BIO'
+@a_bio.short_name = 'Ciencias Biológicas'
+@a_bio.faculty = @bio
+@a_bio.url = ''
+@a_bio.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_bio.localization.identifier = ''
+@a_bio.localization.name = ''
+@a_bio.localization.latitude = -33.441702
+@a_bio.localization.longitude = -70.639786
+@a_bio.localization.area = @bio
+@a_bio.localization.zoom = 0
+@a_bio.localization.angle = 0
+@a_bio.localization.tilt = 0
+@a_bio.save!
 
-@a_salud = AcademicUnity.create(
-	abbreviation: 'CS',
-	short_name: 'Ciencias de la Salud',
-	faculty: @bio,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.499748,
-		longitude: -70.610252,
-		area: @sj,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_salud = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_salud.abbreviation = 'CS'
+@a_salud.short_name = 'Ciencias de la Salud'
+@a_salud.faculty = @bio
+@a_salud.url = ''
+@a_salud.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_salud.localization.identifier = ''
+@a_salud.localization.name = ''
+@a_salud.localization.latitude = -33.499748
+@a_salud.localization.longitude = -70.610252
+@a_salud.localization.area = @sj
+@a_salud.localization.zoom = 0
+@a_salud.localization.angle = 0
+@a_salud.localization.tilt = 0
+@a_salud.save!
 
-@a_eco = AcademicUnity.create(
-	abbreviation: @eco.abbreviation,
-	short_name: 'Ciencias Económicas y Administrativas',
-	faculty: @eco,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @eco.latitude,
-		longitude: @eco.longitude,
-		area: @eco,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_eco = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_eco.abbreviation = @eco.abbreviation
+@a_eco.short_name = 'Ciencias Económicas y Administrativas'
+@a_eco.faculty = @eco
+@a_eco.url = ''
+@a_eco.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_eco.localization.identifier = ''
+@a_eco.localization.name = ''
+@a_eco.localization.latitude = @eco.latitude
+@a_eco.localization.longitude = @eco.longitude
+@a_eco.localization.area = @eco
+@a_eco.localization.zoom = 0
+@a_eco.localization.angle = 0
+@a_eco.localization.tilt = 0
+@a_eco.save!
 
-@a_politica = AcademicUnity.create(
-	abbreviation: 'ICP',
-	short_name: 'Ciencia Política',
-	faculty: @historia,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.497035,
-		longitude: -70.613200,
-		area: @historia,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_politica = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_politica.abbreviation = 'ICP'
+@a_politica.short_name = 'Ciencia Política'
+@a_politica.faculty = @historia
+@a_politica.url = ''
+@a_politica.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_politica.localization.identifier = ''
+@a_politica.localization.name = ''
+@a_politica.localization.latitude = -33.497035
+@a_politica.localization.longitude = -70.613200
+@a_politica.localization.area = @historia
+@a_politica.localization.zoom = 0
+@a_politica.localization.angle = 0
+@a_politica.localization.tilt = 0
+@a_politica.save!
 
-@a_college = AcademicUnity.create(
-	abbreviation: @college.abbreviation,
-	short_name: 'College',
-	faculty: @college,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @college.latitude,
-		longitude: @college.longitude,
-		area: @college,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_college = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_college.abbreviation = @college.abbreviation
+@a_college.short_name = 'College'
+@a_college.faculty = @college
+@a_college.url = ''
+@a_college.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_college.localization.identifier = ''
+@a_college.localization.name = ''
+@a_college.localization.latitude = @college.latitude
+@a_college.localization.longitude = @college.longitude
+@a_college.localization.area = @college
+@a_college.localization.zoom = 0
+@a_college.localization.angle = 0
+@a_college.localization.tilt = 0
+@a_college.save!
 
-@a_com = AcademicUnity.create(
-	abbreviation: @comunicaciones.abbreviation,
-	short_name: 'Comunicaciones',
-	faculty: @comunicaciones,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @comunicaciones.latitude,
-		longitude: @comunicaciones.longitude,
-		area: @comunicaciones,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_com = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_com.abbreviation = @comunicaciones.abbreviation
+@a_com.short_name = 'Comunicaciones'
+@a_com.faculty = @comunicaciones
+@a_com.url = ''
+@a_com.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_com.localization.identifier = ''
+@a_com.localization.name = ''
+@a_com.localization.latitude = @comunicaciones.latitude
+@a_com.localization.longitude = @comunicaciones.longitude
+@a_com.localization.area = @comunicaciones
+@a_com.localization.zoom = 0
+@a_com.localization.angle = 0
+@a_com.localization.tilt = 0
+@a_com.save!
 
-@a_cc = AcademicUnity.create(
-	abbreviation: @construccion.abbreviation,
-	short_name: 'Construcción Civil',
-	faculty: @construccion,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @construccion.latitude,
-		longitude: @construccion.longitude,
-		area: @construccion,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_cc = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_com.abbreviation = @construccion.abbreviation
+@a_com.short_name = 'Construcción Civil'
+@a_com.faculty = @construccion
+@a_com.url = ''
+@a_com.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_com.localization.identifier = ''
+@a_com.localization.name = ''
+@a_com.localization.latitude = @construccion.latitude
+@a_com.localization.longitude = @construccion.longitude
+@a_com.localization.area = @construccion
+@a_com.localization.zoom = 0
+@a_com.localization.angle = 0
+@a_com.localization.tilt = 0
+@a_com.save!
 
-@a_der = AcademicUnity.create(
-	abbreviation: @derecho.abbreviation,
-	short_name: 'Derecho',
-	faculty: @derecho,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @derecho.latitude,
-		longitude: @derecho.longitude,
-		area: @derecho,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_der = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_der.abbreviation = @derecho.abbreviation
+@a_der.short_name = 'Derecho'
+@a_der.faculty = @derecho
+@a_der.url = ''
+@a_der.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_der.localization.identifier = ''
+@a_der.localization.name = ''
+@a_der.localization.latitude = @derecho.latitude
+@a_der.localization.longitude = @derecho.longitude
+@a_der.localization.area = @derecho
+@a_der.localization.zoom = 0
+@a_der.localization.angle = 0
+@a_der.localization.tilt = 0
+@a_der.save!
 
-@a_dno = AcademicUnity.create(
-	abbreviation: 'DNO',
-	short_name: 'Diseño',
-	faculty: @fadeu,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.418974,
-		longitude: -70.618059,
-		area: @fadeu,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_dno = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_dno.abbreviation = 'DNO'
+@a_dno.short_name = 'Diseño'
+@a_dno.faculty = @fadeu
+@a_dno.url = ''
+@a_dno.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_dno.localization.identifier = ''
+@a_dno.localization.name = ''
+@a_dno.localization.latitude = -33.418974
+@a_dno.localization.longitude = -70.618059
+@a_dno.localization.area = @fadeu
+@a_dno.localization.zoom = 0
+@a_dno.localization.angle = 0
+@a_dno.localization.tilt = 0
+@a_dno.save!
 
-@a_edu = AcademicUnity.create(
-	abbreviation: @educacion.abbreviation,
-	short_name: 'Educación',
-	faculty: @educacion,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @educacion.latitude,
-		longitude: @educacion.longitude,
-		area: @educacion,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_edu = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_edu.abbreviation = @educacion.abbreviation
+@a_edu.short_name = 'Educación'
+@a_edu.faculty = @educacion
+@a_edu.url = ''
+@a_edu.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_edu.localization.identifier = ''
+@a_edu.localization.name = ''
+@a_edu.localization.latitude = @educacion.latitude
+@a_edu.localization.longitude = @educacion.longitude
+@a_edu.localization.area = @educacion
+@a_edu.localization.zoom = 0
+@a_edu.localization.angle = 0
+@a_edu.localization.tilt = 0
+@a_edu.save!
 
-@a_enf = AcademicUnity.create(
-	abbreviation: @enfermeria.abbreviation,
-	short_name: 'Enfermería',
-	faculty: @enfermeria,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @enfermeria.latitude,
-		longitude: @enfermeria.longitude,
-		area: @enfermeria,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_enf = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_enf.abbreviation = @enfermeria.abbreviation
+@a_enf.short_name = 'Enfermería'
+@a_enf.faculty = @enfermeria
+@a_enf.url = ''
+@a_enf.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_enf.localization.identifier = ''
+@a_enf.localization.name = ''
+@a_enf.localization.latitude = @enfermeria.latitude
+@a_enf.localization.longitude = @enfermeria.longitude
+@a_enf.localization.area = @enfermeria
+@a_enf.localization.zoom = 0
+@a_enf.localization.angle = 0
+@a_enf.localization.tilt = 0
+@a_enf.save!
 
-@a_est = AcademicUnity.create(
-	abbreviation: 'EST',
-	short_name: 'Estética',
-	faculty: @artes,
-	url: ''
-)
+@a_est = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_est.abbreviation = 'EST'
+@a_est.short_name = 'Estética'
+@a_est.faculty = @artes
+@a_est.url = ''
+@a_est.save!
 
-@a_urb = AcademicUnity.create(
-	abbreviation: 'IEU',
-	short_name: 'Estudios Urbanos y Territoriales',
-	faculty: @fadeu,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.419214,
-		longitude: -70.618350,
-		area: @fadeu,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_urb = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_urb.abbreviation = 'IEU'
+@a_urb.short_name = 'Estudios Urbanos y Territoriales'
+@a_urb.faculty = @fadeu
+@a_urb.url = ''
+@a_urb.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_urb.localization.identifier = ''
+@a_urb.localization.name = ''
+@a_urb.localization.latitude = -33.419214
+@a_urb.localization.longitude = -70.618350
+@a_urb.localization.area = @fadeu
+@a_urb.localization.zoom = 0
+@a_urb.localization.angle = 0
+@a_urb.localization.tilt = 0
+@a_urb.save!
 
-@a_fil = AcademicUnity.create(
-	abbreviation: @filosofia.abbreviation,
-	short_name: 'Filosofía',
-	faculty: @filosofia,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @filosofia.latitude,
-		longitude: @filosofia.longitude,
-		area: @filosofia,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_fil = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_fil.abbreviation = @filosofia.abbreviation
+@a_fil.short_name = 'Filosofía'
+@a_fil.faculty = @filosofia
+@a_fil.url = ''
+@a_fil.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_fil.localization.identifier = ''
+@a_fil.localization.name = ''
+@a_fil.localization.latitude = @filosofia.latitude
+@a_fil.localization.longitude = @filosofia.longitude
+@a_fil.localization.area = @filosofia
+@a_fil.localization.zoom = 0
+@a_fil.localization.angle = 0
+@a_fil.localization.tilt = 0
+@a_fil.save!
 
-@a_fis = AcademicUnity.create(
-	abbreviation: @fisica.abbreviation,
-	short_name: 'Física',
-	faculty: @fisica,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @fisica.latitude,
-		longitude: @fisica.longitude,
-		area: @fisica,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_fis = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_fis.abbreviation = @fisica.abbreviation
+@a_fis.short_name = 'Física'
+@a_fis.faculty = @fisica
+@a_fis.url = ''
+@a_fis.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_fis.localization.identifier = ''
+@a_fis.localization.name = ''
+@a_fis.localization.latitude = @fisica.latitude
+@a_fis.localization.longitude = @fisica.longitude
+@a_fis.localization.area = @fisica
+@a_fis.localization.zoom = 0
+@a_fis.localization.angle = 0
+@a_fis.localization.tilt = 0
+@a_fis.save!
 
-@a_geo = AcademicUnity.create(
-	abbreviation: 'GEO',
-	short_name: 'Geografía',
-	faculty: @historia,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.497000,
-		longitude: -70.613201,
-		area: @historia,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_geo = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_geo.abbreviation = 'GEO'
+@a_geo.short_name = 'Geografía'
+@a_geo.faculty = @historia
+@a_geo.url = ''
+@a_geo.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_geo.localization.identifier = ''
+@a_geo.localization.name = ''
+@a_geo.localization.latitude = -33.497000
+@a_geo.localization.longitude = -70.613201
+@a_geo.localization.area = @historia
+@a_geo.localization.zoom = 0
+@a_geo.localization.angle = 0
+@a_geo.localization.tilt = 0
+@a_geo.save!
 
-@a_his = AcademicUnity.create(
-	abbreviation: 'HIS',
-	short_name: 'Historia',
-	faculty: @historia,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.497174,
-		longitude: -70.613198,
-		area: @historia,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_his = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_his.abbreviation = 'HIS'
+@a_his.short_name = 'Historia'
+@a_his.faculty = @historia
+@a_his.url = ''
+@a_his.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_his.localization.identifier = ''
+@a_his.localization.name = ''
+@a_his.localization.latitude = -33.497174
+@a_his.localization.longitude = -70.613198
+@a_his.localization.area = @historia
+@a_his.localization.zoom = 0
+@a_his.localization.angle = 0
+@a_his.localization.tilt = 0
+@a_his.save!
 
-@a_ing = AcademicUnity.create(
-	abbreviation: @ingenieria.abbreviation,
-	short_name: 'Ingeniería',
-	faculty: @ingenieria,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @ingenieria.latitude,
-		longitude: @ingenieria.longitude,
-		area: @ingenieria,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_ing = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_ing.abbreviation = @ingenieria.abbreviation
+@a_ing.short_name = 'Ingeniería'
+@a_ing.faculty = @ingenieria
+@a_ing.url = ''
+@a_ing.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_ing.localization.identifier = ''
+@a_ing.localization.name = ''
+@a_ing.localization.latitude = @ingenieria.latitude
+@a_ing.localization.longitude = @ingenieria.longitude
+@a_ing.localization.area = @ingenieria
+@a_ing.localization.zoom = 0
+@a_ing.localization.angle = 0
+@a_ing.localization.tilt = 0
+@a_ing.save!
 
-@a_let = AcademicUnity.create(
-	abbreviation: @letras.abbreviation,
-	short_name: 'Letras',
-	faculty: @letras,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @letras.latitude,
-		longitude: @letras.longitude,
-		area: @letras,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_let = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_let.abbreviation = @letras.abbreviation
+@a_let.short_name = 'Letras'
+@a_let.faculty = @letras
+@a_let.url = ''
+@a_let.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_let.localization.identifier = ''
+@a_let.localization.name = ''
+@a_let.localization.latitude = @letras.latitude
+@a_let.localization.longitude = @letras.longitude
+@a_let.localization.area = @letras
+@a_let.localization.zoom = 0
+@a_let.localization.angle = 0
+@a_let.localization.tilt = 0
+@a_let.save!
 
-@a_mat = AcademicUnity.create(
-	abbreviation: @matematica.abbreviation,
-	short_name: 'Matemática',
-	faculty: @matematica,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @matematica.latitude,
-		longitude: @matematica.longitude,
-		area: @matematica,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_mat = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_mat.abbreviation = @matematica.abbreviation
+@a_mat.short_name = 'Matemática'
+@a_mat.faculty = @matematica
+@a_mat.url = ''
+@a_mat.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_mat.localization.identifier = ''
+@a_mat.localization.name = ''
+@a_mat.localization.latitude = @matematica.latitude
+@a_mat.localization.longitude = @matematica.longitude
+@a_mat.localization.area = @matematica
+@a_mat.localization.zoom = 0
+@a_mat.localization.angle = 0
+@a_mat.localization.tilt = 0
+@a_mat.save!
 
-@a_med = AcademicUnity.create(
-	abbreviation: @medicina.abbreviation,
-	short_name: 'Medicina',
-	faculty: @medicina,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @medicina.latitude,
-		longitude: @medicina.longitude,
-		area: @medicina,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_med = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_med.abbreviation = @medicina.abbreviation
+@a_med.short_name = 'Medicina'
+@a_med.faculty = @medicina
+@a_med.url = ''
+@a_med.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_med.localization.identifier = ''
+@a_med.localization.name = ''
+@a_med.localization.latitude = @medicina.latitude
+@a_med.localization.longitude = @medicina.longitude
+@a_med.localization.area = @medicina
+@a_med.localization.zoom = 0
+@a_med.localization.angle = 0
+@a_med.localization.tilt = 0
+@a_med.save!
 
-@a_musica = AcademicUnity.create(
-	abbreviation: 'MUC',
-	short_name: 'Música',
-	faculty: @artes,
-	url: ''
-)
+@a_musica = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_musica.abbreviation = 'MUC'
+@a_musica.short_name = 'Música'
+@a_musica.faculty = @artes
+@a_musica.url = ''
+@a_musica.save!
 
-@a_odonto = AcademicUnity.create(
-	abbreviation: 'ODO',
-	short_name: 'Odontología',
-	faculty: @medicina,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: -33.497556,
-		longitude: -70.614412,
-		area: @sj,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_odonto = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_odonto.abbreviation = 'ODO'
+@a_odonto.short_name = 'Odontología'
+@a_odonto.faculty = @medicina
+@a_odonto.url = ''
+@a_odonto.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_odonto.localization.identifier = ''
+@a_odonto.localization.name = ''
+@a_odonto.localization.latitude = -33.497556
+@a_odonto.localization.longitude = -70.614412
+@a_odonto.localization.area = @sj
+@a_odonto.localization.zoom = 0
+@a_odonto.localization.angle = 0
+@a_odonto.localization.tilt = 0
+@a_odonto.save!
 
-@a_psi = AcademicUnity.create(
-	abbreviation: 'PSI',
-	short_name: 'Psicología',
-	faculty: @sociales,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @sociales.latitude,
-		longitude: @sociales.longitude,
-		area: @sociales,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_psi = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_psi.abbreviation = 'PSI'
+@a_psi.short_name = 'Psicología'
+@a_psi.faculty = @sociales
+@a_psi.url = ''
+@a_psi.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_psi.localization.identifier = ''
+@a_psi.localization.name = ''
+@a_psi.localization.latitude = @sociales.latitude
+@a_psi.localization.longitude = @sociales.longitude
+@a_psi.localization.area = @sociales
+@a_psi.localization.zoom = 0
+@a_psi.localization.angle = 0
+@a_psi.localization.tilt = 0
+@a_psi.save!
 
-@a_quim = AcademicUnity.create(
-	abbreviation: @quimica.abbreviation,
-	short_name: 'Química',
-	faculty: @quimica,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @quimica.latitude,
-		longitude: @quimica.longitude,
-		area: @quimica,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_quim = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_quim.abbreviation = @quimica.abbreviation
+@a_quim.short_name = 'Química'
+@a_quim.faculty = @quimica
+@a_quim.url = ''
+@a_quim.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_quim.localization.identifier = ''
+@a_quim.localization.name = ''
+@a_quim.localization.latitude = @quimica.latitude
+@a_quim.localization.longitude = @quimica.longitude
+@a_quim.localization.area = @quimica
+@a_quim.localization.zoom = 0
+@a_quim.localization.angle = 0
+@a_quim.localization.tilt = 0
+@a_quim.save!
 
-@a_socio = AcademicUnity.create(
-	abbreviation: 'SOL',
-	short_name: 'Sociología',
-	faculty: @sociales,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @sociales.latitude,
-		longitude: @sociales.longitude,
-		area: @sociales,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_socio = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_socio.abbreviation = 'SOL'
+@a_socio.short_name = 'Sociología'
+@a_socio.faculty = @sociales
+@a_socio.url = ''
+@a_socio.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_socio.localization.identifier = ''
+@a_socio.localization.name = ''
+@a_socio.localization.latitude = @sociales.latitude
+@a_socio.localization.longitude = @sociales.longitude
+@a_socio.localization.area = @sociales
+@a_socio.localization.zoom = 0
+@a_socio.localization.angle = 0
+@a_socio.localization.tilt = 0
+@a_socio.save!
 
-@a_act = AcademicUnity.create(
-	abbreviation: 'ACT',
-	short_name: 'Actuación',
-	faculty: @artes,
-	url: ''
-)
+@a_act = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_act.abbreviation = 'ACT'
+@a_act.short_name = 'Actuación'
+@a_act.faculty = @artes
+@a_act.url = ''
+@a_act.save!
 
-@a_teo = AcademicUnity.create(
-	abbreviation: @teologia.abbreviation,
-	short_name: 'Teología',
-	faculty: @teologia,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @teologia.latitude,
-		longitude: @teologia.longitude,
-		area: @teologia,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_teo = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_teo.abbreviation = @teologia.abbreviation
+@a_teo.short_name = 'Teología'
+@a_teo.faculty = @teologia
+@a_teo.url = ''
+@a_teo.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_teo.localization.identifier = ''
+@a_teo.localization.name = ''
+@a_teo.localization.latitude = @teologia.latitude
+@a_teo.localization.longitude = @teologia.longitude
+@a_teo.localization.area = @teologia
+@a_teo.localization.zoom = 0
+@a_teo.localization.angle = 0
+@a_teo.localization.tilt = 0
+@a_teo.save!
 
-@a_social = AcademicUnity.create(
-	abbreviation: 'TS',
-	short_name: 'Trabajo Social',
-	faculty: @sociales,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @sociales.latitude,
-		longitude: @sociales.longitude,
-		area: @sociales,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_social = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_social.abbreviation = 'TS'
+@a_social.short_name = 'Trabajo Social'
+@a_social.faculty = @sociales
+@a_social.url = ''
+@a_social.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_social.localization.identifier = ''
+@a_social.localization.name = ''
+@a_social.localization.latitude = @sociales.latitude
+@a_social.localization.longitude = @sociales.longitude
+@a_social.localization.area = @sociales
+@a_social.localization.zoom = 0
+@a_social.localization.angle = 0
+@a_social.localization.tilt = 0
+@a_social.save!
 
-@a_vr = AcademicUnity.create(
-	abbreviation: @villarica.abbreviation,
-	short_name: 'Villarrica',
-	faculty: @villarica,
-	url: '',
-	localization: Place.create(
-		identifier: '',
-		name: '',
-		latitude: @villarica.latitude,
-		longitude: @villarica.longitude,
-		area: @villarica,
-		zoom: 0,
-		angle: 0,
-		tilt: 0
-	)
-)
+@a_vr = AcademicUnity.where(abbreviation: '').first_or_initialize
+@a_vr.abbreviation = @villarica.abbreviation
+@a_vr.short_name = 'Villarrica'
+@a_vr.faculty = @villarica
+@a_vr.url = ''
+@a_vr.localization = Place.where(identifier: 'ACADEMICUNITY ')
+@a_vr.localization.identifier = ''
+@a_vr.localization.name = ''
+@a_vr.localization.latitude = @villarica.latitude
+@a_vr.localization.longitude = @villarica.longitude
+@a_vr.localization.area = @villarica
+@a_vr.localization.zoom = 0
+@a_vr.localization.angle = 0
+@a_vr.localization.tilt = 0
+@a_vr.save!
 
 AcademicUnity.all.each do |f|
     puts('Created academic unity: ' +f.	short_name)

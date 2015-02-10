@@ -21,102 +21,94 @@ puts('Creating buildings')
 #  updated_at   :datetime
 #
 
-@cdi = Building.create(
-    abbreviation: 'CDI',
-    name: 'Centro de Innovación UC - Anacleto Angelini',
-    short_name: 'Centro de Innovación',
-    campus: @sj,
-    address: 'Av. Vicuña Mackenna 4860, Macul, Santiago, Chile',
-    url: 'http://centrodeinnovacion.uc.cl/',
-    facebook: 'https://www.facebook.com/pages/Centro-de-Innovación-UC/673851555989524',
-    twitter: 'https://twitter.com/CentroinnovaUC',
-    phone: '(56 2) 2354 2280',
-    email: 'centrodeinnovacion@uc.cl',
-    information: 'El Centro de Innovación UC Anacleto Angelini es un espacio concebido para promover una ecología pro innovación y emprendimiento, abierto a todas las facultades de nuestra universidad.  Concebido como un centro multidisciplinario y generalista, acoge en su interior tanto proyectos de innovación como iniciativas de emprendimiento, de alto impacto económico, social y cultural.
-El Centro aspira a hacer una contribución muy significativa en nuestra sociedad, ayudando a articular una fructífera interacción entre educación superior, sector privado y sector público.',
-    localization: Place.create(
-        identifier: 'CDI',
-        name: "Centro de Innovación",
-        latitude: -33.497902,
-        longitude: -70.615236,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@cdi = Building.where(abbreviation: 'CDI').first_or_initialize
+@cdi.name = 'Centro de Innovación UC - Anacleto Angelini'
+@cdi.short_name = 'Centro de Innovación'
+@cdi.campus = @sj
+@cdi.address = 'Av. Vicuña Mackenna 4860, Macul, Santiago, Chile'
+@cdi.url = 'http://centrodeinnovacion.uc.cl/'
+@cdi.facebook = 'https://www.facebook.com/pages/Centro-de-Innovación-UC/673851555989524'
+@cdi.twitter = 'https://twitter.com/CentroinnovaUC'
+@cdi.phone = '(56 2) 2354 2280'
+@cdi.email = 'centrodeinnovacion@uc.cl'
+@cdi.information = 'El Centro de Innovación UC Anacleto Angelini es un espacio concebido para promover una ecología pro innovación y emprendimiento, abierto a todas las facultades de nuestra universidad.  Concebido como un centro multidisciplinario y generalista, acoge en su interior tanto proyectos de innovación como iniciativas de emprendimiento, de alto impacto económico, social y cultural. El Centro aspira a hacer una contribución muy significativa en nuestra sociedad, ayudando a articular una fructífera interacción entre educación superior, sector privado y sector público.'
+@cdi.localization = Place.where(identifier: 'BUILDING CDI').first_or_initialize
+@cdi.localization.name = "Centro de Innovación"
+@cdi.localization.latitude = -33.497902
+@cdi.localization.longitude = -70.615236
+@cdi.localization.area = @sj
+@cdi.localization.zoom = 0
+@cdi.localization.angle = 0
+@cdi.localization.tilt = 0
+@cdi.save!
 
-@hallsj = Building.create(
-    abbreviation: 'Hall SJ',
-    name: 'Hall Universitario - San Joaquín',
-    short_name: 'Hall Universitario',
-    campus: @sj,
-    address: '',
-    url: '',
-    facebook: '',
-    twitter: '',
-    phone: '',
-    email: '',
-    information: '',
-    localization: Place.create(
-        identifier: 'HALL SJ',
-        name: "Hall SJ",
-        latitude: -33.498028,
-        longitude: -70.613246,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
 
-@al = Building.create(
-    abbreviation: 'AL',
-    name: 'Aula Magna',
-    short_name: 'Aula Magna',
-    campus: @sj,
-    address: '',
-    url: '',
-    facebook: '',
-    twitter: '',
-    phone: '',
-    email: '',
-    information: '',
-    localization: Place.create(
-        identifier: 'Aula Magna',
-        name: "Aula Magna",
-        latitude: -33.497842,
-        longitude: -70.608997,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+@hallsj = Building.where(abbreviation: 'HALL SJ').first_or_initialize
+@hallsj.name = 'Hall Universitario - San Joaquín'
+@hallsj.short_name = 'Hall Universitario'
+@hallsj.campus = @sj
+@hallsj.address = ''
+@hallsj.url = ''
+@hallsj.facebook = ''
+@hallsj.twitter = ''
+@hallsj.phone = ''
+@hallsj.email = ''
+@hallsj.information = ''
+@hallsj.localization = Place.where(identifier: 'BUILDING HALL SJ').first_or_initialize
+@hallsj.localization.name = "Hall SJ"
+@hallsj.localization.latitude = -33.498028
+@hallsj.localization.longitude = -70.613246
+@hallsj.localization.area = @sj
+@hallsj.localization.zoom = 0
+@hallsj.localization.angle = 0
+@hallsj.localization.tilt = 0
+@hallsj.save!
 
-@templo = Building.create(
-    abbreviation: 'Templo',
-    name: 'Templo',
-    short_name: 'Templo',
-    campus: @sj,
-    address: '',
-    url: '',
-    facebook: '',
-    twitter: '',
-    phone: '',
-    email: '',
-    information: '',
-    localization: Place.create(
-        identifier: 'Aula Magna',
-        name: "Aula Magna",
-        latitude: -33.497835,
-        longitude: -70.609015,
-        area: @sj,
-        zoom: 0,
-        angle: 0,
-        tilt: 0
-    )
-)
+
+@al = Building.where(abbreviation: 'AL').first_or_initialize
+@al.name = 'Aula Magna'
+@al.short_name = 'Aula Magna'
+@al.campus = @sj
+@al.address = ''
+@al.url = ''
+@al.facebook = ''
+@al.twitter = ''
+@al.phone = ''
+@al.email = ''
+@al.information = ''
+@al.localization = Place.where(identifier: 'BUILDING AL').first_or_initialize
+@al.localization.name = "Aula Magna"
+@al.localization.latitude = -33.497842
+@al.localization.longitude = -70.608997
+@al.localization.area = @sj
+@al.localization.zoom = 0
+@al.localization.angle = 0
+@al.localization.tilt = 0
+@al.save!
+
+
+@templo = Building.where(abbreviation: 'TEMPLO').first_or_initialize
+@templo.abbreviation = 'Templo'
+@templo.name = 'Templo'
+@templo.short_name = 'Templo'
+@templo.campus = @sj
+@templo.address = ''
+@templo.url = ''
+@templo.facebook = ''
+@templo.twitter = ''
+@templo.phone = ''
+@templo.email = ''
+@templo.information = ''
+@templo.localization = Place.where(identifier: 'BUILDING TEMPLO').first_or_initialize
+@templo.localization.name = "Aula Magna"
+@templo.localization.latitude = -33.497835
+@templo.localization.longitude = -70.609015
+@templo.localization.area = @sj
+@templo.localization.zoom = 0
+@templo.localization.angle = 0
+@templo.localization.tilt = 0
+@templo.save!
+
 
 Building.all.each do |b|
   puts('Created building: ' +b.name)
