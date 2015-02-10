@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-testing = true
+testing = false
 
 def load_campuses
   @sj ||= Campus.find_by_abbreviation('SJ')

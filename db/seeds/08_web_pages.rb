@@ -1,290 +1,249 @@
 puts('Creating web pages')
 
-# == Schema Information
-#
-# Table name: webpages
-#
-#  id                     :integer          not null, primary key
-#  identifier             :string(255)      not null
-#  name                   :string(255)      not null
-#  owner                  :string(255)
-#  organization_id        :integer          not null
-#  page_type              :integer          default(0), not null
-#  information            :text             default(""), not null
-#  available              :boolean          default(TRUE), not null
-#  secure_protocol        :boolean          default(FALSE), not null
-#  requires_login         :boolean          default(FALSE), not null
-#  should_open_in_browser :boolean          default(TRUE), not null
-#  home_url               :string(255)      not null
-#  base_url               :string(255)
-#  created_at             :datetime
-#  updated_at             :datetime
-#
+web = Webpage.where(identifier: 'PORTALUC').first_or_initialize
+web.name = 'miPortalUC'
+web.owner = 'UC'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = true
+web.requires_login = true
+web.home_url = 'https://portal.uc.cl'
+web.login_url = 'https://portal.uc.cl/web/home-community/inicio'
+web.save!
 
-Webpage.create(
-      identifier: 'PORTALUC',
-      name: 'miPortalUC',
-      owner: 'UC',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: true,
-      requires_login: true,
-      home_url: 'https://portal.uc.cl',
-      login_url: 'https://portal.uc.cl/web/home-community/inicio'
-)
+web = Webpage.where(identifier: 'WEBCURSOS').first_or_initialize
+web.name = 'WEBCURSOS UC'
+web.owner = 'Dirección de Informática UC'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = true
+web.requires_login = true
+web.home_url = 'http://webcurso.uc.cl/portal'
+web.login_url = 'http://webcurso.uc.cl/portal/pda/?force.login=yes'
+web.save!
 
-Webpage.create(
-      identifier: 'WEBCURSOS',
-      name: 'WEBCURSOS UC',
-      owner: 'Dirección de Informática UC',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: true,
-      requires_login: true,
-      home_url: 'http://webcurso.uc.cl/portal',
-      login_url: 'http://webcurso.uc.cl/portal/pda/?force.login=yes'
-)
+web = Webpage.where(identifier: 'SIDING').first_or_initialize
+web.name = 'Siding'
+web.owner = 'Sistema de Información de Ingeniería'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = true
+web.home_url = 'http://www.ing.puc.cl/'
+web.login_url = 'https://intrawww.ing.puc.cl/siding/dirdes/ingcursos/cursos/index.phtml'
+web.save!
 
-Webpage.create(
-      identifier: 'SIDING',
-      name: 'Siding',
-      owner: 'Sistema de Información de Ingeniería',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: false,
-      requires_login: true,
-      home_url: 'http://www.ing.puc.cl/',
-      login_url: 'https://intrawww.ing.puc.cl/siding/dirdes/ingcursos/cursos/index.phtml'
-)
+web = Webpage.where(identifier: 'LABMAT').first_or_initialize
+web.name = 'Labmat'
+web.owner = 'Facultad de Matemáticas UC'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = true
+web.requires_login = true
+web.home_url = 'http://www.labmat.puc.cl/'
+web.login_url = 'http://www.labmat.puc.cl/'
 
-Webpage.create(
-      identifier: 'LABMAT',
-      name: 'Labmat',
-      owner: 'Facultad de Matemáticas UC',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: true,
-      requires_login: true,
-      home_url: 'http://www.labmat.puc.cl/',
-      login_url: 'http://www.labmat.puc.cl/'
-)
+web.save!
 
+web = Webpage.where(identifier: 'SIBUC').first_or_initialize
+web.name = 'SIBUC'
+web.owner = 'Bibliotecas'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = true
+web.requires_login = true
+web.home_url = 'http://aleph.uc.cl/'
+web.login_url = 'http://aleph.uc.cl/'
+web.save!
 
-Webpage.create(
-      identifier: 'SIBUC',
-      name: 'SIBUC',
-      owner: 'Bibliotecas',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: true,
-      requires_login: true,
-      home_url: 'http://aleph.uc.cl/',
-      login_url: 'http://aleph.uc.cl/'
-)
+web = Webpage.where(identifier: 'BUSCA_CURSOS').first_or_initialize
+web.name = 'BuscaCursos UC'
+web.owner = 'Dirección de Informática'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://www3.uc.cl/buscacursos/'
+web.save!
 
-Webpage.create(
-      identifier: 'BUSCA_CURSOS',
-      name: 'BuscaCursos UC',
-      owner: 'Dirección de Informática',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: false,
-      requires_login: false,
-      home_url: 'http://www3.uc.cl/buscacursos/'
-)
+web = Webpage.where(identifier: 'CERTIFICADOS_ACADEMICOS').first_or_initialize
+web.name = 'Certificados Académicos'
+web.owner = 'Formación General UC'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://formaciongeneral.uc.cl/certificados-academicos'
+web.save!
 
-Webpage.create(
-      identifier: 'CERTIFICADOS_ACADEMICOS',
-      name: 'Certificados Académicos',
-      owner: 'Formación General UC',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: false,
-      requires_login: false,
-      home_url: 'http://formaciongeneral.uc.cl/certificados-academicos'
-)
+web = Webpage.where(identifier: 'MALLAS').first_or_initialize
+web.name = 'Mallas Curriculares'
+web.owner = 'Admisión y Registros Académicos'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://admisionyregistros.uc.cl/alumnos/programas-estudio/carreras-y-programas2/mallas-carreras-pregrado'
+web.save!
 
-Webpage.create(
-      identifier: 'MALLAS',
-      name: 'Mallas Curriculares',
-      owner: 'Admisión y Registros Académicos',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: false,
-      requires_login: false,
-      home_url: 'http://admisionyregistros.uc.cl/alumnos/programas-estudio/carreras-y-programas2/mallas-carreras-pregrado'
-)
+web = Webpage.where(identifier: 'AUDIO_VISUAL').first_or_initialize
+web.name = 'Centro Audiovisual'
+web.owner = 'Bibliotecas'
+web.organization = @uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://guiastematicas.bibliotecas.uc.cl/audiovisuales/'
+web.save!
 
-Webpage.create(
-      identifier: 'AUDIO_VISUAL',
-      name: 'Centro Audiovisual',
-      owner: 'Bibliotecas',
-      organization: @uc,
-      page_type: 'official',
-      information: '',
-      available: true,
-      secure_protocol: false,
-      requires_login: false,
-      home_url: 'http://guiastematicas.bibliotecas.uc.cl/audiovisuales/'
-)
+web = Webpage.where(identifier: 'FEUC').first_or_initialize
+web.name = 'FEUC'
+web.owner = 'FEUC'
+web.organization = @uc
+web.page_type = 'community'
+web.information = 'Federación de Estudiantes de la Universidad Católica'
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://www.feuc.cl/sitio2015/'
 
-Webpage.create(
-       identifier: 'FEUC',
-       name: 'FEUC',
-       owner: 'FEUC',
-       organization: @uc,
-       page_type: 'community',
-       information: 'Federación de Estudiantes de la Universidad Católica',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'http://www.feuc.cl/sitio2015/'
-)
+web.save!
 
+web = Webpage.where(identifier: 'PUCLITICO').first_or_initialize
+web.name = 'El PUCLítico'
+web.owner = 'El PUCLítico'
+web.organization = @uc
+web.page_type = 'community'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://www.elpuclitico.cl/'
+web.save!
 
-Webpage.create(
-       identifier: 'PUCLITICO',
-       name: 'El PUCLítico',
-       owner: 'El PUCLítico',
-       organization: @uc,
-       page_type: 'community',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: ''
-)
+web = Webpage.where(identifier: 'LA_RESISTENCIA').first_or_initialize
+web.name = 'La Resistencia'
+web.owner = 'La Resistencia'
+web.organization = @uc
+web.page_type = 'community'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'https://www.facebook.com/laresistenciafanpage'
+web.save!
 
-Webpage.create(
-       identifier: 'LA_RESISTENCIA',
-       name: 'La Resistencia',
-       owner: 'La Resistencia',
-       organization: @uc,
-       page_type: 'community',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'https://www.facebook.com/laresistenciafanpage'
-)
+web = Webpage.where(identifier: 'ANIMALIA_UC').first_or_initialize
+web.name = 'Animalia UC'
+web.owner = 'Animalia UC'
+web.organization = @uc
+web.page_type = 'community'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://animaliauc.cl/'
+web.save!
 
-Webpage.create(
-       identifier: 'ANIMALIA_UC',
-       name: 'Animalia UC',
-       owner: 'Animalia UC',
-       organization: @uc,
-       page_type: 'community',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'http://animaliauc.cl/'
-)
+web = Webpage.where(identifier: 'CONFESIONES_UC').first_or_initialize
+web.name = 'Confesiones UCé'
+web.owner = 'Confesiones UCé'
+web.organization = @uc
+web.page_type = 'community'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'https://www.facebook.com/confesionesuc2'
+web.save!
 
-Webpage.create(
-       identifier: 'CONFESIONES_UC',
-       name: 'Confesiones UCé',
-       owner: 'Confesiones UCé',
-       organization: @uc,
-       page_type: 'community',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'https://www.facebook.com/confesionesuc2'
-)
+web = Webpage.where(identifier: 'CUMPLIDOS_UC').first_or_initialize
+web.name = 'Cumplidos UC'
+web.owner = 'Cumplidos UC'
+web.organization = @uc
+web.page_type = 'community'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'https://www.facebook.com/cumplidosUC'
+web.save!
 
-Webpage.create(
-       identifier: 'CUMPLIDOS_UC',
-       name: 'Cumplidos UC',
-       owner: 'Cumplidos UC',
-       organization: @uc,
-       page_type: 'community',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'https://www.facebook.com/cumplidosUC'
-)
+web = Webpage.where(identifier: 'TREEP_UC').first_or_initialize
+web.name = 'Treep'
+web.owner = 'Treep'
+web.organization = @uc
+web.page_type = 'community'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://treep.cl/'
 
-Webpage.create(
-       identifier: 'TREEP_UC',
-       name: 'Treep',
-       owner: 'Treep',
-       organization: @uc,
-       page_type: 'community',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'http://treep.cl/'
-)
+web.save!
 
+web = Webpage.where(identifier: 'NAU').first_or_initialize
+web.name = 'NAU'
+web.owner = 'NAU'
+web.organization = @uc
+web.page_type = 'political_party'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://www.nau.cl/'
+web.save!
 
-Webpage.create(
-       identifier: 'NAU',
-       name: 'NAU',
-       owner: 'NAU',
-       organization: @uc,
-       page_type: 'political_party',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'http://www.nau.cl/'
-)
+web = Webpage.where(identifier: 'SOLIDARIDAD').first_or_initialize
+web.name = 'Solidaridad'
+web.owner = 'Solidaridad'
+web.organization = @uc
+web.page_type = 'political_party'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://www.solidaridad.cl/'
+web.save!
 
-Webpage.create(
-       identifier: 'SOLIDARIDAD',
-       name: 'Solidaridad',
-       owner: 'Solidaridad',
-       organization: @uc,
-       page_type: 'political_party',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'http://www.solidaridad.cl/'
-)
+web = Webpage.where(identifier: 'MG').first_or_initialize
+web.name = 'MG'
+web.owner = 'MG'
+web.organization = @uc
+web.page_type = 'political_party'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'http://www.mguc.cl/'
+web.save!
 
-Webpage.create(
-       identifier: 'MG',
-       name: 'MG',
-       owner: 'MG',
-       organization: @uc,
-       page_type: 'political_party',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'http://www.mguc.cl/'
-)
-
-Webpage.create(
-       identifier: 'CRECER_UC',
-       name: 'Crecer',
-       owner: 'Crecer',
-       organization: @uc,
-       page_type: 'political_party',
-       information: '',
-       available: true,
-       secure_protocol: false,
-       requires_login: false,
-       home_url: 'https://www.facebook.com/crecer.uc'
-)
+web = Webpage.where(identifier: 'CRECER_UC').first_or_initialize
+web.name = 'Crecer'
+web.owner = 'Crecer'
+web.organization = @uc
+web.page_type = 'political_party'
+web.information = ''
+web.available = true
+web.secure_protocol = false
+web.requires_login = false
+web.home_url = 'https://www.facebook.com/crecer.uc'
+web.save!
