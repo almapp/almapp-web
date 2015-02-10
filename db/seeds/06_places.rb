@@ -22,7 +22,8 @@ puts('Creating places')
 # area
 # classroom
 
-# bath
+# bath_men
+# bath_women
 # trash
 # park_bicycle
 # park_car
