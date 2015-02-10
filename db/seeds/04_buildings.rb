@@ -88,7 +88,6 @@ puts('Creating buildings')
 
 
 @templo = Building.where(abbreviation: 'TEMPLO').first_or_initialize
-@templo.abbreviation = 'Templo'
 @templo.name = 'Templo'
 @templo.short_name = 'Templo'
 @templo.campus = @sj

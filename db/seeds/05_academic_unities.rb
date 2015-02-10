@@ -162,19 +162,19 @@ puts('Creating Academic Unities')
 @a_com.save!
 
 @a_cc = AcademicUnity.where(abbreviation: @construccion.abbreviation).first_or_initialize
-@a_com.short_name = 'Construcción Civil'
-@a_com.faculty = @construccion
-@a_com.url = ''
-@a_com.localization = Place.where(identifier: "ACADEMICUNITY #{@construccion.abbreviation}").first_or_initialize
-@a_com.localization.identifier = ''
-@a_com.localization.name = ''
-@a_com.localization.latitude = @construccion.latitude
-@a_com.localization.longitude = @construccion.longitude
-@a_com.localization.area = @construccion
-@a_com.localization.zoom = 0
-@a_com.localization.angle = 0
-@a_com.localization.tilt = 0
-@a_com.save!
+@a_cc.short_name = 'Construcción Civil'
+@a_cc.faculty = @construccion
+@a_cc.url = ''
+@a_cc.localization = Place.where(identifier: "ACADEMICUNITY #{@construccion.abbreviation}").first_or_initialize
+@a_cc.localization.identifier = ''
+@a_cc.localization.name = ''
+@a_cc.localization.latitude = @construccion.latitude
+@a_cc.localization.longitude = @construccion.longitude
+@a_cc.localization.area = @construccion
+@a_cc.localization.zoom = 0
+@a_cc.localization.angle = 0
+@a_cc.localization.tilt = 0
+@a_cc.save!
 
 @a_der = AcademicUnity.where(abbreviation: @derecho.abbreviation).first_or_initialize
 @a_der.short_name = 'Derecho'
@@ -243,7 +243,6 @@ puts('Creating Academic Unities')
 @a_est.save!
 
 @a_urb = AcademicUnity.where(abbreviation: 'EST').first_or_initialize
-@a_urb.abbreviation = 'IEU'
 @a_urb.short_name = 'Estudios Urbanos y Territoriales'
 @a_urb.faculty = @fadeu
 @a_urb.url = ''
@@ -415,7 +414,6 @@ puts('Creating Academic Unities')
 @a_psi.save!
 
 @a_quim = AcademicUnity.where(abbreviation: @quimica.abbreviation).first_or_initialize
-@a_quim.abbreviation =
 @a_quim.short_name = 'Química'
 @a_quim.faculty = @quimica
 @a_quim.url = ''
