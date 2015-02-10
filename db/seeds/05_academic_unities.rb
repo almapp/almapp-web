@@ -20,12 +20,11 @@ puts('Creating Academic Unities')
 #  updated_at   :datetime
 #
 
-@a_agro = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_agro.abbreviation = @agro.abbreviation
+@a_agro = AcademicUnity.where(abbreviation: @agro.abbreviation).first_or_initialize
 @a_agro.short_name = 'Agronomía e Ingeniería Forestal'
 @a_agro.faculty = @agro
 @a_agro.url = ''
-@a_agro.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_agro.localization = Place.where(identifier: "ACADEMICUNITY #{@agro.abbreviation}").first_or_initialize
 @a_agro.localization.identifier = ''
 @a_agro.localization.name = ''
 @a_agro.localization.latitude = @agro.latitude
@@ -102,12 +101,11 @@ puts('Creating Academic Unities')
 @a_salud.localization.tilt = 0
 @a_salud.save!
 
-@a_eco = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_eco.abbreviation = @eco.abbreviation
+@a_eco = AcademicUnity.where(abbreviation: @eco.abbreviation).first_or_initialize
 @a_eco.short_name = 'Ciencias Económicas y Administrativas'
 @a_eco.faculty = @eco
 @a_eco.url = ''
-@a_eco.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_eco.localization = Place.where(identifier: "ACADEMICUNITY #{@a_eco.abbreviation}").first_or_initialize
 @a_eco.localization.identifier = ''
 @a_eco.localization.name = ''
 @a_eco.localization.latitude = @eco.latitude
@@ -133,12 +131,11 @@ puts('Creating Academic Unities')
 @a_politica.localization.tilt = 0
 @a_politica.save!
 
-@a_college = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_college.abbreviation = @college.abbreviation
+@a_college = AcademicUnity.where(abbreviation: @college.abbreviation).first_or_initialize
 @a_college.short_name = 'College'
 @a_college.faculty = @college
 @a_college.url = ''
-@a_college.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_college.localization = Place.where(identifier: "ACADEMICUNITY #{@college.abbreviation}").first_or_initialize
 @a_college.localization.identifier = ''
 @a_college.localization.name = ''
 @a_college.localization.latitude = @college.latitude
@@ -149,12 +146,11 @@ puts('Creating Academic Unities')
 @a_college.localization.tilt = 0
 @a_college.save!
 
-@a_com = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_com.abbreviation = @comunicaciones.abbreviation
+@a_com = AcademicUnity.where(abbreviation: @comunicaciones.abbreviation).first_or_initialize
 @a_com.short_name = 'Comunicaciones'
 @a_com.faculty = @comunicaciones
 @a_com.url = ''
-@a_com.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_com.localization = Place.where(identifier: "ACADEMICUNITY #{@comunicaciones.abbreviation}").first_or_initialize
 @a_com.localization.identifier = ''
 @a_com.localization.name = ''
 @a_com.localization.latitude = @comunicaciones.latitude
@@ -165,12 +161,11 @@ puts('Creating Academic Unities')
 @a_com.localization.tilt = 0
 @a_com.save!
 
-@a_cc = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_com.abbreviation = @construccion.abbreviation
+@a_cc = AcademicUnity.where(abbreviation: @construccion.abbreviation).first_or_initialize
 @a_com.short_name = 'Construcción Civil'
 @a_com.faculty = @construccion
 @a_com.url = ''
-@a_com.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_com.localization = Place.where(identifier: "ACADEMICUNITY #{@construccion.abbreviation}").first_or_initialize
 @a_com.localization.identifier = ''
 @a_com.localization.name = ''
 @a_com.localization.latitude = @construccion.latitude
@@ -181,12 +176,11 @@ puts('Creating Academic Unities')
 @a_com.localization.tilt = 0
 @a_com.save!
 
-@a_der = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_der.abbreviation = @derecho.abbreviation
+@a_der = AcademicUnity.where(abbreviation: @derecho.abbreviation).first_or_initialize
 @a_der.short_name = 'Derecho'
 @a_der.faculty = @derecho
 @a_der.url = ''
-@a_der.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_der.localization = Place.where(identifier: "ACADEMICUNITY #{@derecho.abbreviation}").first_or_initialize
 @a_der.localization.identifier = ''
 @a_der.localization.name = ''
 @a_der.localization.latitude = @derecho.latitude
@@ -212,12 +206,11 @@ puts('Creating Academic Unities')
 @a_dno.localization.tilt = 0
 @a_dno.save!
 
-@a_edu = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_edu.abbreviation = @educacion.abbreviation
+@a_edu = AcademicUnity.where(abbreviation: @educacion.abbreviation).first_or_initialize
 @a_edu.short_name = 'Educación'
 @a_edu.faculty = @educacion
 @a_edu.url = ''
-@a_edu.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_edu.localization = Place.where(identifier: "ACADEMICUNITY #{@educacion.abbreviation}").first_or_initialize
 @a_edu.localization.identifier = ''
 @a_edu.localization.name = ''
 @a_edu.localization.latitude = @educacion.latitude
@@ -228,12 +221,11 @@ puts('Creating Academic Unities')
 @a_edu.localization.tilt = 0
 @a_edu.save!
 
-@a_enf = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_enf.abbreviation = @enfermeria.abbreviation
+@a_enf = AcademicUnity.where(abbreviation: @enfermeria.abbreviation).first_or_initialize
 @a_enf.short_name = 'Enfermería'
 @a_enf.faculty = @enfermeria
 @a_enf.url = ''
-@a_enf.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_enf.localization = Place.where(identifier: "ACADEMICUNITY #{@enfermeria.abbreviation}").first_or_initialize
 @a_enf.localization.identifier = ''
 @a_enf.localization.name = ''
 @a_enf.localization.latitude = @enfermeria.latitude
@@ -266,12 +258,11 @@ puts('Creating Academic Unities')
 @a_urb.localization.tilt = 0
 @a_urb.save!
 
-@a_fil = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_fil.abbreviation = @filosofia.abbreviation
+@a_fil = AcademicUnity.where(abbreviation: @filosofia.abbreviation).first_or_initialize
 @a_fil.short_name = 'Filosofía'
 @a_fil.faculty = @filosofia
 @a_fil.url = ''
-@a_fil.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_fil.localization = Place.where(identifier: "ACADEMICUNITY #{@filosofia.abbreviation}").first_or_initialize
 @a_fil.localization.identifier = ''
 @a_fil.localization.name = ''
 @a_fil.localization.latitude = @filosofia.latitude
@@ -282,12 +273,11 @@ puts('Creating Academic Unities')
 @a_fil.localization.tilt = 0
 @a_fil.save!
 
-@a_fis = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_fis.abbreviation = @fisica.abbreviation
+@a_fis = AcademicUnity.where(abbreviation: @fisica.abbreviation).first_or_initialize
 @a_fis.short_name = 'Física'
 @a_fis.faculty = @fisica
 @a_fis.url = ''
-@a_fis.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_fis.localization = Place.where(identifier: "ACADEMICUNITY #{@fisica.abbreviation}").first_or_initialize
 @a_fis.localization.identifier = ''
 @a_fis.localization.name = ''
 @a_fis.localization.latitude = @fisica.latitude
@@ -328,12 +318,11 @@ puts('Creating Academic Unities')
 @a_his.localization.tilt = 0
 @a_his.save!
 
-@a_ing = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_ing.abbreviation = @ingenieria.abbreviation
+@a_ing = AcademicUnity.where(abbreviation: @ingenieria.abbreviation).first_or_initialize
 @a_ing.short_name = 'Ingeniería'
 @a_ing.faculty = @ingenieria
 @a_ing.url = ''
-@a_ing.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_ing.localization = Place.where(identifier: "ACADEMICUNITY #{@ingenieria.abbreviation}").first_or_initialize
 @a_ing.localization.identifier = ''
 @a_ing.localization.name = ''
 @a_ing.localization.latitude = @ingenieria.latitude
@@ -344,12 +333,11 @@ puts('Creating Academic Unities')
 @a_ing.localization.tilt = 0
 @a_ing.save!
 
-@a_let = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_let.abbreviation = @letras.abbreviation
+@a_let = AcademicUnity.where(abbreviation: @letras.abbreviation).first_or_initialize
 @a_let.short_name = 'Letras'
 @a_let.faculty = @letras
 @a_let.url = ''
-@a_let.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_let.localization = Place.where(identifier: "ACADEMICUNITY #{@letras.abbreviation}").first_or_initialize
 @a_let.localization.identifier = ''
 @a_let.localization.name = ''
 @a_let.localization.latitude = @letras.latitude
@@ -360,12 +348,11 @@ puts('Creating Academic Unities')
 @a_let.localization.tilt = 0
 @a_let.save!
 
-@a_mat = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_mat.abbreviation = @matematica.abbreviation
+@a_mat = AcademicUnity.where(abbreviation: @matematica.abbreviation).first_or_initialize
 @a_mat.short_name = 'Matemática'
 @a_mat.faculty = @matematica
 @a_mat.url = ''
-@a_mat.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_mat.localization = Place.where(identifier: "ACADEMICUNITY #{@matematica.abbreviation}").first_or_initialize
 @a_mat.localization.identifier = ''
 @a_mat.localization.name = ''
 @a_mat.localization.latitude = @matematica.latitude
@@ -376,12 +363,11 @@ puts('Creating Academic Unities')
 @a_mat.localization.tilt = 0
 @a_mat.save!
 
-@a_med = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_med.abbreviation = @medicina.abbreviation
+@a_med = AcademicUnity.where(abbreviation: @medicina.abbreviation).first_or_initialize
 @a_med.short_name = 'Medicina'
 @a_med.faculty = @medicina
 @a_med.url = ''
-@a_med.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_med.localization = Place.where(identifier: "ACADEMICUNITY #{@medicina.abbreviation}").first_or_initialize
 @a_med.localization.identifier = ''
 @a_med.localization.name = ''
 @a_med.localization.latitude = @medicina.latitude
@@ -428,12 +414,12 @@ puts('Creating Academic Unities')
 @a_psi.localization.tilt = 0
 @a_psi.save!
 
-@a_quim = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_quim.abbreviation = @quimica.abbreviation
+@a_quim = AcademicUnity.where(abbreviation: @quimica.abbreviation).first_or_initialize
+@a_quim.abbreviation =
 @a_quim.short_name = 'Química'
 @a_quim.faculty = @quimica
 @a_quim.url = ''
-@a_quim.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_quim.localization = Place.where(identifier: "ACADEMICUNITY #{@quimica.abbreviation}").first_or_initialize
 @a_quim.localization.identifier = ''
 @a_quim.localization.name = ''
 @a_quim.localization.latitude = @quimica.latitude
@@ -465,12 +451,11 @@ puts('Creating Academic Unities')
 @a_act.url = ''
 @a_act.save!
 
-@a_teo = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_teo.abbreviation = @teologia.abbreviation
+@a_teo = AcademicUnity.where(abbreviation: @teologia.abbreviation).first_or_initialize
 @a_teo.short_name = 'Teología'
 @a_teo.faculty = @teologia
 @a_teo.url = ''
-@a_teo.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_teo.localization = Place.where(identifier: "ACADEMICUNITY #{@teologia.abbreviation}").first_or_initialize
 @a_teo.localization.identifier = ''
 @a_teo.localization.name = ''
 @a_teo.localization.latitude = @teologia.latitude
@@ -496,12 +481,11 @@ puts('Creating Academic Unities')
 @a_social.localization.tilt = 0
 @a_social.save!
 
-@a_vr = AcademicUnity.where(abbreviation: '').first_or_initialize
-@a_vr.abbreviation = @villarica.abbreviation
+@a_vr = AcademicUnity.where(abbreviation: @villarica.abbreviation).first_or_initialize
 @a_vr.short_name = 'Villarrica'
 @a_vr.faculty = @villarica
 @a_vr.url = ''
-@a_vr.localization = Place.where(identifier: 'ACADEMICUNITY ').first_or_initialize
+@a_vr.localization = Place.where(identifier: "ACADEMICUNITY #{@villarica.abbreviation}").first_or_initialize
 @a_vr.localization.identifier = ''
 @a_vr.localization.name = ''
 @a_vr.localization.latitude = @villarica.latitude
