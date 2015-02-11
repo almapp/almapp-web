@@ -118,7 +118,7 @@ web = Webpage.where(identifier: 'FEUC').first_or_initialize
 web.name = 'FEUC'
 web.owner = 'FEUC'
 web.organization = @uc
-web.page_type = 'community'
+web.page_type = 'political_party'
 web.information = 'Federación de Estudiantes de la Universidad Católica'
 web.available = true
 web.secure_protocol = false
@@ -236,7 +236,7 @@ web.requires_login = false
 web.home_url = 'http://www.mguc.cl/'
 web.save!
 
-web = Webpage.where(identifier: 'CRECER_UC').first_or_initialize
+web = Webpage.where(identifier: 'CRECER').first_or_initialize
 web.name = 'Crecer'
 web.owner = 'Crecer'
 web.organization = @uc
