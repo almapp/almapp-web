@@ -5,7 +5,6 @@
 #  id                     :integer          not null, primary key
 #  name                   :string(255)
 #  username               :string(255)      not null
-#  student_id             :string(255)
 #  organization_id        :integer          not null
 #  admin                  :boolean          default(FALSE)
 #  male                   :boolean          default(TRUE)
@@ -23,6 +22,10 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 
 class User < ActiveRecord::Base
@@ -90,8 +93,14 @@ class User < ActiveRecord::Base
     self.username = self.email.split('@').first
   end
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/users/:style/missing.png"
-  validates_attachment :avatar,  :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
+  has_attached_file :avatar,
+                    :styles => { :medium => '300x300>', :thumb => '100x100>'},
+                    :url => '/paperclip_images/:id_partition/:style/:hash.:extension',
+                    :hash_secret => "longSecretString",
+                    #:path => 'public/images/paperclip/:class/:id/:style.:extension',
+                    #:url => '/images/paperclip/:class/:id/:style.:extension',
+                    :default_url => '/images/users/default/:style.png'
+  validates_attachment :avatar,  :content_type => { :content_type => %w(image/jpeg image/jpg image/gif image/png)}
 
   belongs_to :organization
 

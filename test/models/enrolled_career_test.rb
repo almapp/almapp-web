@@ -9,6 +9,7 @@
 #  admission_date :date
 #  created_at     :datetime
 #  updated_at     :datetime
+#  student_id     :string(255)
 #
 
 require 'test_helper'

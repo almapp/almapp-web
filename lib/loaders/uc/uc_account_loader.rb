@@ -93,6 +93,18 @@ class UCAccountLoader < AccountLoader
     end
 
     user.update(profile_data)
+
+    careers_data = get_career
+    careers_data.each do |career_data|
+      career = Career.where(name: career_data[:career]).first_or_create
+      enroll = EnrolledCareer.where(user: user, career: career).first_or_create
+      enroll.curriculum = career_data[:curriculum]
+      enroll.student_id = career_data[:student_id]
+
+    end
+
+    user.avatar = get_profile_pic
+
     user.save!
   end
 
@@ -100,6 +112,16 @@ class UCAccountLoader < AccountLoader
     request = Net::HTTP::Get.new(path)
     request['Cookie'] = @portal_cookie
     @http.request(request)
+  end
+
+  def get_profile_pic
+    response = request(PHOTO_PATH)
+
+    tempfile = Tempfile.new([SecureRandom.hex.to_s, '.jpeg'])
+    File.open(tempfile.path,'wb') do |f|
+      f.write response.body
+    end
+    return tempfile
   end
 
   def get_career
@@ -116,9 +138,9 @@ class UCAccountLoader < AccountLoader
       career_and_curriculum = data[1].text
 
       data = {
-      alumni_number: data[0].text,
-      career: career_and_curriculum.split(' - ')[0].delete(' '),
-      curriculum: career_and_curriculum.split(' - ')[1],
+      student_id: data[0].text,
+      curriculum: career_and_curriculum.split(' - ')[0].delete(' '),
+      career: career_and_curriculum.split(' - ')[1],
       ingress_year: data[2].text,
       ingress_period: data[3].text
       }
