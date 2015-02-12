@@ -90,6 +90,9 @@ class User < ActiveRecord::Base
     self.username = self.email.split('@').first
   end
 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/users/:style/missing.png"
+  validates_attachment :avatar,  :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
+
   belongs_to :organization
 
   has_many :friendships

@@ -18,7 +18,7 @@ gem 'oj_mimic_json'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 # Images
-gem 'paperclip'
+gem 'paperclip', '~> 4.2'
 
 # Chat
 gem 'faye-rails'

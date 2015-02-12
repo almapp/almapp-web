@@ -269,7 +269,7 @@ DEPENDENCIES
   oauth2
   oj
   oj_mimic_json
-  paperclip
+  paperclip (~> 4.2)
   pg
   puma
   rails (= 4.1.6)

@@ -22,6 +22,9 @@ class Teacher < ActiveRecord::Base
 
   validates :name, presence: true
 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/teachers/:style/missing.png"
+  validates_attachment :avatar,  :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
+
   has_and_belongs_to_many :sections
   has_and_belongs_to_many :academic_unities
 
