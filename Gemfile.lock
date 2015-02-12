@@ -49,6 +49,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (>= 1.6.0)
     callsite (0.0.11)
+    certified (1.0.0)
     chunky_png (1.3.3)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -254,6 +255,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bullet
+  certified
   compass
   devise
   doorkeeper

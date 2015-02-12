@@ -4,6 +4,8 @@ class ApplicationController < ActionController::API
   include ActionController::Helpers
   include ActionController::Caching
 
+  respond_to :json
+
   SUBDOMAINS = Organization.pluck(:abbreviation).map(&:downcase)
 
   before_action :configure_permitted_parameters, if: :devise_controller?

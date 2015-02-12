@@ -66,6 +66,7 @@ gem 'validates_timeliness', '~> 3.0'
 gem 'active_record_union'
 
 gem 'nokogiri'
+gem 'certified'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
