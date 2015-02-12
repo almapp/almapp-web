@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208122214) do
+ActiveRecord::Schema.define(version: 20150212141040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -191,8 +191,6 @@ ActiveRecord::Schema.define(version: 20150208122214) do
     t.boolean  "availability",      default: true
     t.integer  "academic_unity_id"
     t.text     "information",       default: ""
-    t.integer  "capacity"
-    t.integer  "enrolled"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "comments_count",    default: 0,    null: false
@@ -507,14 +505,12 @@ ActiveRecord::Schema.define(version: 20150208122214) do
   add_index "sections_teachers", ["teacher_id", "section_id"], name: "index_sections_teachers_on_teacher_id_and_section_id", unique: true, using: :btree
   add_index "sections_teachers", ["teacher_id"], name: "index_sections_teachers_on_teacher_id", using: :btree
 
-  create_table "sections_users", id: false, force: true do |t|
-    t.integer "user_id",    null: false
+  create_table "sections_users", force: true do |t|
     t.integer "section_id", null: false
+    t.integer "user_id",    null: false
   end
 
-  add_index "sections_users", ["section_id"], name: "index_sections_users_on_section_id", using: :btree
-  add_index "sections_users", ["user_id", "section_id"], name: "index_sections_users_on_user_id_and_section_id", unique: true, using: :btree
-  add_index "sections_users", ["user_id"], name: "index_sections_users_on_teacher_id", using: :btree
+  add_index "sections_users", ["section_id", "user_id"], name: "index_sections_users_on_section_id_and_user_id", unique: true, using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

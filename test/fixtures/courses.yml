@@ -9,8 +9,6 @@
 #  availability      :boolean          default(TRUE)
 #  academic_unity_id :integer
 #  information       :text             default("")
-#  capacity          :integer
-#  enrolled          :integer
 #  created_at        :datetime
 #  updated_at        :datetime
 #  comments_count    :integer          default(0), not null

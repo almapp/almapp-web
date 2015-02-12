@@ -9,8 +9,6 @@
 #  availability      :boolean          default(TRUE)
 #  academic_unity_id :integer
 #  information       :text             default("")
-#  capacity          :integer
-#  enrolled          :integer
 #  created_at        :datetime
 #  updated_at        :datetime
 #  comments_count    :integer          default(0), not null
@@ -31,9 +29,7 @@ class Course < ActiveRecord::Base
   validates :academic_unity_id, presence: true
 
   # Causes error if left empty
-  validates :capacity, numericality: {greater_than_or_equal_to: 0}, if: 'capacity.present?'
   validates :credits, numericality: {greater_than_or_equal_to: 0}, if: 'credits.present?'
-  validates :enrolled, numericality: {greater_than_or_equal_to: 0}, if: 'enrolled.present?'
 
   belongs_to :academic_unity
 

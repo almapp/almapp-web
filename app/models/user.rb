@@ -109,7 +109,13 @@ class User < ActiveRecord::Base
   has_many :chats, through: :chat_participantships
   has_many :chat_messages, through: :chat_participantships
 
-  has_and_belongs_to_many :sections
+  has_many :sections_users
+  has_many :sections,  -> { uniq }, through: :sections_users do
+    def <<(new_item)
+      filtered =  Array(new_item) - proxy_association.owner.sections
+      super(filtered) unless filtered.empty?
+    end
+  end
   has_many :courses, through: :sections
 
   def sections_for_period(year=current_year, period=current_period)

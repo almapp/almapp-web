@@ -7,10 +7,11 @@ class UCAccountLoader < AccountLoader
   LOGIN_PATH = 'https://sso.uc.cl/cas/login?service=https://portal.uc.cl/c/portal/login'
   LOGOUT_PATH = 'https://sso.uc.cl/cas/logout'
 
-  PROFILE_PATH = 'https://portal.uc.cl/c/portal/render_portlet?p_l_id=10230&p_p_id=DatosPersonales_WAR_LPT022_DatosPersonales'
-  CAREER_PATH = 'https://portal.uc.cl/c/portal/render_portlet?p_l_id=10230&p_p_id=infopersona_WAR_LPT008_InfoPersonas_INSTANCE_R5fG'
-  PHOTO_PATH = 'https://portal.uc.cl/LPT022_DatosPersonales/Foto'
-  ACADEMIC_PATH = 'https://portal.uc.cl/c/portal/render_portlet?p_l_id=10706&p_p_id=ResumenAcademico_WAR_LPT014_ResumenAcademico_INSTANCE_6vY7'
+  SCHEDULE_PATH = '/c/portal/render_portlet?p_l_id=10706&p_p_id=horarioClases_WAR_LPT002_HorarioClases_INSTANCE_UuK1'
+  PROFILE_PATH = '/c/portal/render_portlet?p_l_id=10230&p_p_id=DatosPersonales_WAR_LPT022_DatosPersonales'
+  CAREER_PATH = '/c/portal/render_portlet?p_l_id=10230&p_p_id=infopersona_WAR_LPT008_InfoPersonas_INSTANCE_R5fG'
+  PHOTO_PATH = '/LPT022_DatosPersonales/Foto'
+  ACADEMIC_PATH = '/c/portal/render_portlet?p_l_id=10706&p_p_id=ResumenAcademico_WAR_LPT014_ResumenAcademico_INSTANCE_6vY7'
 
   def cas_login(username, password)
     uri = URI.parse(LOGIN_PATH)
@@ -67,26 +68,104 @@ class UCAccountLoader < AccountLoader
     http.request(request)
   end
 
-  def prepare_user(username, password)
+  def prepare_user(user, password)
 
-    cas_logged_response = cas_login(username, password)
+    cas_logged_response = cas_login(user.username, password)
     cas_logged_redirect = cas_logged_response.response['Location']
 
     portal_logged_response = portal_login(cas_logged_redirect)
-    portal_cookie = portal_logged_response['Set-Cookie'].split(';')[0]
+    @portal_cookie = portal_logged_response['Set-Cookie'].split(';')[0]
     portal_redirect = portal_logged_response['Location']
 
-    final_response = final_login(portal_redirect, portal_cookie)
+    final_response = final_login(portal_redirect, @portal_cookie)
     final_cookie = final_response['Set-Cookie']
 
     uri = URI.parse('https://portal.uc.cl')
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    @http = Net::HTTP.new(uri.host, uri.port)
+    @http.use_ssl = true
+    @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    request = Net::HTTP::Get.new('/c/portal/render_portlet?p_l_id=10706&p_p_id=horarioClases_WAR_LPT002_HorarioClases_INSTANCE_UuK1&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_pos=1&p_p_col_count=5&currentURL=%2Fweb%2Fhome-community%2Finformacion-academica')
-    request['Cookie'] = portal_cookie
-    http.request(request)
+    sections = get_sections
+    profile_data = get_profile
+
+    sections.each do |section|
+      user.sections << section unless user.sections.include?(section)
+    end
+
+    user.update(profile_data)
+    user.save!
+  end
+
+  def request(path)
+    request = Net::HTTP::Get.new(path)
+    request['Cookie'] = @portal_cookie
+    @http.request(request)
+  end
+
+  def get_career
+    response = request(CAREER_PATH)
+    doc = Nokogiri::HTML(response.body)
+
+    careers = []
+
+    table = doc.xpath('//table[@class="IP-tabla"]/tbody/tr')
+    table = table[2..table.size]
+    table.each do |career_data|
+      data = table.xpath('//td[@class="IP-alumno-td"]')
+
+      career_and_curriculum = data[1].text
+
+      data = {
+      alumni_number: data[0].text,
+      career: career_and_curriculum.split(' - ')[0].delete(' '),
+      curriculum: career_and_curriculum.split(' - ')[1],
+      ingress_year: data[2].text,
+      ingress_period: data[3].text
+      }
+
+      careers << data
+    end
+    return careers
+  end
+
+  def get_profile
+    response = request(PROFILE_PATH)
+    doc = Nokogiri::HTML(response.body)
+
+    data = {}
+
+    tr = doc.xpath('//tbody/tr')
+    tr.xpath("//td[@class='dp-imagen']").remove
+    tr.each do |f|
+      key = f.xpath('th').first.text
+      value = f.xpath('td').first.text
+      puts "#{key} : #{value}"
+
+      if key.present? && value.present?
+        value = value.titleize
+        case key
+          when 'Nombre'
+            data.merge!(name: value)
+          when 'Sexo'
+            data.merge!(male: (value.casecmp("MASCULINO") == 0))
+          when 'País de Origen'
+            data.merge!(country: value)
+        end
+      end
+    end
+    return data
+  end
+
+  def get_sections
+    response = request(SCHEDULE_PATH)
+    doc = Nokogiri::HTML(response.body)
+
+    sections = []
+    doc.xpath('//td[@class="hc-uportal-td2 hc-td"]').each do |node|
+      section = Section.find_by_identifier(node.text)
+      sections << section if section.present?
+    end
+    return sections
   end
 
   def logout(login_cookies)
@@ -95,33 +174,6 @@ class UCAccountLoader < AccountLoader
     'Content-Type' => 'application/x-www-form-urlencoded'
     }
     response = @http.get(LOGOUT_PATH, headers)
-  end
-
-  def prepare_profile(user, profile_html)
-    doc = Nokogiri::HTML(profile_html)
-    tr = doc.xpath('//tbody/tr')
-    tr.xpath("//td[@class='dp-imagen']").remove
-    tr.each do |f|
-      key = f.xpath('th').first.text
-      value = f.xpath('td').first.text
-      puts key
-      puts value
-      if key.present? && value.present?
-        value = value.titleize
-        case key
-          when 'Nombre'
-            user.name = value
-          when 'Sexo'
-            user.male = (value == MASCULINO)
-          when 'País de Origen'
-            user.country = value
-          else
-            puts key
-        end
-      end
-    end
-    puts user
-    return user
   end
 
 end

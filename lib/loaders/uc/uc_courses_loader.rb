@@ -176,7 +176,7 @@ class UCCoursesLoader < CoursesLoader
           table = table.xpath('tr')
           doc = nil
 
-          table = table[2..table.size] # Remove table titles
+          table = table[1..table.size] # Remove table titles
           table.each do |cell|
             attributes = cell.xpath('td')
             puts '///////////////////////////////'

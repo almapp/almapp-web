@@ -5,7 +5,7 @@
 #  id             :integer          not null, primary key
 #  course_id      :integer          not null
 #  number         :integer          not null
-#  period       :integer          not null
+#  period         :integer          not null
 #  year           :integer          not null
 #  created_at     :datetime
 #  updated_at     :datetime
@@ -33,7 +33,13 @@ class Section < ActiveRecord::Base
   has_many :schedule_modules, through: :schedule_items
   has_many :places, through: :schedule_items
 
-  has_and_belongs_to_many :section_students, class_name: 'User'
+  has_many :sections_users
+  has_many :section_students,  -> { uniq }, through: :sections_users, source: :user, class_name: 'User' do
+    def <<(new_item)
+      super( Array(new_item) - proxy_association.owner.section_students )
+    end
+  end
+
   has_and_belongs_to_many :teachers
 
   has_many :assistantships
@@ -55,11 +61,15 @@ class Section < ActiveRecord::Base
 
   def self.find_by_identifier(identifier = '', year = current_year, period = current_period)
     array = identifier.split('-')
-    find_by_name_and_number(array[0], array[1], year, period) if array.size == 2
+    if array.size == 2
+      find_by_name_and_number(array[0], array[1], year, period)
+    else
+      find_by_name_and_number(identifier, 1, year, period)
+    end
   end
 
   def self.find_by_name_and_number(initials, number, year = current_year, period = current_period)
-    period(year, period).joins(:course).merge(Course.where(initials: initials)).first
+    period(year, period).where(number: number).joins(:course).merge(Course.where(initials: initials)).first
   end
 
 end
