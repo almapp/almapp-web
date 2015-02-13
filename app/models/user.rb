@@ -104,6 +104,8 @@ class User < ActiveRecord::Base
 
   belongs_to :organization
 
+  has_many :devices
+
   has_many :friendships
 
   # Users who want to be my friends

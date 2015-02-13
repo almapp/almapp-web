@@ -115,11 +115,15 @@ Rails.application.routes.draw do
         resource :me, controller: 'me' do
           get '/sections' => 'me#sections', as: :me_sections
           get '/courses' => 'me#courses', as: :me_courses
+          # match '/register_device', to: 'me#register_devise', as: :me_register_device, via: [:get, :post, :delete]
+          resources :devices, only [:create, :delete]
         end
 
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable, :searchable]
 
-        resources :users, concerns: :searchable
+        resources :users, concerns: :searchable do
+          # resources :devices
+        end
 
         resources :schedule_modules, only: [:index, :show]
         resources :comments, only: [:show, :index],  concerns: :likeable

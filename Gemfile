@@ -23,10 +23,14 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # Images
 gem 'paperclip', '~> 4.2'
 
+# Notifications
+gem 'rpush'
+
 # Chat
 gem 'faye-rails'
 gem 'faye-redis'
 gem 'thin'
+gem 'eventmachine'
 # gem 'faye-redis'
 
 # Email
