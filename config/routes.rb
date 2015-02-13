@@ -116,7 +116,7 @@ Rails.application.routes.draw do
           get '/sections' => 'me#sections', as: :me_sections
           get '/courses' => 'me#courses', as: :me_courses
           # match '/register_device', to: 'me#register_devise', as: :me_register_device, via: [:get, :post, :delete]
-          resources :devices, only [:create, :delete]
+          resources :devices, only: [:create, :delete]
         end
 
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable, :searchable]

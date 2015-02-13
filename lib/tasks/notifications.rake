@@ -1,10 +1,10 @@
-NAME = 'Almapp-iOS'
+require 'app/models/device'
 
 namespace :notifications do
 
   desc 'Setup rpush for Apple'
   task apple: :environment do
-    app = Rpush::Apns::App.where(name: NAME).first_or_initialize
+    app = Rpush::Apns::App.where(name: Device.rpush_app_name(Device::DEVICE_IOS)).first_or_initialize
 
     if Rails.env.production?
 

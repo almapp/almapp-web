@@ -105,6 +105,11 @@ class User < ActiveRecord::Base
   belongs_to :organization
 
   has_many :devices
+  def notify(title, message, data, devices = Device::DEVICES)
+    self.devices.platform_is(devices) do |device|
+      device.push(title, message, data)
+    end
+  end
 
   has_many :friendships
 
