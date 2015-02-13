@@ -11,6 +11,9 @@ gem 'pg'
 # Server
 gem 'puma'
 
+# Tasks
+gem 'whenever', :require => false
+
 gem 'jbuilder'
 gem 'jbuilder_cache_multi'
 gem 'oj'
