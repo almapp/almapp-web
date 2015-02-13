@@ -1,5 +1,3 @@
-require 'app/models/device'
-
 namespace :notifications do
 
   desc 'Setup rpush for Apple'

@@ -13,11 +13,21 @@ module Api
         end
       end
 
+      def destroy
+        @item = Device.where(item_params).first
+        if @item.present?
+          @item.destroy
+          head :no_content
+
+        else
+          render :json => {:error => "Not found"}.to_json, :status => 404
+        end
+      end
+
       protected
       def item_params
         params.require(:device).permit(:platform, :token)
       end
-
 		end
 	end
 end
