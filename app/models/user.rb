@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true, format: /\A[a-z0-9]+[a-z0-9\._-]*@[a-z0-9\.]+\.[a-z]{2,5}\z/i
 
-  before_validation :create_username
+  after_initialize :create_username
 
   def create_username
     self.username = self.email.split('@').first

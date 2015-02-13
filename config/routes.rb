@@ -27,68 +27,89 @@ Rails.application.routes.draw do
   #   end
   # end
 
+
   #=================
   #= Routes start ==
   #=================
 
-  # Each organization has a subdomain determined by their 'abbreviation' column, this column can't be null.
-  #constraints(Subdomain) do
-
-  use_doorkeeper
   devise_for :users
 
-  # Namespace for APIs
-  namespace :api, defaults: {format: :json} do
+  # Each organization has a subdomain determined by their 'abbreviation' column, this column can't be null.
+  scope ':organization' do
+    # resources :organizations, only: [:index], concerns: :searchable
 
-    # First version
-    # url style: http://subdomain.domain.host/api/v1/resources/action
-    namespace :v1 do
+    # Doorkeeper to protect our API
+    use_doorkeeper :scope => 'oauth2'
 
-      #=================
-      #=== Concerns ====
-      #=================
+    # GET    /:organization/oauth2/authorize/:code(.:format)                                     doorkeeper/authorizations#show
+    # GET    /:organization/oauth2/authorize(.:format)                                           doorkeeper/authorizations#new
+    # POST   /:organization/oauth2/authorize(.:format)                                           doorkeeper/authorizations#create
+    # PATCH  /:organization/oauth2/authorize(.:format)                                           doorkeeper/authorizations#update
+    # PUT    /:organization/oauth2/authorize(.:format)                                           doorkeeper/authorizations#update
+    # DELETE /:organization/oauth2/authorize(.:format)                                           doorkeeper/authorizations#destroy
+    # POST   /:organization/oauth2/token(.:format)                                               doorkeeper/tokens#create
+    # POST   /:organization/oauth2/revoke(.:format)                                              doorkeeper/tokens#revoke
+    # GET    /:organization/oauth2/applications(.:format)                                        doorkeeper/applications#index
+    # POST   /:organization/oauth2/applications(.:format)                                        doorkeeper/applications#create
+    # GET    /:organization/oauth2/applications/new(.:format)                                    doorkeeper/applications#new
+    # GET    /:organization/oauth2/applications/:id/edit(.:format)                               doorkeeper/applications#edit
+    # GET    /:organization/oauth2/applications/:id(.:format)                                    doorkeeper/applications#show
+    # PATCH  /:organization/oauth2/applications/:id(.:format)                                    doorkeeper/applications#update
+    # PUT    /:organization/oauth2/applications/:id(.:format)                                    doorkeeper/applications#update
+    # DELETE /:organization/oauth2/applications/:id(.:format)                                    doorkeeper/applications#destroy
+    # GET    /:organization/oauth2/authorized_applications(.:format)                             doorkeeper/authorized_applications#index
+    # DELETE /:organization/oauth2/authorized_applications/:id(.:format)                         doorkeeper/authorized_applications#destroy
+    # GET    /:organization/oauth2/token/info(.:format)                                          doorkeeper/token_info#show
 
-      concern :searchable do
-        collection do
-          # get 'search' # /:resources/search
-          get '/search', action: :search
+    # Namespace for APIs
+    namespace :api, defaults: {format: :json} do
+
+      # First version
+      # url style: http://subdomain.domain.host/api/v1/resources/action
+      namespace :v1 do
+
+        #=================
+        #=== Concerns ====
+        #=================
+
+        concern :searchable do
+          collection do
+            # get 'search' # /:resources/search
+            get '/search', action: :search
+          end
         end
-      end
 
-      concern :likeable do
-        get '/likes' => 'likes#likes', as: :likes           # /resource/1/likes
-        get '/dislikes' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
-      end
+        concern :likeable do
+          get '/likes' => 'likes#likes', as: :likes           # /resource/1/likes
+          get '/dislikes' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
+        end
 
-      concern :commentable do
-        resources :comments, shallow: true # /resource/1/comments
-      end
+        concern :commentable do
+          resources :comments, shallow: true # /resource/1/comments
+        end
 
-      concern :posteable do
-        resources :posts, shallow: true                                         # /resource/1/posts
-        get '/published_posts' => 'posts#published_posts', as: :published_posts # /resource/1/published_posts
-      end
+        concern :posteable do
+          resources :posts, shallow: true                                         # /resource/1/posts
+          get '/published_posts' => 'posts#published_posts', as: :published_posts # /resource/1/published_posts
+        end
 
-      concern :event_hosting do
-        resources :events, shallow: true # /resource/1/events
-      end
+        concern :event_hosting do
+          resources :events, shallow: true # /resource/1/events
+        end
 
-      concern :mapable do
-        resources :places, shallow: true # /resource/1/places
-      end
+        concern :mapable do
+          resources :places, shallow: true # /resource/1/places
+        end
 
-      concern :has_students do
-        get '/courses_students' => 'likes#likes', as: :likes           # /resource/1/likes
-        get '/enrolled_students' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
-      end
+        concern :has_students do
+          get '/courses_students' => 'likes#likes', as: :likes           # /resource/1/likes
+          get '/enrolled_students' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
+        end
 
-      #==================
-      #= General Routes =
-      #==================
+        #==================
+        #= General Routes =
+        #==================
 
-      # resources :organizations, only: [:index], concerns: :searchable
-
-      scope ':organization' do
         get '/' => 'organizations#show'
 
         resource :me, controller: 'me' do

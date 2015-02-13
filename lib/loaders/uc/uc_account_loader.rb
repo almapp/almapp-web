@@ -69,9 +69,9 @@ class UCAccountLoader < AccountLoader
   end
 
   def prepare_user(user, password)
-
     cas_logged_response = cas_login(user.username, password)
     cas_logged_redirect = cas_logged_response.response['Location']
+    return nil unless cas_logged_redirect.present?
 
     portal_logged_response = portal_login(cas_logged_redirect)
     @portal_cookie = portal_logged_response['Set-Cookie'].split(';')[0]
@@ -85,27 +85,30 @@ class UCAccountLoader < AccountLoader
     @http.use_ssl = true
     @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    sections = get_sections
+
     profile_data = get_profile
+    user.assign_attributes(profile_data)
+    if user.save!
 
-    sections.each do |section|
-      user.sections << section unless user.sections.include?(section)
+      sections = get_sections
+
+      sections.each do |section|
+        user.sections << section unless user.sections.include?(section)
+      end
+
+      careers_data = get_career
+      careers_data.each do |career_data|
+        career = Career.where(name: career_data[:career]).first_or_create
+        enroll = EnrolledCareer.where(user: user, career: career).first_or_create
+        enroll.curriculum = career_data[:curriculum]
+        enroll.student_id = career_data[:student_id]
+
+      end
+
+      user.avatar = get_profile_pic
+
+      (user.save!) ? user : nil
     end
-
-    user.update(profile_data)
-
-    careers_data = get_career
-    careers_data.each do |career_data|
-      career = Career.where(name: career_data[:career]).first_or_create
-      enroll = EnrolledCareer.where(user: user, career: career).first_or_create
-      enroll.curriculum = career_data[:curriculum]
-      enroll.student_id = career_data[:student_id]
-
-    end
-
-    user.avatar = get_profile_pic
-
-    user.save!
   end
 
   def request(path)
