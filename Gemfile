@@ -12,7 +12,9 @@ gem 'pg'
 gem 'puma'
 
 # Tasks
-gem 'whenever', :require => false
+gem 'clockwork'
+gem 'sidekiq'
+gem 'redis'
 
 gem 'jbuilder'
 gem 'jbuilder_cache_multi'
