@@ -81,7 +81,7 @@ class UCCoursesLoader < CoursesLoader
     r[16] = get_unity('Ciencias de la Salud')
     r[5] = get_unity('Ciencias Económicas y Administrativas')
     r[45] = get_unity('Ciencia Política')
-    #r[9] = f('College') Diferent layout http://admisionyregistros.uc.cl/dara/libcursos/periodo21/ua94_3.html
+    r[9] = get_unity('College') # Diferent layout http://admisionyregistros.uc.cl/dara/libcursos/periodo21/ua94_3.html
     r[51] = get_unity('Estética')
     r[95] = get_unity('Estudios Urbanos y Territoriales')
     r[67] = get_unity('Filosofía')
@@ -96,7 +96,7 @@ class UCCoursesLoader < CoursesLoader
     r[29] = get_unity('Psicología')
     r[10] = get_unity('Química')
     r[91] = get_unity('Sociología')
-    r[34] = get_unity('Teatro')
+    r[34] = get_unity('Actuación')
     r[38] = get_unity('Teología')
     r[30] = get_unity('Trabajo Social')
     r[21] = get_unity('Villarrica')
@@ -162,16 +162,28 @@ class UCCoursesLoader < CoursesLoader
           unity.name = title.titleize
           unity.save
 
-          table = doc.xpath('//body/table/tr[9]/td/table')
-
+          # Let's find the main table
           columns = Hash.new
-          (0..table.xpath('tr[1]/td').count).each do |column|
-            column_name = table.xpath("tr[1]/td[#{column}]").text
-            row_index = row_names.index(column_name)
-            columns[column_name] = row_index
-            puts column_name
-            puts row_index
+          table = nil
+          [9 ,11].each do |tr_row| # TODO: improve matching
+            begin
+              table = doc.xpath("//body/table/tr[#{tr_row}]/td/table") # College: /html/body/table/tbody/tr[11]/td/table/tbody
+              next if table.blank?
+
+              (0..table.xpath('tr[1]/td').count).each do |column|
+                column_name = table.xpath("tr[1]/td[#{column}]").text
+                row_index = row_names.index(column_name)
+                columns[column_name] = row_index
+                puts column_name
+                puts row_index
+              end
+            rescue
+              puts "no table on row #{tr_row}"
+            end
+
+            break unless columns.blank?
           end
+
 
           table = table.xpath('tr')
           doc = nil
