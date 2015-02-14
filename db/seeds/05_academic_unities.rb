@@ -242,7 +242,7 @@ puts('Creating Academic Unities')
 @a_est.url = ''
 @a_est.save!
 
-@a_urb = AcademicUnity.where(abbreviation: 'EST').first_or_initialize
+@a_urb = AcademicUnity.where(abbreviation: 'IEU').first_or_initialize
 @a_urb.short_name = 'Estudios Urbanos y Territoriales'
 @a_urb.faculty = @fadeu
 @a_urb.url = ''
