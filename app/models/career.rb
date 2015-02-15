@@ -28,7 +28,7 @@ class Career < ActiveRecord::Base
 
   belongs_to :academic_unity
 
-  has_many :enrolled_careers
+  has_many :enrolled_careers, dependent: :destroy
   has_many :enrolled_students, through: :enrolled_careers, source: :user, class_name: 'User'
 
 end

@@ -31,7 +31,7 @@ class Group < ActiveRecord::Base
   has_and_belongs_to_many :organizations #TODO create polymorphic n-to-n
   has_and_belongs_to_many :faculties
 
-  has_many :groups_subscribers
+  has_many :groups_subscribers, dependent: :destroy
   has_many :subscribers, through: :groups_subscribers, source: :user
   has_many :events, -> { order(to_date: :desc) }, as: :host
 end

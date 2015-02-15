@@ -54,6 +54,6 @@ class Event < ActiveRecord::Base
   belongs_to :host, polymorphic: true
   belongs_to :localization, :class_name => 'Place', :foreign_key => 'place_id'
 
-  has_many :events_assistances
+  has_many :events_assistances, dependent: :destroy
   has_many :participants, through: :events_assistances, source: :user
 end

@@ -21,7 +21,7 @@ module Api
 			end
 
 			def get_item
-				get_item_class.eager_load(:academic_unities, :courses, :sections).find(params[:id])
+				get_item_class.eager_load(:academic_unities, :courses, :sections).find_by_id(params[:id])
 			end
 
 			# Set @parent var to the respective parent of the item, see the routes.

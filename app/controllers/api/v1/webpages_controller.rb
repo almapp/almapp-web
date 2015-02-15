@@ -15,7 +15,7 @@ module Api
 			end
 
 			def get_item
-				get_item_class.eager_load(:organization).find(params[:id])
+				get_item_class.eager_load(:organization).find_by_id(params[:id])
 			end
 
 			# Set @parent var to the respective parent of the item, see the routes.

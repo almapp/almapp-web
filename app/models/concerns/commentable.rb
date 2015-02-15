@@ -4,7 +4,7 @@ module Commentable
   included do
     validates :comments_count, presence: true, numericality: {greater_than_or_equal_to: 0}
 
-    has_many :comments, -> { order(created_at: :desc) }, as: :commentable
+    has_many :comments, -> { order(created_at: :desc) }, as: :commentable, dependent: :destroy
   end
 
   def add_comment_from(user, comment_content, anonymous = false)

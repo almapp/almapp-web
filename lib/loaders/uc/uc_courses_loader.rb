@@ -19,25 +19,6 @@ class UCCoursesLoader < CoursesLoader
     !!(input =~ /(^[L,M,W,J,V,S,1,2,3,4,5,6,7,8,:,;,a, ,\-]+$)/)
   end
 
-  def get_camp(name)
-    case name.downcase
-      when 'San Joaquin'.downcase
-        @sj
-      when 'Lo Contador'.downcase
-        @lc
-      when 'Casa Central'.downcase
-        @cc
-      when 'Campus Oriente'.downcase
-        @or
-      when 'Villarica'.downcase
-        @vr
-      when 'Campus Externo'.downcase
-        @ex
-      else
-        nil
-    end
-  end
-
   def get_unity(short_name)
     AcademicUnity.find_by_short_name(short_name)
   end
@@ -65,41 +46,41 @@ class UCCoursesLoader < CoursesLoader
   def relations
     # {UNITY : Faculty}
     r = Hash.new
-    r[4] = get_unity('Ingeniería')
-    r[28] = get_unity('Comunicaciones')
-    r[1] = get_unity('Construcción Civil')
-    r[17] = get_unity('Derecho')
-    r[59] = get_unity('Diseño')
-    r[20] = get_unity('Educación')
-    r[13] = get_unity('Enfermería')
-    #r[91] = f('Antropología') Same as Sociologia
-    r[11] = get_unity('Agronomía e Ingeniería Forestal')
-    r[94] = get_unity('Arquitectura')
-    r[33] = get_unity('Arte')
-    r[2] = get_unity('Astrofísica')
-    r[12] = get_unity('Ciencias Biológicas')
-    r[16] = get_unity('Ciencias de la Salud')
-    r[5] = get_unity('Ciencias Económicas y Administrativas')
-    r[45] = get_unity('Ciencia Política')
-    r[9] = get_unity('College') # Diferent layout http://admisionyregistros.uc.cl/dara/libcursos/periodo21/ua94_3.html
-    r[51] = get_unity('Estética')
-    r[95] = get_unity('Estudios Urbanos y Territoriales')
-    r[67] = get_unity('Filosofía')
-    r[3] = get_unity('Física')
-    r[57] = get_unity('Geografía')
-    r[56] = get_unity('Historia')
-    r[64] = get_unity('Letras')
-    r[6] = get_unity('Matemática')
-    r[14] = get_unity('Medicina')
-    r[70] = get_unity('Música')
-    r[15] = get_unity('Odontología')
-    r[29] = get_unity('Psicología')
-    r[10] = get_unity('Química')
-    r[91] = get_unity('Sociología')
-    r[34] = get_unity('Actuación')
-    r[38] = get_unity('Teología')
-    r[30] = get_unity('Trabajo Social')
-    r[21] = get_unity('Villarrica')
+    # r[4] = get_unity('Ingeniería')
+    # r[28] = get_unity('Comunicaciones')
+    # r[1] = get_unity('Construcción Civil')
+    # r[17] = get_unity('Derecho')
+    # r[59] = get_unity('Diseño')
+    # r[20] = get_unity('Educación')
+    # r[13] = get_unity('Enfermería')
+    # #r[91] = f('Antropología') Same as Sociologia
+    # r[11] = get_unity('Agronomía e Ingeniería Forestal')
+    # r[94] = get_unity('Arquitectura')
+    # r[33] = get_unity('Arte')
+    # r[2] = get_unity('Astrofísica')
+    # r[12] = get_unity('Ciencias Biológicas')
+    # r[16] = get_unity('Ciencias de la Salud')
+    # r[5] = get_unity('Ciencias Económicas y Administrativas')
+    # r[45] = get_unity('Ciencia Política')
+    # r[51] = get_unity('Estética')
+    # r[95] = get_unity('Estudios Urbanos y Territoriales')
+    # r[67] = get_unity('Filosofía')
+    # r[3] = get_unity('Física')
+    # r[57] = get_unity('Geografía')
+    # r[56] = get_unity('Historia')
+    # r[64] = get_unity('Letras')
+    # r[6] = get_unity('Matemática')
+    # r[14] = get_unity('Medicina')
+    # r[70] = get_unity('Música')
+    # r[15] = get_unity('Odontología')
+    # r[29] = get_unity('Psicología')
+    # r[10] = get_unity('Química')
+    # r[91] = get_unity('Sociología')
+    # r[34] = get_unity('Actuación')
+    # r[38] = get_unity('Teología')
+    # r[30] = get_unity('Trabajo Social')
+    # r[21] = get_unity('Villarrica')
+    r[9] = get_unity('College') # Diferent layout http://admisionyregistros.uc.cl/dara/libcursos/periodo21/ua9_42.html
     return r
   end
 
@@ -116,26 +97,16 @@ class UCCoursesLoader < CoursesLoader
   ROW_CAMPUS = 'Campus'
   ROW_TITLES = 'Títulos'
 
-  def row_names
-    [ROW_NO,
-    ROW_INITIALS,
-    ROW_SECTION,
-    ROW_CREDIT,
-    ROW_CLASSNAME,
-    ROW_VAC_DISP,
-    ROW_TEACHERS,
-    ROW_SCHEDULE,
-    ROW_ACTIVITY_TYPE,
-    ROW_CLASSROOMS,
-    ROW_CAMPUS,
-    ROW_TITLES]
-  end
-
 
   def get_website(url)
     url = URI.parse(url)
     req = Net::HTTP.new(url.host, url.port)
     req.get(url.path)
+  end
+
+  def should_skip(year, period, academic_number, page)
+    @skip ||= [[2015, 1, 9, 42]]
+    @skip.include? Array(year, period, academic_number, page)
   end
 
   def load_courses(year, period)
@@ -150,6 +121,11 @@ class UCCoursesLoader < CoursesLoader
       puts "== Unity: #{unity.short_name} (#{number})"
       puts '====================================='
       while keep_going
+        if should_skip(year, period, number, page)
+          page += 1
+          next
+        end
+
         url = get_url(period, number, page)
         web = get_website(url)
         if web.code == '200'
@@ -163,20 +139,15 @@ class UCCoursesLoader < CoursesLoader
           unity.save
 
           # Let's find the main table
-          columns = Hash.new
+          columns = nil
           table = nil
           [9 ,11].each do |tr_row| # TODO: improve matching
             begin
               table = doc.xpath("//body/table/tr[#{tr_row}]/td/table") # College: /html/body/table/tbody/tr[11]/td/table/tbody
               next if table.blank?
 
-              (0..table.xpath('tr[1]/td').count).each do |column|
-                column_name = table.xpath("tr[1]/td[#{column}]").text
-                row_index = row_names.index(column_name)
-                columns[column_name] = row_index
-                puts column_name
-                puts row_index
-              end
+              headers = table.xpath('tr[1]/td')
+              columns = headers.map { |head| head.text }
             rescue
               puts "no table on row #{tr_row}"
             end
@@ -191,12 +162,16 @@ class UCCoursesLoader < CoursesLoader
           table = table[1..table.size] # Remove table titles
           table.each do |cell|
             attributes = cell.xpath('td')
-            puts '///////////////////////////////'
-            puts "// Number: #{attributes[columns[ROW_NO]].text}"
 
-            initial = attributes[columns[ROW_INITIALS]].text
-            credits = remove_shitty_chars(attributes[columns[ROW_CREDIT]].text)
-            name = remove_shitty_chars(attributes[columns[ROW_CLASSNAME]].text)
+            course_number = attributes[columns.index(ROW_NO)].text.to_i rescue 0
+            next if course_number == 0
+
+            puts '///////////////////////////////'
+            puts "// Number: #{course_number}"
+
+            initial = attributes[columns.index(ROW_INITIALS)].text
+            credits = remove_shitty_chars(attributes[columns.index(ROW_CREDIT)].text)
+            name = remove_shitty_chars(attributes[columns.index(ROW_CLASSNAME)].text)
 
             course = Course.find_by_initials(initial)
             if course.present?
@@ -212,8 +187,8 @@ class UCCoursesLoader < CoursesLoader
               puts 'Course not found, created: '.concat(course.inspect)
             end
 
-            section_number = remove_shitty_chars(attributes[columns[ROW_SECTION]].text)
-            vacancy = remove_shitty_chars(attributes[columns[ROW_VAC_DISP]].text)
+            section_number = remove_shitty_chars(attributes[columns.index(ROW_SECTION)].text)
+            vacancy = remove_shitty_chars(attributes[columns.index(ROW_VAC_DISP)].text)
             section = Section.find_by_course_id_and_year_and_period_and_number(course.id, year, period, section_number)
             if section.present?
               section.vacancy = vacancy
@@ -231,7 +206,7 @@ class UCCoursesLoader < CoursesLoader
             #slots_opt = remove_blank_prefix(attributes[6].text)
             #slots_ofg = remove_blank_prefix(attributes[7].text)
 
-            teachers = attributes[columns[ROW_TEACHERS]].xpath('font')
+            teachers = attributes[columns.index(ROW_TEACHERS)].xpath('font')
             teachers.children.each do |t|
               if t.text?
                 t_name = remove_shitty_chars(t.text)
@@ -254,10 +229,10 @@ class UCCoursesLoader < CoursesLoader
             section.save!
             puts section.inspect
 
-            schedules = attributes[columns[ROW_SCHEDULE]].xpath('font').children
-            module_types = attributes[columns[ROW_ACTIVITY_TYPE]].xpath('font').children
-            classrooms = attributes[columns[ROW_CLASSROOMS]].xpath('font').children
-            campus_name = remove_shitty_chars(attributes[columns[ROW_CAMPUS]].xpath('font').children.first.text) rescue ''
+            schedules = attributes[columns.index(ROW_SCHEDULE)].xpath('font').children
+            module_types = attributes[columns.index(ROW_ACTIVITY_TYPE)].xpath('font').children
+            classrooms = attributes[columns.index(ROW_CLASSROOMS)].xpath('font').children
+            campus_name = remove_shitty_chars(attributes[columns.index(ROW_CAMPUS)].xpath('font').children.first.text) rescue ''
 
             for i in 0..module_types.length-1 do
               if module_types[i].text?

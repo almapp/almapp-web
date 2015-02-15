@@ -1,9 +1,19 @@
 module Api
 	module V1
 		class LikesController < BaseController
-			before_action :authenticate_user!, only: [:create, :destroy, :update]
-			before_action :set_and_validate_parent, only: [:index, :likes, :dislikes, :create]
+			before_action :authorize_user, only: [:create, :destroy, :update, :like, :dislike]
+			before_action :set_and_validate_parent, only: [:index, :likes, :dislikes, :like, :dislike, :create]
 			before_action :set_and_validate_item, only: [:show, :update, :destroy]
+
+      def like
+        @item = @parent.add_like_by(current_resource_owner)
+        render 'api/v1/likes/show'
+      end
+
+      def dislike
+        @item = @parent.add_dislike_by(current_resource_owner)
+        render 'api/v1/likes/show'
+      end
 
 			def likes
 				@items = @parent.likes.eager_load(:user)

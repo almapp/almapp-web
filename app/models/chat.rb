@@ -17,7 +17,7 @@ class Chat < ActiveRecord::Base
 
   belongs_to :conversable, polymorphic: true
 
-  has_many :chat_participantships
+  has_many :chat_participantships, dependent: :destroy
   has_many :users, through: :chat_participantships
   has_many :chat_messages, through: :chat_participantships
 end

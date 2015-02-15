@@ -24,7 +24,7 @@ module Api
         if params[:organization]
           get_item_class.eager_load(:localization).find_with_subdomain(params[:organization])
         else
-          get_item_class.eager_load(:localization).find(params[:id])
+          get_item_class.eager_load(:localization).find_by_id(params[:id])
         end
 			end
 

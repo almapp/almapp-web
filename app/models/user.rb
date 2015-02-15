@@ -104,14 +104,14 @@ class User < ActiveRecord::Base
 
   belongs_to :organization
 
-  has_many :devices
+  has_many :devices, dependent: :destroy
   def notify(title, message, data, devices = Device::DEVICES)
     self.devices.platform_is(devices) do |device|
       device.push(title, message, data)
     end
   end
 
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
 
   # Users who want to be my friends
   has_many :pending_friendships, -> { where accepted: false }, class_name: 'Friendship', foreign_key: 'friend_id'
@@ -121,14 +121,14 @@ class User < ActiveRecord::Base
   has_many :requested_friendships, -> { where accepted: false }, class_name: 'Friendship'
   has_many :requested_friends, through: :requested_friendships, source: :friend
 
-  has_many :groups_subscribers
+  has_many :groups_subscribers, dependent: :destroy
   has_many :subscribed_groups, through: :groups_subscribers, source: :group, class_name: 'Group'
 
-  has_many :chat_participantships
+  has_many :chat_participantships, dependent: :destroy
   has_many :chats, through: :chat_participantships
   has_many :chat_messages, through: :chat_participantships
 
-  has_many :sections_users
+  has_many :sections_users, dependent: :destroy
   has_many :sections,  -> { uniq }, through: :sections_users do
     def <<(new_item)
       filtered =  Array(new_item) - proxy_association.owner.sections

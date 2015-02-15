@@ -24,8 +24,8 @@ class Like < ActiveRecord::Base
   belongs_to :user
   belongs_to :likeable, polymorphic: true, counter_cache: true
 
-  before_create do
-    old_like = self.class.find_by_user_and_likeable(self.user, self.likeable)
+  before_validation do
+    old_like = Like.find_by_user_and_likeable(self.user, self.likeable)
     old_like.destroy if old_like.present?
   end
 

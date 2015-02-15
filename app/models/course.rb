@@ -33,7 +33,7 @@ class Course < ActiveRecord::Base
 
   belongs_to :academic_unity
 
-  has_many :sections
+  has_many :sections, dependent: :destroy
   has_many :section_students, through: :sections, source: :section_students, class_name: 'User'
   has_many :teachers, through: :sections
 

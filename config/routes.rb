@@ -80,6 +80,8 @@ Rails.application.routes.draw do
         end
 
         concern :likeable do
+          match '/like' => 'likes#like', via: :post
+          match '/dislike' => 'likes#like', via: :post
           get '/likes' => 'likes#likes', as: :likes           # /resource/1/likes
           get '/dislikes' => 'likes#dislikes', as: :dislikes  # /resource/1/dislikes
         end
@@ -127,7 +129,8 @@ Rails.application.routes.draw do
 
         resources :schedule_modules, only: [:index, :show]
         resources :comments, only: [:show, :index],  concerns: :likeable
-        resources :posts, :events, :places, only: [:show, :index], concerns: [:commentable, :likeable, :searchable]
+        resources :posts, :events, concerns: [:commentable, :likeable, :searchable]
+        resources :places, only: [:show, :index], concerns: [:commentable, :likeable, :searchable]
         resources :likes, only: [:show]
         get '/likes' => 'likes#likes', as: :likes           # /likes
         get '/dislikes' => 'likes#dislikes', as: :dislikes  # /dislikes

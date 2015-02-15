@@ -38,8 +38,8 @@ class AcademicUnity < ActiveRecord::Base
   belongs_to :faculty
 
   has_and_belongs_to_many :teachers
-  has_many :courses
-  has_many :careers
+  has_many :courses, dependent: :destroy
+  has_many :careers, dependent: :destroy
 
   has_many :courses_sections, through: :courses, source: :sections
 

@@ -38,6 +38,12 @@ class Post < ActiveRecord::Base
                     too_long: 'must have at most %{count} words.'
                     }, presence: true
 
+  before_validation :set_default_target
+
+  def set_default_target
+    self.target ||= self.user.organization if self.user.present?
+  end
+
   belongs_to :localization, :class_name => 'Place', :foreign_key => 'place_id'
   belongs_to :event
   belongs_to :user

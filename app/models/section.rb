@@ -29,11 +29,11 @@ class Section < ActiveRecord::Base
 
   belongs_to :course
 
-  has_many :schedule_items
+  has_many :schedule_items, dependent: :destroy
   has_many :schedule_modules, through: :schedule_items
   has_many :places, through: :schedule_items
 
-  has_many :sections_users
+  has_many :sections_users, dependent: :destroy
   has_many :section_students,  -> { uniq }, through: :sections_users, source: :user, class_name: 'User' do
     def <<(new_item)
       super( Array(new_item) - proxy_association.owner.section_students )
@@ -42,7 +42,7 @@ class Section < ActiveRecord::Base
 
   has_and_belongs_to_many :teachers
 
-  has_many :assistantships
+  has_many :assistantships, dependent: :destroy
   has_many :assistants, through: :assistantships, source: :user, class_name: 'User'
 
   scope :period, lambda { |year, period| where(year: year, period: period) }

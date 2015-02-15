@@ -11,7 +11,7 @@ module Api
 			end
 
 			def get_item
-				get_item_class.preload(:campus).eager_load(:schedule_module, :section, :place).find(params[:id])
+				get_item_class.preload(:campus).eager_load(:schedule_module, :section, :place).find_by_id(params[:id])
 			end
 
 			# Set @parent var to the respective parent of the item, see the routes.
