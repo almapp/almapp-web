@@ -109,6 +109,4 @@ puts('Creating buildings')
 @templo.save!
 
 
-Building.all.each do |b|
-  puts('Created building: ' +b.name)
-end
+puts("Created #{Building.count} #{Building.to_s.pluralize.downcase}")

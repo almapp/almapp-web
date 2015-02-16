@@ -493,6 +493,4 @@ puts('Creating faculties')
 @college.save!
 
 
-Faculty.all.each do |f|
-  puts('Created faculty: ' +f.name)
-end
+puts("Created #{Faculty.count} #{Faculty.to_s.pluralize.downcase}")

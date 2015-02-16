@@ -247,3 +247,5 @@ web.secure_protocol = false
 web.requires_login = false
 web.home_url = 'https://www.facebook.com/crecer.uc'
 web.save!
+
+puts("Created #{Webpage.count} #{Webpage.to_s.pluralize.downcase}")

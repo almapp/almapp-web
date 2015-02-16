@@ -173,7 +173,5 @@ place.save!
 @ex.localization = nil
 @ex.save!
 
-Campus.all.each do |c|
-  puts('Created campus: ' +c.name)
-end
+puts("Created #{Campus.count} #{Campus.to_s.pluralize.downcase}")
 

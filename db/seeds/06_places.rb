@@ -11397,10 +11397,4 @@ place.save!
 
 #-------------------------------------------------
 
-Place.all.each do |p|
-  if p.name.present?
-    puts"new place: #{p.name}"
-  else
-    puts p.inspect
-  end
-end
+puts("Created #{Place.count} #{Place.to_s.pluralize.downcase}")

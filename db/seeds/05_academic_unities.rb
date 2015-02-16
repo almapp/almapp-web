@@ -494,6 +494,4 @@ puts('Creating Academic Unities')
 @a_vr.localization.tilt = 0
 @a_vr.save!
 
-AcademicUnity.all.each do |f|
-    puts('Created academic unity: ' +f.	short_name)
-	end
+puts("Created #{AcademicUnity.count} #{AcademicUnity.to_s.pluralize.downcase}")
