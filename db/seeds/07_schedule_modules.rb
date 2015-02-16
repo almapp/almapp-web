@@ -13,9 +13,12 @@ puts('Creating schedule modules')
 #  end_time        :string(255)      not null
 #
 
-@uc = Organization.find_by_abbreviation('UC')
+
 
 def create_modules(days, blocks, start_times, end_times)
+  uc = Organization.find_by_abbreviation('UC')
+  uc.schedule_modules.destroy_all
+
   days.each do |day|
     blocks.each do |block|
       i = block - 1
@@ -33,13 +36,12 @@ def create_modules(days, blocks, start_times, end_times)
           start_minute: start_time[1],
           end_hour: end_time[0],
           end_minute: end_time[1],
-          organization: @uc
+          organization: uc
       )
     end
   end
 end
 
-@uc.schedule_modules.destroy_all
 create_modules(%w(L M W J V S), [*1..8], %w(8:30 10:00 11:30 14:00 15:30 17:00 18:30 20:00), %w(9:50 11:20 12:50 15:20 16:50 18:20 19:50 21:20))
 
 puts("Created #{ScheduleModule.count} #{ScheduleModule.to_s.pluralize.downcase}")

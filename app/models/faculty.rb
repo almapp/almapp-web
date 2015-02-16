@@ -23,7 +23,7 @@
 #
 
 class Faculty < ActiveRecord::Base
-  searchkick word_start: [:abbreviation, :short_name], text_middle: [:name]
+  searchkick callbacks: false, word_start: [:abbreviation, :short_name], text_middle: [:name]
 
   include Commentable
   include PostTarget

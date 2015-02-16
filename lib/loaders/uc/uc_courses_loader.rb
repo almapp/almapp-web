@@ -4,19 +4,15 @@ class UCCoursesLoader < CoursesLoader
 
   # On console: ActiveRecord::Base.logger.level = 1; u = UCCoursesLoader.new; u.load_courses(2015,1)
 
-  def initialize
-    @organization = Organization.find_by_abbreviation('UC')
-  end
-
-  def regex(input)
+  def self.regex(input)
     !!(input =~ /(^[L,M,W,J,V,S,1,2,3,4,5,6,7,8,:,;,a, ,\-]+$)/)
   end
 
-  def get_url(period, unity, page)
+  def self.get_url(period, unity, page)
     "http://admisionyregistros.uc.cl/dara/libcursos/periodo2#{period}/ua#{unity}_#{page}.html"
   end
 
-  def remove_shitty_chars(input)
+  def self.remove_shitty_chars(input)
     c = input[0]
     l = input[-1]
     if  c == ' ' || c == '-' || c == '('
@@ -28,11 +24,11 @@ class UCCoursesLoader < CoursesLoader
     end
   end
 
-  def test_relation
+  def self.test_relation
     { 4 => 'Ingeniería' }
   end
 
-  def relations
+  def self.relations
     # Diferent layout http://admisionyregistros.uc.cl/dara/libcursos/periodo21/ua9_42.html
     {
      9 => 'College', # academic unity on courses will be overwritten
@@ -86,33 +82,35 @@ class UCCoursesLoader < CoursesLoader
   ROW_TITLES = 'Títulos'
 
 
-  def get_website(url)
+  def self.get_website(url)
     url = URI.parse(url)
     req = Net::HTTP.new(url.host, url.port)
     req.get(url.path)
   end
 
-  def should_skip(year, period, academic_number, page)
+  def self.should_skip(year, period, academic_number, page)
     (year == 2015 && period == 1 && academic_number == 9 && page == 42)
   end
 
-  def log(message)
+  def self.log(message)
     puts message if false
   end
 
-  def load_courses(year, period)
+  def self.load_courses(year, period)
     load_courses_for(relations, year, period)
+    Course.reindex
+    Teacher.reindex
   end
 
 
-  def load_courses_for(relations_hash, year, period)
+  def self.load_courses_for(relations_hash, year, period)
     relations_hash.each do |number, unity|
       academic_unity = AcademicUnity.find_by_short_name(unity)
       courses_of(number, academic_unity, year, period)
     end
   end
 
-  def courses_of(number, unity, year, period)
+  def self.courses_of(number, unity, year, period)
     log '====================================='
     log "== Unity: #{unity.short_name} (#{number})"
     log '====================================='
@@ -211,7 +209,7 @@ class UCCoursesLoader < CoursesLoader
 
             schedule_items = []
             if module_block.present? && regex(module_block)
-              matches = ScheduleModule.modules_for_loader(@organization, module_block)
+              matches = ScheduleModule.modules_for_loader(Organization.find_by_abbreviation('UC'), module_block)
               matches.each do |schedule_module|
 
                 schedule_items << ScheduleItem.new(
@@ -232,13 +230,16 @@ class UCCoursesLoader < CoursesLoader
               )
             end
             ScheduleItem.import schedule_items
+            schedule_items.each do |item|
+              puts "#{section.identifier} \t|\t #{item.class_type} \t|\t #{(item.schedule_module) ? item.schedule_module.initials : '-'} \t|\t #{item.place_name} @ #{item.campus_name}"
+            end
           end
         end
       end
     end
   end
 
-  def get_attributes_row(doc)
+  def self.get_attributes_row(doc)
     # Let's find the main table
     columns = nil
     table = nil
@@ -248,7 +249,7 @@ class UCCoursesLoader < CoursesLoader
         next if table.blank?
 
         headers = table.xpath('tr[1]/td')
-        columns = headers.map { |head| head.text }
+        columns = headers.map(&:text)
       rescue
         log "no table on row #{tr_row}"
       end

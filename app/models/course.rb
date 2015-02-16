@@ -17,7 +17,7 @@
 #
 
 class Course < ActiveRecord::Base
-  searchkick word_start: [:initials, :name], text_middle: [:name]
+  searchkick callbacks: false, word_start: [:initials, :name], text_middle: [:name]
 
   include Commentable
   include PostTarget
