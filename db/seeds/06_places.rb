@@ -38,6 +38,8 @@ puts('Creating places')
 # library
 # other
 
+places = []
+
 place = Place.where(identifier: 'ENF_117').first_or_initialize
 place.name = '117'
 place.area = @a_enf
@@ -50,7 +52,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -66,7 +68,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -82,7 +84,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -98,7 +100,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -114,7 +116,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -130,7 +132,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -146,7 +148,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -162,7 +164,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -178,7 +180,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -194,7 +196,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -210,7 +212,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -226,7 +228,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -242,7 +244,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -258,7 +260,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -274,7 +276,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -290,7 +292,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -306,7 +308,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -322,7 +324,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -338,7 +340,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -354,7 +356,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -370,7 +372,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -386,7 +388,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -402,7 +404,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -418,7 +420,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -434,7 +436,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -450,7 +452,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -466,7 +468,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -482,7 +484,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -498,7 +500,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -514,7 +516,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -530,7 +532,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -546,7 +548,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -562,7 +564,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -578,7 +580,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -594,7 +596,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -610,7 +612,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -626,7 +628,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -642,7 +644,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -658,7 +660,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -674,7 +676,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -690,7 +692,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -706,7 +708,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -722,7 +724,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -738,7 +740,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -754,7 +756,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 
 #-------------------------------------------------
@@ -771,7 +773,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'food_lunch'
-place.save!
+places << place
 
 
 #-------------------------------------------------
@@ -788,7 +790,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -804,7 +806,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -820,7 +822,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -836,7 +838,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -852,7 +854,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -868,7 +870,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -884,7 +886,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -900,7 +902,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -916,7 +918,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -932,7 +934,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -948,7 +950,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -964,7 +966,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -980,7 +982,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -996,7 +998,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1012,7 +1014,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1028,7 +1030,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1044,7 +1046,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1060,7 +1062,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1076,7 +1078,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1092,7 +1094,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1108,7 +1110,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1124,7 +1126,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1140,7 +1142,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1156,7 +1158,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1172,7 +1174,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1188,7 +1190,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1204,7 +1206,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1220,7 +1222,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1236,7 +1238,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1252,7 +1254,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1268,7 +1270,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1284,7 +1286,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1300,7 +1302,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1316,7 +1318,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1332,7 +1334,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1348,7 +1350,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1364,7 +1366,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1380,7 +1382,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1396,7 +1398,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1412,7 +1414,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1428,7 +1430,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1444,7 +1446,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1460,7 +1462,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1476,7 +1478,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1492,7 +1494,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1508,7 +1510,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1524,7 +1526,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1540,7 +1542,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1556,7 +1558,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1572,7 +1574,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1588,7 +1590,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1604,7 +1606,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1620,7 +1622,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1636,7 +1638,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1652,7 +1654,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1668,7 +1670,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1684,7 +1686,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1700,7 +1702,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1716,7 +1718,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1732,7 +1734,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1748,7 +1750,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bank'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1764,7 +1766,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bank'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1780,7 +1782,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1796,7 +1798,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1812,7 +1814,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1828,7 +1830,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1844,7 +1846,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1860,7 +1862,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1876,7 +1878,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1892,7 +1894,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1908,7 +1910,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1924,7 +1926,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1940,7 +1942,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1956,7 +1958,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1972,7 +1974,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -1988,7 +1990,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2004,7 +2006,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2020,7 +2022,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2036,7 +2038,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2052,7 +2054,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2068,7 +2070,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2084,7 +2086,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2100,7 +2102,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2116,7 +2118,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2132,7 +2134,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2148,7 +2150,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2164,7 +2166,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2180,7 +2182,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2196,7 +2198,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2212,7 +2214,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2228,7 +2230,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2244,7 +2246,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2260,7 +2262,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2276,7 +2278,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2292,7 +2294,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2308,7 +2310,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'trash'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2324,7 +2326,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2340,7 +2342,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2356,7 +2358,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2372,7 +2374,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2388,7 +2390,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2404,7 +2406,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2420,7 +2422,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2436,7 +2438,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2452,7 +2454,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2468,7 +2470,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2484,7 +2486,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2500,7 +2502,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2516,7 +2518,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2532,7 +2534,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2548,7 +2550,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2564,7 +2566,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2580,7 +2582,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2596,7 +2598,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2612,7 +2614,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2628,7 +2630,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2644,7 +2646,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2660,7 +2662,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2676,7 +2678,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2692,7 +2694,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2708,7 +2710,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2724,7 +2726,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2740,7 +2742,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2756,7 +2758,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2772,7 +2774,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2788,7 +2790,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2804,7 +2806,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2820,7 +2822,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2836,7 +2838,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2852,7 +2854,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2868,7 +2870,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2884,7 +2886,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2900,7 +2902,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2916,7 +2918,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2932,7 +2934,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2948,7 +2950,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2964,7 +2966,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2980,7 +2982,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -2996,7 +2998,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3012,7 +3014,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3028,7 +3030,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3044,7 +3046,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3060,7 +3062,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3076,7 +3078,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'bath'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3092,7 +3094,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3108,7 +3110,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3124,7 +3126,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3140,7 +3142,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3156,7 +3158,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3172,7 +3174,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3188,7 +3190,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3204,7 +3206,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3220,7 +3222,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3236,7 +3238,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3252,7 +3254,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3268,7 +3270,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3284,7 +3286,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3300,7 +3302,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3316,7 +3318,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3332,7 +3334,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3348,7 +3350,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3364,7 +3366,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3380,7 +3382,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3396,7 +3398,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3412,7 +3414,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3428,7 +3430,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3444,7 +3446,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3460,7 +3462,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3476,7 +3478,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3492,7 +3494,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3508,7 +3510,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3524,7 +3526,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3540,7 +3542,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3568,7 +3570,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3584,7 +3586,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'computers, printer'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3600,7 +3602,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'computers, printer'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3616,7 +3618,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'computers, printer'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3632,7 +3634,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'computers, printer'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3648,7 +3650,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'computers, printer'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3664,7 +3666,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'computers, printer'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3680,7 +3682,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'computers, printer'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3696,7 +3698,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3712,7 +3714,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3728,7 +3730,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3744,7 +3746,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3760,7 +3762,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3776,7 +3778,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3792,7 +3794,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3808,7 +3810,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3824,7 +3826,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3840,7 +3842,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3856,7 +3858,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3872,7 +3874,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3888,7 +3890,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3904,7 +3906,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3920,7 +3922,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3936,7 +3938,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3952,7 +3954,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3968,7 +3970,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -3984,7 +3986,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4000,7 +4002,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4016,7 +4018,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4032,7 +4034,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4048,7 +4050,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'cash_machine'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4064,7 +4066,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4080,7 +4082,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4096,7 +4098,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4112,7 +4114,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4128,7 +4130,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4145,7 +4147,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'photocopy'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4161,7 +4163,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4177,7 +4179,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4193,7 +4195,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4209,7 +4211,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4225,7 +4227,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4241,7 +4243,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4257,7 +4259,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'other'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4273,7 +4275,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4289,7 +4291,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4305,7 +4307,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4321,7 +4323,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4337,7 +4339,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4353,7 +4355,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4369,7 +4371,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4385,7 +4387,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4401,7 +4403,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4417,7 +4419,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4433,7 +4435,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4449,7 +4451,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4465,7 +4467,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4481,7 +4483,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4497,7 +4499,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4513,7 +4515,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4529,7 +4531,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4545,7 +4547,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4561,7 +4563,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4577,7 +4579,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4593,7 +4595,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4609,7 +4611,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4625,7 +4627,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4641,7 +4643,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4657,7 +4659,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4673,7 +4675,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4689,7 +4691,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4705,7 +4707,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4721,7 +4723,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4737,7 +4739,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4753,7 +4755,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4769,7 +4771,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4785,7 +4787,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4801,7 +4803,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4817,7 +4819,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4833,7 +4835,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4849,7 +4851,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4865,7 +4867,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4881,7 +4883,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4897,7 +4899,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4913,7 +4915,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4929,7 +4931,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4945,7 +4947,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4961,7 +4963,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4977,7 +4979,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -4993,7 +4995,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5009,7 +5011,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5025,7 +5027,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5041,7 +5043,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5057,7 +5059,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5073,7 +5075,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5089,7 +5091,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5105,7 +5107,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5121,7 +5123,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5137,7 +5139,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5153,7 +5155,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5169,7 +5171,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5185,7 +5187,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5201,7 +5203,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5217,7 +5219,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5233,7 +5235,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5249,7 +5251,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5265,7 +5267,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5281,7 +5283,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5297,7 +5299,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5313,7 +5315,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5329,7 +5331,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5345,7 +5347,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5361,7 +5363,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5377,7 +5379,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5393,7 +5395,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5409,7 +5411,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5425,7 +5427,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5441,7 +5443,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5457,7 +5459,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5473,7 +5475,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5489,7 +5491,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5505,7 +5507,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5521,7 +5523,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5537,7 +5539,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5553,7 +5555,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5569,7 +5571,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5585,7 +5587,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5601,7 +5603,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5617,7 +5619,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5633,7 +5635,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5649,7 +5651,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5665,7 +5667,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5681,7 +5683,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5697,7 +5699,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5713,7 +5715,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5729,7 +5731,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5745,7 +5747,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5761,7 +5763,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5777,7 +5779,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5793,7 +5795,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5809,7 +5811,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5825,7 +5827,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5841,7 +5843,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5857,7 +5859,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5873,7 +5875,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5889,7 +5891,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5905,7 +5907,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5921,7 +5923,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5937,7 +5939,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5953,7 +5955,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5969,7 +5971,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -5985,7 +5987,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6001,7 +6003,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6017,7 +6019,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6033,7 +6035,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6049,7 +6051,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6065,7 +6067,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6081,7 +6083,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6097,7 +6099,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6113,7 +6115,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6129,7 +6131,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6145,7 +6147,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6161,7 +6163,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6177,7 +6179,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6193,7 +6195,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6209,7 +6211,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6225,7 +6227,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6241,7 +6243,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6257,7 +6259,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6273,7 +6275,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6289,7 +6291,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6305,7 +6307,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6321,7 +6323,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6337,7 +6339,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6353,7 +6355,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6369,7 +6371,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6385,7 +6387,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6401,7 +6403,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6417,7 +6419,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6433,7 +6435,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6449,7 +6451,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6465,7 +6467,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6481,7 +6483,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6497,7 +6499,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6513,7 +6515,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6529,7 +6531,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6545,7 +6547,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6561,7 +6563,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6577,7 +6579,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6593,7 +6595,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6609,7 +6611,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6625,7 +6627,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6641,7 +6643,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6657,7 +6659,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6673,7 +6675,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6689,7 +6691,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6705,7 +6707,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6721,7 +6723,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6737,7 +6739,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6753,7 +6755,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6769,7 +6771,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6785,7 +6787,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6801,7 +6803,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6817,7 +6819,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6833,7 +6835,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6849,7 +6851,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6865,7 +6867,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6881,7 +6883,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6897,7 +6899,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6913,7 +6915,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6929,7 +6931,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6945,7 +6947,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6961,7 +6963,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6977,7 +6979,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -6993,7 +6995,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7009,7 +7011,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7025,7 +7027,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7041,7 +7043,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7057,7 +7059,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7073,7 +7075,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7089,7 +7091,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7105,7 +7107,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7121,7 +7123,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7137,7 +7139,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7153,7 +7155,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7169,7 +7171,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7185,7 +7187,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7201,7 +7203,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7217,7 +7219,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7233,7 +7235,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7249,7 +7251,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7265,7 +7267,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7281,7 +7283,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7297,7 +7299,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7313,7 +7315,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7329,7 +7331,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7345,7 +7347,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7361,7 +7363,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7377,7 +7379,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7393,7 +7395,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7409,7 +7411,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7425,7 +7427,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7441,7 +7443,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7457,7 +7459,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7473,7 +7475,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7489,7 +7491,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7505,7 +7507,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7521,7 +7523,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7537,7 +7539,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7553,7 +7555,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7569,7 +7571,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7585,7 +7587,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7601,7 +7603,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7617,7 +7619,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7633,7 +7635,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7649,7 +7651,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7665,7 +7667,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7681,7 +7683,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7697,7 +7699,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7713,7 +7715,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7729,7 +7731,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7745,7 +7747,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7761,7 +7763,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7777,7 +7779,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7793,7 +7795,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7809,7 +7811,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7825,7 +7827,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7841,7 +7843,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7857,7 +7859,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7873,7 +7875,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7889,7 +7891,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7905,7 +7907,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7921,7 +7923,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7937,7 +7939,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7953,7 +7955,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7969,7 +7971,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -7985,7 +7987,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8001,7 +8003,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8017,7 +8019,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8033,7 +8035,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8049,7 +8051,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8065,7 +8067,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8081,7 +8083,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8097,7 +8099,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8113,7 +8115,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8129,7 +8131,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8145,7 +8147,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8161,7 +8163,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8177,7 +8179,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8193,7 +8195,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8209,7 +8211,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8225,7 +8227,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8241,7 +8243,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8257,7 +8259,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8273,7 +8275,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8289,7 +8291,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8305,7 +8307,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8321,7 +8323,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8337,7 +8339,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8353,7 +8355,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8369,7 +8371,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8385,7 +8387,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8401,7 +8403,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8417,7 +8419,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8433,7 +8435,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8449,7 +8451,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8465,7 +8467,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8481,7 +8483,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8497,7 +8499,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8513,7 +8515,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8529,7 +8531,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8545,7 +8547,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8561,7 +8563,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8577,7 +8579,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8593,7 +8595,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8609,7 +8611,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8625,7 +8627,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8641,7 +8643,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8657,7 +8659,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8673,7 +8675,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8689,7 +8691,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8705,7 +8707,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8721,7 +8723,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8737,7 +8739,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8753,7 +8755,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8769,7 +8771,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8785,7 +8787,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8801,7 +8803,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8817,7 +8819,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8833,7 +8835,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8849,7 +8851,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8865,7 +8867,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8881,7 +8883,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8897,7 +8899,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8913,7 +8915,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8929,7 +8931,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8945,7 +8947,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8961,7 +8963,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8977,7 +8979,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -8993,7 +8995,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9009,7 +9011,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9025,7 +9027,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9041,7 +9043,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9057,7 +9059,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9073,7 +9075,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9089,7 +9091,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9105,7 +9107,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9121,7 +9123,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9137,7 +9139,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9153,7 +9155,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9169,7 +9171,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9185,7 +9187,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9201,7 +9203,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9217,7 +9219,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9233,7 +9235,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9249,7 +9251,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9265,7 +9267,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9281,7 +9283,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9297,7 +9299,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9313,7 +9315,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9329,7 +9331,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9345,7 +9347,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9361,7 +9363,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9377,7 +9379,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9393,7 +9395,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9409,7 +9411,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9425,7 +9427,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9441,7 +9443,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9457,7 +9459,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9473,7 +9475,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9489,7 +9491,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9505,7 +9507,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9521,7 +9523,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9537,7 +9539,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9553,7 +9555,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9569,7 +9571,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9585,7 +9587,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9601,7 +9603,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9617,7 +9619,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9633,7 +9635,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9649,7 +9651,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9665,7 +9667,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9681,7 +9683,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9697,7 +9699,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9713,7 +9715,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9729,7 +9731,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9745,7 +9747,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9761,7 +9763,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9777,7 +9779,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9793,7 +9795,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9809,7 +9811,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9825,7 +9827,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9841,7 +9843,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9857,7 +9859,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9873,7 +9875,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9889,7 +9891,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9905,7 +9907,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9921,7 +9923,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9937,7 +9939,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9953,7 +9955,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9969,7 +9971,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -9985,7 +9987,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10001,7 +10003,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10017,7 +10019,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10033,7 +10035,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10049,7 +10051,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10065,7 +10067,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10081,7 +10083,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10097,7 +10099,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10113,7 +10115,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10129,7 +10131,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10145,7 +10147,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10161,7 +10163,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10177,7 +10179,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10193,7 +10195,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10209,7 +10211,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10225,7 +10227,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10241,7 +10243,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10257,7 +10259,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10273,7 +10275,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10289,7 +10291,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10305,7 +10307,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10321,7 +10323,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10337,7 +10339,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10353,7 +10355,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10369,7 +10371,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10385,7 +10387,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10401,7 +10403,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10417,7 +10419,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10433,7 +10435,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10449,7 +10451,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10465,7 +10467,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10481,7 +10483,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10497,7 +10499,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10513,7 +10515,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10529,7 +10531,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10545,7 +10547,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10561,7 +10563,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10577,7 +10579,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10593,7 +10595,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10609,7 +10611,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10625,7 +10627,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10641,7 +10643,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10657,7 +10659,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10673,7 +10675,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10689,7 +10691,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10705,7 +10707,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10721,7 +10723,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10737,7 +10739,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10753,7 +10755,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10769,7 +10771,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10785,7 +10787,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10801,7 +10803,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10817,7 +10819,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10833,7 +10835,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10849,7 +10851,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10865,7 +10867,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10881,7 +10883,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10897,7 +10899,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10913,7 +10915,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10929,7 +10931,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10945,7 +10947,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10961,7 +10963,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10977,7 +10979,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -10993,7 +10995,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11009,7 +11011,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11025,7 +11027,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11041,7 +11043,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11057,7 +11059,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11073,7 +11075,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11089,7 +11091,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11105,7 +11107,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11121,7 +11123,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11137,7 +11139,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11153,7 +11155,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11169,7 +11171,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11185,7 +11187,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11201,7 +11203,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11217,7 +11219,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11233,7 +11235,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11249,7 +11251,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11265,7 +11267,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11281,7 +11283,7 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
 
@@ -11297,8 +11299,10 @@ place.angle = 0.0
 place.tilt = 0.0
     
 place.category_list = 'classroom'
-place.save!
+places << place
 
 #-------------------------------------------------
+
+Place.import places
 
 puts("Created #{Place.count} #{Place.to_s.pluralize.downcase}")
