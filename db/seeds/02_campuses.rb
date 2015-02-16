@@ -30,8 +30,8 @@ place.angle = 90
 place.tilt = 30
 place.floor = 1
 
-place.category_list = 'area'
 place.save!
+place.category_list = 'area, campus'
 
 @sj = Campus.where(abbreviation: 'SJ').first_or_initialize
 @sj.name = 'San Joaquín'
@@ -58,8 +58,8 @@ place.angle = 5
 place.tilt = 0
 place.floor = 1
 
-place.category_list = 'area'
 place.save!
+place.category_list = 'area, campus'
 
 @cc = Campus.where(abbreviation: 'CC').first_or_initialize
 @cc.name = 'Casa Central'
@@ -86,8 +86,8 @@ place.angle = 150
 place.tilt = 30
 place.floor = 1
 
-place.category_list = 'area'
 place.save!
+place.category_list = 'area, campus'
 
 @lc = Campus.where(abbreviation: 'LC').first_or_initialize
 @lc.name = 'Lo Contador'
@@ -114,8 +114,8 @@ place.angle = 0
 place.tilt = 0
 place.floor = 1
 
-place.category_list = 'area'
 place.save!
+place.category_list = 'area, campus'
 
 @co = Campus.where(abbreviation: 'OR').first_or_initialize
 @co.name = 'Campus Oriente'
@@ -142,8 +142,8 @@ place.angle = 0
 place.tilt = 0
 place.floor = 1
 
-place.category_list = 'area'
 place.save!
+place.category_list = 'area, campus'
 
 @vr = Campus.where(abbreviation: 'VR').first_or_initialize
 @vr.name = 'Villarica'

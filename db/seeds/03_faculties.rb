@@ -41,6 +41,7 @@ puts('Creating faculties')
 @agro.localization.zoom = 0
 @agro.localization.angle = 0
 @agro.localization.tilt = 0
+@agro.localization.category_list = 'area, faculty'
 @agro.save!
 
 
@@ -62,6 +63,7 @@ puts('Creating faculties')
 @fadeu.localization.zoom = 0
 @fadeu.localization.angle = 0
 @fadeu.localization.tilt = 0
+@fadeu.localization.category_list = 'area, faculty'
 @fadeu.save!
 
 
@@ -83,6 +85,7 @@ puts('Creating faculties')
 @artes.localization.zoom = 0
 @artes.localization.angle = 0
 @artes.localization.tilt = 0
+@artes.localization.category_list = 'area, faculty'
 @artes.save!
 
 
@@ -104,6 +107,7 @@ puts('Creating faculties')
 @bio.localization.zoom = 0
 @bio.localization.angle = 0
 @bio.localization.tilt = 0
+@bio.localization.category_list = 'area, faculty'
 @bio.save!
 
 
@@ -125,6 +129,7 @@ puts('Creating faculties')
 @eco.localization.zoom = 0
 @eco.localization.angle = 0
 @eco.localization.tilt = 0
+@eco.localization.category_list = 'area, faculty'
 @eco.save!
 
 
@@ -146,6 +151,7 @@ puts('Creating faculties')
 @sociales.localization.zoom = 0
 @sociales.localization.angle = 0
 @sociales.localization.tilt = 0
+@sociales.localization.category_list = 'area, faculty'
 @sociales.save!
 
 
@@ -167,6 +173,7 @@ puts('Creating faculties')
 @comunicaciones.localization.zoom = 0
 @comunicaciones.localization.angle = 0
 @comunicaciones.localization.tilt = 0
+@comunicaciones.localization.category_list = 'area, faculty'
 @comunicaciones.save!
 
 
@@ -188,6 +195,7 @@ puts('Creating faculties')
 @letras.localization.zoom = 0
 @letras.localization.angle = 0
 @letras.localization.tilt = 0
+@letras.localization.category_list = 'area, faculty'
 @letras.save!
 
 
@@ -209,6 +217,7 @@ puts('Creating faculties')
 @derecho.localization.zoom = 0
 @derecho.localization.angle = 0
 @derecho.localization.tilt = 0
+@derecho.localization.category_list = 'area, faculty'
 @derecho.save!
 
 
@@ -230,6 +239,7 @@ puts('Creating faculties')
 @educacion.localization.zoom = 0
 @educacion.localization.angle = 0
 @educacion.localization.tilt = 0
+@educacion.localization.category_list = 'area, faculty'
 @educacion.save!
 
 
@@ -251,6 +261,7 @@ puts('Creating faculties')
 @filosofia.localization.zoom = 0
 @filosofia.localization.angle = 0
 @filosofia.localization.tilt = 0
+@filosofia.localization.category_list = 'area, faculty'
 @filosofia.save!
 
 
@@ -272,6 +283,7 @@ puts('Creating faculties')
 @fisica.localization.zoom = 0
 @fisica.localization.angle = 0
 @fisica.localization.tilt = 0
+@fisica.localization.category_list = 'area, faculty'
 @fisica.save!
 
 
@@ -293,6 +305,7 @@ puts('Creating faculties')
 @historia.localization.zoom = 0
 @historia.localization.angle = 0
 @historia.localization.tilt = 0
+@historia.localization.category_list = 'area, faculty'
 @historia.save!
 
 
@@ -314,6 +327,7 @@ puts('Creating faculties')
 @construccion.localization.zoom = 0
 @construccion.localization.angle = 0
 @construccion.localization.tilt = 0
+@construccion.localization.category_list = 'area, faculty'
 @construccion.save!
 
 
@@ -335,6 +349,7 @@ puts('Creating faculties')
 @ingenieria.localization.zoom = 0
 @ingenieria.localization.angle = 0
 @ingenieria.localization.tilt = 0
+@ingenieria.localization.category_list = 'area, faculty'
 @ingenieria.save!
 
 
@@ -356,6 +371,7 @@ puts('Creating faculties')
 @matematica.localization.zoom = 0
 @matematica.localization.angle = 0
 @matematica.localization.tilt = 0
+@matematica.localization.category_list = 'area, faculty'
 @matematica.save!
 
 
@@ -377,6 +393,7 @@ puts('Creating faculties')
 @enfermeria.localization.zoom = 0
 @enfermeria.localization.angle = 0
 @enfermeria.localization.tilt = 0
+@enfermeria.localization.category_list = 'area, faculty'
 @enfermeria.save!
 
 
@@ -398,6 +415,7 @@ puts('Creating faculties')
 @medicina.localization.zoom = 0
 @medicina.localization.angle = 0
 @medicina.localization.tilt = 0
+@medicina.localization.category_list = 'area, faculty'
 @medicina.save!
 
 
@@ -421,6 +439,7 @@ puts('Creating faculties')
 @quimica.localization.zoom = 0
 @quimica.localization.angle = 0
 @quimica.localization.tilt = 0
+@quimica.localization.category_list = 'area, faculty'
 @quimica.save!
 
 
@@ -444,6 +463,7 @@ puts('Creating faculties')
 @teologia.localization.zoom = 0
 @teologia.localization.angle = 0
 @teologia.localization.tilt = 0
+@teologia.localization.category_list = 'area, faculty'
 @teologia.save!
 
 
@@ -467,6 +487,7 @@ puts('Creating faculties')
 @villarica.localization.zoom = 0
 @villarica.localization.angle = 0
 @villarica.localization.tilt = 0
+@villarica.localization.category_list = 'area, faculty'
 @villarica.save!
 
 
@@ -490,6 +511,7 @@ puts('Creating faculties')
 @college.localization.zoom = 0
 @college.localization.angle = 0
 @college.localization.tilt = 0 
+@college.localization.category_list = 'area, faculty'
 @college.save!
 
 

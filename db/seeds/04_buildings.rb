@@ -40,6 +40,7 @@ puts('Creating buildings')
 @cdi.localization.zoom = 0
 @cdi.localization.angle = 0
 @cdi.localization.tilt = 0
+@cdi.localization.category_list = 'area, building'
 @cdi.save!
 
 
@@ -62,6 +63,7 @@ puts('Creating buildings')
 @hallsj.localization.zoom = 0
 @hallsj.localization.angle = 0
 @hallsj.localization.tilt = 0
+@hallsj.localization.category_list = 'area, building'
 @hallsj.save!
 
 
@@ -84,6 +86,7 @@ puts('Creating buildings')
 @al.localization.zoom = 0
 @al.localization.angle = 0
 @al.localization.tilt = 0
+@al.localization.category_list = 'area, building'
 @al.save!
 
 
@@ -106,6 +109,7 @@ puts('Creating buildings')
 @templo.localization.zoom = 0
 @templo.localization.angle = 0
 @templo.localization.tilt = 0
+@templo.localization.category_list = 'area, building'
 @templo.save!
 
 

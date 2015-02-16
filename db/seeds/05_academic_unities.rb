@@ -33,6 +33,7 @@ puts('Creating Academic Unities')
 @a_agro.localization.zoom = 0
 @a_agro.localization.angle = 0
 @a_agro.localization.tilt = 0
+@a_agro.localization.category_list = 'area, academic_unity'
 @a_agro.save!
 
 @a_arq = AcademicUnity.where(abbreviation: 'ARQ').first_or_initialize
@@ -48,6 +49,7 @@ puts('Creating Academic Unities')
 @a_arq.localization.zoom = 0
 @a_arq.localization.angle = 0
 @a_arq.localization.tilt = 0
+@a_arq.localization.category_list = 'area, academic_unity'
 @a_arq.save!
 
 @a_art = AcademicUnity.where(abbreviation: 'ART').first_or_initialize
@@ -69,6 +71,7 @@ puts('Creating Academic Unities')
 @a_astro.localization.zoom = 0
 @a_astro.localization.angle = 0
 @a_astro.localization.tilt = 0
+@a_astro.localization.category_list = 'area, academic_unity'
 @a_astro.save!
 
 @a_bio = AcademicUnity.where(abbreviation: 'BIO').first_or_initialize
@@ -84,6 +87,7 @@ puts('Creating Academic Unities')
 @a_bio.localization.zoom = 0
 @a_bio.localization.angle = 0
 @a_bio.localization.tilt = 0
+@a_bio.localization.category_list = 'area, academic_unity'
 @a_bio.save!
 
 @a_salud = AcademicUnity.where(abbreviation: 'CS').first_or_initialize
@@ -99,6 +103,7 @@ puts('Creating Academic Unities')
 @a_salud.localization.zoom = 0
 @a_salud.localization.angle = 0
 @a_salud.localization.tilt = 0
+@a_salud.localization.category_list = 'area, academic_unity'
 @a_salud.save!
 
 @a_eco = AcademicUnity.where(abbreviation: @eco.abbreviation).first_or_initialize
@@ -114,6 +119,7 @@ puts('Creating Academic Unities')
 @a_eco.localization.zoom = 0
 @a_eco.localization.angle = 0
 @a_eco.localization.tilt = 0
+@a_eco.localization.category_list = 'area, academic_unity'
 @a_eco.save!
 
 @a_politica = AcademicUnity.where(abbreviation: 'ICP').first_or_initialize
@@ -129,6 +135,7 @@ puts('Creating Academic Unities')
 @a_politica.localization.zoom = 0
 @a_politica.localization.angle = 0
 @a_politica.localization.tilt = 0
+@a_politica.localization.category_list = 'area, academic_unity'
 @a_politica.save!
 
 @a_college = AcademicUnity.where(abbreviation: @college.abbreviation).first_or_initialize
@@ -144,6 +151,7 @@ puts('Creating Academic Unities')
 @a_college.localization.zoom = 0
 @a_college.localization.angle = 0
 @a_college.localization.tilt = 0
+@a_college.localization.category_list = 'area, academic_unity'
 @a_college.save!
 
 @a_com = AcademicUnity.where(abbreviation: @comunicaciones.abbreviation).first_or_initialize
@@ -159,6 +167,7 @@ puts('Creating Academic Unities')
 @a_com.localization.zoom = 0
 @a_com.localization.angle = 0
 @a_com.localization.tilt = 0
+@a_com.localization.category_list = 'area, academic_unity'
 @a_com.save!
 
 @a_cc = AcademicUnity.where(abbreviation: @construccion.abbreviation).first_or_initialize
@@ -174,6 +183,7 @@ puts('Creating Academic Unities')
 @a_cc.localization.zoom = 0
 @a_cc.localization.angle = 0
 @a_cc.localization.tilt = 0
+@a_cc.localization.category_list = 'area, academic_unity'
 @a_cc.save!
 
 @a_der = AcademicUnity.where(abbreviation: @derecho.abbreviation).first_or_initialize
@@ -189,6 +199,7 @@ puts('Creating Academic Unities')
 @a_der.localization.zoom = 0
 @a_der.localization.angle = 0
 @a_der.localization.tilt = 0
+@a_der.localization.category_list = 'area, academic_unity'
 @a_der.save!
 
 @a_dno = AcademicUnity.where(abbreviation: 'DNO').first_or_initialize
@@ -204,6 +215,7 @@ puts('Creating Academic Unities')
 @a_dno.localization.zoom = 0
 @a_dno.localization.angle = 0
 @a_dno.localization.tilt = 0
+@a_dno.localization.category_list = 'area, academic_unity'
 @a_dno.save!
 
 @a_edu = AcademicUnity.where(abbreviation: @educacion.abbreviation).first_or_initialize
@@ -219,6 +231,7 @@ puts('Creating Academic Unities')
 @a_edu.localization.zoom = 0
 @a_edu.localization.angle = 0
 @a_edu.localization.tilt = 0
+@a_edu.localization.category_list = 'area, academic_unity'
 @a_edu.save!
 
 @a_enf = AcademicUnity.where(abbreviation: @enfermeria.abbreviation).first_or_initialize
@@ -234,6 +247,7 @@ puts('Creating Academic Unities')
 @a_enf.localization.zoom = 0
 @a_enf.localization.angle = 0
 @a_enf.localization.tilt = 0
+@a_enf.localization.category_list = 'area, academic_unity'
 @a_enf.save!
 
 @a_est = AcademicUnity.where(abbreviation: 'EST').first_or_initialize
@@ -255,6 +269,7 @@ puts('Creating Academic Unities')
 @a_urb.localization.zoom = 0
 @a_urb.localization.angle = 0
 @a_urb.localization.tilt = 0
+@a_urb.localization.category_list = 'area, academic_unity'
 @a_urb.save!
 
 @a_fil = AcademicUnity.where(abbreviation: @filosofia.abbreviation).first_or_initialize
@@ -270,6 +285,7 @@ puts('Creating Academic Unities')
 @a_fil.localization.zoom = 0
 @a_fil.localization.angle = 0
 @a_fil.localization.tilt = 0
+@a_fil.localization.category_list = 'area, academic_unity'
 @a_fil.save!
 
 @a_fis = AcademicUnity.where(abbreviation: @fisica.abbreviation).first_or_initialize
@@ -285,6 +301,7 @@ puts('Creating Academic Unities')
 @a_fis.localization.zoom = 0
 @a_fis.localization.angle = 0
 @a_fis.localization.tilt = 0
+@a_fis.localization.category_list = 'area, academic_unity'
 @a_fis.save!
 
 @a_geo = AcademicUnity.where(abbreviation: 'GEO').first_or_initialize
@@ -300,6 +317,7 @@ puts('Creating Academic Unities')
 @a_geo.localization.zoom = 0
 @a_geo.localization.angle = 0
 @a_geo.localization.tilt = 0
+@a_geo.localization.category_list = 'area, academic_unity'
 @a_geo.save!
 
 @a_his = AcademicUnity.where(abbreviation: 'HIS').first_or_initialize
@@ -315,6 +333,7 @@ puts('Creating Academic Unities')
 @a_his.localization.zoom = 0
 @a_his.localization.angle = 0
 @a_his.localization.tilt = 0
+@a_his.localization.category_list = 'area, academic_unity'
 @a_his.save!
 
 @a_ing = AcademicUnity.where(abbreviation: @ingenieria.abbreviation).first_or_initialize
@@ -330,6 +349,7 @@ puts('Creating Academic Unities')
 @a_ing.localization.zoom = 0
 @a_ing.localization.angle = 0
 @a_ing.localization.tilt = 0
+@a_ing.localization.category_list = 'area, academic_unity'
 @a_ing.save!
 
 @a_let = AcademicUnity.where(abbreviation: @letras.abbreviation).first_or_initialize
@@ -345,6 +365,7 @@ puts('Creating Academic Unities')
 @a_let.localization.zoom = 0
 @a_let.localization.angle = 0
 @a_let.localization.tilt = 0
+@a_let.localization.category_list = 'area, academic_unity'
 @a_let.save!
 
 @a_mat = AcademicUnity.where(abbreviation: @matematica.abbreviation).first_or_initialize
@@ -360,6 +381,7 @@ puts('Creating Academic Unities')
 @a_mat.localization.zoom = 0
 @a_mat.localization.angle = 0
 @a_mat.localization.tilt = 0
+@a_mat.localization.category_list = 'area, academic_unity'
 @a_mat.save!
 
 @a_med = AcademicUnity.where(abbreviation: @medicina.abbreviation).first_or_initialize
@@ -375,6 +397,7 @@ puts('Creating Academic Unities')
 @a_med.localization.zoom = 0
 @a_med.localization.angle = 0
 @a_med.localization.tilt = 0
+@a_med.localization.category_list = 'area, academic_unity'
 @a_med.save!
 
 @a_musica = AcademicUnity.where(abbreviation: 'MUC').first_or_initialize
@@ -396,6 +419,7 @@ puts('Creating Academic Unities')
 @a_odonto.localization.zoom = 0
 @a_odonto.localization.angle = 0
 @a_odonto.localization.tilt = 0
+@a_odonto.localization.category_list = 'area, academic_unity'
 @a_odonto.save!
 
 @a_psi = AcademicUnity.where(abbreviation: 'PSI').first_or_initialize
@@ -411,6 +435,7 @@ puts('Creating Academic Unities')
 @a_psi.localization.zoom = 0
 @a_psi.localization.angle = 0
 @a_psi.localization.tilt = 0
+@a_psi.localization.category_list = 'area, academic_unity'
 @a_psi.save!
 
 @a_quim = AcademicUnity.where(abbreviation: @quimica.abbreviation).first_or_initialize
@@ -426,6 +451,7 @@ puts('Creating Academic Unities')
 @a_quim.localization.zoom = 0
 @a_quim.localization.angle = 0
 @a_quim.localization.tilt = 0
+@a_quim.localization.category_list = 'area, academic_unity'
 @a_quim.save!
 
 @a_socio = AcademicUnity.where(abbreviation: 'SOL').first_or_initialize
@@ -441,6 +467,7 @@ puts('Creating Academic Unities')
 @a_socio.localization.zoom = 0
 @a_socio.localization.angle = 0
 @a_socio.localization.tilt = 0
+@a_socio.localization.category_list = 'area, academic_unity'
 @a_socio.save!
 
 @a_act = AcademicUnity.where(abbreviation: 'ACT').first_or_initialize
@@ -462,6 +489,7 @@ puts('Creating Academic Unities')
 @a_teo.localization.zoom = 0
 @a_teo.localization.angle = 0
 @a_teo.localization.tilt = 0
+@a_teo.localization.category_list = 'area, academic_unity'
 @a_teo.save!
 
 @a_social = AcademicUnity.where(abbreviation: 'TS').first_or_initialize
@@ -477,6 +505,7 @@ puts('Creating Academic Unities')
 @a_social.localization.zoom = 0
 @a_social.localization.angle = 0
 @a_social.localization.tilt = 0
+@a_social.localization.category_list = 'area, academic_unity'
 @a_social.save!
 
 @a_vr = AcademicUnity.where(abbreviation: @villarica.abbreviation).first_or_initialize
@@ -492,6 +521,7 @@ puts('Creating Academic Unities')
 @a_vr.localization.zoom = 0
 @a_vr.localization.angle = 0
 @a_vr.localization.tilt = 0
+@a_vr.localization.category_list = 'area, academic_unity'
 @a_vr.save!
 
 puts("Created #{AcademicUnity.count} #{AcademicUnity.to_s.pluralize.downcase}")
