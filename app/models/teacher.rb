@@ -35,8 +35,8 @@ class Teacher < ActiveRecord::Base
                     :default_url => '/images/teachers/default/:style.png'
   validates_attachment :avatar,  :content_type => { :content_type => %w(image/jpeg image/jpg image/gif image/png)}
 
-  has_and_belongs_to_many :sections, dependent: :destroy
-  has_and_belongs_to_many :academic_unities, dependent: :destroy
+  has_and_belongs_to_many :sections, -> { uniq }, dependent: :destroy
+  has_and_belongs_to_many :academic_unities, -> { uniq }, dependent: :destroy
 
   def faculties
     Faculty.joins(:academic_unities).merge(academic_unities)

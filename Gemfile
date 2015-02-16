@@ -7,6 +7,7 @@ gem 'rails-api'
 
 # Database
 gem 'pg'
+gem 'activerecord-import'
 
 # Server
 gem 'puma'
