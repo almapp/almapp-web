@@ -38,7 +38,7 @@ module Api
 
 			# Set strong params for the item. Remember to change :item for the actual name
 			def item_params
-				params.require(:course).permit(:initials, :name, :credits, :availability, :academic_unity_id, :information, :capacity, :enrolled)
+				params.require(:course).permit(:initials, :name, :credits, :availability, :academic_unity_id, :information)
 			end
 
 			# Custom params to filter
