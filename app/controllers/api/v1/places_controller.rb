@@ -41,7 +41,7 @@ module Api
 			# Custom params to filter
 			def query_params
 				# allowing us to filter by this
-				params.permit(:identifier, :name, :service, :area_id, :area_type, :floor)
+				params.permit(:id, :identifier, :name, :service, :area_id, :area_type, :floor)
 			end
 		end
 	end
