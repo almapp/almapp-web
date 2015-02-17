@@ -75,3 +75,5 @@ public/paperclip_images
 # Certificates
 private/apple/sandbox.pem
 private/apple/sandbox.pem
+
+dump.rdb

@@ -13,6 +13,7 @@
 #  comments_count :integer          default(0), not null
 #  likes_count    :integer          default(0), not null
 #  dislikes_count :integer          default(0), not null
+#  identifier     :string(255)      not null
 #
 
 class Section < ActiveRecord::Base
@@ -26,6 +27,7 @@ class Section < ActiveRecord::Base
   validates :period, presence: true, numericality: {greater_than_or_equal_to: 0}
   validates :year, presence: true, numericality: {greater_than_or_equal_to: 0}
   validates_uniqueness_of :course_id, scope: [:number, :year, :period]
+  validates_uniqueness_of :identifier, scope: [:year, :period]
 
   belongs_to :course
 
@@ -55,21 +57,22 @@ class Section < ActiveRecord::Base
     where(course: course).pluck(:year, :period).uniq
   end
 
-  def identifier
+  def expected_identifier
     "#{self.course.initials}-#{self.number}"
   end
 
-  def self.find_by_identifier(identifier = '', year = current_year, period = current_period)
-    array = identifier.split('-')
-    if array.size == 2
-      find_by_name_and_number(array[0], array[1], year, period)
-    else
-      find_by_name_and_number(identifier, 1, year, period)
-    end
-  end
 
-  def self.find_by_name_and_number(initials, number, year = current_year, period = current_period)
-    period(year, period).where(number: number).joins(:course).merge(Course.where(initials: initials)).first
-  end
+  # def self.find_by_identifier(identifier = '', year = current_year, period = current_period)
+  #   array = identifier.split('-')
+  #   if array.size == 2
+  #     find_by_name_and_number(array[0], array[1], year, period)
+  #   else
+  #     find_by_name_and_number(identifier, 1, year, period)
+  #   end
+  # end
+  #
+  # def self.find_by_name_and_number(initials, number, year = current_year, period = current_period)
+  #   period(year, period).where(number: number).joins(:course).merge(Course.where(initials: initials)).first
+  # end
 
 end

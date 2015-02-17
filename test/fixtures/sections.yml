@@ -13,6 +13,7 @@
 #  comments_count :integer          default(0), not null
 #  likes_count    :integer          default(0), not null
 #  dislikes_count :integer          default(0), not null
+#  identifier     :string(255)      not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

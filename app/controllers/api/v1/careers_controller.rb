@@ -36,7 +36,7 @@ module Api
 
 			# Set strong params for the item. Remember to change :item for the actual name
 			def item_params
-				params.require(:career).permit(:name, :url, :curriculum_url, :academic_unity_id, :information)
+				params.require(:career).permit(:name, :url, :academic_unity_id, :information)
 			end
 
 			# Custom params to filter

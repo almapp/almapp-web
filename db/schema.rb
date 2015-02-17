@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213030206) do
+ActiveRecord::Schema.define(version: 20150217003225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,16 +47,6 @@ ActiveRecord::Schema.define(version: 20150213030206) do
   add_index "academic_unities_teachers", ["academic_unity_id"], name: "index_academic_unities_teachers_on_academic_unity_id", using: :btree
   add_index "academic_unities_teachers", ["teacher_id", "academic_unity_id"], name: "index_academic_teachers_on_teacher_id_and_academic_unity_id", unique: true, using: :btree
   add_index "academic_unities_teachers", ["teacher_id"], name: "index_academic_unities_teachers_on_teacher_id", using: :btree
-
-  create_table "api_keys", force: true do |t|
-    t.string   "client",        default: "",   null: false
-    t.string   "key",           default: "",   null: false
-    t.string   "contact_name",  default: "",   null: false
-    t.string   "contact_email", default: "",   null: false
-    t.boolean  "valid_key",     default: true, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "assistantships", force: true do |t|
     t.integer  "section_id", null: false
@@ -119,7 +109,6 @@ ActiveRecord::Schema.define(version: 20150213030206) do
   create_table "careers", force: true do |t|
     t.string   "name",                           null: false
     t.string   "url"
-    t.string   "curriculum_url"
     t.integer  "academic_unity_id"
     t.text     "information",       default: ""
     t.datetime "created_at"
@@ -562,9 +551,11 @@ ActiveRecord::Schema.define(version: 20150213030206) do
     t.integer  "comments_count", default: 0,  null: false
     t.integer  "likes_count",    default: 0,  null: false
     t.integer  "dislikes_count", default: 0,  null: false
+    t.string   "identifier",                  null: false
   end
 
   add_index "sections", ["course_id"], name: "index_sections_on_course_id", using: :btree
+  add_index "sections", ["identifier", "year", "period"], name: "index_sections_on_identifier_and_year_and_period", unique: true, using: :btree
 
   create_table "sections_teachers", id: false, force: true do |t|
     t.integer "teacher_id", null: false

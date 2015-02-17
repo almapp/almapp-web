@@ -24,11 +24,11 @@ class UCAccountLoader < AccountLoader
     doc = Nokogiri::HTML(response.body)
     lt = doc.at('input[@name="lt"]')['value']
     execution = doc.at('input[@name="execution"]')['value']
-    eventId = doc.at('input[@name="_eventId"]')['value']
+    event_id = doc.at('input[@name="_eventId"]')['value']
 
     cookie = response.response['set-cookie'].split('; ')[0]
 
-    data = "username=#{username}&password=#{password}&lt=#{lt}&execution=#{execution}&_eventId=#{eventId}"
+    data = "username=#{username}&password=#{password}&lt=#{lt}&execution=#{execution}&_eventId=#{event_id}"
     headers = {
     'Content-Type' => 'application/x-www-form-urlencoded',
     'Cookie' => cookie,
@@ -75,10 +75,10 @@ class UCAccountLoader < AccountLoader
 
     portal_logged_response = portal_login(cas_logged_redirect)
     @portal_cookie = portal_logged_response['Set-Cookie'].split(';')[0]
-    portal_redirect = portal_logged_response['Location']
+    # portal_redirect = portal_logged_response['Location']
 
-    final_response = final_login(portal_redirect, @portal_cookie)
-    final_cookie = final_response['Set-Cookie']
+    # final_response = final_login(portal_redirect, @portal_cookie)
+    # final_cookie = final_response['Set-Cookie']
 
     uri = URI.parse('https://portal.uc.cl')
     @http = Net::HTTP.new(uri.host, uri.port)
@@ -90,22 +90,28 @@ class UCAccountLoader < AccountLoader
     user.assign_attributes(profile_data)
     if user.save!
 
-      sections = get_sections
+      #sections = get_sections
 
-      sections.each do |section|
-        user.sections << section unless user.sections.include?(section)
-      end
+      #sections.each do |section|
+      #  user.sections << section unless user.sections.include?(section)
+      #end
+
+      sectionsuser.import (get_sections - user.sections).map { |section| sectionsuser.new(user: user, section: section) }
 
       careers_data = get_career
       careers_data.each do |career_data|
-        career = Career.where(name: career_data[:career]).first_or_create
-        enroll = EnrolledCareer.where(user: user, career: career).first_or_create
+        career = career.where(name: career_data[:career]).first_or_create
+        enroll = enrolledcareer.where(user: user, career: career).first_or_initialize
         enroll.curriculum = career_data[:curriculum]
         enroll.student_id = career_data[:student_id]
-
+        enroll.save!
       end
 
-      user.avatar = get_profile_pic
+      profile_pic = get_profile_pic
+      user.avatar = profile_pic
+
+      profile_pic.close
+      profile_pic.unlink
 
       (user.save!) ? user : nil
     end
@@ -124,33 +130,28 @@ class UCAccountLoader < AccountLoader
     File.open(tempfile.path,'wb') do |f|
       f.write response.body
     end
-    return tempfile
+    tempfile
   end
 
   def get_career
     response = request(CAREER_PATH)
     doc = Nokogiri::HTML(response.body)
 
-    careers = []
-
     table = doc.xpath('//table[@class="IP-tabla"]/tbody/tr')
     table = table[2..table.size]
-    table.each do |career_data|
-      data = table.xpath('//td[@class="IP-alumno-td"]')
+    table.map do |career_data|
+      data = career_data.xpath('//td[@class="IP-alumno-td"]')
 
       career_and_curriculum = data[1].text
 
-      data = {
+      {
       student_id: data[0].text,
       curriculum: career_and_curriculum.split(' - ')[0].delete(' '),
       career: career_and_curriculum.split(' - ')[1],
       ingress_year: data[2].text,
       ingress_period: data[3].text
       }
-
-      careers << data
     end
-    return careers
   end
 
   def get_profile
@@ -164,7 +165,6 @@ class UCAccountLoader < AccountLoader
     tr.each do |f|
       key = f.xpath('th').first.text
       value = f.xpath('td').first.text
-      puts "#{key} : #{value}"
 
       if key.present? && value.present?
         value = value.titleize
@@ -185,12 +185,15 @@ class UCAccountLoader < AccountLoader
     response = request(SCHEDULE_PATH)
     doc = Nokogiri::HTML(response.body)
 
-    sections = []
-    doc.xpath('//td[@class="hc-uportal-td2 hc-td"]').each do |node|
-      section = Section.find_by_identifier(node.text)
-      sections << section if section.present?
-    end
-    return sections
+    identifiers = doc.xpath('//td[@class="hc-uportal-td2 hc-td"]').map { |node| node.text }
+    Section.where(identifier: identifiers, year: current_year, period: current_period)
+
+
+    # identifiers = doc.xpath('//td[@class="hc-uportal-td2 hc-td"]').inject([]) do |result, node|
+    #   section = Section.find_by_identifier(node.text)
+    #   result << section if section.present?
+    #   result
+    # end
   end
 
   def logout(login_cookies)

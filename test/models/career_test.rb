@@ -5,7 +5,6 @@
 #  id                :integer          not null, primary key
 #  name              :string(255)      not null
 #  url               :string(255)
-#  curriculum_url    :string(255)
 #  academic_unity_id :integer
 #  information       :text             default("")
 #  created_at        :datetime

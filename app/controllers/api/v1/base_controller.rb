@@ -3,7 +3,7 @@ module Api
     class BaseController < ApplicationController
       include ControllerHelpers::V1
 
-      MAX_ITEMS = 10
+      MAX_ITEMS = 5
       LIKE_BOOST = 5
       DISLIKE_BOOST = 3
       COMMENT_BOOST = 10
