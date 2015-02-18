@@ -20,20 +20,22 @@ Doorkeeper.configure do
 
 
   resource_owner_from_credentials do |routes|
-    user = User.find_for_database_authentication(:email => params[:username])
-    if user.present?
-      user if user.valid_password?(params[:password])
-    else
-      slug = params[:organization]
-      #return nil unless slug.present? && slug.size != 0
+    if params[:password] && params[:username]
+      user = User.find_for_database_authentication(:email => params[:username])
+      if user.present?
+        user if user.valid_password?(params[:password])
+      else
+        slug = params[:organization]
+        #return nil unless slug.present? && slug.size != 0
 
-      user = User.new(email: params[:username],
-                         organization: Organization.where("lower(abbreviation) = ?", slug.downcase).first,
-                         password:params[:password],
-                         password_confirmation:params[:password])
+        user = User.new(email: params[:username],
+                        organization: Organization.where("lower(abbreviation) = ?", slug.downcase).first,
+                        password:params[:password],
+                        password_confirmation:params[:password])
 
-      account_loader = UCAccountLoader.new
-      account_loader.prepare_user(user, params[:password])
+        account_loader = UCAccountLoader.new
+        account_loader.prepare_user(user, params[:password])
+      end
     end
   end
 
