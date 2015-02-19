@@ -36,6 +36,7 @@ puts('Creating places')
 # cash_machine
 # bank
 # library
+# lab
 # other
 
 uc = Organization.where(abbreviation: 'UC').first_or_initialize
@@ -4332,7 +4333,7 @@ place.save!
 
 place = Place.where(identifier: 'centro_prev_cancer_diges').first_or_initialize
 place.name = 'Centro de Prevención de Cáncer Digistivo'
-place.area = sj
+place.area = cc
 place.latitude = -33.441546
 place.longitude = -70.640279
 place.floor = '1'
@@ -4341,14 +4342,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'ciencias_materiales').first_or_initialize
 place.name = 'Ciencia de los Materiales'
-place.area = sj
+place.area = fisica
 place.latitude = -33.499558
 place.longitude = -70.611290
 place.floor = '1'
@@ -4357,55 +4358,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'BIO').first_or_initialize
-place.name = 'Ciencias Biológicas'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'D').first_or_initialize
-place.name = 'College'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'college_uc').first_or_initialize
-place.name = 'College UC'
-place.area = sj
-place.latitude = -33.500422
-place.longitude = -70.611161
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
+place.category_list = 'lab'
 place.save!
 
 #-------------------------------------------------
@@ -4421,14 +4374,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'Computacion_SA').first_or_initialize
 place.name = 'Computación'
-place.area = sj
+place.area = a_ing
 place.latitude = -33.499145
 place.longitude = -70.615123
 place.floor = '1'
@@ -4437,14 +4390,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc1').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_ing
 place.latitude = -33.499145
 place.longitude = -70.615123
 place.floor = '1'
@@ -4453,14 +4406,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc10').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = quimica
 place.latitude = -33.498915
 place.longitude = -70.610695
 place.floor = '1'
@@ -4469,14 +4422,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc11').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = cc
 place.latitude = -33.441303
 place.longitude = -70.640081
 place.floor = '?'
@@ -4485,14 +4438,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc2').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_eco
 place.latitude = -33.496921
 place.longitude = -70.611203
 place.floor = '1'
@@ -4501,14 +4454,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc3').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_enf
 place.latitude = -33.499045
 place.longitude = -70.613138
 place.floor = '1'
@@ -4517,14 +4470,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc4').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.498967
 place.longitude = -70.613442
 place.floor = '1'
@@ -4533,14 +4486,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc5').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_ing
 place.latitude = -33.499683
 place.longitude = -70.613110
 place.floor = '1'
@@ -4549,14 +4502,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc6').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_ing
 place.latitude = -33.499674
 place.longitude = -70.612956
 place.floor = '1'
@@ -4565,14 +4518,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc7').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500404
 place.longitude = -70.611025
 place.floor = '1'
@@ -4581,14 +4534,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc8').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500620
 place.longitude = -70.610785
 place.floor = '1'
@@ -4597,14 +4550,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'pc9').first_or_initialize
 place.name = 'Computadores'
-place.area = sj
+place.area = a_salud
 place.latitude = -33.500547
 place.longitude = -70.610029
 place.floor = '1'
@@ -4613,30 +4566,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'COM').first_or_initialize
-place.name = 'Comunicaciones'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
+place.category_list = 'computers'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'correspondencia_cc').first_or_initialize
 place.name = 'Correspondencia'
-place.area = sj
+place.area = cc
 place.latitude = -33.440899
 place.longitude = -70.641083
 place.floor = '?'
@@ -4645,14 +4582,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'almuerzo12').first_or_initialize
-place.name = 'Cómida'
-place.area = sj
+place.name = 'Comida'
+place.area = co
 place.latitude = -33.445119
 place.longitude = -70.593593
 place.floor = '1'
@@ -4661,14 +4598,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'food_lunch'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'D101').first_or_initialize
 place.name = 'D101'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500558
 place.longitude = -70.611208
 place.floor = '1'
@@ -4684,7 +4621,7 @@ place.save!
 
 place = Place.where(identifier: 'D104').first_or_initialize
 place.name = 'D104'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500515
 place.longitude = -70.611019
 place.floor = '1'
@@ -4700,7 +4637,7 @@ place.save!
 
 place = Place.where(identifier: 'D201').first_or_initialize
 place.name = 'D201'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500563
 place.longitude = -70.611268
 place.floor = '2'
@@ -4716,7 +4653,7 @@ place.save!
 
 place = Place.where(identifier: 'D202').first_or_initialize
 place.name = 'D202'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500563
 place.longitude = -70.611241
 place.floor = '2'
@@ -4732,7 +4669,7 @@ place.save!
 
 place = Place.where(identifier: 'D203').first_or_initialize
 place.name = 'D203'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500587
 place.longitude = -70.611018
 place.floor = '2'
@@ -4748,7 +4685,7 @@ place.save!
 
 place = Place.where(identifier: 'D204').first_or_initialize
 place.name = 'D204'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500598
 place.longitude = -70.610932
 place.floor = '2'
@@ -4764,7 +4701,7 @@ place.save!
 
 place = Place.where(identifier: 'D301').first_or_initialize
 place.name = 'D301'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500581
 place.longitude = -70.611225
 place.floor = '3'
@@ -4780,7 +4717,7 @@ place.save!
 
 place = Place.where(identifier: 'D302').first_or_initialize
 place.name = 'D302'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500579
 place.longitude = -70.611166
 place.floor = '3'
@@ -4796,7 +4733,7 @@ place.save!
 
 place = Place.where(identifier: 'D303').first_or_initialize
 place.name = 'D303'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500590
 place.longitude = -70.611072
 place.floor = '3'
@@ -4812,7 +4749,7 @@ place.save!
 
 place = Place.where(identifier: 'D304').first_or_initialize
 place.name = 'D304'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500607
 place.longitude = -70.610919
 place.floor = '3'
@@ -4828,7 +4765,7 @@ place.save!
 
 place = Place.where(identifier: 'D305').first_or_initialize
 place.name = 'D305'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500618
 place.longitude = -70.610737
 place.floor = '3'
@@ -4844,7 +4781,7 @@ place.save!
 
 place = Place.where(identifier: 'D306').first_or_initialize
 place.name = 'D306'
-place.area = sj
+place.area = a_college
 place.latitude = -33.500633
 place.longitude = -70.610636
 place.floor = '3'
@@ -4860,7 +4797,7 @@ place.save!
 
 place = Place.where(identifier: 'DAE').first_or_initialize
 place.name = 'DAE'
-place.area = sj
+place.area = al
 place.latitude = -33.497909
 place.longitude = -70.608993
 place.floor = '?'
@@ -4869,14 +4806,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'dae_cc').first_or_initialize
 place.name = 'DAE'
-place.area = sj
+place.area = cc
 place.latitude = -33.441281
 place.longitude = -70.640251
 place.floor = '1'
@@ -4885,14 +4822,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'DARA').first_or_initialize
 place.name = 'DARA'
-place.area = sj
+place.area = hallsj
 place.latitude = -33.497763
 place.longitude = -70.613103
 place.floor = '?'
@@ -4901,14 +4838,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'DASE').first_or_initialize
 place.name = 'DASE'
-place.area = sj
+place.area = hallsj
 place.latitude = -33.497840
 place.longitude = -70.613116
 place.floor = '?'
@@ -4917,7 +4854,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
@@ -4933,14 +4870,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'DICTUC_SA').first_or_initialize
 place.name = 'DICTUD'
-place.area = sj
+place.area = a_ing
 place.latitude = -33.498952
 place.longitude = -70.614970
 place.floor = '1'
@@ -4949,14 +4886,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'def_solidos').first_or_initialize
 place.name = 'Defectos en Sólidos'
-place.area = sj
+place.area = fisica
 place.latitude = -33.499558
 place.longitude = -70.611290
 place.floor = '1'
@@ -4965,7 +4902,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'lab'
 place.save!
 
 #-------------------------------------------------
@@ -5071,38 +5008,6 @@ place.name = 'Departamento de Registros y Servicios'
 place.area = sj
 place.latitude = -33.441110
 place.longitude = -70.640691
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'DPT').first_or_initialize
-place.name = 'Deportes'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'DEC').first_or_initialize
-place.name = 'Derecho'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
 place.floor = '1'
 place.information = nil
 place.zoom = 0.0
@@ -5258,25 +5163,9 @@ place.save!
 
 #-------------------------------------------------
 
-place = Place.where(identifier: 'DIS').first_or_initialize
-place.name = 'Diseño'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
 place = Place.where(identifier: 'doc_lc').first_or_initialize
 place.name = 'Doctorados'
-place.area = sj
+place.area = lc
 place.latitude = -33.418620
 place.longitude = -70.616706
 place.floor = '1'
@@ -5292,7 +5181,7 @@ place.save!
 
 place = Place.where(identifier: 'domo1').first_or_initialize
 place.name = 'Domo'
-place.area = sj
+place.area = a_enf
 place.latitude = -33.499343
 place.longitude = -70.613116
 place.floor = '1'
@@ -5301,14 +5190,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'study'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'domo2').first_or_initialize
 place.name = 'Domo'
-place.area = sj
+place.area = a_enf
 place.latitude = -33.499823
 place.longitude = -70.612897
 place.floor = '1'
@@ -5317,14 +5206,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'study'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'domo_ING').first_or_initialize
 place.name = 'Domos de Ingeniería'
-place.area = sj
+place.area = a_ing
 place.latitude = -33.499823
 place.longitude = -70.612897
 place.floor = '1'
@@ -5333,14 +5222,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'study'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'E10').first_or_initialize
 place.name = 'E10'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.499134
 place.longitude = -70.614200
 place.floor = '1'
@@ -5356,7 +5245,7 @@ place.save!
 
 place = Place.where(identifier: 'E11').first_or_initialize
 place.name = 'E11'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.499022
 place.longitude = -70.614178
 place.floor = '1'
@@ -5372,7 +5261,7 @@ place.save!
 
 place = Place.where(identifier: 'E12').first_or_initialize
 place.name = 'E12'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.499022
 place.longitude = -70.614076
 place.floor = '1'
@@ -5388,7 +5277,7 @@ place.save!
 
 place = Place.where(identifier: 'E13').first_or_initialize
 place.name = 'E13'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.499111
 place.longitude = -70.614081
 place.floor = '1'
@@ -5404,7 +5293,7 @@ place.save!
 
 place = Place.where(identifier: 'E14').first_or_initialize
 place.name = 'E14'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.499089
 place.longitude = -70.613797
 place.floor = '1'
@@ -5420,7 +5309,7 @@ place.save!
 
 place = Place.where(identifier: 'E15').first_or_initialize
 place.name = 'E15'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.499013
 place.longitude = -70.613797
 place.floor = '1'
@@ -5436,7 +5325,7 @@ place.save!
 
 place = Place.where(identifier: 'E16').first_or_initialize
 place.name = 'E16'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.498981
 place.longitude = -70.613706
 place.floor = '1'
@@ -5452,7 +5341,7 @@ place.save!
 
 place = Place.where(identifier: 'E17').first_or_initialize
 place.name = 'E17'
-place.area = sj
+place.area = a_cc
 place.latitude = -33.499075
 place.longitude = -70.613673
 place.floor = '1'
@@ -5468,7 +5357,7 @@ place.save!
 
 place = Place.where(identifier: 'ED109').first_or_initialize
 place.name = 'ED109'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498179
 place.longitude = -70.614941
 place.floor = '1'
@@ -5484,7 +5373,7 @@ place.save!
 
 place = Place.where(identifier: 'ED110').first_or_initialize
 place.name = 'ED110'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498235
 place.longitude = -70.614842
 place.floor = '1'
@@ -5500,7 +5389,7 @@ place.save!
 
 place = Place.where(identifier: 'ED111').first_or_initialize
 place.name = 'ED111'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498119
 place.longitude = -70.614193
 place.floor = '1'
@@ -5516,7 +5405,7 @@ place.save!
 
 place = Place.where(identifier: 'ED112').first_or_initialize
 place.name = 'ED112'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498099
 place.longitude = -70.613990
 place.floor = '1'
@@ -5532,7 +5421,7 @@ place.save!
 
 place = Place.where(identifier: 'ED113').first_or_initialize
 place.name = 'ED113'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498108
 place.longitude = -70.613993
 place.floor = '1'
@@ -5548,7 +5437,7 @@ place.save!
 
 place = Place.where(identifier: 'ED214').first_or_initialize
 place.name = 'ED214'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498117
 place.longitude = -70.614207
 place.floor = '2'
@@ -5564,7 +5453,7 @@ place.save!
 
 place = Place.where(identifier: 'ED215').first_or_initialize
 place.name = 'ED215'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498144
 place.longitude = -70.614223
 place.floor = '2'
@@ -5580,7 +5469,7 @@ place.save!
 
 place = Place.where(identifier: 'ED216').first_or_initialize
 place.name = 'ED216'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498055
 place.longitude = -70.613960
 place.floor = '2'
@@ -5596,7 +5485,7 @@ place.save!
 
 place = Place.where(identifier: 'ED217').first_or_initialize
 place.name = 'ED217'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498120
 place.longitude = -70.614035
 place.floor = '2'
@@ -5612,7 +5501,7 @@ place.save!
 
 place = Place.where(identifier: 'ED218').first_or_initialize
 place.name = 'ED218'
-place.area = sj
+place.area = a_edu
 place.latitude = -33.498098
 place.longitude = -70.613986
 place.floor = '2'
@@ -5628,7 +5517,7 @@ place.save!
 
 place = Place.where(identifier: 'ED219').first_or_initialize
 place.name = 'ED219'
-place.area = sj
+place.area = a_edu
 place.latitude = 0.0
 place.longitude = 0.0
 place.floor = '2'
@@ -5644,7 +5533,7 @@ place.save!
 
 place = Place.where(identifier: 'ediciones_arq').first_or_initialize
 place.name = 'Ediciones ARQ'
-place.area = sj
+place.area = a_arq
 place.latitude = -33.419849
 place.longitude = -70.617716
 place.floor = '1'
@@ -5653,14 +5542,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'RaulDeves').first_or_initialize
 place.name = 'Edificio Raul Deves'
-place.area = sj
+place.area = a_ing
 place.latitude = -33.499616
 place.longitude = -70.612735
 place.floor = '1'
@@ -5669,30 +5558,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'EDU').first_or_initialize
-place.name = 'Educación'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'eletro_qim').first_or_initialize
 place.name = 'Eletroquímica'
-place.area = sj
+place.area = a_quim
 place.latitude = -33.498722
 place.longitude = -70.610711
 place.floor = '?'
@@ -5701,206 +5574,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'EEA').first_or_initialize
-place.name = 'Escuela de Administración'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'escuela_arte').first_or_initialize
-place.name = 'Escuela de Arte'
-place.area = sj
-place.latitude = -33.445349
-place.longitude = -70.594181
-place.floor = '1?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'CCL').first_or_initialize
-place.name = 'Escuela de Construcción Civil'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'ENF').first_or_initialize
-place.name = 'Escuela de Enfermería'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'ING').first_or_initialize
-place.name = 'Escuela de Ingeniería'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'MED').first_or_initialize
-place.name = 'Escuela de Medicina'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'escuela_musica').first_or_initialize
-place.name = 'Escuela de Música'
-place.area = sj
-place.latitude = -33.445832
-place.longitude = -70.592896
-place.floor = '1?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'PSI').first_or_initialize
-place.name = 'Escuela de Psicología'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'escuela_psico').first_or_initialize
-place.name = 'Escuela de Psicología'
-place.area = sj
-place.latitude = -33.498403
-place.longitude = -70.610134
-place.floor = '?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'escuela_teatro').first_or_initialize
-place.name = 'Escuela de Teatro'
-place.area = sj
-place.latitude = -33.446006
-place.longitude = -70.593148
-place.floor = '1?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'TSL').first_or_initialize
-place.name = 'Escuela de Trabajo Social'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'escuela_trab_social').first_or_initialize
-place.name = 'Escuela de Trabajo Social'
-place.area = sj
-place.latitude = -33.498501
-place.longitude = -70.610128
-place.floor = '?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
+place.category_list = 'lab'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici1').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = hallsj
 place.latitude = -33.497740
 place.longitude = -70.612941
 place.floor = '1'
@@ -5909,14 +5590,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici19').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = lc
 place.latitude = -33.418895
 place.longitude = -70.618351
 place.floor = '1'
@@ -5925,14 +5606,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici2').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = ingenieria
 place.latitude = -33.499361
 place.longitude = -70.614255
 place.floor = '1'
@@ -5941,14 +5622,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici3').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = sociales
 place.latitude = -33.497237
 place.longitude = -70.610355
 place.floor = '1'
@@ -5957,14 +5638,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici4').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = sociales
 place.latitude = -33.498375
 place.longitude = -70.610533
 place.floor = '1'
@@ -5973,14 +5654,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici5').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = a_salud
 place.latitude = -33.500282
 place.longitude = -70.609832
 place.floor = '1'
@@ -5989,14 +5670,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici6').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = deportes
 place.latitude = -33.500706
 place.longitude = -70.608004
 place.floor = '1'
@@ -6005,14 +5686,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici7').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = la_y
 place.latitude = -33.499442
 place.longitude = -70.611902
 place.floor = '1'
@@ -6021,14 +5702,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'bici8').first_or_initialize
 place.name = 'Estacionamiento de Bicicletas'
-place.area = sj
+place.area = cc
 place.latitude = -33.441524
 place.longitude = -70.639994
 place.floor = '1'
@@ -6037,30 +5718,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'URB').first_or_initialize
-place.name = 'Estudios Urbanos'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
+place.category_list = 'park_bicycle'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'extension_cc').first_or_initialize
 place.name = 'Extensión'
-place.area = sj
+place.area = cc
 place.latitude = -33.440847
 place.longitude = -70.641010
 place.floor = '?'
@@ -6069,7 +5734,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
