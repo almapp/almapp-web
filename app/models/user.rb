@@ -6,7 +6,7 @@
 #  name                   :string(255)
 #  username               :string(255)      not null
 #  organization_id        :integer          not null
-#  admin                  :boolean          default(FALSE)
+#  admin                  :boolean          default(FALSE), not null
 #  male                   :boolean          default(TRUE)
 #  country                :string(255)
 #  created_at             :datetime
