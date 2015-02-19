@@ -28,7 +28,7 @@ class Teacher < ActiveRecord::Base
 
   has_attached_file :avatar,
                     :styles => { :original => '300x300>', :thumb => '100x100>'},
-                    :url => '/paperclip_images/:id_partition/:style/:hash.:extension',
+                    :url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
                     :hash_secret => "longSecretString",
                     #:path => 'public/images/paperclip/:class/:id/:style.:extension',
                     #:url => '/images/paperclip/:class/:id/:style.:extension',
