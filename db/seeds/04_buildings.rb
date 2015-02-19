@@ -51,6 +51,28 @@ cdi.localization.tilt = 0
 cdi.localization.category_list = 'area, building'
 cdi.save!
 
+la_y = Building.where(abbreviation: 'LA Y').first_or_initialize
+la_y.name = 'Centro Desarrollo Docente'
+la_y.short_name = 'La Y'
+la_y.campus = sj
+la_y.address = ''
+la_y.url = ''
+la_y.facebook = ''
+la_y.twitter = ''
+la_y.phone = ''
+la_y.email = ''
+la_y.information = ''
+la_y.localization = Place.where(identifier: 'BUILDING LA Y').first_or_initialize
+la_y.localization.name = "La Y"
+la_y.localization.latitude = -33.499199
+la_y.localization.longitude = -70.612133
+la_y.localization.area = sj
+la_y.localization.zoom = 0
+la_y.localization.angle = 0
+la_y.localization.tilt = 0
+la_y.localization.category_list = 'area, building'
+la_y.save!
+
 
 hallsj = Building.where(abbreviation: 'HALL SJ').first_or_initialize
 hallsj.name = 'Hall Universitario - San Joaquín'

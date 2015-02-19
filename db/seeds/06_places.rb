@@ -46,6 +46,7 @@ co = Campus.where(abbreviation: 'OR').first_or_initialize
 vr = Campus.where(abbreviation: 'VR').first_or_initialize
 ex = Campus.where(abbreviation: 'EX').first_or_initialize
 cdi = Building.where(abbreviation: 'CDI').first_or_initialize
+la_y = Building.where(abbreviation: 'LA Y').first_or_initialize
 hallsj = Building.where(abbreviation: 'HALL SJ').first_or_initialize
 al = Building.where(abbreviation: 'AL').first_or_initialize
 templo = Building.where(abbreviation: 'TEMPLO').first_or_initialize
