@@ -1,11 +1,11 @@
 puts('Creating web pages')
 
 def icon_url_for(web)
-  seed_url_for('webpages', "#{web.identifier.upcase}_icon/original.png")
+  seed_url_for('webpages', "#{web.identifier.upcase}_icon.png")
 end
 
 def background_url_for(web)
-  seed_url_for('webpages', "#{web.identifier.upcase}/original.png")
+  seed_url_for('webpages', "#{web.identifier.upcase}.png")
 end
 
 uc = Organization.find_by_abbreviation('UC')
@@ -36,6 +36,21 @@ web.secure_protocol = true
 web.requires_login = true
 web.home_url = 'http://webcurso.uc.cl/portal'
 web.login_url = 'http://webcurso.uc.cl/portal/pda/?force.login=yes'
+web.set_icon_from_url(icon_url_for(web))
+web.set_background_from_url(background_url_for(web))
+web.save!
+
+web = Webpage.where(identifier: 'MAIL_UC').first_or_initialize
+web.name = 'MAIL UC'
+web.owner = 'Gmail'
+web.organization = uc
+web.page_type = 'official'
+web.information = ''
+web.available = true
+web.secure_protocol = true
+web.requires_login = true
+web.home_url = 'https://webaccess.uc.cl/'
+web.login_url = 'https://webaccess.uc.cl/'
 web.set_icon_from_url(icon_url_for(web))
 web.set_background_from_url(background_url_for(web))
 web.save!
