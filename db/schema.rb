@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219004458) do
+ActiveRecord::Schema.define(version: 20150219010000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -653,20 +653,28 @@ ActiveRecord::Schema.define(version: 20150219004458) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "webpages", force: true do |t|
-    t.string   "identifier",                             null: false
-    t.string   "name",                                   null: false
+    t.string   "identifier",                              null: false
+    t.string   "name",                                    null: false
     t.string   "owner"
-    t.integer  "organization_id",                        null: false
-    t.integer  "page_type",              default: 0,     null: false
-    t.text     "information",            default: "",    null: false
-    t.boolean  "available",              default: true,  null: false
-    t.boolean  "secure_protocol",        default: false, null: false
-    t.boolean  "requires_login",         default: false, null: false
-    t.boolean  "should_open_in_browser", default: true,  null: false
-    t.string   "home_url",                               null: false
+    t.integer  "organization_id",                         null: false
+    t.integer  "page_type",               default: 0,     null: false
+    t.text     "information",             default: "",    null: false
+    t.boolean  "available",               default: true,  null: false
+    t.boolean  "secure_protocol",         default: false, null: false
+    t.boolean  "requires_login",          default: false, null: false
+    t.boolean  "should_open_in_browser",  default: true,  null: false
+    t.string   "home_url",                                null: false
     t.string   "login_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   add_index "webpages", ["organization_id"], name: "index_webpages_on_organization_id", using: :btree

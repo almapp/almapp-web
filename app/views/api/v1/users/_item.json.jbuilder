@@ -1,7 +1,7 @@
 json.extract! item, :id, :name, :username, :findeable, :email, :male, :organization_id, :admin, :country, :current_sign_in_at, :last_sign_in_at
 
 json.set! 'avatar' do
-  json.set! 'medium', item.avatar.url(:medium)
+  json.set! 'original', item.avatar.url(:original)
   json.set! 'thumb', item.avatar.url(:thumb)
 end
 

@@ -94,7 +94,7 @@ class User < ActiveRecord::Base
   end
 
   has_attached_file :avatar,
-                    :styles => { :medium => '300x300>', :thumb => '100x100>'},
+                    :styles => { :original => '300x300>', :thumb => '100x100>'},
                     :url => '/paperclip_images/:id_partition/:style/:hash.:extension',
                     :hash_secret => "longSecretString",
                     #:path => 'public/images/paperclip/:class/:id/:style.:extension',
