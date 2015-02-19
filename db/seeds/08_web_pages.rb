@@ -1,7 +1,7 @@
 puts('Creating web pages')
 
 def url_for(path)
-  "https://raw.githubusercontent.com/mrpatiwi/almapp-web-seed-assets/master/#{path}"
+  "https://raw.githubusercontent.com/mrpatiwi/almapp-web-seed-assets/master/webpages/#{path}"
 end
 
 def icon_url_for(web)
