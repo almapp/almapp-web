@@ -68,6 +68,7 @@ a_agro.localization.zoom = 0
 a_agro.localization.angle = 0
 a_agro.localization.tilt = 0
 a_agro.localization.category_list = 'area, academic_unity'
+a_agro.set_banner_from_url(banner_url_for(a_agro))
 a_agro.save!
 
 a_arq = AcademicUnity.where(abbreviation: 'ARQ').first_or_initialize
@@ -84,12 +85,14 @@ a_arq.localization.zoom = 0
 a_arq.localization.angle = 0
 a_arq.localization.tilt = 0
 a_arq.localization.category_list = 'area, academic_unity'
+a_arq.set_banner_from_url(banner_url_for(a_arq))
 a_arq.save!
 
 a_art = AcademicUnity.where(abbreviation: 'ART').first_or_initialize
 a_art.short_name = 'Arte'
 a_art.faculty = artes
 a_art.url = ''
+a_art.set_banner_from_url(banner_url_for(a_art))
 a_art.save!
 
 a_astro = AcademicUnity.where(abbreviation: 'ASTFIS').first_or_initialize
@@ -106,6 +109,7 @@ a_astro.localization.zoom = 0
 a_astro.localization.angle = 0
 a_astro.localization.tilt = 0
 a_astro.localization.category_list = 'area, academic_unity'
+a_astro.set_banner_from_url(banner_url_for(a_astro))
 a_astro.save!
 
 a_bio = AcademicUnity.where(abbreviation: 'BIO').first_or_initialize
@@ -122,6 +126,7 @@ a_bio.localization.zoom = 0
 a_bio.localization.angle = 0
 a_bio.localization.tilt = 0
 a_bio.localization.category_list = 'area, academic_unity'
+a_bio.set_banner_from_url(banner_url_for(a_bio))
 a_bio.save!
 
 a_salud = AcademicUnity.where(abbreviation: 'CS').first_or_initialize
@@ -138,6 +143,7 @@ a_salud.localization.zoom = 0
 a_salud.localization.angle = 0
 a_salud.localization.tilt = 0
 a_salud.localization.category_list = 'area, academic_unity'
+a_salud.set_banner_from_url(banner_url_for(a_salud))
 a_salud.save!
 
 a_eco = AcademicUnity.where(abbreviation: eco.abbreviation).first_or_initialize
@@ -154,6 +160,7 @@ a_eco.localization.zoom = 0
 a_eco.localization.angle = 0
 a_eco.localization.tilt = 0
 a_eco.localization.category_list = 'area, academic_unity'
+a_eco.set_banner_from_url(banner_url_for(a_eco))
 a_eco.save!
 
 a_politica = AcademicUnity.where(abbreviation: 'ICP').first_or_initialize
@@ -170,6 +177,7 @@ a_politica.localization.zoom = 0
 a_politica.localization.angle = 0
 a_politica.localization.tilt = 0
 a_politica.localization.category_list = 'area, academic_unity'
+a_politica.set_banner_from_url(banner_url_for(a_politica))
 a_politica.save!
 
 a_college = AcademicUnity.where(abbreviation: college.abbreviation).first_or_initialize
@@ -186,6 +194,7 @@ a_college.localization.zoom = 0
 a_college.localization.angle = 0
 a_college.localization.tilt = 0
 a_college.localization.category_list = 'area, academic_unity'
+a_college.set_banner_from_url(banner_url_for(a_college))
 a_college.save!
 
 a_com = AcademicUnity.where(abbreviation: comunicaciones.abbreviation).first_or_initialize
@@ -202,6 +211,7 @@ a_com.localization.zoom = 0
 a_com.localization.angle = 0
 a_com.localization.tilt = 0
 a_com.localization.category_list = 'area, academic_unity'
+a_com.set_banner_from_url(banner_url_for(a_com))
 a_com.save!
 
 a_cc = AcademicUnity.where(abbreviation: construccion.abbreviation).first_or_initialize
@@ -218,6 +228,7 @@ a_cc.localization.zoom = 0
 a_cc.localization.angle = 0
 a_cc.localization.tilt = 0
 a_cc.localization.category_list = 'area, academic_unity'
+a_cc.set_banner_from_url(banner_url_for(a_cc))
 a_cc.save!
 
 a_der = AcademicUnity.where(abbreviation: derecho.abbreviation).first_or_initialize
@@ -234,6 +245,7 @@ a_der.localization.zoom = 0
 a_der.localization.angle = 0
 a_der.localization.tilt = 0
 a_der.localization.category_list = 'area, academic_unity'
+a_der.set_banner_from_url(banner_url_for(a_der))
 a_der.save!
 
 a_dno = AcademicUnity.where(abbreviation: 'DNO').first_or_initialize
@@ -250,6 +262,7 @@ a_dno.localization.zoom = 0
 a_dno.localization.angle = 0
 a_dno.localization.tilt = 0
 a_dno.localization.category_list = 'area, academic_unity'
+a_dno.set_banner_from_url(banner_url_for(a_dno))
 a_dno.save!
 
 a_edu = AcademicUnity.where(abbreviation: educacion.abbreviation).first_or_initialize
@@ -266,6 +279,7 @@ a_edu.localization.zoom = 0
 a_edu.localization.angle = 0
 a_edu.localization.tilt = 0
 a_edu.localization.category_list = 'area, academic_unity'
+a_edu.set_banner_from_url(banner_url_for(a_edu))
 a_edu.save!
 
 a_enf = AcademicUnity.where(abbreviation: enfermeria.abbreviation).first_or_initialize
@@ -282,12 +296,14 @@ a_enf.localization.zoom = 0
 a_enf.localization.angle = 0
 a_enf.localization.tilt = 0
 a_enf.localization.category_list = 'area, academic_unity'
+a_enf.set_banner_from_url(banner_url_for(a_enf))
 a_enf.save!
 
 a_est = AcademicUnity.where(abbreviation: 'EST').first_or_initialize
 a_est.short_name = 'Estética'
 a_est.faculty = artes
 a_est.url = ''
+a_est.set_banner_from_url(banner_url_for(a_est))
 a_est.save!
 
 a_urb = AcademicUnity.where(abbreviation: 'IEU').first_or_initialize
@@ -304,6 +320,7 @@ a_urb.localization.zoom = 0
 a_urb.localization.angle = 0
 a_urb.localization.tilt = 0
 a_urb.localization.category_list = 'area, academic_unity'
+a_urb.set_banner_from_url(banner_url_for(a_urb))
 a_urb.save!
 
 a_fil = AcademicUnity.where(abbreviation: filosofia.abbreviation).first_or_initialize
@@ -320,6 +337,7 @@ a_fil.localization.zoom = 0
 a_fil.localization.angle = 0
 a_fil.localization.tilt = 0
 a_fil.localization.category_list = 'area, academic_unity'
+a_fil.set_banner_from_url(banner_url_for(a_fil))
 a_fil.save!
 
 a_fis = AcademicUnity.where(abbreviation: fisica.abbreviation).first_or_initialize
@@ -336,6 +354,7 @@ a_fis.localization.zoom = 0
 a_fis.localization.angle = 0
 a_fis.localization.tilt = 0
 a_fis.localization.category_list = 'area, academic_unity'
+a_fis.set_banner_from_url(banner_url_for(a_fis))
 a_fis.save!
 
 a_geo = AcademicUnity.where(abbreviation: 'GEO').first_or_initialize
@@ -352,6 +371,7 @@ a_geo.localization.zoom = 0
 a_geo.localization.angle = 0
 a_geo.localization.tilt = 0
 a_geo.localization.category_list = 'area, academic_unity'
+a_geo.set_banner_from_url(banner_url_for(a_geo))
 a_geo.save!
 
 a_his = AcademicUnity.where(abbreviation: 'HIS').first_or_initialize
@@ -368,6 +388,7 @@ a_his.localization.zoom = 0
 a_his.localization.angle = 0
 a_his.localization.tilt = 0
 a_his.localization.category_list = 'area, academic_unity'
+a_his.set_banner_from_url(banner_url_for(a_his))
 a_his.save!
 
 a_ing = AcademicUnity.where(abbreviation: ingenieria.abbreviation).first_or_initialize
@@ -384,6 +405,7 @@ a_ing.localization.zoom = 0
 a_ing.localization.angle = 0
 a_ing.localization.tilt = 0
 a_ing.localization.category_list = 'area, academic_unity'
+a_ing.set_banner_from_url(banner_url_for(a_ing))
 a_ing.save!
 
 a_let = AcademicUnity.where(abbreviation: letras.abbreviation).first_or_initialize
@@ -400,6 +422,7 @@ a_let.localization.zoom = 0
 a_let.localization.angle = 0
 a_let.localization.tilt = 0
 a_let.localization.category_list = 'area, academic_unity'
+a_let.set_banner_from_url(banner_url_for(a_let))
 a_let.save!
 
 a_mat = AcademicUnity.where(abbreviation: matematica.abbreviation).first_or_initialize
@@ -416,6 +439,7 @@ a_mat.localization.zoom = 0
 a_mat.localization.angle = 0
 a_mat.localization.tilt = 0
 a_mat.localization.category_list = 'area, academic_unity'
+a_mat.set_banner_from_url(banner_url_for(a_mat))
 a_mat.save!
 
 a_med = AcademicUnity.where(abbreviation: medicina.abbreviation).first_or_initialize
@@ -432,12 +456,14 @@ a_med.localization.zoom = 0
 a_med.localization.angle = 0
 a_med.localization.tilt = 0
 a_med.localization.category_list = 'area, academic_unity'
+a_med.set_banner_from_url(banner_url_for(a_med))
 a_med.save!
 
 a_musica = AcademicUnity.where(abbreviation: 'MUC').first_or_initialize
 a_musica.short_name = 'Música'
 a_musica.faculty = artes
 a_musica.url = ''
+a_musica.set_banner_from_url(banner_url_for(a_musica))
 a_musica.save!
 
 a_odonto = AcademicUnity.where(abbreviation: 'ODO').first_or_initialize
@@ -454,6 +480,7 @@ a_odonto.localization.zoom = 0
 a_odonto.localization.angle = 0
 a_odonto.localization.tilt = 0
 a_odonto.localization.category_list = 'area, academic_unity'
+a_odonto.set_banner_from_url(banner_url_for(a_odonto))
 a_odonto.save!
 
 a_psi = AcademicUnity.where(abbreviation: 'PSI').first_or_initialize
@@ -470,6 +497,7 @@ a_psi.localization.zoom = 0
 a_psi.localization.angle = 0
 a_psi.localization.tilt = 0
 a_psi.localization.category_list = 'area, academic_unity'
+a_psi.set_banner_from_url(banner_url_for(a_psi))
 a_psi.save!
 
 a_quim = AcademicUnity.where(abbreviation: quimica.abbreviation).first_or_initialize
@@ -486,6 +514,7 @@ a_quim.localization.zoom = 0
 a_quim.localization.angle = 0
 a_quim.localization.tilt = 0
 a_quim.localization.category_list = 'area, academic_unity'
+a_quim.set_banner_from_url(banner_url_for(a_quim))
 a_quim.save!
 
 a_socio = AcademicUnity.where(abbreviation: 'SOL').first_or_initialize
@@ -502,12 +531,14 @@ a_socio.localization.zoom = 0
 a_socio.localization.angle = 0
 a_socio.localization.tilt = 0
 a_socio.localization.category_list = 'area, academic_unity'
+a_socio.set_banner_from_url(banner_url_for(a_socio))
 a_socio.save!
 
 a_act = AcademicUnity.where(abbreviation: 'ACT').first_or_initialize
 a_act.short_name = 'Actuación'
 a_act.faculty = artes
 a_act.url = ''
+a_act.set_banner_from_url(banner_url_for(a_act))
 a_act.save!
 
 a_teo = AcademicUnity.where(abbreviation: teologia.abbreviation).first_or_initialize
@@ -524,6 +555,7 @@ a_teo.localization.zoom = 0
 a_teo.localization.angle = 0
 a_teo.localization.tilt = 0
 a_teo.localization.category_list = 'area, academic_unity'
+a_teo.set_banner_from_url(banner_url_for(a_teo))
 a_teo.save!
 
 a_social = AcademicUnity.where(abbreviation: 'TS').first_or_initialize
@@ -540,6 +572,7 @@ a_social.localization.zoom = 0
 a_social.localization.angle = 0
 a_social.localization.tilt = 0
 a_social.localization.category_list = 'area, academic_unity'
+a_social.set_banner_from_url(banner_url_for(a_social))
 a_social.save!
 
 a_vr = AcademicUnity.where(abbreviation: villarica.abbreviation).first_or_initialize
@@ -556,6 +589,7 @@ a_vr.localization.zoom = 0
 a_vr.localization.angle = 0
 a_vr.localization.tilt = 0
 a_vr.localization.category_list = 'area, academic_unity'
+a_vr.set_banner_from_url(banner_url_for(a_vr))
 a_vr.save!
 
 puts("Created #{AcademicUnity.count} #{AcademicUnity.to_s.pluralize.downcase}")

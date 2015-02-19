@@ -52,7 +52,7 @@ class Webpage < ActiveRecord::Base
 
   def set_icon_from_url(url)
     begin
-      self.icon = URI.parse(url)
+      self.icon = URI.parse(URI.escape(url))
     rescue
       puts "Error #{$!} on #{self.identifier} icon"
     end

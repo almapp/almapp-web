@@ -9,6 +9,15 @@
 
 testing = false
 
+def seed_url_for(class_name, path)
+  "https://raw.githubusercontent.com/mrpatiwi/almapp-web-seed-assets/master/#{class_name}/#{path}"
+end
+
+def banner_url_for(area)
+  seed_url_for(area.class.name.pluralize.underscore.downcase, "#{area.abbreviation.downcase}.jpg")
+end
+
+
 # Loads from "seeds" folder sorting by number prefix
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
 

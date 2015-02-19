@@ -1,15 +1,11 @@
 puts('Creating web pages')
 
-def url_for(path)
-  "https://raw.githubusercontent.com/mrpatiwi/almapp-web-seed-assets/master/webpages/#{path}"
-end
-
 def icon_url_for(web)
-  url_for "#{web.identifier.upcase}_icon/original.png"
+  seed_url_for('webpages', "#{web.identifier.upcase}_icon/original.png")
 end
 
 def background_url_for(web)
-  url_for "#{web.identifier.upcase}/original.png"
+  seed_url_for('webpages', "#{web.identifier.upcase}/original.png")
 end
 
 uc = Organization.find_by_abbreviation('UC')

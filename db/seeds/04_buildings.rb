@@ -49,6 +49,7 @@ cdi.localization.zoom = 0
 cdi.localization.angle = 0
 cdi.localization.tilt = 0
 cdi.localization.category_list = 'area, building'
+cdi.set_banner_from_url(banner_url_for(cdi))
 cdi.save!
 
 la_y = Building.where(abbreviation: 'LA Y').first_or_initialize
@@ -71,6 +72,7 @@ la_y.localization.zoom = 0
 la_y.localization.angle = 0
 la_y.localization.tilt = 0
 la_y.localization.category_list = 'area, building'
+la_y.set_banner_from_url(banner_url_for(la_y))
 la_y.save!
 
 
@@ -94,6 +96,7 @@ hallsj.localization.zoom = 0
 hallsj.localization.angle = 0
 hallsj.localization.tilt = 0
 hallsj.localization.category_list = 'area, building'
+hallsj.set_banner_from_url(banner_url_for(hallsj))
 hallsj.save!
 
 
@@ -117,6 +120,7 @@ al.localization.zoom = 0
 al.localization.angle = 0
 al.localization.tilt = 0
 al.localization.category_list = 'area, building'
+al.set_banner_from_url(banner_url_for(al))
 al.save!
 
 
@@ -140,6 +144,7 @@ templo.localization.zoom = 0
 templo.localization.angle = 0
 templo.localization.tilt = 0
 templo.localization.category_list = 'area, building'
+templo.set_banner_from_url(banner_url_for(templo))
 templo.save!
 
 

@@ -51,6 +51,7 @@ agro.localization.zoom = 0
 agro.localization.angle = 0
 agro.localization.tilt = 0
 agro.localization.category_list = 'area, faculty'
+agro.set_banner_from_url(banner_url_for(agro))
 agro.save!
 
 
@@ -73,6 +74,7 @@ fadeu.localization.zoom = 0
 fadeu.localization.angle = 0
 fadeu.localization.tilt = 0
 fadeu.localization.category_list = 'area, faculty'
+fadeu.set_banner_from_url(banner_url_for(fadeu))
 fadeu.save!
 
 
@@ -95,6 +97,7 @@ artes.localization.zoom = 0
 artes.localization.angle = 0
 artes.localization.tilt = 0
 artes.localization.category_list = 'area, faculty'
+artes.set_banner_from_url(banner_url_for(artes))
 artes.save!
 
 
@@ -117,6 +120,7 @@ bio.localization.zoom = 0
 bio.localization.angle = 0
 bio.localization.tilt = 0
 bio.localization.category_list = 'area, faculty'
+bio.set_banner_from_url(banner_url_for(bio))
 bio.save!
 
 
@@ -139,6 +143,7 @@ eco.localization.zoom = 0
 eco.localization.angle = 0
 eco.localization.tilt = 0
 eco.localization.category_list = 'area, faculty'
+eco.set_banner_from_url(banner_url_for(eco))
 eco.save!
 
 
@@ -161,6 +166,7 @@ sociales.localization.zoom = 0
 sociales.localization.angle = 0
 sociales.localization.tilt = 0
 sociales.localization.category_list = 'area, faculty'
+sociales.set_banner_from_url(banner_url_for(sociales))
 sociales.save!
 
 
@@ -183,6 +189,7 @@ comunicaciones.localization.zoom = 0
 comunicaciones.localization.angle = 0
 comunicaciones.localization.tilt = 0
 comunicaciones.localization.category_list = 'area, faculty'
+comunicaciones.set_banner_from_url(banner_url_for(comunicaciones))
 comunicaciones.save!
 
 
@@ -205,6 +212,7 @@ letras.localization.zoom = 0
 letras.localization.angle = 0
 letras.localization.tilt = 0
 letras.localization.category_list = 'area, faculty'
+letras.set_banner_from_url(banner_url_for(letras))
 letras.save!
 
 
@@ -227,6 +235,7 @@ derecho.localization.zoom = 0
 derecho.localization.angle = 0
 derecho.localization.tilt = 0
 derecho.localization.category_list = 'area, faculty'
+derecho.set_banner_from_url(banner_url_for(derecho))
 derecho.save!
 
 
@@ -249,6 +258,7 @@ educacion.localization.zoom = 0
 educacion.localization.angle = 0
 educacion.localization.tilt = 0
 educacion.localization.category_list = 'area, faculty'
+educacion.set_banner_from_url(banner_url_for(educacion))
 educacion.save!
 
 
@@ -271,6 +281,7 @@ filosofia.localization.zoom = 0
 filosofia.localization.angle = 0
 filosofia.localization.tilt = 0
 filosofia.localization.category_list = 'area, faculty'
+filosofia.set_banner_from_url(banner_url_for(filosofia))
 filosofia.save!
 
 
@@ -293,6 +304,7 @@ fisica.localization.zoom = 0
 fisica.localization.angle = 0
 fisica.localization.tilt = 0
 fisica.localization.category_list = 'area, faculty'
+fisica.set_banner_from_url(banner_url_for(fisica))
 fisica.save!
 
 
@@ -315,6 +327,7 @@ historia.localization.zoom = 0
 historia.localization.angle = 0
 historia.localization.tilt = 0
 historia.localization.category_list = 'area, faculty'
+historia.set_banner_from_url(banner_url_for(historia))
 historia.save!
 
 
@@ -337,6 +350,7 @@ construccion.localization.zoom = 0
 construccion.localization.angle = 0
 construccion.localization.tilt = 0
 construccion.localization.category_list = 'area, faculty'
+construccion.set_banner_from_url(banner_url_for(construccion))
 construccion.save!
 
 
@@ -359,6 +373,7 @@ ingenieria.localization.zoom = 0
 ingenieria.localization.angle = 0
 ingenieria.localization.tilt = 0
 ingenieria.localization.category_list = 'area, faculty'
+ingenieria.set_banner_from_url(banner_url_for(ingenieria))
 ingenieria.save!
 
 
@@ -381,6 +396,7 @@ matematica.localization.zoom = 0
 matematica.localization.angle = 0
 matematica.localization.tilt = 0
 matematica.localization.category_list = 'area, faculty'
+matematica.set_banner_from_url(banner_url_for(matematica))
 matematica.save!
 
 
@@ -403,6 +419,7 @@ enfermeria.localization.zoom = 0
 enfermeria.localization.angle = 0
 enfermeria.localization.tilt = 0
 enfermeria.localization.category_list = 'area, faculty'
+enfermeria.set_banner_from_url(banner_url_for(enfermeria))
 enfermeria.save!
 
 
@@ -425,6 +442,7 @@ medicina.localization.zoom = 0
 medicina.localization.angle = 0
 medicina.localization.tilt = 0
 medicina.localization.category_list = 'area, faculty'
+medicina.set_banner_from_url(banner_url_for(medicina))
 medicina.save!
 
 
@@ -449,6 +467,7 @@ quimica.localization.zoom = 0
 quimica.localization.angle = 0
 quimica.localization.tilt = 0
 quimica.localization.category_list = 'area, faculty'
+quimica.set_banner_from_url(banner_url_for(quimica))
 quimica.save!
 
 
@@ -473,6 +492,7 @@ teologia.localization.zoom = 0
 teologia.localization.angle = 0
 teologia.localization.tilt = 0
 teologia.localization.category_list = 'area, faculty'
+teologia.set_banner_from_url(banner_url_for(teologia))
 teologia.save!
 
 
@@ -497,6 +517,7 @@ villarica.localization.zoom = 0
 villarica.localization.angle = 0
 villarica.localization.tilt = 0
 villarica.localization.category_list = 'area, faculty'
+villarica.set_banner_from_url(banner_url_for(villarica))
 villarica.save!
 
 
@@ -521,6 +542,7 @@ college.localization.zoom = 0
 college.localization.angle = 0
 college.localization.tilt = 0
 college.localization.category_list = 'area, faculty'
+college.set_banner_from_url(banner_url_for(college))
 college.save!
 
 

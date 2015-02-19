@@ -47,6 +47,7 @@ sj.phone = nil
 sj.email = nil
 sj.information = 'Incorporado al patrimonio de la Universidad en 1891, legado de Honoria Gandarillas de la chacra Macul (primera hijuela de Macul e Hijuela San Joaquín) con 82 hás., el actual campus San Joaquín de la Universidad comenzó su implementación como ciudad universitaria en los sesenta y continúa en desarrollo.'
 sj.localization = place
+sj.set_banner_from_url(banner_url_for(sj))
 sj.save!
 
 #-------------------------------------------------
@@ -75,6 +76,7 @@ cc.phone = nil
 cc.email = nil
 cc.information = 'El edificio principal y fundacional de la Universidad se terminó de construir en 1912. Proyecto original de Ignacio Cremonesi, fue concluido por su discípulo Emilio Jecquier. Por su magnificencia fue denominado Palacio Universitario y desde entonces acoge a la Dirección Superior y a varias facultades.'
 cc.localization = place
+cc.set_banner_from_url(banner_url_for(cc))
 cc.save!
 
 #-------------------------------------------------
@@ -103,6 +105,7 @@ lc.phone = nil
 lc.email = nil
 lc.information = 'Antigua hacienda del siglo XVIII contemporánea a grandes obras en la ciudad de Santiago como el puente de Calicanto. Su casona es Monumento Nacional y parte del patrimonio arquitectónico de Santiago. Desde 1958 es sede de la Facultad de Arquitectura, Diseño y Estudios Urbanos de la Universidad.'
 lc.localization = place
+lc.set_banner_from_url(banner_url_for(lc))
 lc.save!
 
 #-------------------------------------------------
@@ -131,6 +134,7 @@ co.phone = nil
 co.email = nil
 co.information = 'Construido en 1934 y adquirido por la Universidad a la Congregación de las Monjas Francesas en la década de los setenta (1971), acoge a las carreras de la Facultad de Artes y al Instituto de Estética. '
 co.localization = place
+co.set_banner_from_url(banner_url_for(co))
 co.save!
 
 #-------------------------------------------------
@@ -159,6 +163,7 @@ vr.phone = nil
 vr.email = nil
 vr.information = 'Es un edificio de moderna construcción (2001) donde se desarrolla casi toda la actividad relacionada con los programas académicos, dirección y administración.'
 vr.localization = place
+vr.set_banner_from_url(banner_url_for(vr))
 vr.save!
 
 #-------------------------------------------------
@@ -174,6 +179,7 @@ ex.phone = nil
 ex.email = nil
 ex.information = ''
 ex.localization = nil
+ex.set_banner_from_url(banner_url_for(ex))
 ex.save!
 
 puts("Created #{Campus.count} #{Campus.to_s.pluralize.downcase}")

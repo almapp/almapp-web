@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219010000) do
+ActiveRecord::Schema.define(version: 20150219031123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,19 @@ ActiveRecord::Schema.define(version: 20150219010000) do
     t.string   "url"
     t.string   "email"
     t.string   "address"
-    t.text     "information",    default: ""
+    t.text     "information",         default: ""
     t.string   "facebook"
     t.string   "twitter"
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comments_count", default: 0,  null: false
-    t.integer  "likes_count",    default: 0,  null: false
-    t.integer  "dislikes_count", default: 0,  null: false
+    t.integer  "comments_count",      default: 0,  null: false
+    t.integer  "likes_count",         default: 0,  null: false
+    t.integer  "dislikes_count",      default: 0,  null: false
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "academic_unities", ["abbreviation", "faculty_id"], name: "index_academic_unities_on_abbreviation_and_organization_id", unique: true, using: :btree
@@ -63,20 +67,24 @@ ActiveRecord::Schema.define(version: 20150219010000) do
     t.string   "abbreviation"
     t.string   "short_name"
     t.string   "name"
-    t.integer  "campus_id",                   null: false
+    t.integer  "campus_id",                        null: false
     t.string   "address"
     t.string   "phone"
     t.string   "email"
     t.string   "url"
     t.string   "facebook"
     t.string   "twitter"
-    t.text     "information",    default: ""
+    t.text     "information",         default: ""
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comments_count", default: 0,  null: false
-    t.integer  "likes_count",    default: 0,  null: false
-    t.integer  "dislikes_count", default: 0,  null: false
+    t.integer  "comments_count",      default: 0,  null: false
+    t.integer  "likes_count",         default: 0,  null: false
+    t.integer  "dislikes_count",      default: 0,  null: false
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "buildings", ["campus_id"], name: "index_buildings_on_campus_id", using: :btree
@@ -86,20 +94,24 @@ ActiveRecord::Schema.define(version: 20150219010000) do
     t.string   "abbreviation"
     t.string   "short_name"
     t.string   "name"
-    t.integer  "organization_id",              null: false
+    t.integer  "organization_id",                  null: false
     t.string   "address"
     t.string   "url"
     t.string   "facebook"
     t.string   "twitter"
     t.string   "phone"
     t.string   "email"
-    t.text     "information",     default: ""
+    t.text     "information",         default: ""
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comments_count",  default: 0,  null: false
-    t.integer  "likes_count",     default: 0,  null: false
-    t.integer  "dislikes_count",  default: 0,  null: false
+    t.integer  "comments_count",      default: 0,  null: false
+    t.integer  "likes_count",         default: 0,  null: false
+    t.integer  "dislikes_count",      default: 0,  null: false
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "campuses", ["abbreviation", "organization_id"], name: "index_campuses_on_cid_and_organization_id", unique: true, using: :btree
@@ -253,20 +265,24 @@ ActiveRecord::Schema.define(version: 20150219010000) do
     t.string   "abbreviation"
     t.string   "short_name"
     t.string   "name"
-    t.integer  "campus_id",                   null: false
+    t.integer  "campus_id",                        null: false
     t.string   "address"
     t.string   "phone"
     t.string   "email"
     t.string   "url"
     t.string   "facebook"
-    t.text     "information",    default: ""
+    t.text     "information",         default: ""
     t.string   "twitter"
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comments_count", default: 0,  null: false
-    t.integer  "likes_count",    default: 0,  null: false
-    t.integer  "dislikes_count", default: 0,  null: false
+    t.integer  "comments_count",      default: 0,  null: false
+    t.integer  "likes_count",         default: 0,  null: false
+    t.integer  "dislikes_count",      default: 0,  null: false
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "faculties", ["abbreviation", "campus_id"], name: "index_faculties_on_abbreviation_and_campus_id", unique: true, using: :btree
@@ -386,8 +402,8 @@ ActiveRecord::Schema.define(version: 20150219010000) do
   create_table "organizations", force: true do |t|
     t.string   "name"
     t.string   "short_name"
-    t.string   "abbreviation",                null: false
-    t.text     "information",    default: ""
+    t.string   "abbreviation",                     null: false
+    t.text     "information",         default: ""
     t.string   "image"
     t.string   "url"
     t.datetime "created_at"
@@ -397,9 +413,13 @@ ActiveRecord::Schema.define(version: 20150219010000) do
     t.integer  "place_id"
     t.string   "address"
     t.string   "phone"
-    t.integer  "comments_count", default: 0,  null: false
-    t.integer  "likes_count",    default: 0,  null: false
-    t.integer  "dislikes_count", default: 0,  null: false
+    t.integer  "comments_count",      default: 0,  null: false
+    t.integer  "likes_count",         default: 0,  null: false
+    t.integer  "dislikes_count",      default: 0,  null: false
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "organizations", ["abbreviation"], name: "index_organizations_on_abbreviation", unique: true, using: :btree
