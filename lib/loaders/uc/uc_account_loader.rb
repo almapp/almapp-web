@@ -96,12 +96,12 @@ class UCAccountLoader < AccountLoader
       #  user.sections << section unless user.sections.include?(section)
       #end
 
-      sectionsuser.import (get_sections - user.sections).map { |section| sectionsuser.new(user: user, section: section) }
+      SectionsUser.import (get_sections - user.sections).map { |section| SectionsUser.new(user: user, section: section) }
 
       careers_data = get_career
       careers_data.each do |career_data|
-        career = career.where(name: career_data[:career]).first_or_create
-        enroll = enrolledcareer.where(user: user, career: career).first_or_initialize
+        career = Career.where(name: career_data[:career]).first_or_create
+        enroll = EnrolledCareer.where(user: user, career: career).first_or_initialize
         enroll.curriculum = career_data[:curriculum]
         enroll.student_id = career_data[:student_id]
         enroll.save!
