@@ -122,7 +122,7 @@ class UCCoursesLoader < CoursesLoader
   end
 
   def self.log(message)
-    puts message if true
+    puts message if Rails.env.development?
   end
 
   def self.load_courses(year, period)
