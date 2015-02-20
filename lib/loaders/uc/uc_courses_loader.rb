@@ -31,7 +31,7 @@ class UCCoursesLoader < CoursesLoader
   def self.relations
     # Diferent layout http://admisionyregistros.uc.cl/dara/libcursos/periodo21/ua9_42.html
     {
-     9 => 'College', # academic unity on courses will be overwritten
+     # 9 => 'College', # academic unity on courses will be overwritten
      4 => 'Ingeniería',
      28 => 'Comunicaciones',
      1 => 'Construcción Civil',
@@ -85,15 +85,30 @@ class UCCoursesLoader < CoursesLoader
     url = "http://www3.uc.cl/buscacursos/informacionCurso.ajax.php?semestre=#{year}-#{period}&sigla=#{course.initials}&seccion=1"
     uri = URI.parse(url)
     req = Net::HTTP.new(uri.host, uri.port)
-    web = req.get(uri)
+    response = req.get(uri)
 
-    if web.code == '200'
-      doc = Nokogiri::HTML(web.body)
+    if response.code == '200'
+      doc = Nokogiri::HTML(response.body)
       info = doc.xpath('/html/body/div[1]/div[1]/div[1]').text
       return info.empty? ? '' : info.strip
     else
       ''
     end
+  end
+
+  def self.get_teacher_pic(teacher, course, year, period)
+    name = teacher.name
+
+    url = "http://www3.uc.cl/buscacursos/getFotoProfe.db.php?nombre=#{name}&semestre=#{year}-#{period}&sigla=#{course.initials}&seccion=1"
+    uri = URI.parse(URI.encode(url))
+    req = Net::HTTP.new(uri.host, uri.port)
+    response = req.get(uri)
+
+    tempfile = Tempfile.new([SecureRandom.hex.to_s, '.jpeg'])
+    File.open(tempfile.path,'wb') do |f|
+      f.write response.body
+    end
+    return tempfile
   end
 
   def self.get_website(url)
@@ -107,7 +122,7 @@ class UCCoursesLoader < CoursesLoader
   end
 
   def self.log(message)
-    puts message if false
+    puts message if true
   end
 
   def self.load_courses(year, period)
@@ -186,6 +201,13 @@ class UCCoursesLoader < CoursesLoader
               log course.name.concat(' has no teachers.')
             else
               teacher = Teacher.eager_load(:academic_unities, :sections).where(name: t_name).first_or_initialize
+              unless teacher.avatar.exists?
+                profile_pic = get_teacher_pic(teacher, course, year, period)
+                teacher.avatar = profile_pic
+
+                profile_pic.close
+                profile_pic.unlink
+              end
               teacher.academic_unities << unity unless teacher.academic_unities.include?(unity)
               teacher.sections << section unless teacher.sections.include?(section)
               teacher.save!
