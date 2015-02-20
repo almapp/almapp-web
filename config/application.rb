@@ -20,6 +20,10 @@ module AlmappWeb
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.paperclip_defaults = {:url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
+                                 :hash_secret => ENV['PAPERCLIP_HASH'] || 'obfuscation_string',
+                                 :default_url => '/images/:class/default/:style.:extension'}
+
     config.middleware.use Rack::Deflater
 
     config.autoload_paths += %W(#{config.root}/lib)

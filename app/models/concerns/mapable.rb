@@ -12,12 +12,7 @@ module Mapable
 
 
     has_attached_file :banner,
-                      :styles => { :original => '640x320#', :small => '640x160#'},
-                      :url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
-                      :hash_secret => "longSecretString",
-                      #:path => 'public/images/paperclip/:class/:id/:style.:extension',
-                      #:url => '/images/paperclip/:class/:id/:style.:extension',
-                      :default_url => '/images/:class/default/:style.png'
+                      :styles => { :original => '640x320#', :small => '640x160#'}
     validates_attachment :banner,  :content_type => { :content_type => %w(image/jpeg image/jpg image/gif image/png)}
 
   end

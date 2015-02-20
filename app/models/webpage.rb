@@ -37,17 +37,11 @@ class Webpage < ActiveRecord::Base
   enum page_type: [ :community, :official, :political_party, :utility]
 
   has_attached_file :icon,
-                    :styles => { :original => '150x150', :small => '100x100'},
-                    :url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
-                    :hash_secret => "longSecretString",
-                    :default_url => '/images/webpages/icon/default/:style.png'
+                    :styles => { :original => '150x150', :small => '100x100'}
   validates_attachment :icon,  :content_type => { :content_type => %w(image/png)}
 
   has_attached_file :background,
-                    :styles => { :original => '375x375', :small => '250x250'},
-                    :url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
-                    :hash_secret => "longSecretString",
-                    :default_url => '/images/webpages/background/default/:style.png'
+                    :styles => { :original => '375x375', :small => '250x250'}
   validates_attachment :background,  :content_type => { :content_type => %w(image/jpeg image/jpg image/png)}
 
   def set_icon_from_url(url)

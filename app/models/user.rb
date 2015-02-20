@@ -94,12 +94,7 @@ class User < ActiveRecord::Base
   end
 
   has_attached_file :avatar,
-                    :styles => { :original => '300x300>', :thumb => '100x100>'},
-                    :url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
-                    :hash_secret => "longSecretString",
-                    #:path => 'public/images/paperclip/:class/:id/:style.:extension',
-                    #:url => '/images/paperclip/:class/:id/:style.:extension',
-                    :default_url => '/images/users/default/:style.png'
+                    :styles => { :original => '300x300>', :thumb => '100x100>'}
   validates_attachment :avatar,  :content_type => { :content_type => %w(image/jpeg image/jpg image/gif image/png)}
 
   belongs_to :organization

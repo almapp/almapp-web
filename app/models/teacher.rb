@@ -27,12 +27,7 @@ class Teacher < ActiveRecord::Base
   validates :name, presence: true
 
   has_attached_file :avatar,
-                    :styles => { :original => '300x300>', :thumb => '100x100>'},
-                    :url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
-                    :hash_secret => "longSecretString",
-                    #:path => 'public/images/paperclip/:class/:id/:style.:extension',
-                    #:url => '/images/paperclip/:class/:id/:style.:extension',
-                    :default_url => '/images/teachers/default/:style.png'
+                    :styles => { :original => '300x300>', :thumb => '100x100>'}
   validates_attachment :avatar,  :content_type => { :content_type => %w(image/jpeg image/jpg image/gif image/png)}
 
   has_and_belongs_to_many :sections, -> { uniq }, dependent: :destroy
