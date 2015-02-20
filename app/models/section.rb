@@ -23,11 +23,18 @@ class Section < ActiveRecord::Base
   include PostPublisher
   include EventPublisher
 
+  validates :identifier, presence: true, uniqueness: true
   validates :course_id, presence: true
   validates :period, presence: true, numericality: {greater_than_or_equal_to: 0}
   validates :year, presence: true, numericality: {greater_than_or_equal_to: 0}
   validates_uniqueness_of :course_id, scope: [:number, :year, :period]
   validates_uniqueness_of :identifier, scope: [:year, :period]
+
+  before_validation :set_identifier
+
+  def set_identifier
+    self.identifier ||= expected_identifier
+  end
 
   belongs_to :course
 
