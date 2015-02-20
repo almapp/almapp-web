@@ -52,6 +52,7 @@ hallsj = Building.where(abbreviation: 'HALL SJ').first_or_initialize
 al = Building.where(abbreviation: 'AL').first_or_initialize
 templo = Building.where(abbreviation: 'TEMPLO').first_or_initialize
 agro = Faculty.where(abbreviation: 'AGC').first_or_initialize
+deportes = Faculty.where(abbreviation: 'DPT').first_or_initialize
 fadeu = Faculty.where(abbreviation: 'FADEU').first_or_initialize
 artes = Faculty.where(abbreviation: 'ART').first_or_initialize
 bio = Faculty.where(abbreviation: 'BIO').first_or_initialize
