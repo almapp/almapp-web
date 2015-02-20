@@ -81,11 +81,25 @@ class UCCoursesLoader < CoursesLoader
   ROW_CAMPUS = 'Campus'
   ROW_TITLES = 'Títulos'
 
+  def self.get_course_info(course, year, period)
+    url = "http://www3.uc.cl/buscacursos/informacionCurso.ajax.php?semestre=#{year}-#{period}&sigla=#{course.initials}&seccion=1"
+    uri = URI.parse(url)
+    req = Net::HTTP.new(uri.host, uri.port)
+    web = req.get(uri)
+
+    if web.code == '200'
+      doc = Nokogiri::HTML(web.body)
+      info = doc.xpath('/html/body/div[1]/div[1]/div[1]').text
+      return info.empty? ? '' : info.strip
+    else
+      ''
+    end
+  end
 
   def self.get_website(url)
-    url = URI.parse(url)
-    req = Net::HTTP.new(url.host, url.port)
-    req.get(url.path)
+    uri = URI.parse(url)
+    req = Net::HTTP.new(uri.host, uri.port)
+    req.get(uri.path)
   end
 
   def self.should_skip(year, period, academic_number, page)
@@ -150,6 +164,7 @@ class UCCoursesLoader < CoursesLoader
         course.academic_unity = unity
         course.name = name
         course.credits = credits
+        course.information = get_course_info(course, year, period)
         course.save!
 
 
