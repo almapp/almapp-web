@@ -54,6 +54,27 @@ agro.localization.category_list = 'area, faculty'
 agro.set_banner_from_url(banner_url_for(agro))
 agro.save!
 
+deportes = Faculty.where(abbreviation: 'DPT').first_or_initialize
+deportes.name = 'Deportes'
+deportes.short_name = 'Deportes'
+deportes.campus = sj
+deportes.address = ''
+deportes.url = ''
+deportes.facebook = ''
+deportes.twitter = ''
+deportes.phone = ''
+deportes.email = ''
+deportes.information = nil
+deportes.localization = Place.where(identifier: 'FACULTY DPT').first_or_initialize
+deportes.localization.latitude = -33.500779
+deportes.localization.longitude = -70.609704
+deportes.localization.area = sj
+deportes.localization.zoom = 0
+deportes.localization.angle = 0
+deportes.localization.tilt = 0
+deportes.localization.category_list = 'area, faculty'
+deportes.set_banner_from_url(banner_url_for(deportes))
+deportes.save!
 
 fadeu = Faculty.where(abbreviation: 'FADEU').first_or_initialize
 fadeu.name = 'Facultad de Arquitectura, Diseño y Estudios Urbanos'
