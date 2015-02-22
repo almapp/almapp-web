@@ -22,7 +22,7 @@ module AlmappWeb
 
     config.paperclip_defaults = {:url => '/paperclip_images/:class/:attachment/:id_partition/:style/:hash.:extension',
                                  :hash_secret => ENV['PAPERCLIP_HASH'] || 'obfuscation_string',
-                                 :default_url => '/images/:class/default/:style.:extension'}
+                                 :default_url => '/images/:class/default/:style.png'}
 
     config.middleware.use Rack::Deflater
 
