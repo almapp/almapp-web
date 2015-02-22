@@ -87,28 +87,30 @@ class UCCoursesLoader < CoursesLoader
     req = Net::HTTP.new(uri.host, uri.port)
     response = req.get(uri)
 
-    if response.code == '200'
+    if response.kind_of? Net::HTTPSuccess
       doc = Nokogiri::HTML(response.body)
       info = doc.xpath('/html/body/div[1]/div[1]/div[1]').text
       return info.empty? ? '' : info.strip
     else
-      ''
+      return ''
     end
   end
 
-  def self.get_teacher_pic(teacher, course, year, period)
-    name = teacher.name
-
-    url = "http://www3.uc.cl/buscacursos/getFotoProfe.db.php?nombre=#{name}&semestre=#{year}-#{period}&sigla=#{course.initials}&seccion=1"
+  def self.get_teacher_pic(teacher, course, section, year, period)
+    url = "http://www3.uc.cl/buscacursos/getFotoProfe.db.php?nombre=#{teacher.name}&semestre=#{year}-#{period}&sigla=#{course.initials}&seccion=#{section.number}"
     uri = URI.parse(URI.encode(url))
     req = Net::HTTP.new(uri.host, uri.port)
     response = req.get(uri)
 
-    tempfile = Tempfile.new([SecureRandom.hex.to_s, '.jpeg'])
-    File.open(tempfile.path,'wb') do |f|
-      f.write response.body
+    if response.kind_of? Net::HTTPSuccess
+      tempfile = Tempfile.new([SecureRandom.hex.to_s, '.jpeg'])
+      File.open(tempfile.path,'wb') do |f|
+        f.write response.body
+      end
+      return tempfile
+    else
+      return nil
     end
-    return tempfile
   end
 
   def self.get_website(url)
@@ -156,7 +158,7 @@ class UCCoursesLoader < CoursesLoader
       end
 
       web = get_website(get_url(period, number, page))
-      if web.code != '200'
+      unless web.kind_of? Net::HTTPSuccess
         break
       end
 
@@ -202,11 +204,13 @@ class UCCoursesLoader < CoursesLoader
             else
               teacher = Teacher.eager_load(:academic_unities, :sections).where(name: t_name).first_or_initialize
               unless teacher.avatar.exists?
-                profile_pic = get_teacher_pic(teacher, course, year, period)
-                teacher.avatar = profile_pic
+                profile_pic = get_teacher_pic(teacher, course, section, year, period)
+                if profile_pic.present? && profile_pic.size > 0
+                  teacher.avatar = profile_pic
 
-                profile_pic.close
-                profile_pic.unlink
+                  profile_pic.close
+                  profile_pic.unlink
+                end
               end
               teacher.academic_unities << unity unless teacher.academic_unities.include?(unity)
               teacher.sections << section unless teacher.sections.include?(section)
@@ -268,7 +272,7 @@ class UCCoursesLoader < CoursesLoader
             end
             ScheduleItem.import schedule_items
             schedule_items.each do |item|
-              puts "#{section.identifier} \t|\t #{item.class_type} \t|\t #{(item.schedule_module) ? item.schedule_module.initials : '-'} \t|\t #{item.place_name} @ #{item.campus_name}"
+              puts "Created: \t|\t #{unity.short_name} \t|\t n:#{course_number} \t|\t #{section.identifier} \t|\t #{item.class_type} \t|\t #{(item.schedule_module) ? item.schedule_module.initials : '-'} \t|\t #{item.place_name} @ #{item.campus_name}"
             end
           end
         end
