@@ -108,10 +108,12 @@ class UCAccountLoader < AccountLoader
       end
 
       profile_pic = get_profile_pic
-      user.avatar = profile_pic
+      if profile_pic.present? && profile_pic.size > 0
+        user.avatar = profile_pic
 
-      profile_pic.close
-      profile_pic.unlink
+        profile_pic.close
+        profile_pic.unlink
+      end
 
       (user.save!) ? user : nil
     end
@@ -126,11 +128,15 @@ class UCAccountLoader < AccountLoader
   def get_profile_pic
     response = request(PHOTO_PATH)
 
-    tempfile = Tempfile.new([SecureRandom.hex.to_s, '.jpeg'])
-    File.open(tempfile.path,'wb') do |f|
-      f.write response.body
+    if response.kind_of? Net::HTTPSuccess
+      tempfile = Tempfile.new([SecureRandom.hex.to_s, '.jpeg'])
+      File.open(tempfile.path,'wb') do |f|
+        f.write response.body
+      end
+      return tempfile
+    else
+      return nil
     end
-    tempfile
   end
 
   def get_career

@@ -1,7 +1,7 @@
 module Api
 	module V1
 		class DevicesController < BaseController
-      before_action :authorize_user
+      before_action :authorize_user!
 
       def create
         @item = Device.where(item_params).first_or_initialize

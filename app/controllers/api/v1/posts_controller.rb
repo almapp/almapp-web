@@ -2,7 +2,7 @@ module Api
 	module V1
 		class PostsController < BaseController
 
-			before_action :authorize_user, only: [:create, :destroy, :update]
+			before_action :authorize_user!, only: [:create, :destroy, :update]
 			before_action :set_and_validate_parent, only: [:index, :published_posts, :create]
 			before_action :set_and_validate_items, only: [:index, :published_posts, :create]
 			before_action :set_and_validate_item, only: [:show, :update, :destroy]

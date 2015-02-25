@@ -1,7 +1,7 @@
 module Api
 	module V1
 		class LikesController < BaseController
-			before_action :authorize_user, only: [:create, :destroy, :update, :like, :dislike]
+			before_action :authorize_user!, only: [:create, :destroy, :update, :like, :dislike]
 			before_action :set_and_validate_parent, only: [:index, :likes, :dislikes, :like, :dislike, :create]
 			before_action :set_and_validate_item, only: [:show, :update, :destroy]
 

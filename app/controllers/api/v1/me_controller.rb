@@ -1,9 +1,12 @@
 module Api
 	module V1
-		class MeController < BaseController
+		class MeController < ApplicationController
+      include ControllerHelpers::V1
 			# prepend_before_action :authenticate_user!
 
-      before_action :authorize_user
+      before_action :doorkeeper_authorize!
+      before_action :current_resource_owner
+      before_action :authorize_user!
 
 			def show
 				render 'api/v1/users/show'
