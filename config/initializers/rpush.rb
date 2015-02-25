@@ -1,6 +1,6 @@
 Rpush.configure do |config|
 
-  # Supported clients are :active_record and :redis.
+  # Supported clients are :active_record, :redis and :mongoid
   config.client = :active_record
 
   # Options passed to Redis.new
@@ -8,9 +8,6 @@ Rpush.configure do |config|
 
   # Frequency in seconds to check for new notifications.
   config.push_poll = 2
-
-  # Frequency in seconds to check for feedback
-  config.feedback_poll = 60
 
   # The maximum number of notifications to load from the store every `push_poll` seconds.
   # If some notifications are still enqueued internally, Rpush will load the batch_size less
@@ -24,10 +21,13 @@ Rpush.configure do |config|
   # Path to log file. Relative to current directory unless absolute.
   config.log_file = 'log/rpush.log'
 
-  config.log_level = (defined?(Rails) && Rails.logger) ? Rails.logger.level : ::Logger::Severity::INFO
+  config.log_level = (defined?(Rails) && Rails.logger) ? Rails.logger.level : ::Logger::Severity::DEBUG
 
   # Define a custom logger.
   # config.logger = MyLogger.new
+
+  # config.apns.feedback_receiver.enabled = true
+  # config.apns.feedback_receiver.frequency = 60
 
  end
 
@@ -127,5 +127,3 @@ Rpush.reflect do |on|
   # on.error do |error|
   # end
 end
-
-

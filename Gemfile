@@ -25,6 +25,8 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 # Images
 gem 'paperclip', '~> 4.2'
+gem 'azure', '~> 0.6.4'
+gem 'paperclip-azure'
 
 # Notifications
 gem 'rpush'
