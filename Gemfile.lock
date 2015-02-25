@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/mrpatiwi/paperclip-azure.git
+  revision: 325efbe4902da62a0c448545a1d77957de0da21f
+  specs:
+    paperclip-azure (0.2.12)
+      addressable
+      azure
+      hashie
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -190,10 +199,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    paperclip-azure (0.2.12)
-      addressable
-      azure
-      hashie
     parser (2.2.0.3)
       ast (>= 1.1, < 3.0)
     pg (0.18.1)
@@ -332,7 +337,7 @@ DEPENDENCIES
   oj
   oj_mimic_json
   paperclip (~> 4.2)
-  paperclip-azure
+  paperclip-azure!
   pg
   puma
   rails (= 4.1.6)
