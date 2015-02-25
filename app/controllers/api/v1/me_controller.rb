@@ -9,6 +9,7 @@ module Api
       before_action :authorize_user!
 
 			def show
+        @item = get_item
 				render 'api/v1/users/show'
 			end
 
