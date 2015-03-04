@@ -5742,7 +5742,7 @@ place.save!
 
 place = Place.where(identifier: 'F1').first_or_initialize
 place.name = 'F1'
-place.area = sj
+place.area = a_enf
 place.latitude = -33.499031
 place.longitude = -70.613146
 place.floor = '1'
@@ -5758,7 +5758,7 @@ place.save!
 
 place = Place.where(identifier: 'F2').first_or_initialize
 place.name = 'F2'
-place.area = sj
+place.area = a_enf
 place.latitude = -33.498973
 place.longitude = -70.613149
 place.floor = '1'
@@ -5774,7 +5774,7 @@ place.save!
 
 place = Place.where(identifier: 'F3').first_or_initialize
 place.name = 'F3'
-place.area = sj
+place.area = a_enf
 place.latitude = -33.498892
 place.longitude = -70.613160
 place.floor = '1'
@@ -5806,7 +5806,7 @@ place.save!
 
 place = Place.where(identifier: 'feuc_cc').first_or_initialize
 place.name = 'FEUC'
-place.area = sj
+place.area = cc
 place.latitude = -33.440857
 place.longitude = -70.640356
 place.floor = '1'
@@ -5815,14 +5815,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'feuc_lc').first_or_initialize
 place.name = 'FEUC'
-place.area = sj
+place.area = lc
 place.latitude = -33.419700
 place.longitude = -70.618192
 place.floor = '1'
@@ -5831,14 +5831,14 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'other'
 place.save!
 
 #-------------------------------------------------
 
 place = Place.where(identifier: 'feuc_sociales').first_or_initialize
 place.name = 'FEUC'
-place.area = sj
+place.area = sociales
 place.latitude = -33.497766
 place.longitude = -70.609919
 place.floor = '1'
@@ -5854,7 +5854,7 @@ place.save!
 
 place = Place.where(identifier: 'FT-101').first_or_initialize
 place.name = 'FT-101'
-place.area = sj
+place.area = a_teo
 place.latitude = -33.497971
 place.longitude = -70.610615
 place.floor = '1'
@@ -5870,7 +5870,7 @@ place.save!
 
 place = Place.where(identifier: 'FT-102').first_or_initialize
 place.name = 'FT-102'
-place.area = sj
+place.area = a_teo
 place.latitude = -33.497703
 place.longitude = -70.610647
 place.floor = '1'
@@ -5886,7 +5886,7 @@ place.save!
 
 place = Place.where(identifier: 'FT-103').first_or_initialize
 place.name = 'FT-103'
-place.area = sj
+place.area = a_teo
 place.latitude = -33.497656
 place.longitude = -70.610762
 place.floor = '1'
@@ -5902,7 +5902,7 @@ place.save!
 
 place = Place.where(identifier: 'FT-104').first_or_initialize
 place.name = 'FT-104'
-place.area = sj
+place.area = a_teo
 place.latitude = -33.497985
 place.longitude = -70.610700
 place.floor = '1'
@@ -5918,7 +5918,7 @@ place.save!
 
 place = Place.where(identifier: 'FT-105').first_or_initialize
 place.name = 'FT-105'
-place.area = sj
+place.area = a_teo
 place.latitude = -33.498020
 place.longitude = -70.610714
 place.floor = '1'
@@ -5932,169 +5932,9 @@ place.save!
 
 #-------------------------------------------------
 
-place = Place.where(identifier: 'facultad_bio_cel_mole').first_or_initialize
-place.name = 'Facultad Biología Celular y Molecular'
-place.area = sj
-place.latitude = -33.441837
-place.longitude = -70.639496
-place.floor = '?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_astro').first_or_initialize
-place.name = 'Facultad de Astronomía'
-place.area = sj
-place.latitude = -33.499850
-place.longitude = -70.611151
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_comunicaciones').first_or_initialize
-place.name = 'Facultad de Comunicaciones'
-place.area = sj
-place.latitude = -33.441423
-place.longitude = -70.640802
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_filosofia').first_or_initialize
-place.name = 'Facultad de Filosofía'
-place.area = sj
-place.latitude = -33.496753
-place.longitude = -70.614067
-place.floor = '2'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_fisiologia').first_or_initialize
-place.name = 'Facultad de Fisiología'
-place.area = sj
-place.latitude = -33.441403
-place.longitude = -70.639573
-place.floor = '?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_geografia').first_or_initialize
-place.name = 'Facultad de Geografía'
-place.area = sj
-place.latitude = -33.497309
-place.longitude = -70.613166
-place.floor = '2?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_letras').first_or_initialize
-place.name = 'Facultad de Letras'
-place.area = sj
-place.latitude = -33.496719
-place.longitude = -70.613595
-place.floor = '2?'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_mate').first_or_initialize
-place.name = 'Facultad de Matemática'
-place.area = sj
-place.latitude = -33.499762
-place.longitude = -70.610652
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'facultad_quimica').first_or_initialize
-place.name = 'Facultad de Química'
-place.area = sj
-place.latitude = -33.498832
-place.longitude = -70.611327
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
-place = Place.where(identifier: 'TTF').first_or_initialize
-place.name = 'Facultad de Teología'
-place.area = sj
-place.latitude = 0.0
-place.longitude = 0.0
-place.floor = '1'
-place.information = nil
-place.zoom = 0.0
-place.angle = 0.0
-place.tilt = 0.0
-
-place.category_list = 'classroom'
-place.save!
-
-#-------------------------------------------------
-
 place = Place.where(identifier: 'fotocopia18').first_or_initialize
 place.name = 'Fotocopia iPlot'
-place.area = sj
+place.area = lc
 place.latitude = -33.419393
 place.longitude = -70.618427
 place.floor = '1'
@@ -6103,7 +5943,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy, printer'
 place.save!
 
 #-------------------------------------------------
@@ -6119,7 +5959,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6135,7 +5975,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6151,7 +5991,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6167,7 +6007,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6183,7 +6023,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6199,7 +6039,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6215,7 +6055,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6231,7 +6071,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6247,7 +6087,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6263,7 +6103,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6279,7 +6119,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6295,7 +6135,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6311,7 +6151,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6327,7 +6167,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6343,7 +6183,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6359,7 +6199,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
@@ -6375,7 +6215,7 @@ place.zoom = 0.0
 place.angle = 0.0
 place.tilt = 0.0
 
-place.category_list = 'classroom'
+place.category_list = 'photocopy'
 place.save!
 
 #-------------------------------------------------
