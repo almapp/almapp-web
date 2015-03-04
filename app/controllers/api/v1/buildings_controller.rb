@@ -26,7 +26,7 @@ module Api
 
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
-			def set_parent
+			def get_parent
 				item_organizational_parent
 			end
 

@@ -11,9 +11,9 @@ module Api
       before_action :doorkeeper_authorize!
       before_action :current_resource_owner
       before_action :authorize_user! , only: [:create, :update, :destroy]
-      before_action :set_and_validate_parent, only: [:index, :create, :search]
-      before_action :set_and_validate_items, only: [:index]
-      before_action :set_and_validate_item, only: [:show, :update, :destroy]
+      before_action :set_parent, only: [:index, :create, :search]
+      before_action :set_items!, only: [:index]
+      before_action :set_item!, only: [:show, :update, :destroy]
 
 
       #=================
@@ -74,17 +74,23 @@ module Api
       #==== Helpers ====
       #=================
 
-      def set_and_validate_item
-        @item = get_item
-        render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @item.present?
+      def set_item
+        @item ||= get_item
       end
 
-      def set_and_validate_parent
-        @parent = get_parent
-        # render :json => {:error => "Parent for #{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless @parent.present?
+      def set_item!
+        render :json => {:error => "#{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless set_item.present?
       end
 
-      def set_and_validate_items
+      def set_parent
+        @parent ||= get_parent
+      end
+
+      def set_parent!
+        render :json => {:error => "Parent for #{@item_class} with ID = #{params[:id]} was not found."}.to_json, :status => 404 unless set_parent.present?
+      end
+
+      def set_items!
         begin
           @items = get_items
         rescue

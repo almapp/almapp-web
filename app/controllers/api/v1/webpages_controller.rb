@@ -2,9 +2,9 @@ module Api
 	module V1
 		class WebpagesController < BaseController
 
-      def get_found_items(query, limit)
-        get_items.search(query)
-      end
+      		def get_found_items(query, limit)
+        	get_items.search(query)
+      		end
 
 			# Return an array to display in the index view.
 			# @return Relation array
@@ -20,9 +20,9 @@ module Api
 
 			# Set @parent var to the respective parent of the item, see the routes.
 			# Can be null.
-			def set_parent
-				current_organization
-			end
+      		def get_parent
+        		current_organization
+      		end
 
 			# Set a parent to the item if needed. This is called before saving on create.
 			def set_item_parent(parent)

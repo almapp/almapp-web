@@ -3,9 +3,9 @@ module Api
 		class PostsController < BaseController
 
 			before_action :authorize_user!, only: [:create, :destroy, :update]
-			before_action :set_and_validate_parent, only: [:index, :published_posts, :create]
-			before_action :set_and_validate_items, only: [:index, :published_posts, :create]
-			before_action :set_and_validate_item, only: [:show, :update, :destroy]
+			before_action :set_parent, only: [:index, :published_posts, :create]
+			before_action :set_items!, only: [:index, :published_posts, :create]
+			before_action :set_item!, only: [:show, :update, :destroy]
 
       def get_found_items(query, limit)
         get_items.search(query, boost_by: {comments_count: {factor: COMMENT_BOOST},
