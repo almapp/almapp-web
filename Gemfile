@@ -26,7 +26,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # Images
 gem 'paperclip', '~> 4.2'
 gem 'azure', '~> 0.6.4'
-gem 'paperclip-azure', :git => 'https://github.com/mrpatiwi/paperclip-azure.git'
+gem 'paperclip-azure', '~> 0.2.14' #, :git => 'https://github.com/mrpatiwi/paperclip-azure.git'
 
 # Notifications
 gem 'rpush'
@@ -40,6 +40,7 @@ gem 'eventmachine'
 
 # Email
 gem 'gmail'
+gem 'google-api-client', require: 'google/api_client'
 
 # Searching
 # https://shellycloud.com/blog/2013/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch

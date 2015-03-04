@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/mrpatiwi/paperclip-azure.git
-  revision: 325efbe4902da62a0c448545a1d77957de0da21f
-  specs:
-    paperclip-azure (0.2.12)
-      addressable
-      azure
-      hashie
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,6 +42,10 @@ GEM
     ast (2.0.0)
     astrolabe (1.3.0)
       parser (>= 2.2.0.pre.3, < 3.0)
+    autoparse (0.3.3)
+      addressable (>= 2.3.1)
+      extlib (>= 0.9.15)
+      multi_json (>= 1.0.0)
     awesome_print (1.6.1)
     azure (0.6.4)
       json (~> 1.8)
@@ -105,8 +100,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    doorkeeper (2.1.1)
-      railties (>= 3.1)
+    doorkeeper (2.1.3)
+      railties (>= 3.2)
     elasticsearch (1.0.6)
       elasticsearch-api (= 1.0.6)
       elasticsearch-transport (= 1.0.6)
@@ -128,6 +123,7 @@ GEM
       eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
     eventmachine (1.0.7)
+    extlib (0.9.16)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     faye (1.0.3)
@@ -154,6 +150,16 @@ GEM
       mail (>= 2.2.1)
     gmail_xoauth (0.4.1)
       oauth (>= 0.3.6)
+    google-api-client (0.8.2)
+      activesupport (>= 3.2)
+      addressable (~> 2.3)
+      autoparse (~> 0.3)
+      extlib (~> 0.9)
+      faraday (~> 0.9)
+      launchy (~> 2.4)
+      multi_json (~> 1.10)
+      retriable (~> 1.4)
+      signet (~> 0.6)
     hashie (3.4.0)
     hike (1.2.3)
     hiredis (0.5.2)
@@ -167,6 +173,8 @@ GEM
       jbuilder (>= 1.5.0, < 3)
     json (1.8.2)
     jwt (1.3.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     macaddr (1.7.1)
       systemu (~> 2.6.2)
     mail (2.6.3)
@@ -191,7 +199,7 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
-    oj (2.11.4)
+    oj (2.11.5)
     oj_mimic_json (1.0.1)
     orm_adapter (0.5.0)
     paperclip (4.2.1)
@@ -199,6 +207,10 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paperclip-azure (0.2.14)
+      addressable
+      azure
+      hashie
     parser (2.2.0.3)
       ast (>= 1.1, < 3.0)
     pg (0.18.1)
@@ -245,6 +257,7 @@ GEM
       redis (~> 3.0, >= 3.0.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    retriable (1.4.1)
     rpush (2.4.0)
       activesupport
       ansi
@@ -259,7 +272,7 @@ GEM
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.1)
-    sass (3.4.12)
+    sass (3.4.13)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -273,7 +286,13 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
-    spring (1.3.2)
+    signet (0.6.0)
+      addressable (~> 2.3)
+      extlib (~> 0.9)
+      faraday (~> 0.9)
+      jwt (~> 1.0)
+      multi_json (~> 1.10)
+    spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -329,6 +348,7 @@ DEPENDENCIES
   faye-rails
   faye-redis
   gmail
+  google-api-client
   jbuilder
   jbuilder_cache_multi
   meta_request
@@ -337,7 +357,7 @@ DEPENDENCIES
   oj
   oj_mimic_json
   paperclip (~> 4.2)
-  paperclip-azure!
+  paperclip-azure (~> 0.2.14)
   pg
   puma
   rails (= 4.1.6)
