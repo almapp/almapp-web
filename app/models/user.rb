@@ -26,6 +26,7 @@
 #  avatar_content_type    :string(255)
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  last_email_id          :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -98,6 +99,8 @@ class User < ActiveRecord::Base
   validates_attachment :avatar,  :content_type => { :content_type => %w(image/jpeg image/jpg image/gif image/png)}
 
   belongs_to :organization
+
+  has_one :email_token, dependent: :destroy
 
   has_many :devices, dependent: :destroy
   def notify(title, message, data, devices = Device::DEVICES)

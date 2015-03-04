@@ -26,6 +26,7 @@
 #  avatar_content_type    :string(255)
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  last_email_id          :string(255)
 #
 
 require 'test_helper'

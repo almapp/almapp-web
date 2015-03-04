@@ -119,6 +119,11 @@ Rails.application.routes.draw do
           get '/courses' => 'me#courses', as: :me_courses
           # match '/register_device', to: 'me#register_devise', as: :me_register_device, via: [:get, :post, :delete]
           resources :devices, only: [:create, :destroy]
+          resource :email_client, controller: 'email_client' do
+
+            resources :emails
+            resource :token, controller: 'email_tokens'
+          end
         end
 
         resources :groups, concerns: [:commentable, :event_hosting, :posteable, :likeable, :searchable]
