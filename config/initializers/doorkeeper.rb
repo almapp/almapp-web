@@ -4,20 +4,9 @@ Doorkeeper.configure do
   # :mongoid4, :mongo_mapper
   orm :active_record
 
-  # This block will be called to check whether the resource owner is authenticated or not.
-  #resource_owner_authenticator do
-  #  # fail "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
-  #  # Put your resource owner authentication logic here.
-  #  #session[:user_return_to] = request.fullpath
-  #  #current_user || redirect_to(new_user_session_url)
-#
-  #  current_user || warden.authenticate!(:scope => :user)
-  #end
-
   resource_owner_authenticator do
     current_user || warden.authenticate!(scope: :user)
   end
-
 
   resource_owner_from_credentials do |routes|
     if params[:password] && params[:username]
