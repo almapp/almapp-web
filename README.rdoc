@@ -1,4 +1,0 @@
-== README
-
-Must run <tt>grunt build --force</tt>. on <tt> ng-app</tt> before deploying with <tt>mina deploy</tt> on <tt>production</tt> branch.
-
