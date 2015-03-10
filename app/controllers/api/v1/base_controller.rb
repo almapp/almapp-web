@@ -98,8 +98,6 @@ module Api
         end
       end
 
-
-
       # Use callbacks to share common setup or constraints between actions.
       def get_item
         get_item_class.find_by_id(params[:id])
@@ -134,6 +132,10 @@ module Api
       # Custom params to filter
       def query_params
         params.permit(:id)
+      end
+
+      def should_cache?
+        Rails.env.production? && query_params.blank?
       end
     end
   end

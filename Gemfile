@@ -18,7 +18,7 @@ gem 'sidekiq'
 gem 'redis'
 
 gem 'jbuilder'
-gem 'jbuilder_cache_multi'
+gem 'jbuilder_cache_multi', :git => 'https://github.com/mrpatiwi/jbuilder_cache_multi.git'
 gem 'oj'
 gem 'oj_mimic_json'
 gem 'acts-as-taggable-on', '~> 3.4'

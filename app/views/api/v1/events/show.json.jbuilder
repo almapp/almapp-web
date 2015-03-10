@@ -8,7 +8,7 @@ json.set! json_root do
   end
 
   json.participants do
-    json.cache_collection! @item.participants, key: 'compact' do |participant|
+    json.cache_collection_if! should_cache?, @item.participants, key: 'compact' do |participant|
       json.set! json_root(participant) do
         json.partial! template_for_item(participant, 'compact'), item: participant
       end

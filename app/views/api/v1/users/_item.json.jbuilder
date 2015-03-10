@@ -8,7 +8,7 @@ end
 # json.set! 'friends_count', item.friends.size
 
 json.careers do
-  json.cache_collection! item.careers, key: 'compact', expires_in: normal do |career|
+  json.cache_collection_if! should_cache?, item.careers, key: 'compact', expires_in: normal do |career|
     json.set! json_root(career) do
       json.partial! template_for_item(career, 'compact'), item: career
     end

@@ -16,7 +16,7 @@ json.set! json_root do
       json.array! periods.periods do |period|
         json.set! period do
           json.sections do
-            json.cache_collection! sections.period(periods.year, period), key: 'item' do |section|
+            json.cache_collection_if! should_cache?, sections.period(periods.year, period), key: 'item' do |section|
               json.section do
                 json.partial! template_for_item(section, 'item'), item: section
               end

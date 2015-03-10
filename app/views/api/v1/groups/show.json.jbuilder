@@ -2,7 +2,7 @@ json.set! json_root do
   json.partial! template_for_item, item: @item
 
   json.subscribers do
-    json.cache_collection! @item.subscribers, key: 'compact' do |subscriber|
+    json.cache_collection_if! should_cache?, @item.subscribers, key: 'compact' do |subscriber|
       json.set! json_root(subscriber) do
         json.partial! template_for_item(subscriber, 'compact'), item: subscriber
       end
