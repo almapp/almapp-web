@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   #= Routes start ==
   #=================
 
-  devise_for :users
+  # devise_for :users
 
   # Each organization has a subdomain determined by their 'abbreviation' column, this column can't be null.
   scope ':organization' do
