@@ -3,10 +3,10 @@ module Api
 		class UsersController < BaseController
 
       def get_found_items(query, limit)
-        get_items.search(query,
+        get_items.where(findeable: true).search(query,
                          fields: [{'username^10' => :word_start},
                                   {'name^6' => :text_middle}],
-                         limit: 5)
+                         limit: limit)
       end
 
 			# Return an array to display in the index view.

@@ -8,7 +8,7 @@ module Api
       DISLIKE_BOOST = 3
       COMMENT_BOOST = 10
 
-      before_action :doorkeeper_authorize!
+      # before_action :doorkeeper_authorize!
       before_action :current_resource_owner
       before_action :authorize_user! , only: [:create, :update, :destroy]
       before_action :set_parent, only: [:index, :create, :search]
